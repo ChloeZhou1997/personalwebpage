@@ -1,8 +1,8 @@
 +++
-title = "Learning List 03 Reading and Writing Buffer in Emacs"
+title = "Learning Elisp 03 Reading and Writing Buffer in Emacs"
 author = ["Chloe"]
 date = 2022-10-27
-lastmod = 2022-10-27T12:14:26-04:00
+lastmod = 2022-10-27T14:24:56-04:00
 tags = ["emacs", "lisp"]
 draft = false
 +++
