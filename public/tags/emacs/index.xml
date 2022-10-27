@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emacs on My Personal Webpage</title>
+    <link>http://example.org/tags/emacs/</link>
+    <description>Recent content in emacs on My Personal Webpage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Elisp 01 Functions</title>
+      <link>http://example.org/posts/emacs-lisp-01-functions/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/emacs-lisp-01-functions/</guid>
+      <description>Define a function Specify the `&amp;amp;optional` or `&amp;amp;rest` argument in the arguments
+1 2(defun multiply-many (x &amp;amp;optional y &amp;amp;rest operands) 3	&amp;#34;Multiplying the result of math expression on the arguments X, Y and OPERANDS&amp;#34; 4	(dolist (i operands) 5	(when i 6	(setq x (* x 7	(or y 1) 8	i)))) 9	x) 10 11(multiply-many 2 3 8 19) Function wihtout names Lambda function - a function without a name</description>
+    </item>
+    
+    <item>
+      <title>Learning Elisp 02 Variable and Scope</title>
+      <link>http://example.org/posts/emacs-lisp-02-variable-and-scope/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/emacs-lisp-02-variable-and-scope/</guid>
+      <description>Variables Set vairbales and Define vairables are different Define Buffer-local variables Understanding variable scopes Creating Variable scope with let Defining and setting customization variables Variable is a symbol that binds with a value : &#39;tab-width-&amp;gt; 4
+Set variables Variables are symbols binds to values, what setq means is &amp;ldquo;set quote&amp;rdquo;, a convient way to write
+1 2(set &amp;#39;tab-width 4) 3 4;; The variable doesn&amp;#39;t have to exist or be pre-defined 5 6(set &amp;#39;i-dont-exist 5) Documenting Variables defvar allows one to assign documentations to the created variables</description>
+    </item>
+    
+    <item>
+      <title>Learning List 03 Reading and Writing Buffer in Emacs</title>
+      <link>http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/</guid>
+      <description>Basic API for Emacs Buffers Buffers may be visible or not.
+Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or create one (get-buffer-create) 1 2(get-buffer &amp;#34;*scratch*&amp;#34;) Create a buffer if it doesn&amp;rsquo;t already exist:
+1 2(get-buffer-create &amp;#34;Hello World&amp;#34;) Changing the current buffer (set-buffer) 1(progn 2	(set-buffer (get-buffer &amp;#34;*scratch*&amp;#34;)) 3	(current-buffer)) 4 5;;equivalently 6(progn 7	(set-buffer &amp;#34;*scratch*&amp;#34;) 8	(current-buffer)) progn is an expression that allows you to run multiple expression inside of the body.</description>
+    </item>
+    
+    <item>
+      <title>Lisp Project - Dotcrafter</title>
+      <link>http://example.org/posts/emacs-lisp-00-final-project/</link>
+      <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/emacs-lisp-00-final-project/</guid>
+      <description>Use move-folder-to-config-files to move config folders into the /.dotfiles
+Use move-file-to-config-files to move config files into the /.dotfiles
+Use link-config-files to create symblink between the config files in the /.dotfiles and the home-directory
+From function.org See: Interactive function
+Define a command that automaticaly tangle the `.org` files in your dotfiles folder (this is used in the last section of the file.
+(Not in actual production code)
+1(defun 2	dotfiles-tangle-org-file(&amp;amp;optional org-file) 3	&amp;#34;Tangles a single .</description>
+    </item>
+    
+  </channel>
+</rss>

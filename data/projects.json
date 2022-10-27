@@ -1,0 +1,19 @@
+{
+  "list": [
+    {
+      "name":"Smart Brain",
+      "url":"https://smart-brain-joz.herokuapp.com/",
+      "desc":"React + Node.js + PostgreSQL full-stack project"
+    },
+    {
+      "name":"Roboto Friends Card Filter",
+      "url":"https://chloezhou1997.github.io/robotofriends/",
+      "desc":"A simple React front-end app"
+    },
+    {
+        "name": "Dotcrafter",
+        "url": "",
+        "desc":"Emacs Lisp Package dotfile management"
+    }
+  ]
+}

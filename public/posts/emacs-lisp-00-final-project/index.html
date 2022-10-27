@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Lisp Project - Dotcrafter | My Personal Webpage</title>
+  <link rel = 'canonical' href = 'http://example.org/posts/emacs-lisp-00-final-project/'>
+  <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Lisp Project - Dotcrafter" />
+<meta property="og:description" content="Use move-folder-to-config-files to move config folders into the /.dotfiles
+Use move-file-to-config-files to move config files into the /.dotfiles
+Use link-config-files to create symblink between the config files in the /.dotfiles and the home-directory
+From function.org See: Interactive function
+Define a command that automaticaly tangle the `.org` files in your dotfiles folder (this is used in the last section of the file.
+(Not in actual production code)
+1(defun 2	dotfiles-tangle-org-file(&amp;optional org-file) 3	&#34;Tangles a single ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/emacs-lisp-00-final-project/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-27T12:11:55-04:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lisp Project - Dotcrafter"/>
+<meta name="twitter:description" content="Use move-folder-to-config-files to move config folders into the /.dotfiles
+Use move-file-to-config-files to move config files into the /.dotfiles
+Use link-config-files to create symblink between the config files in the /.dotfiles and the home-directory
+From function.org See: Interactive function
+Define a command that automaticaly tangle the `.org` files in your dotfiles folder (this is used in the last section of the file.
+(Not in actual production code)
+1(defun 2	dotfiles-tangle-org-file(&amp;optional org-file) 3	&#34;Tangles a single ."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="http://example.org/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://example.org/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Blog</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li>
+          <a class="icon" href="http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&text=Lisp%20Project%20-%20Dotcrafter" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&is_video=false&description=Lisp%20Project%20-%20Dotcrafter" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Lisp%20Project%20-%20Dotcrafter&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&name=Lisp%20Project%20-%20Dotcrafter&description=Use%20move-folder-to-config-files%20to%20move%20config%20folders%20into%20the%20%2f.dotfiles%0aUse%20move-file-to-config-files%20to%20move%20config%20files%20into%20the%20%2f.dotfiles%0aUse%20link-config-files%20to%20create%20symblink%20between%20the%20config%20files%20in%20the%20%2f.dotfiles%20and%20the%20home-directory%0aFrom%20function.org%20See%3a%20Interactive%20function%0aDefine%20a%20command%20that%20automaticaly%20tangle%20the%20%60.org%60%20files%20in%20your%20dotfiles%20folder%20%28this%20is%20used%20in%20the%20last%20section%20of%20the%20file.%0a%28Not%20in%20actual%20production%20code%29%0a1%28defun%202%09dotfiles-tangle-org-file%28%26amp%3boptional%20org-file%29%203%09%26%2334%3bTangles%20a%20single%20." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&t=Lisp%20Project%20-%20Dotcrafter" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#from-function-dot-org">From <code>function.org</code></a></li>
+    <li><a href="#from-variable-and-scoping-dot-org">From <code>variable-and-scoping.org</code></a></li>
+    <li><a href="#from-reading-and-writing-buffers-dot-org">From <code>reading-and-writing-buffers.org</code></a>
+      <ul>
+        <li><a href="#getting-the-buffer-for-our-configuration-org-files">Getting the buffer for our configuration Org files</a></li>
+        <li><a href="#creating-expected-directories-before-linking">Creating expected directories before linking</a></li>
+        <li><a href="#finding-the-list-of-all-configuration-files-to-be-linked">Finding the list of all configuration files to be linked</a></li>
+        <li><a href="#migrating-config-files-to-the-dotfiles-folder">Migrating config files to the dotfiles folder</a></li>
+        <li><a href="#creating-symblink-for-all-config-files">Creating symblink for all config files</a>
+          <ul>
+            <li><a href="#procedure">Procedure</a></li>
+            <li><a href="#code">Code</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#from-creating-minor-mode-dot-org">From <code>creating-minor-mode.org</code></a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Lisp Project - Dotcrafter
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-10-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-27</time>
+          
+            (Updated: <time datetime="2022-10-27 12:11:55 -0400 EDT" itemprop="dateModified">2022-10-27</time>)
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          7 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/emacs" rel="tag">emacs</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/config" rel="tag">config</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Use <code>move-folder-to-config-files</code> to move config folders into the
+<code>/.dotfiles</code></p>
+<p>Use <code>move-file-to-config-files</code> to move config files into the <code>/.dotfiles</code></p>
+<p>Use <code>link-config-files</code> to create symblink between the config files in
+the <code>/.dotfiles</code> and the <code>home-directory</code></p>
+<h2 id="from-function-dot-org">From <code>function.org</code></h2>
+<p>See: <a href="/posts/emacs-lisp-01-functions/">Interactive function</a></p>
+<p>Define a command that automaticaly tangle the `.org` files in your
+dotfiles folder (this is used in the last section of the file.</p>
+<p><strong>(Not in actual production code)</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>		<span style="color:#8be9fd;font-style:italic">dotfiles-tangle-org-file</span>(<span style="color:#ff79c6">&amp;optional</span> <span style="color:#8be9fd;font-style:italic">org-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f1fa8c">&#34;Tangles a single .org file relative to the path in
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#f1fa8c">dotfiles-folder. If no file is specified, tangle the current
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f1fa8c">file if it is an org-mode buffer inside of dotfiles-folder&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span> <span style="color:#f1fa8c">&#34;F&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;File: %s&#34;</span> <span style="color:#8be9fd;font-style:italic">org-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#6272a4">;;suppress prompts and messages</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">org-confirm-babel-evaluate</span> nil)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	(<span style="color:#8be9fd;font-style:italic">message-log-max</span> nil)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">inhibit-message</span> t))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">org-babel-tangle-file</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">org-file</span> <span style="color:#8be9fd;font-style:italic">dotfiles-folder</span>))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotfiles-tangle-org-files</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>	(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">org-file</span> <span style="color:#8be9fd;font-style:italic">dotfiles-org-files</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>		(<span style="color:#8be9fd;font-style:italic">dotfiles-tangle-org-file</span> <span style="color:#8be9fd;font-style:italic">org-file</span>)))
+</span></span></code></pre></div><h2 id="from-variable-and-scoping-dot-org">From <code>variable-and-scoping.org</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-dotfiles-folder</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f1fa8c">&#34;The folder where dotfiles and org-mode configuration files are stored.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#f1fa8c">&#39;directory</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotfiles-org-files</span> <span style="color:#ff79c6">&#39;</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#f1fa8c">&#34;The list of org-mode files under the </span><span style="color:#f1fa8c">`dotfiles-folder&#39;</span><span style="color:#f1fa8c"> which
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#f1fa8c">contain configuration files that should be tangled&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#50fa7b">list</span> <span style="color:#50fa7b">string</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#6272a4">;; (defun dotfiles-tangle-org-file (&amp;optional org-file)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#6272a4">;;   &#34;Tangles a single .org file relative to the path in</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#6272a4">;; dotfiles-folder.  If no file is specified, tangle the current</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#6272a4">;; file if it is an org-mode buffer inside of dotfiles-folder.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#6272a4">;;   (interactive)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#6272a4">;;  ;; Suppress prompts and messages</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#6272a4">;;   (let ((org-confirm-babel-evaluate nil)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#6272a4">;;         (message-log-max nil)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#6272a4">;;         (inhibit-message t))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style="color:#6272a4">;;     (org-babel-tangle-file (expand-file-name org-file dotfiles-folder))))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-org-files</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>	<span style="color:#f1fa8c">&#34;Tangles all of the .org files in the paths specified by the variable dotfiles-folder&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>	(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">org-file</span> <span style="color:#8be9fd;font-style:italic">dotfiles-org-files</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>		(<span style="color:#8be9fd;font-style:italic">dotfiles-tangle-org-file</span> <span style="color:#8be9fd;font-style:italic">org-file</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>	(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Dotfiles are up to date!&#34;</span>))
+</span></span></code></pre></div><h2 id="from-reading-and-writing-buffers-dot-org">From <code>reading-and-writing-buffers.org</code></h2>
+<p><a href="/posts/emacs-lisp-03-reading-and-writing-buffers/">More information</a></p>
+<h3 id="getting-the-buffer-for-our-configuration-org-files">Getting the buffer for our configuration Org files</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; (dolist (org-file dotfiles-org-files)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;; 	(with-current-buffer (get-file-buffer (expand-file-name org-file</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;; 																													dotfiles-folder))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4">;; 		(message &#34;File: %s&#34; (buffer-file-name)))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4">;; 	(message &#34;The current buffer is %s&#34; (current-buffer)))</span>
+</span></span></code></pre></div><p>we can use these functions to find <strong>where a file inside of the dotfiles folder should be linked in the home
+directory.</strong></p>
+<ul>
+<li>find the relative path of a file under <code>/.dotfile</code> relative to the
+actual folder</li>
+<li>find the relative path of the <code>/.dotfile/file</code> against the output
+directory, (usually the home directory).</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#6272a4">;;; Code:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-output-directory</span> <span style="color:#f1fa8c">&#34;~&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>			<span style="color:#f1fa8c">&#34;The directory where dotcrafter.el will write out your dotfiles.
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#f1fa8c">		This ia typically set to the home directory but can be changed for
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#f1fa8c">		testing purposes.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>			<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#f1fa8c">&#39;string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>			<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-config-files-directory</span> <span style="color:#f1fa8c">&#34;.files&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>			<span style="color:#f1fa8c">&#34;The directory path inside of &#39;~/.dotfiles&#39; where configuration
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#f1fa8c">		files should be symbolically linked are stored&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>			<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#f1fa8c">&#39;string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>			<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>		(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter--resolve-config-files-path</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>			<span style="color:#f1fa8c">&#34;The function gives the full path of the given file relative to
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#f1fa8c">	the ~/.dotfile folder&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>						(<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-config-files-directory</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>															<span style="color:#8be9fd;font-style:italic">dotcrafter-dotfiles-folder</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>		(<span style="color:#8be9fd;font-style:italic">dotcrafter--resolve-config-files-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>		(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">resolve-config-file-target</span>(<span style="color:#8be9fd;font-style:italic">config-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>			<span style="color:#f1fa8c">&#34;Get the path of each each directory and file in the
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#f1fa8c">	relative to the corresponding ~/.dotfiles location&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>			(<span style="color:#50fa7b">expand-file-name</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>			 (<span style="color:#8be9fd;font-style:italic">file-relative-name</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>				 (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">config-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>				 (<span style="color:#8be9fd;font-style:italic">resolve-config-files-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>			 <span style="color:#8be9fd;font-style:italic">output-directory</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>		(<span style="color:#8be9fd;font-style:italic">resolve-config-file-target</span> <span style="color:#f1fa8c">&#34;init.el&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>		<span style="color:#6272a4">;; expanded files</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>		(<span style="color:#8be9fd;font-style:italic">file-relative-name</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files&#34;</span>)
+</span></span></code></pre></div><h3 id="creating-expected-directories-before-linking">Creating expected directories before linking</h3>
+<p>When we start to create symbolic links into the home directory (where
+the config file should be, usually), one caveat is when creating
+symlink too close to the home directory and commonly used in unix
+system (e.g. <code>~/.config</code>). (If these folders do not prexist, the program
+will create symbolic link for these folders as well&hellip;?)</p>
+<p>Solution: create these files at first to avoid the problem all at
+once.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-ensure-output-directories</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;.config&#34;</span> <span style="color:#f1fa8c">&#34;.zshrc&#34;</span> <span style="color:#f1fa8c">&#34;.emacs.d&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f1fa8c">&#34;list of directories in the output folder that should be created
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#f1fa8c"> before linking configuration files.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#50fa7b">list</span> <span style="color:#50fa7b">string</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-ensure-output-directories</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#6272a4">;; Ensure that the expected output directories are already</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#6272a4">;; created so that links will be created inside</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">dir</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-ensure-output-directories</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>		(<span style="color:#8be9fd;font-style:italic">make-directory</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">dir</span> <span style="color:#8be9fd;font-style:italic">output-directory</span>) t)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>(<span style="color:#8be9fd;font-style:italic">dotcrafter-ensure-output-directories</span>)
+</span></span></code></pre></div><h3 id="finding-the-list-of-all-configuration-files-to-be-linked">Finding the list of all configuration files to be linked</h3>
+<p>Goal: mirror the configuration files in <code>~/.dotfiles</code> into the home
+folder using symbolic link.</p>
+<p>Solution: Based on , list all the linkable
+files under <code>~/.dotfiles</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">find-all-files-to-link</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">file-to-link</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>				 (<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>					(<span style="color:#8be9fd;font-style:italic">resolve-config-files-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>					<span style="color:#f1fa8c">&#34;&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>			(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;file-to-link: %s&#34;</span> <span style="color:#8be9fd;font-style:italic">file-to-link</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>			(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#8be9fd;font-style:italic">file-to-link</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;File:%s\n			- %s&#34;</span> <span style="color:#8be9fd;font-style:italic">file</span> (<span style="color:#8be9fd;font-style:italic">resolve-config-file-target</span> <span style="color:#8be9fd;font-style:italic">file</span>))))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>(<span style="color:#8be9fd;font-style:italic">find-all-files-to-link</span>)
+</span></span></code></pre></div><h3 id="migrating-config-files-to-the-dotfiles-folder">Migrating config files to the dotfiles folder</h3>
+<ul>
+<li>Migrating folders or files under home dir (<code>output-directory</code>) to the
+<code>.dotfiles</code> diretory.</li>
+<li>Move the file to the corresponding location under the config path</li>
+<li>parameter <code>D</code> allows for pass folder as input argument, <code>F</code> allows for
+passing files as input argument.
+<ul>
+<li><a href="https://www.gnu.org/software/emacs/manual/html%5Fnode/elisp/Interactive-Codes.html">Code Character for interactive</a></li>
+</ul>
+</li>
+<li>[] in the tutorial, <code>F</code> is enough
+to allow both folder path and
+file path to be input, not in
+my case through &hellip; have to use
+both <code>D</code> and <code>F</code> in order for the
+function to work.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-move-folder-to-config-files</span> (<span style="color:#ff79c6">&amp;optional</span> <span style="color:#8be9fd;font-style:italic">source-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span> <span style="color:#f1fa8c">&#34;DConfiguration path to move:&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	(<span style="color:#8be9fd;font-style:italic">let*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>			((<span style="color:#8be9fd;font-style:italic">relative-path</span> (<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">source-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>																					<span style="color:#8be9fd;font-style:italic">output-directory</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>			 (<span style="color:#8be9fd;font-style:italic">dest-path</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">relative-path</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>																		(<span style="color:#8be9fd;font-style:italic">resolve-config-files-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>			 (<span style="color:#8be9fd;font-style:italic">dest-path</span> (<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#8be9fd;font-style:italic">string-suffix-p</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>											(<span style="color:#50fa7b">substring</span> <span style="color:#8be9fd;font-style:italic">dest-path</span> <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">-1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>										<span style="color:#8be9fd;font-style:italic">dest-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>		(<span style="color:#8be9fd;font-style:italic">when</span>(<span style="color:#8be9fd;font-style:italic">string-prefix-p</span> <span style="color:#f1fa8c">&#34;..&#34;</span> <span style="color:#8be9fd;font-style:italic">relative-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>			(error <span style="color:#f1fa8c">&#34;Copied path is not inside of config output directory :%s&#34;</span> <span style="color:#8be9fd;font-style:italic">output-directory</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>		(<span style="color:#8be9fd;font-style:italic">when</span>(<span style="color:#50fa7b">file-exists-p</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>			(error <span style="color:#f1fa8c">&#34;Can&#39;t copy path because it already exists in the config directory: %s&#34;</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>		(<span style="color:#8be9fd;font-style:italic">make-directory</span> (<span style="color:#50fa7b">file-name-directory</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>) t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>		(<span style="color:#50fa7b">rename-file</span> <span style="color:#8be9fd;font-style:italic">source-path</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-move-file-to-config-files</span> (<span style="color:#ff79c6">&amp;optional</span> <span style="color:#8be9fd;font-style:italic">source-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span> <span style="color:#f1fa8c">&#34;fConfiguration path to move:&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>	(<span style="color:#8be9fd;font-style:italic">let*</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>			((<span style="color:#8be9fd;font-style:italic">relative-path</span> (<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">source-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>																					<span style="color:#8be9fd;font-style:italic">output-directory</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>			 (<span style="color:#8be9fd;font-style:italic">dest-path</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">relative-path</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>																		(<span style="color:#8be9fd;font-style:italic">resolve-config-files-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>			 (<span style="color:#8be9fd;font-style:italic">dest-path</span> (<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#8be9fd;font-style:italic">string-suffix-p</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>											(<span style="color:#50fa7b">substring</span> <span style="color:#8be9fd;font-style:italic">dest-path</span> <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">-1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>										<span style="color:#8be9fd;font-style:italic">dest-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>		(<span style="color:#8be9fd;font-style:italic">when</span>(<span style="color:#8be9fd;font-style:italic">string-prefix-p</span> <span style="color:#f1fa8c">&#34;..&#34;</span> <span style="color:#8be9fd;font-style:italic">relative-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>			(error <span style="color:#f1fa8c">&#34;Copied path is not inside of config output directory :%s&#34;</span> <span style="color:#8be9fd;font-style:italic">output-directory</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>		(<span style="color:#8be9fd;font-style:italic">when</span>(<span style="color:#50fa7b">file-exists-p</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>			(error <span style="color:#f1fa8c">&#34;Can&#39;t copy path because it already exists in the config directory: %s&#34;</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>		(<span style="color:#8be9fd;font-style:italic">make-directory</span> (<span style="color:#50fa7b">file-name-directory</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>) t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>		(<span style="color:#50fa7b">rename-file</span> <span style="color:#8be9fd;font-style:italic">source-path</span> <span style="color:#8be9fd;font-style:italic">dest-path</span>)))
+</span></span></code></pre></div><h3 id="creating-symblink-for-all-config-files">Creating symblink for all config files</h3>
+<p>Create symblink at the optimal level in home dir so no need to create
+a link for every single file 0.0.</p>
+<h4 id="procedure">Procedure</h4>
+<ol>
+<li>Recursively looping over the <code>~/.dotfiles/</code></li>
+<li>File any given file, break the path into pieces (identifier &ldquo;<code>/</code>&rdquo;)</li>
+<li>Check whether each piece exists (iteratively)</li>
+<li>Check if a symblink exists for each piece, pointing to the <code>output-directory</code></li>
+<li>Create the symblink if it doesn&rsquo;t exists</li>
+</ol>
+<h4 id="code">Code</h4>
+<ul>
+<li><code>dotcrafter-link-config-files</code> : link the whole config dir</li>
+<li><code>link-config-file</code> : link every inidividual files (inside of the dir)</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter--link-config-file</span> (<span style="color:#8be9fd;font-style:italic">config-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	(<span style="color:#8be9fd;font-style:italic">let*</span> ((<span style="color:#8be9fd;font-style:italic">path-parts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>					(<span style="color:#8be9fd;font-style:italic">split-string</span> (<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">config-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>																						(<span style="color:#8be9fd;font-style:italic">dotcrafter--resolve-config-files-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>												<span style="color:#f1fa8c">&#34;/&#34;</span> t))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>				 (<span style="color:#8be9fd;font-style:italic">current-path</span> nil))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		(<span style="color:#8be9fd;font-style:italic">while</span> <span style="color:#8be9fd;font-style:italic">path-parts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>			(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">current-path</span> (<span style="color:#8be9fd;font-style:italic">if</span> <span style="color:#8be9fd;font-style:italic">current-path</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>														 (<span style="color:#50fa7b">concat</span> <span style="color:#8be9fd;font-style:italic">current-path</span> <span style="color:#f1fa8c">&#34;/&#34;</span> (<span style="color:#50fa7b">car</span> <span style="color:#8be9fd;font-style:italic">path-parts</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>													 (<span style="color:#50fa7b">car</span> <span style="color:#8be9fd;font-style:italic">path-parts</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>			(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">path-parts</span> (<span style="color:#50fa7b">cdr</span> <span style="color:#8be9fd;font-style:italic">path-parts</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>			<span style="color:#6272a4">;; Whether need to create a symblink between the current source path to the target path</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>			(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">source-path</span> (<span style="color:#50fa7b">expand-file-name</span> (<span style="color:#50fa7b">concat</span> <span style="color:#8be9fd;font-style:italic">config-files-directory</span> <span style="color:#f1fa8c">&#34;/&#34;</span> <span style="color:#8be9fd;font-style:italic">current-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>																					 <span style="color:#8be9fd;font-style:italic">dotfiles-folder</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>						(<span style="color:#8be9fd;font-style:italic">target-path</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">current-path</span> <span style="color:#8be9fd;font-style:italic">output-directory</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>				<span style="color:#6272a4">;; First, if the file exists, if it&#39;s a symblink</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>				(<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#50fa7b">file-symlink-p</span> <span style="color:#8be9fd;font-style:italic">target-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>						(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>							(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;The source path is a string %s&#34;</span> <span style="color:#8be9fd;font-style:italic">source-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>							<span style="color:#6272a4">;;check if the symblink target to the source path</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>							(<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#50fa7b">string-equal</span> <span style="color:#8be9fd;font-style:italic">source-path</span> (<span style="color:#8be9fd;font-style:italic">file-truename</span> <span style="color:#8be9fd;font-style:italic">target-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>									<span style="color:#6272a4">;;stop looping</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>									(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">path-parts</span> <span style="color:#ff79c6">&#39;</span>())
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>								(error <span style="color:#f1fa8c">&#34;The targeted file/folder %s is a symblink of a different source file&#34;</span> <span style="color:#8be9fd;font-style:italic">target-path</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>					<span style="color:#6272a4">;; if the file/folder exists, but doesn&#39;t have a symblink</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>					<span style="color:#6272a4">;; if it&#39;s a file, creat symblink</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>					<span style="color:#6272a4">;; if it&#39;s a folder, keep looping</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>					(<span style="color:#8be9fd;font-style:italic">when</span> (<span style="color:#8be9fd;font-style:italic">not</span> (<span style="color:#50fa7b">file-directory-p</span> <span style="color:#8be9fd;font-style:italic">target-path</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>						(<span style="color:#50fa7b">make-symbolic-link</span> <span style="color:#8be9fd;font-style:italic">source-path</span> <span style="color:#8be9fd;font-style:italic">target-path</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>						(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">path-parts</span> <span style="color:#ff79c6">&#39;</span>())))))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-link-config-files</span>()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">config-files</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>				 (<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span> (<span style="color:#8be9fd;font-style:italic">dotcrafter--resolve-config-files-path</span>) <span style="color:#f1fa8c">&#34;&#34;</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>		<span style="color:#6272a4">;;ensure the expected output folders are created;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>		(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">dir</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-ensure-output-directories</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>			(<span style="color:#8be9fd;font-style:italic">make-directory</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">dir</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-output-directory</span>) t))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>		(<span style="color:#8be9fd;font-style:italic">dolist</span> (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#8be9fd;font-style:italic">config-files</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>			(<span style="color:#8be9fd;font-style:italic">dotcrafter--link-config-file</span> <span style="color:#8be9fd;font-style:italic">file</span>))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>(<span style="color:#8be9fd;font-style:italic">dotcrafter-link-config-files</span>)
+</span></span></code></pre></div><h2 id="from-creating-minor-mode-dot-org">From <code>creating-minor-mode.org</code></h2>
+<p>Goal: creatingminor mode to</p>
+<ul>
+<li>automatically tangle and update configuration target files for ANY
+Org Mode file lives inside of the dotfiles folder</li>
+<li>the tangle setting in my init config.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-keymap-prefix</span> <span style="color:#f1fa8c">&#34;C-c C-,&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#f1fa8c">&#34;The prefix for dotcrafter-mode key bindings.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#f1fa8c">&#39;string</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>(<span style="color:#8be9fd;font-style:italic">defcustom</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-on-save</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#f1fa8c">&#34;When t, automatically tangle Org files on save&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#8be9fd;font-style:italic">:type</span> <span style="color:#f1fa8c">&#39;boolean</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-org-file</span> (<span style="color:#ff79c6">&amp;optional</span> <span style="color:#8be9fd;font-style:italic">org-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>	<span style="color:#f1fa8c">&#34;Tangle .org file relative to the path in dotfiles-folder.
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#f1fa8c">If no file is specified, tangle the current file if it&#39;s an
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#f1fa8c">org-mode buffer inside of dotfile-folder&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">org-confirm-babel-evaluate</span> nil)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>				(<span style="color:#8be9fd;font-style:italic">message-log-max</span> nil)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>				(<span style="color:#8be9fd;font-style:italic">inhibit-message-t</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>		(<span style="color:#8be9fd;font-style:italic">org-babel-tangle-file</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">org-file</span> <span style="color:#8be9fd;font-style:italic">dotfiles-folder</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>		(<span style="color:#8be9fd;font-style:italic">dotcrafter-link-config-files</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter--org-mode-hook</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;after-save-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">dotcrafter--after-save-handler</span> nil t))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter--after-save-handler</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>	(<span style="color:#8be9fd;font-style:italic">when</span> (<span style="color:#8be9fd;font-style:italic">and</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-mode</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>						 <span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-on-save</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>						 (<span style="color:#50fa7b">member</span> (<span style="color:#50fa7b">file-name-nondirectory</span> <span style="color:#50fa7b">buffer-file-name</span>) <span style="color:#8be9fd;font-style:italic">dotfiles-org-files</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>						 (<span style="color:#50fa7b">string-equal</span> (<span style="color:#50fa7b">directory-file-name</span> (<span style="color:#50fa7b">file-name-directory</span> (<span style="color:#50fa7b">buffer-file-name</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>													 (<span style="color:#50fa7b">directory-file-name</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#8be9fd;font-style:italic">dotfiles-folder</span>))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Tangling %s...&#34;</span> (<span style="color:#50fa7b">file-name-nondirectory</span> <span style="color:#50fa7b">buffer-file-name</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>		(<span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-org-file</span> <span style="color:#50fa7b">buffer-file-name</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">dotcrafter--key</span> (<span style="color:#8be9fd;font-style:italic">key</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>	(<span style="color:#8be9fd;font-style:italic">kbd</span> (<span style="color:#50fa7b">concat</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-keymap-prefix</span> <span style="color:#f1fa8c">&#34; &#34;</span> <span style="color:#8be9fd;font-style:italic">key</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>(<span style="color:#8be9fd;font-style:italic">define-minor-mode</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-mode</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>	<span style="color:#f1fa8c">&#34;Toggles global dotcrafter-mode&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>	nil
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>	<span style="color:#8be9fd;font-style:italic">:global</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>	<span style="color:#8be9fd;font-style:italic">:group</span> <span style="color:#f1fa8c">&#39;dotfiles</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>	<span style="color:#8be9fd;font-style:italic">:lighter</span> <span style="color:#f1fa8c">&#34; dotcrafter&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>	<span style="color:#8be9fd;font-style:italic">:keymap</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>	(<span style="color:#50fa7b">list</span> (<span style="color:#50fa7b">cons</span> (<span style="color:#8be9fd;font-style:italic">dotcrafter--key</span> <span style="color:#f1fa8c">&#34;t&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">dotcrafter-tangle-org-file</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>				(<span style="color:#50fa7b">cons</span> (<span style="color:#8be9fd;font-style:italic">dotcrafter--key</span> <span style="color:#f1fa8c">&#34;u&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">dotcrafter-update-dotfiles</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>	(<span style="color:#8be9fd;font-style:italic">if</span> <span style="color:#8be9fd;font-style:italic">dotcrafter-mode</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>			(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">dotcrafter--org-mode-hook</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>		(<span style="color:#8be9fd;font-style:italic">remove-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">dotcrafter--org-mode-hook</span>)))
+</span></span></code></pre></div>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Blog</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#from-function-dot-org">From <code>function.org</code></a></li>
+    <li><a href="#from-variable-and-scoping-dot-org">From <code>variable-and-scoping.org</code></a></li>
+    <li><a href="#from-reading-and-writing-buffers-dot-org">From <code>reading-and-writing-buffers.org</code></a>
+      <ul>
+        <li><a href="#getting-the-buffer-for-our-configuration-org-files">Getting the buffer for our configuration Org files</a></li>
+        <li><a href="#creating-expected-directories-before-linking">Creating expected directories before linking</a></li>
+        <li><a href="#finding-the-list-of-all-configuration-files-to-be-linked">Finding the list of all configuration files to be linked</a></li>
+        <li><a href="#migrating-config-files-to-the-dotfiles-folder">Migrating config files to the dotfiles folder</a></li>
+        <li><a href="#creating-symblink-for-all-config-files">Creating symblink for all config files</a>
+          <ul>
+            <li><a href="#procedure">Procedure</a></li>
+            <li><a href="#code">Code</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#from-creating-minor-mode-dot-org">From <code>creating-minor-mode.org</code></a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&text=Lisp%20Project%20-%20Dotcrafter" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&is_video=false&description=Lisp%20Project%20-%20Dotcrafter" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Lisp%20Project%20-%20Dotcrafter&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&title=Lisp%20Project%20-%20Dotcrafter" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&name=Lisp%20Project%20-%20Dotcrafter&description=Use%20move-folder-to-config-files%20to%20move%20config%20folders%20into%20the%20%2f.dotfiles%0aUse%20move-file-to-config-files%20to%20move%20config%20files%20into%20the%20%2f.dotfiles%0aUse%20link-config-files%20to%20create%20symblink%20between%20the%20config%20files%20in%20the%20%2f.dotfiles%20and%20the%20home-directory%0aFrom%20function.org%20See%3a%20Interactive%20function%0aDefine%20a%20command%20that%20automaticaly%20tangle%20the%20%60.org%60%20files%20in%20your%20dotfiles%20folder%20%28this%20is%20used%20in%20the%20last%20section%20of%20the%20file.%0a%28Not%20in%20actual%20production%20code%29%0a1%28defun%202%09dotfiles-tangle-org-file%28%26amp%3boptional%20org-file%29%203%09%26%2334%3bTangles%20a%20single%20." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-00-final-project%2f&t=Lisp%20Project%20-%20Dotcrafter" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  My Personal Webpage 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Blog</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

@@ -1,0 +1,72 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My Personal Webpage'
+theme = "cactus"
+
+# Main menu which appears below site header.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    style = "dracula"
+    tabWidth = 4
+
+[params]
+	googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+  showAllPostsArchive = false # default
+
+  description = "This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school."
+  mainSection = "posts"
+
+	tagsOverview = true
+
+  showProjectsList = true # show projects list by default (if projects data file exists).
+  projectsUrl = "https://github.com/gohugoio" # title link for projects list
+
+  # Post page settings
+  show_updated = true # default
+  showReadTime = true # default
+
+	# Mathsjax syntax
+	mathjax = true
+	
+	# the value of name should be an valid font awesome icon name (brands type)
+  # https://fontawesome.com/icons?d=gallery&s=brands
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/ChloeZhou1997"
+  [[params.social]]
+    name = "linkedin"
+    link = "https://www.linkedin.com/in/qiaohui-zhou-9082b099/"
+  [[params.social]]
+    name = "email"
+    link = "qz111@georgetown.edu"  # no need for "mailto:" in the head

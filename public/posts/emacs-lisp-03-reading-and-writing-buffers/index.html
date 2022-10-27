@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Learning List 03 Reading and Writing Buffer in Emacs | My Personal Webpage</title>
+  <link rel = 'canonical' href = 'http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/'>
+  <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Learning List 03 Reading and Writing Buffer in Emacs" />
+<meta property="og:description" content="Basic API for Emacs Buffers Buffers may be visible or not.
+Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or create one (get-buffer-create) 1 2(get-buffer &#34;*scratch*&#34;) Create a buffer if it doesn&rsquo;t already exist:
+1 2(get-buffer-create &#34;Hello World&#34;) Changing the current buffer (set-buffer) 1(progn 2	(set-buffer (get-buffer &#34;*scratch*&#34;)) 3	(current-buffer)) 4 5;;equivalently 6(progn 7	(set-buffer &#34;*scratch*&#34;) 8	(current-buffer)) progn is an expression that allows you to run multiple expression inside of the body." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-27T12:14:26-04:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learning List 03 Reading and Writing Buffer in Emacs"/>
+<meta name="twitter:description" content="Basic API for Emacs Buffers Buffers may be visible or not.
+Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or create one (get-buffer-create) 1 2(get-buffer &#34;*scratch*&#34;) Create a buffer if it doesn&rsquo;t already exist:
+1 2(get-buffer-create &#34;Hello World&#34;) Changing the current buffer (set-buffer) 1(progn 2	(set-buffer (get-buffer &#34;*scratch*&#34;)) 3	(current-buffer)) 4 5;;equivalently 6(progn 7	(set-buffer &#34;*scratch*&#34;) 8	(current-buffer)) progn is an expression that allows you to run multiple expression inside of the body."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="http://example.org/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://example.org/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Blog</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" http://example.org/posts/emacs-lisp-00-final-project/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="http://example.org/posts/emacs-lisp-02-variable-and-scope/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-api-for-emacs-buffers">Basic API for Emacs Buffers</a>
+      <ul>
+        <li><a href="#manipulating-buffer">Manipulating Buffer</a>
+          <ul>
+            <li><a href="#current-buffer">Current buffer</a></li>
+            <li><a href="#get-buffer-by-name-or-create-one--get-buffer-create">Get buffer by name or create one (<code>get-buffer-create</code>)</a></li>
+            <li><a href="#changing-the-current-buffer--set-buffer">Changing the current buffer (<code>set-buffer</code>)</a></li>
+            <li><a href="#changing-the-current-buffer-safely--save-current-buffer">Changing the current buffer safely (<code>save-current-buffer</code>)</a></li>
+          </ul>
+        </li>
+        <li><a href="#manipulating-files">Manipulating Files</a>
+          <ul>
+            <li><a href="#file-of-the-current-buffer--buffer-file-name">File of the current buffer (<code>buffer-file-name</code>)</a></li>
+            <li><a href="#load-files-into-a-buffer--find-file-noselect">Load files into a buffer (<code>find-file-noselect</code>)</a></li>
+            <li><a href="#manipulating-file-paths--prefix-file-name">Manipulating file paths (prefix <code>file-name</code>)</a></li>
+            <li><a href="#resolving-file-paths--file-name-absolute-p-etc">Resolving file paths (<code>file-name-absolute-p</code> etc)</a></li>
+            <li><a href="#check-if-file-exists">Check if file exists</a></li>
+          </ul>
+        </li>
+        <li><a href="#manipulating-directories">Manipulating Directories</a>
+          <ul>
+            <li><a href="#creating-directories--make-directory">Creating directories (<code>make-directory</code>)</a></li>
+            <li><a href="#listing-files-in-directories">Listing files in directories</a></li>
+            <li><a href="#copying-moving-and-deleting-files-and-dir">Copying, moving and deleting files and dir</a></li>
+            <li><a href="#renaming-moving">Renaming/Moving</a></li>
+            <li><a href="#deleting">Deleting</a></li>
+          </ul>
+        </li>
+        <li><a href="#creating-symblink">Creating Symblink</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Learning List 03 Reading and Writing Buffer in Emacs
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-10-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-27</time>
+          
+            (Updated: <time datetime="2022-10-27 12:14:26 -0400 EDT" itemprop="dateModified">2022-10-27</time>)
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/emacs" rel="tag">emacs</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/lisp" rel="tag">lisp</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h2 id="basic-api-for-emacs-buffers">Basic API for Emacs Buffers</h2>
+<p>Buffers may be visible or not.</p>
+<h3 id="manipulating-buffer">Manipulating Buffer</h3>
+<h4 id="current-buffer">Current buffer</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">current-buffer</span>)
+</span></span></code></pre></div><h4 id="get-buffer-by-name-or-create-one--get-buffer-create">Get buffer by name or create one (<code>get-buffer-create</code>)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>)
+</span></span></code></pre></div><p>Create a buffer if it doesn&rsquo;t already exist:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-buffer-create</span> <span style="color:#f1fa8c">&#34;Hello World&#34;</span>)
+</span></span></code></pre></div><h4 id="changing-the-current-buffer--set-buffer">Changing the current buffer (<code>set-buffer</code>)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#50fa7b">set-buffer</span> (<span style="color:#50fa7b">get-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4">;;equivalently</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>	(<span style="color:#50fa7b">set-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
+</span></span></code></pre></div><ul>
+<li><code>progn</code> is an expression that allows you to run multiple expression inside of the body.</li>
+</ul>
+<h4 id="changing-the-current-buffer-safely--save-current-buffer">Changing the current buffer safely (<code>save-current-buffer</code>)</h4>
+<p>The <code>set-buffer</code> command may affect the code run afterwards: (the
+command that&rsquo;s supposed to run in other buffer now run in the
+<em><strong>scratch</strong></em> buffer because that&rsquo;s what set by the <code>set-buffer</code> function.</p>
+<p>Solution: using <code>save-current-buffer</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#8be9fd;font-style:italic">save-current-buffer</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#50fa7b">set-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Current buffer: %s&#34;</span> (<span style="color:#50fa7b">current-buffer</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
+</span></span></code></pre></div><p>Alternatively,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#8be9fd;font-style:italic">with-current-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Current buffer: %s&#34;</span> (<span style="color:#50fa7b">current-buffer</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
+</span></span></code></pre></div><h3 id="manipulating-files">Manipulating Files</h3>
+<h4 id="file-of-the-current-buffer--buffer-file-name">File of the current buffer (<code>buffer-file-name</code>)</h4>
+<p>use <code>buffer-file-name</code> to find/obatin the file name and the full path of the
+file the buffer represented:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">buffer-file-name</span>)
+</span></span></code></pre></div><p>Find the <em>existing</em> buffer that is represented by the file path (provide
+as much information as possible about the file path) using
+<code>get-file-buffer</code>.</p>
+<ul>
+<li>If the file is not currently open in the buffer the function will
+return <code>nil</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-file-buffer</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/reading-and-writing-buffers.org&#34;</span>)
+</span></span></code></pre></div><h4 id="load-files-into-a-buffer--find-file-noselect">Load files into a buffer (<code>find-file-noselect</code>)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span>)
+</span></span></code></pre></div><ul>
+<li>If running the command more than once the file will be loaded into
+the same buffer and sometimes it&rsquo;s not what we want (the buffer may
+not refect the most recent change of the file)</li>
+<li>send <code>t</code> to the second argument to prevent a prompt when the file is
+modified and differ from the buffer</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span> t)
+</span></span></code></pre></div><h4 id="manipulating-file-paths--prefix-file-name">Manipulating file paths (prefix <code>file-name</code>)</h4>
+<p>In Emacs, file paths are decomposed into two parts: 1. directory
+part; 2. file name and extension.</p>
+<p>Function prefix : <code>file-name</code>.</p>
+<ul>
+<li><code>-directory</code> - get the directory part of a file path</li>
+<li><code>-nondirectory</code> - get the filename of the file path</li>
+<li><code>-extension</code> - get the extension of the file without the leading
+period</li>
+<li><code>-sans-extension</code> - get the path without extension</li>
+<li><code>-base</code> - get the file name without path or etension</li>
+<li><code>-as-directory</code> - turn the file name into a directory name</li>
+</ul>
+<p>An interesting example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-name-as-directory</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> (<span style="color:#8be9fd;font-style:italic">file-name-sans-extension</span> (<span style="color:#50fa7b">buffer-file-name</span>))) <span style="color:#6272a4">;; turn the current file name into another path</span>
+</span></span></code></pre></div><h4 id="resolving-file-paths--file-name-absolute-p-etc">Resolving file paths (<code>file-name-absolute-p</code> etc)</h4>
+<ul>
+<li><code>file-name-absolute-p</code></li>
+<li><code>file-relative-name</code> - give the path of a file relative to another
+path</li>
+<li><code>expand-file-name</code> - return the absolute path for a file under a
+specified directory</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">file-name-absolute-p</span> (<span style="color:#50fa7b">buffer-file-name</span>)) <span style="color:#6272a4">;;t</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">buffer-file-name</span>) <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>(<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">buffer-file-name</span>) <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#50fa7b">expand-file-name</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>(<span style="color:#50fa7b">expand-file-name</span> <span style="color:#f1fa8c">&#34;Emacs.org&#34;</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>)
+</span></span></code></pre></div><p>If resolving files that contains <strong>Environmental Variable</strong>,
+<code>expand-file-name</code> won&rsquo;t work, use <code>substitute-in-file-name</code> instead</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">substitute-in-file-name</span> <span style="color:#f1fa8c">&#34;$HOME/.emacs.d&#34;</span>)
+</span></span></code></pre></div><h4 id="check-if-file-exists">Check if file exists</h4>
+<p><code>file-exists-p</code> - check if the file or directory exsits;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-exists-p</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files/.emacs.d&#34;</span>)
+</span></span></code></pre></div><p>Other options:</p>
+<ul>
+<li><code>file-readable-p</code></li>
+<li><code>file-executable-p</code></li>
+<li><code>file-writable-p</code></li>
+</ul>
+<h3 id="manipulating-directories">Manipulating Directories</h3>
+<h4 id="creating-directories--make-directory">Creating directories (<code>make-directory</code>)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">make-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/Test&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;create directory with path that doesn&#39;t exist</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4">;;add t as the second parameter</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">make-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/test1/test2&#34;</span> t)
+</span></span></code></pre></div><h4 id="listing-files-in-directories">Listing files in directories</h4>
+<p>Using <code>directory-files</code> and <code>directory-files-recursively</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>) <span style="color:#6272a4">;;return a list of files names with extension</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> t) <span style="color:#6272a4">;;return the full path of files in the list</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> t <span style="color:#f1fa8c">&#34;.org&#34;</span>) <span style="color:#6272a4">;; Get all file containing &#39;.org&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#6272a4">;; listing all the subfolders file</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>(<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> <span style="color:#f1fa8c">&#34;\\.el$&#34;</span>) <span style="color:#6272a4">;; the last argument is a simple regexp</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>(<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files&#34;</span> <span style="color:#f1fa8c">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>(<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> <span style="color:#f1fa8c">&#34;&#34;</span> t) <span style="color:#6272a4">;;return the folder as well as the files</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#6272a4">;; forth parameter is a lambda function that can ba passed onto the function to restrict the path the doc can search into (this one is very tricky!)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>(<span style="color:#8be9fd;font-style:italic">directory-files-recursively</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> <span style="color:#f1fa8c">&#34;&#34;</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>														 (<span style="color:#8be9fd;font-style:italic">lambda</span> (<span style="color:#8be9fd;font-style:italic">dir</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>															 (<span style="color:#8be9fd;font-style:italic">progn</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>																 (<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;The dir is: %s&#34;</span> <span style="color:#8be9fd;font-style:italic">dir</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>																 (<span style="color:#50fa7b">string-equal</span> <span style="color:#8be9fd;font-style:italic">dir</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files&#34;</span>))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#6272a4">;; The fifth parameter is used to specify whether the path should follow symbolic link</span>
+</span></span></code></pre></div><h4 id="copying-moving-and-deleting-files-and-dir">Copying, moving and deleting files and dir</h4>
+<ul>
+<li><code>Copy-file</code>: copy the contents of one file to another</li>
+<li><code>Copy-directory</code> : copy the contents including the subdirectories into
+another dir</li>
+</ul>
+<p><strong>Caveat</strong>: elisp treat <code>/folder</code> and <code>/folder/</code> differently, if you want to
+present the symbol as a folder, be sure to include <code>/</code> at the end of it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/exp/&#34;</span>) <span style="color:#6272a4">;; if using &#34;~/exp&#34; will throw err</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#6272a4">;; (directory-files &#34;~/exp&#34;)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#6272a4">;;to ignore that the file already exists</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/exp/&#34;</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#6272a4">;; copy directory</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#6272a4">;; (directory-files-recursively &#34;~/.emacs.d&#34; &#34;&#34; t</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#6272a4">;; 														 (lambda (dir)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#6272a4">;; 															 (string-equal dir &#34;~/.emacs.d/lisp&#34;))) ;; no directory called lisp</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>(<span style="color:#8be9fd;font-style:italic">copy-directory</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/snippets&#34;</span> <span style="color:#f1fa8c">&#34;/tmp&#34;</span>)
+</span></span></code></pre></div><h4 id="renaming-moving">Renaming/Moving</h4>
+<ul>
+<li><code>rename-file</code> : rename a file or directory</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;/tmp/&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#50fa7b">rename-file</span> <span style="color:#f1fa8c">&#34;/tmp/init.el&#34;</span> <span style="color:#f1fa8c">&#34;/tmp/init-rename.el&#34;</span>)
+</span></span></code></pre></div><h4 id="deleting">Deleting</h4>
+<ul>
+<li><code>delete-file</code> : Delete a file. (optionally moving it to eh trash
+folder)</li>
+<li><code>delete-directory</code> : Delete a directory, including files if disired</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">delete-file</span> <span style="color:#f1fa8c">&#34;/tmp/init-rename.el&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;delete folder (optionally, including the contents)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>(<span style="color:#8be9fd;font-style:italic">delete-directory</span> <span style="color:#f1fa8c">&#34;~/exp&#34;</span>) <span style="color:#6272a4">;; return err message because the folder is not empty</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">delete-directory</span> <span style="color:#f1fa8c">&#34;~/exp&#34;</span> t)
+</span></span></code></pre></div><h3 id="creating-symblink">Creating Symblink</h3>
+<ul>
+<li><code>make-symbolic-link</code> : create symbolic link, set the third arg to <code>t</code>,
+so it won&rsquo;t through error even if the symblink already exists</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">make-symbolic-link</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.zshrc&#34;</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span> t)
+</span></span></code></pre></div><ul>
+<li><code>file-symlink-p</code>: check if the file is a symblink file</li>
+<li><code>file-truename</code>: return the fule resolved path of the symblink file</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">file-symlink-p</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">file-truename</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span>)
+</span></span></code></pre></div>
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Blog</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-api-for-emacs-buffers">Basic API for Emacs Buffers</a>
+      <ul>
+        <li><a href="#manipulating-buffer">Manipulating Buffer</a>
+          <ul>
+            <li><a href="#current-buffer">Current buffer</a></li>
+            <li><a href="#get-buffer-by-name-or-create-one--get-buffer-create">Get buffer by name or create one (<code>get-buffer-create</code>)</a></li>
+            <li><a href="#changing-the-current-buffer--set-buffer">Changing the current buffer (<code>set-buffer</code>)</a></li>
+            <li><a href="#changing-the-current-buffer-safely--save-current-buffer">Changing the current buffer safely (<code>save-current-buffer</code>)</a></li>
+          </ul>
+        </li>
+        <li><a href="#manipulating-files">Manipulating Files</a>
+          <ul>
+            <li><a href="#file-of-the-current-buffer--buffer-file-name">File of the current buffer (<code>buffer-file-name</code>)</a></li>
+            <li><a href="#load-files-into-a-buffer--find-file-noselect">Load files into a buffer (<code>find-file-noselect</code>)</a></li>
+            <li><a href="#manipulating-file-paths--prefix-file-name">Manipulating file paths (prefix <code>file-name</code>)</a></li>
+            <li><a href="#resolving-file-paths--file-name-absolute-p-etc">Resolving file paths (<code>file-name-absolute-p</code> etc)</a></li>
+            <li><a href="#check-if-file-exists">Check if file exists</a></li>
+          </ul>
+        </li>
+        <li><a href="#manipulating-directories">Manipulating Directories</a>
+          <ul>
+            <li><a href="#creating-directories--make-directory">Creating directories (<code>make-directory</code>)</a></li>
+            <li><a href="#listing-files-in-directories">Listing files in directories</a></li>
+            <li><a href="#copying-moving-and-deleting-files-and-dir">Copying, moving and deleting files and dir</a></li>
+            <li><a href="#renaming-moving">Renaming/Moving</a></li>
+            <li><a href="#deleting">Deleting</a></li>
+          </ul>
+        </li>
+        <li><a href="#creating-symblink">Creating Symblink</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20List%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  My Personal Webpage 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Blog</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

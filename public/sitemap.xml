@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://example.org/tags/config/</loc>
+    <lastmod>2022-10-27T12:11:55-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/emacs/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/emacs-lisp-01-functions/</loc>
+    <lastmod>2022-10-27T12:14:06-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/emacs-lisp-02-variable-and-scope/</loc>
+    <lastmod>2022-10-27T12:14:16-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/lisp/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/emacs-lisp-00-final-project/</loc>
+    <lastmod>2022-10-27T12:11:55-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
+    <lastmod>2022-10-27T12:14:26-04:00</lastmod>
+  </url><url>
+    <loc>http://example.org/categories/</loc>
+  </url>
+</urlset>

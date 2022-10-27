@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main>
+    <article>
+		<aside>
+			{{ .TableOfContents }}
+		</aside>
+    <header>
+        <h1>{{ .Title }}</h1>
+    </header>
+        {{ .Content }}
+    </article>
+
+</main>
+{{ end }}
