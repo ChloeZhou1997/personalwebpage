@@ -1,4 +1,4 @@
-baseURL = $CF_PAGES_URL
+baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'My Personal Webpage'
 theme = "cactus"
