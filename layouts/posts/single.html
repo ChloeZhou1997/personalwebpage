@@ -68,13 +68,16 @@
       {{ end }}
     </div>
   {{ end }}
-    {{ if .Site.Params.tocInline }}
-    <div id="toc">
-      {{ .TableOfContents }}
-    </div>
-    {{ end }}
+  {{ if .Site.Params.tocInline }}
+  <div id="toc">
+    {{ .TableOfContents }}
+  </div>
+  {{ end }}
     <div class="content" itemprop="articleBody">
       {{ .Content}}
+    </div>
+    <div class="post-content" itemprop="articleBody">
+      {{ partial "backlinks" . }}
     </div>
   </article>
 
