@@ -29,7 +29,7 @@ Set variables Variables are symbols binds to values, what setq means is &amp;ldq
     </item>
     
     <item>
-      <title>Learning List 03 Reading and Writing Buffer in Emacs</title>
+      <title>Learning Elisp 03 Reading and Writing Buffer in Emacs</title>
       <link>http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
       
