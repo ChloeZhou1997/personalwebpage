@@ -12,7 +12,7 @@
     },
     {
         "name": "Dotcrafter",
-        "url": "",
+        "url": "https://github.com/ChloeZhou1997/dotfilesmanager",
         "desc":"Emacs Lisp Package dotfile management"
     }
   ]
