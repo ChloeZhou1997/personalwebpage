@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-28
-lastmod = 2022-10-28T00:26:13-04:00
+lastmod = 2022-10-28T10:40:03-04:00
 tags = ["emacs", "config"]
 draft = true
 +++
@@ -335,12 +335,14 @@ using number.
 
 ;;quick parser
 ;;be aware here use-pacakges won't work
- (require  'org-tempo)
+(require  'org-tempo)
 
-	(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-	(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-	(add-to-list 'org-structure-template-alist '("py" . "src python"))
-	(add-to-list 'org-structure-template-alist '("ja" . "src java"))
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+(add-to-list 'org-structure-template-alist '("ja" . "src java"))
+(add-to-list 'org-structure-template-alist '("quo" . "src quote"))
+(add-to-list 'org-structure-template-alist '("ex" . "src example"))
 ```
 
 
@@ -481,7 +483,7 @@ using number.
 ;; Allows you to edit entries directly from org-brain-visualize
 (use-package polymode
 	:config
-	(add-hook 'org-brain-visualize-mode-hook 'org-brain-polymode))
+	(add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode))
 ```
 
 
@@ -734,6 +736,18 @@ light-weighted, integrating with built in emacs completion engine
 ```
 
 
+### Markdown mode {#markdown-mode}
+
+```emacs-lisp
+
+(use-package markdown-mode
+	:ensure t
+	:mode ("README\\.md\\'" . gfm-mode)
+	:init (setq markdown-command "multimarkdown"))
+
+```
+
+
 ## File management {#file-management}
 
 
@@ -974,18 +988,6 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 
 (setq org-export-with-broken-links t)
 ```
-
-Update the timestemps in `#+lastmode:` section:
-
-```emacs-lisp
-(setq time-stamp-active t
-			time-stamp-start "#\\+DATE:[ \t]*"
-			time-stamp-end "$"
-			time-stamp-format "%04Y-%02m-%02d")
-(add-hook 'before-save-hook 'time-stamp nil)
-```
-
-Enabling links within Emacs:
 
 
 ## Helpful {#helpful}
