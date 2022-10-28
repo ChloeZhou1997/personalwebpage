@@ -2,12 +2,58 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-28
-lastmod = 2022-10-28T10:40:03-04:00
+lastmod = 2022-10-28T19:43:23-04:00
 tags = ["emacs", "config"]
 draft = true
 +++
 
+This is the Emacs configuration built from scratch following [system crafter](https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=1&t=0s)
+and [Mike Zamansky](https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg)'s youtube videos. As someone with only limited
+experience in running statistical models in R it's been a confusing
+exprience to finally build vague understanding of what's going on
+behind the scene.
+
+This literal configuration, by the time the post was written is still
+a patchwork of pieces I have taken from different places. My goal is
+to taking notes of concepts and syntax along the way when reorganizing
+the configuration file so that the documentation will be
+self-contained and "dummy-friendly" for people like me who wants to
+start using emacs to boost their productivities but have very little
+idea of anything relates to programming at the beginning of their
+journey.
+
+
 ## Package System Steup {#package-system-steup}
+
+-   [GitRepo](https://github.com/jwiegley/use-package) for the documentations.
+
+`use-package` is a way to organize the code neat but itself is not a
+pckage manager.
+
+Few most common keywords:
+
+-   `:init` : executing the keywords **before** the code is executed.
+-   `:config`: executing codes after the package is loaded
+-   `:command`: autoload the command following the load of the package and
+    do something about the loaded command (if you are autoloading
+    **non-interactive function**, use `:autoload` instead.
+    -   when using `:command` keyword, it creates autoloads for the commands
+        and **defers** their loading before they are acutally used.
+-   `:bind`: it's a two steps procedure, first create the autoload for the
+    command being called, then bind a key to that command.
+
+    -   using `:bind ("key-binding" . command)` is equivalent to,
+
+    `:command function :init (bind-key "key-binding" 'function)`
+
+    -   The keywords takes list of **conses**.
+    -   speicial key needs to be incoperated in `<>` such as `<tab>`.
+    -   the `:bind` can work in conjunction with `remap`, use `:bind([remap fill-paragraph] . unfill-toggle)` , the command `fill-paragraph` is
+        rebinded with `unfill-toggle`
+    -   other variant of key-binding macro can be found in the keybinding
+        section of the [git repo](https://github.com/jwiegley/use-package#key-binding).
+
+<!--listend-->
 
 ```emacs-lisp
 
@@ -748,76 +794,6 @@ light-weighted, integrating with built in emacs completion engine
 ```
 
 
-## File management {#file-management}
-
-
-### Dired {#dired}
-
-```emacs-lisp
-
-(use-package all-the-icons-dired)
-(use-package dired-rainbow
-	:defer 2
-	:config
-	(dired-rainbow-define-chmod directory "#6cb2eb" "d.*")
-	(dired-rainbow-define html "#eb5286" ("css" "less" "sass" "scss" "htm" "html" "jhtm" "mht" "eml" "mustache" "xhtml"))
-	(dired-rainbow-define xml "#f2d024" ("xml" "xsd" "xsl" "xslt" "wsdl" "bib" "json" "msg" "pgn" "rss" "yaml" "yml" "rdata"))
-	(dired-rainbow-define document "#9561e2" ("docm" "doc" "docx" "odb" "odt" "pdb" "pdf" "ps" "rtf" "djvu" "epub" "odp" "ppt" "pptx"))
-	(dired-rainbow-define markdown "#ffed4a" ("org" "etx" "info" "markdown" "md" "mkd" "nfo" "pod" "rst" "tex" "textfile" "txt"))
-	(dired-rainbow-define database "#6574cd" ("xlsx" "xls" "csv" "accdb" "db" "mdb" "sqlite" "nc"))
-	(dired-rainbow-define media "#de751f" ("mp3" "mp4" "mkv" "MP3" "MP4" "avi" "mpeg" "mpg" "flv" "ogg" "mov" "mid" "midi" "wav" "aiff" "flac"))
-	(dired-rainbow-define image "#f66d9b" ("tiff" "tif" "cdr" "gif" "ico" "jpeg" "jpg" "png" "psd" "eps" "svg"))
-	(dired-rainbow-define log "#c17d11" ("log"))
-	(dired-rainbow-define shell "#f6993f" ("awk" "bash" "bat" "sed" "sh" "zsh" "vim"))
-	(dired-rainbow-define interpreted "#38c172" ("py" "ipynb" "rb" "pl" "t" "msql" "mysql" "pgsql" "sql" "r" "clj" "cljs" "scala" "js"))
-	(dired-rainbow-define compiled "#4dc0b5" ("asm" "cl" "lisp" "el" "c" "h" "c++" "h++" "hpp" "hxx" "m" "cc" "cs" "cp" "cpp" "go" "f" "for" "ftn" "f90" "f95" "f03" "f08" "s" "rs" "hi" "hs" "pyc" ".java"))
-	(dired-rainbow-define executable "#8cc4ff" ("exe" "msi"))
-	(dired-rainbow-define compressed "#51d88a" ("7z" "zip" "bz2" "tgz" "txz" "gz" "xz" "z" "Z" "jar" "war" "ear" "rar" "sar" "xpi" "apk" "xz" "tar"))
-	(dired-rainbow-define packaged "#faad63" ("deb" "rpm" "apk" "jad" "jar" "cab" "pak" "pk3" "vdf" "vpk" "bsp"))
-	(dired-rainbow-define encrypted "#ffed4a" ("gpg" "pgp" "asc" "bfe" "enc" "signature" "sig" "p12" "pem"))
-	(dired-rainbow-define fonts "#6cb2eb" ("afm" "fon" "fnt" "pfb" "pfm" "ttf" "otf"))
-	(dired-rainbow-define partition "#e3342f" ("dmg" "iso" "bin" "nrg" "qcow" "toast" "vcd" "vmdk" "bak"))
-	(dired-rainbow-define vc "#0074d9" ("git" "gitignore" "gitattributes" "gitmodules"))
-	(dired-rainbow-define-chmod executable-unix "#38c172" "-.*x.*"))
-
-(use-package dired-single
-	:defer t)
-
-(use-package dired-ranger
-	:defer t)
-
-(use-package dired-collapse
-	:defer t)
-
-
-(use-package dired-single)
-
-(use-package all-the-icons-dired
-	:hook (dired-mode . all-the-icons-dired-mode))
-
-(use-package dired-open
-	:config
-	;; Doesn't work as expected!
-	;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
-	(setq dired-open-extensions '(("png" . "feh")
-																("mkv" . "mpv"))))
-```
-
-
-## Reveal.js {#reveal-dot-js}
-
-```emacs-lisp
-(use-package ox-reveal
-	:ensure ox-reveal)
-
-(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-(setq org-reveal-mathjax t)
-
-(use-package htmlize
-	:ensure t)
-```
-
-
 ## Yasnippet {#yasnippet}
 
 -   [Setting from Repo](https://github.com/MooersLab/configorg/blob/main/config.org)
@@ -889,6 +865,76 @@ light-weighted, integrating with built in emacs completion engine
 		 :isearch t
 		 )))
 (setq yas/prompt-functions '(yas/popup-isearch-prompt yas/no-prompt))
+```
+
+
+## File management {#file-management}
+
+
+### Dired {#dired}
+
+```emacs-lisp
+
+(use-package all-the-icons-dired)
+(use-package dired-rainbow
+	:defer 2
+	:config
+	(dired-rainbow-define-chmod directory "#6cb2eb" "d.*")
+	(dired-rainbow-define html "#eb5286" ("css" "less" "sass" "scss" "htm" "html" "jhtm" "mht" "eml" "mustache" "xhtml"))
+	(dired-rainbow-define xml "#f2d024" ("xml" "xsd" "xsl" "xslt" "wsdl" "bib" "json" "msg" "pgn" "rss" "yaml" "yml" "rdata"))
+	(dired-rainbow-define document "#9561e2" ("docm" "doc" "docx" "odb" "odt" "pdb" "pdf" "ps" "rtf" "djvu" "epub" "odp" "ppt" "pptx"))
+	(dired-rainbow-define markdown "#ffed4a" ("org" "etx" "info" "markdown" "md" "mkd" "nfo" "pod" "rst" "tex" "textfile" "txt"))
+	(dired-rainbow-define database "#6574cd" ("xlsx" "xls" "csv" "accdb" "db" "mdb" "sqlite" "nc"))
+	(dired-rainbow-define media "#de751f" ("mp3" "mp4" "mkv" "MP3" "MP4" "avi" "mpeg" "mpg" "flv" "ogg" "mov" "mid" "midi" "wav" "aiff" "flac"))
+	(dired-rainbow-define image "#f66d9b" ("tiff" "tif" "cdr" "gif" "ico" "jpeg" "jpg" "png" "psd" "eps" "svg"))
+	(dired-rainbow-define log "#c17d11" ("log"))
+	(dired-rainbow-define shell "#f6993f" ("awk" "bash" "bat" "sed" "sh" "zsh" "vim"))
+	(dired-rainbow-define interpreted "#38c172" ("py" "ipynb" "rb" "pl" "t" "msql" "mysql" "pgsql" "sql" "r" "clj" "cljs" "scala" "js"))
+	(dired-rainbow-define compiled "#4dc0b5" ("asm" "cl" "lisp" "el" "c" "h" "c++" "h++" "hpp" "hxx" "m" "cc" "cs" "cp" "cpp" "go" "f" "for" "ftn" "f90" "f95" "f03" "f08" "s" "rs" "hi" "hs" "pyc" ".java"))
+	(dired-rainbow-define executable "#8cc4ff" ("exe" "msi"))
+	(dired-rainbow-define compressed "#51d88a" ("7z" "zip" "bz2" "tgz" "txz" "gz" "xz" "z" "Z" "jar" "war" "ear" "rar" "sar" "xpi" "apk" "xz" "tar"))
+	(dired-rainbow-define packaged "#faad63" ("deb" "rpm" "apk" "jad" "jar" "cab" "pak" "pk3" "vdf" "vpk" "bsp"))
+	(dired-rainbow-define encrypted "#ffed4a" ("gpg" "pgp" "asc" "bfe" "enc" "signature" "sig" "p12" "pem"))
+	(dired-rainbow-define fonts "#6cb2eb" ("afm" "fon" "fnt" "pfb" "pfm" "ttf" "otf"))
+	(dired-rainbow-define partition "#e3342f" ("dmg" "iso" "bin" "nrg" "qcow" "toast" "vcd" "vmdk" "bak"))
+	(dired-rainbow-define vc "#0074d9" ("git" "gitignore" "gitattributes" "gitmodules"))
+	(dired-rainbow-define-chmod executable-unix "#38c172" "-.*x.*"))
+
+(use-package dired-single
+	:defer t)
+
+(use-package dired-ranger
+	:defer t)
+
+(use-package dired-collapse
+	:defer t)
+
+
+(use-package dired-single)
+
+(use-package all-the-icons-dired
+	:hook (dired-mode . all-the-icons-dired-mode))
+
+(use-package dired-open
+	:config
+	;; Doesn't work as expected!
+	;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
+	(setq dired-open-extensions '(("png" . "feh")
+																("mkv" . "mpv"))))
+```
+
+
+## Reveal.js {#reveal-dot-js}
+
+```emacs-lisp
+(use-package ox-reveal
+	:ensure ox-reveal)
+
+(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+	:ensure t)
 ```
 
 
