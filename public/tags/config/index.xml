@@ -6,7 +6,17 @@
     <description>Recent content in config on My Personal Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emacs Configuration</title>
+      <link>http://example.org/posts/emacs/</link>
+      <pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/emacs/</guid>
+      <description>This is the Emacs configuration built from scratch following system crafter and Mike Zamansky&amp;rsquo;s youtube videos. As someone with only limited experience in running statistical models in R it&amp;rsquo;s been a confusing exprience to finally build vague understanding of what&amp;rsquo;s going on behind the scene.
+This literal configuration, by the time the post was written is still a patchwork of pieces I have taken from different places. My goal is to taking notes of concepts and syntax along the way when reorganizing the configuration file so that the documentation will be self-contained and &amp;ldquo;dummy-friendly&amp;rdquo; for people like me who wants to start using emacs to boost their productivities but have very little idea of anything relates to programming at the beginning of their journey.</description>
+    </item>
+    
     <item>
       <title>Org &#43; Hugo &#43; Cloudflare for personal blog</title>
       <link>http://example.org/posts/hugo-quick-start/</link>

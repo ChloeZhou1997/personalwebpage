@@ -1,10 +1,10 @@
 +++
 title = "Emacs Configuration"
 author = ["Chloe"]
-date = 2022-10-28
-lastmod = 2022-10-28T19:43:23-04:00
+date = 2022-10-29
+lastmod = 2022-10-29T09:03:27-04:00
 tags = ["emacs", "config"]
-draft = true
+draft = false
 +++
 
 This is the Emacs configuration built from scratch following [system crafter](https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=1&t=0s)
@@ -24,6 +24,9 @@ journey.
 
 
 ## Package System Steup {#package-system-steup}
+
+
+### use-package {#use-package}
 
 -   [GitRepo](https://github.com/jwiegley/use-package) for the documentations.
 
@@ -52,6 +55,8 @@ Few most common keywords:
         rebinded with `unfill-toggle`
     -   other variant of key-binding macro can be found in the keybinding
         section of the [git repo](https://github.com/jwiegley/use-package#key-binding).
+-   `:hook` : when `(use-package A :hook B)`, it mean hook B onto A, the
+    extended version is `:command A, :init (add-hook 'B #'A)`
 
 <!--listend-->
 
@@ -73,8 +78,37 @@ Few most common keywords:
 	(package-install 'use-package))
 
 (require 'use-package)
+
+;; ensures the package to be download from the package archives
+;; if they have not already been downloaded. This is the global
+;; version of :ensure t.
 (setq use-package-always-ensure t)
 
+```
+
+-   More explanations on the code:
+    -   `require` : require will load the library **once**. Also when data were
+        being updated, require checks whether it needs to do
+        anything. [Check here for more information](https://emacs.stackexchange.com/questions/22717/what-does-require-package-mean-for-emacs-and-how-does-it-differ-from-load-fil).
+    -   `(setq package-archieves)` - add more source
+        -   potential debugging option:
+            -   use `customize-set-variable` instead of `setq`
+            -   use `(add-to-list 'package-archieves '("melpa". "http://melpa.org/packge/"))`
+                -   not sure if it's a list of archieve, if it will takes list
+                    of list.
+    -   `（package-initializae)` is used when running into undefined
+        functions or variables, so as to set up the **load-path** and
+        autoloads for installed package. Afterwards, using `(require
+            'package-name)` to fully load the package.
+
+To keep all the package up to date, use `auto-package-update` option:
+
+```emacs-lisp
+(use-package auto-package-update
+	:config
+	(setq auto-package-update-delete-old-versions t)
+	(setq auto-package-update-hide-results t)
+	(auto-package-update-maybe))
 ```
 
 
@@ -111,7 +145,7 @@ Few most common keywords:
 
 ;;store the recently opened files in order
 (recentf-mode 1)
-
+(require 'org-indent)
 (when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
@@ -394,21 +428,28 @@ using number.
 
 ### Org-roam {#org-roam}
 
+-   Org-roam v2 doesn't recognize `file:` link but only recognizes files
+    and headings with ID.
+-   `org-roam-mode` is no longer a global minor mode
+
+
+#### <span class="org-todo todo TODO">TODO</span> remove all the invocation of `org-roam-mode` in the source block, use `org-roam-db-auto-mode` to toggle the org-roam-mode {#remove-all-the-invocation-of-org-roam-mode-in-the-source-block-use-org-roam-db-auto-mode-to-toggle-the-org-roam-mode}
+
 
 #### Basic Config {#basic-config}
 
 ```emacs-lisp
 (use-package org-roam
-	:ensure t
 	:init
 	(setq org-roam-v2-ack t)
 	(setq org-roam-mode-section-functions
 				(list #'org-roam-backlinks-section
-							#'Org-roam-reflinks-section
+							#'org-roam-reflinks-section
 							;; #'org-roam-unlinked-references-section
 							))
 	:custom
-	(org-roam-directory "~/Notes/Roam")
+	(org-roam-directory "~/Notes")
+	(org-roam-db-location "~/Notes/org-roam.db")
 	(org-roam-completion-everywhere t)
 	(org-roam-capture-templates
 	 '(("d" "default" plain "%?"
@@ -797,7 +838,6 @@ light-weighted, integrating with built in emacs completion engine
 ## Yasnippet {#yasnippet}
 
 -   [Setting from Repo](https://github.com/MooersLab/configorg/blob/main/config.org)
-
     ```emacs-lisp
     (use-package yasnippet
     	:ensure t
