@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-10-29T09:03:27-04:00
+lastmod = 2022-10-30T02:09:49-04:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -29,6 +29,7 @@ journey.
 ### use-package {#use-package}
 
 -   [GitRepo](https://github.com/jwiegley/use-package) for the documentations.
+-   See [quick tutorial](https://ianyepan.github.io/posts/setting-up-use-package/) for how to use `use-package`
 
 `use-package` is a way to organize the code neat but itself is not a
 pckage manager.
@@ -90,16 +91,20 @@ Few most common keywords:
     -   `require` : require will load the library **once**. Also when data were
         being updated, require checks whether it needs to do
         anything. [Check here for more information](https://emacs.stackexchange.com/questions/22717/what-does-require-package-mean-for-emacs-and-how-does-it-differ-from-load-fil).
-    -   `(setq package-archieves)` - add more source
-        -   potential debugging option:
+    -   `(setq package-archieves)` - add more source by **asigning values** to
+        the **variable** `package-archieve`
+        -   potential debugging options:
             -   use `customize-set-variable` instead of `setq`
             -   use `(add-to-list 'package-archieves '("melpa". "http://melpa.org/packge/"))`
-                -   not sure if it's a list of archieve, if it will takes list
-                    of list.
-    -   `（package-initializae)` is used when running into undefined
+                -   Here, `add-to-list` takes first arguments as a **symbol**, so we
+                    have to put a `'` in front of `package-archieves` to tell the
+                    program to treat it as a symbol.[^fn:1]
+    -   `（package-initialize)` is used when running into undefined
         functions or variables, so as to set up the **load-path** and
         autoloads for installed package. Afterwards, using `(require
             'package-name)` to fully load the package.
+    -   Use `use-package-always-ensure` to save trouble from including
+        `:ensure t` line for all the individual packages.
 
 To keep all the package up to date, use `auto-package-update` option:
 
@@ -117,11 +122,17 @@ To keep all the package up to date, use `auto-package-update` option:
 
 ### Interface twick {#interface-twick}
 
+Some easy changes like change the size of the welcome windows, set the
+most common key-map, change annoying default settings and hide stuff
+like tool bar and scroll bar.
+
 ```emacs-lisp
 
 ;; Opening frame
 (add-to-list 'default-frame-alist '(height . 200))
 (add-to-list 'default-frame-alist '(width . 200))
+
+;;set the option and command key to corresponding emacs key
 (setq mac-command-modifier      'meta
 			mac-option-modifier       'alt
 			mac-right-option-modifier 'alt)
@@ -139,21 +150,28 @@ To keep all the package up to date, use `auto-package-update` option:
 ;;diable the scrool bar
 (scroll-bar-mode -1)
 
+;;short form of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;;when displaying picture, don't display actual size(they can be huge)
 (setq org-image-actual-width nil)
+
+;;show line number on the left of the window
 (global-display-line-numbers-mode 1)
 
 ;;store the recently opened files in order
 (recentf-mode 1)
-(require 'org-indent)
-(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; Don't pop up UI dialogs when prompting
 (setq use-dialog-box nil)
 
 ;; The the global scale tab-width
 (setq-default tab-width 2)
+
+(require 'org-indent)
+(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
 
 
 ```
@@ -1119,3 +1137,7 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 (require 'dotcrafter)
 
 ```
+
+[^fn:1]: `#'foo` and `'foo` are equivalent when `foo` is a symbol, but the
+    former is prefered when `foo` is a function. `#'` is intended to be a
+    function call. [More explanations here.](https://emacs.stackexchange.com/a/10943/36783)
