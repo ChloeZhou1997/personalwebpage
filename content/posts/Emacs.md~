@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-03T21:46:52-04:00
+lastmod = 2022-11-02T20:29:32-04:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -121,12 +121,12 @@ To keep all the package up to date, use `auto-package-update` option:
 ```
 
 
-### <span class="org-todo todo ONWATCH">ONWATCH</span> straigt.el <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#straigt-dot-el}
+### Try {#try}
 
--   Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2022-11-03 Thu 21:38] </span></span> <br />
-    Better way of organizing the package, according to system crafter,
-    better switch to straight.el once and for all to avoice weird
-    behavior. Make sure to backup the current init.el first.
+```emacs-lisp
+(use-package try
+	:ensure t)
+```
 
 
 ## General UI Improvement {#general-ui-improvement}
@@ -487,33 +487,37 @@ enabling **ido mode:**
 ```
 
 
-#### Misc packages {#misc-packages}
+### Misc packages {#misc-packages}
 
 ```emacs-lisp
-	; Becon mode
-	; flashes the cursor's line when you scroll
-	(use-package beacon
-		:ensure t
-		:config
-		(beacon-mode 2)
-	; this color looks good for the zenburn theme but not for the one
-	; I'm using for the videos
-	; (setq beacon-color "#666600")
-	)
+; Becon mode
+; flashes the cursor's line when you scroll
+(use-package beacon
+	:ensure t
+	:config
+	(beacon-mode 2)
+; this color looks good for the zenburn theme but not for the one
+; I'm using for the videos
+; (setq beacon-color "#666600")
+)
 
-	; Hungty Deleteo Mode
-	; deletes all the whitespace when you hit backspace or delete
-;;   (use-package hungry-delete
-;;     :ensure t
-;;     :config
-;;     (global-hungry-delete-mode))
+; Hungty Deleteo Mode
+; deletes all the whitespace when you hit backspace or delete
+(use-package hungry-delete
+	:ensure t
+	:config
+	(global-hungry-delete-mode))
 
 
-	; expand the marked region in semantic increments (negative prefix to reduce region)
-	(use-package expand-region
-		:ensure t
-		:config
-		(global-set-key (kbd "C-=") 'er/expand-region))
+; expand the marked region in semantic increments (negative prefix to reduce region)
+(use-package expand-region
+	:ensure t
+	:config
+	(global-set-key (kbd "C-=") 'er/expand-region))
+
+
+(use-package iedit
+	:ensure t)
 
 ```
 
@@ -679,14 +683,23 @@ Add bullet heading style
     	:custom
     	(org-roam-directory "~/Notes/RoamNotes")
     	(org-roam-completion-everywhere t)
+    	(org-roam-capture-templates
+    		'(("d" "default" plain
+    			 "%?"
+    			 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+    			 :unnarrowed t)
+    			;;bibliography reference template
+    			("r" "bibliography reference" plain "%?"
+    			 :target
+    			 (file+head "references/${citekey}.org" "#+title: ${title}\n")
+    			 :unnarrowed t)))
     	:bind (("C-c n l" . org-roam-buffer-toggle)
     				 ("C-c n f" . org-roam-node-find)
     				 ("C-c n i" . org-roam-node-insert)
-    				 ("C-c n I" . org-roam-node-insert-immediate)
+    				 ("C-c n g"   . org-roam-graph)
     				 :map org-mode-map
-    				 ("C-M-i" . completion-at-point)
-    				 ("C-c n t" . org-roam-tag-add)
-    				 ("C-c n a" . org-roam-alias-add)))
+    				 ("C-M-i"   . completion-at-point)
+    				 ("C-c n I" . org-roam-node-insert-immediate))
     ```
 
 
@@ -779,6 +792,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     <!--listend-->
 
     ```emacs-lisp
+    (use-package ivy-bibtex)
     (use-package helm-bibtex)
     (use-package org-ref)
     ```
@@ -809,7 +823,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
 
 -  Installing soft dependencies
 
-    -   Citar (Yet I don't think it's used...)
+    -   Citar
 
     This package provides a completing-read front-end to browse and act on
     BibTeX, BibLaTeX, and CSL JSON bibliographic data, and LaTeX,
@@ -863,52 +877,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     	(require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
     ```
 
-    Configuring for templates integrating with org-noter:
-
-    ```emacs-lisp
-    (setq orb-preformat-keywords
-    			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
-    			orb-process-file-keyword t
-    			orb-attached-file-extensions '("pdf"))
-
-    (setq org-roam-capture-templates
-    			'(("r" "bibliography reference" plain
-    				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
-    				 :target
-    				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-    				("d" "default" plain
-    				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
-    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)))
-    ```
-
-    Note action interface:
-
-    ```emacs-lisp
-    (setq orb-note-actions-interface 'helm)
-    ```
-
-<!--list-separator-->
-
--  Other Global Setting
-
-    Up to this point, all the citations and backlink are correctly set up.
-
-    ```emacs-lisp
-    (org-roam-db-autosync-mode 1)
-    (org-roam-bibtex-mode 1)
-    ```
-
-    Set global key for `helm-bibtex` and `org-noter`
-
-    ```emacs-lisp
-    (global-set-key (kbd "C-c h b") #'helm-bibtex)
-    (global-set-key (kbd "C-c n o") #'org-noter)
-    (global-set-key (kbd "C-c h i") #'org-ref-insert-helm)
-    ```
-
-
-#### <span class="org-todo todo ONWATCH">ONWATCH</span> Org-protocol-capture-html <span class="tag"><span class="_download">@download</span></span> {#org-protocol-capture-html}
+    Configuring for
 
 
 ### Html or Markdown Preview {#html-or-markdown-preview}
@@ -945,19 +914,19 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
 [More Setting Availiable in GitRepo](https://github.com/Kungsgeten/org-brain)
 
 ```emacs-lisp
-(use-package org-brain
-	:ensure t
-	:init
-	(setq org-brain-path "~/Notes/Brain")
-	:config
-	(bind-key "C-c b" "~/Notes")
-	(setq org-id-track-globally t)
-	(setq org-id-locations-file "~/.emacs.d/.org-id-locations")
-	(add-hook 'before-save-hook 'org-brain-ensure-ids-in-buffer)
-	(setq org-brain-visualize-default-choices 'all)
-	(setq org-brain-title-max-length 12)
-	(setq org-brain-include-file-entries nil
-	org-brain-file-entries-use-title nil))
+;; (use-package org-brain
+;;   :ensure t
+;;   :init
+;;   (setq org-brain-path "~/Notes/")
+;;   :config
+;;   (bind-key "C-c b" "~/Notes")
+;;   (setq org-id-track-globally t)
+;;   (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+;;   (add-hook 'before-save-hook 'org-brain-ensure-ids-in-buffer)
+;;   (setq org-brain-visualize-default-choices 'all)
+;;   (setq org-brain-title-max-length 12)
+;;   (setq org-brain-include-file-entries nil
+;; 	org-brain-file-entries-use-title nil))
 
 ;; Allows you to edit entries directly from org-brain-visualize
 (use-package polymode
@@ -993,23 +962,8 @@ Add progress logging to the org-agenda file
 
 ```emacs-lisp
 (setq org-log-done 'note)
+
 ```
-
-
-#### Super-agenda {#super-agenda}
-
-<!--list-separator-->
-
-- <span class="org-todo todo REVIEW">REVIEW</span>  Config super-agenda according to [git repo](https://github.com/alphapapa/org-super-agenda#screenshots) to make it looks nicer. <span class="tag"><span class="_emacs">@emacs</span><span class="_review">@review</span></span>
-
-    ```emacs-lisp
-    (use-package org-super-agenda)
-    ```
-
-
-### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
-
-link: <https://github.com/zzamboni/vita/>
 
 
 ## Keys Bindings {#keys-bindings}
@@ -1021,6 +975,8 @@ link: <https://github.com/zzamboni/vita/>
 (global-set-key (kbd "<f5>") 'revert-buffer)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 (global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
+
+
 ```
 
 
@@ -1041,10 +997,77 @@ your current buffer.
 ```
 
 
+### General (not using) {#general--not-using}
+
+```emacs-lisp
+;; (use-package general
+;; 	:ensure t
+;; 	:config
+;; 	(general-create-definer rune/leader-keys
+;; 		:keymaps '(normal insert visual emacs)
+;; 		:prefix "SPC"
+;; 		:global-prefix "C-SPC")
+;; 	(rune/leader-keys
+;; 		"t" '(:ignore t :which-key "toglles")
+;; 		"tt" '(counsel-load-theme :which-key "choose theme")))
+```
+
+
 ## Editor {#editor}
 
 
-### Completion {#completion}
+### Flycheck {#flycheck}
+
+```emacs-lisp
+(use-package flycheck
+	:ensure t
+	:init
+	(global-flycheck-mode t))
+```
+
+
+### Syntax Highlighting {#syntax-highlighting}
+
+```emacs-lisp
+(use-package rainbow-delimiters
+	:hook (prog-mode . rainbow-delimiters-mode))
+```
+
+
+### Auto-completion {#auto-completion}
+
+```emacs-lisp
+;;auto-completion
+(use-package auto-complete
+	:ensure t
+	:init
+	(ac-config-default)
+	:config
+	(global-auto-complete-mode t)
+	(setq ac-auto-show-menu 0.5))
+
+(set-face-underline 'ac-candidate-face "darkgray")
+
+```
+
+
+### Terminal {#terminal}
+
+
+#### Eshell {#eshell}
+
+```emacs-lisp
+
+(use-package eshell-git-prompt)
+
+(use-package eshell
+
+:config
+(eshell-git-prompt-use-theme 'powerline))
+```
+
+
+### Searching {#searching}
 
 
 #### Ivy and counsel {#ivy-and-counsel}
@@ -1160,88 +1183,6 @@ light-weighted, integrating with built in emacs completion engine
 ```
 
 
-#### Auto-completion {#auto-completion}
-
-```emacs-lisp
-;;auto-completion
-(use-package auto-complete
-	:ensure t
-	:init
-	(ac-config-default)
-	:config
-	(global-auto-complete-mode t)
-	(setq ac-auto-show-menu 0.5))
-
-(set-face-underline 'ac-candidate-face "darkgray")
-
-```
-
-
-#### Multiple editing {#multiple-editing}
-
-Using Iedit: This package includes Emacs minor modes (iedit-mode and
-iedit-rectangle-mode) based on a API library (iedit-lib) and allows
-you to alter one occurrence of some text in a buffer (possibly
-narrowed) or region, and simultaneously have other occurrences changed
-in the same way, with visual feedback as you type.
-
-```emacs-lisp
-(use-package iedit)
-```
-
-
-### Flycheck {#flycheck}
-
-```emacs-lisp
-(use-package flycheck
-	:ensure t
-	:init
-	(global-flycheck-mode t))
-```
-
-
-### Spellcheck {#spellcheck}
-
-```emacs-lisp
-(use-package flyspell)
-(use-package flyspell-correct
-	:after flyspell
-	:bind (:map flyspell-mode-map ("C-c ;" . flyspell-correct-wrapper)))
-
-(use-package flyspell-correct-ivy
-	:after flyspell-correct)
-
-```
-
-
-### <span class="org-todo todo TODO">TODO</span> lsp-grammarly <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#lsp-grammarly}
-
-link:<https://github.com/emacs-grammarly/lsp-grammarly>
-
-
-### Syntax Highlighting {#syntax-highlighting}
-
-```emacs-lisp
-(use-package rainbow-delimiters
-	:hook (prog-mode . rainbow-delimiters-mode))
-```
-
-
-### Terminal {#terminal}
-
-
-#### Eshell {#eshell}
-
-```emacs-lisp
-
-(use-package eshell-git-prompt)
-(use-package eshell
-
-:config
-(eshell-git-prompt-use-theme 'powerline))
-```
-
-
 ### Undo Tree {#undo-tree}
 
 ```emacs-lisp
@@ -1320,6 +1261,28 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 ```
 
 
+## Project Management {#project-management}
+
+```emacs-lisp
+
+(use-package projectile
+	:diminish projectile-mode
+	:config (projectile-mode)
+	:custom ((projectile-completion-system 'ivy))
+	:bind-keymap
+	("C-c p" . projectile-command-map)
+	:init
+	;; NOTE: Set this to the folder where you keep your Git repos!
+	(when (file-directory-p "~/Projects/Code")
+		(setq projectile-project-search-path '("~/Projects/Code")))
+	(setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+	:config (counsel-projectile-mode))
+
+```
+
+
 ## Export {#export}
 
 
@@ -1376,7 +1339,7 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 (defun efs/org-babel-tangle-config ()
 	(when (string-equal (buffer-file-name)
 		(expand-file-name "~/.dotfiles/Emacs.org"))
-	(let ((org-confim-babel-evaluate t))
+	(let ((org-confim-babel-evaluate nil))
 		(org-babel-tangle))))
 
 (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
