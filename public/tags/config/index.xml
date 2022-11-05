@@ -6,7 +6,18 @@
     <description>Recent content in config on My Personal Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring org-protocol in AMD build MacOS</title>
+      <link>/posts/emacs-config-org-protocol/</link>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/emacs-config-org-protocol/</guid>
+      <description>This is a post on configuring org-protocol for people using Emacs on MacOS with AMD chips. The documentary only contains configuration for up to MacOs built on Intel chips. I will also include the steps I have taken to figure the problem out with very limited programming and computer background knowledge.
+First, load org-protocol.el to the init.el configuration file:
+1(server-start) 2(add-to-list &amp;#39;load-path &amp;#34;~/path/to/org/protocol/&amp;#34;) 3(require &amp;#39;org-protocol) Note that org-protocol.el comes with the org-mode so it&amp;rsquo;s not in any package archives.</description>
+    </item>
+    
     <item>
       <title>Emacs Configuration</title>
       <link>/posts/emacs/</link>
