@@ -2,9 +2,9 @@
 title = "Configuring org-protocol in AMD build MacOS"
 author = ["Chloe"]
 date = 2022-11-04
-lastmod = 2022-11-04T21:36:25-04:00
+lastmod = 2022-11-04T21:38:40-04:00
 tags = ["config", "emacs"]
-draft = true
+draft = false
 +++
 
 This is a post on configuring `org-protocol` for people using Emacs on
