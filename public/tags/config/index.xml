@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>config on My Personal Webpage</title>
-    <link>http://example.org/tags/config/</link>
+    <link>/tags/config/</link>
     <description>Recent content in config on My Personal Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/config/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs Configuration</title>
-      <link>http://example.org/posts/emacs/</link>
+      <link>/posts/emacs/</link>
       <pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/emacs/</guid>
+      <guid>/posts/emacs/</guid>
       <description>This is the Emacs configuration built from scratch following system crafter and Mike Zamansky&amp;rsquo;s youtube videos. As someone with only limited experience in running statistical models in R it&amp;rsquo;s been a confusing exprience to finally build vague understanding of what&amp;rsquo;s going on behind the scene.
 This literal configuration, by the time the post was written is still a patchwork of pieces I have taken from different places. My goal is to taking notes of concepts and syntax along the way when reorganizing the configuration file so that the documentation will be self-contained and &amp;ldquo;dummy-friendly&amp;rdquo; for people like me who wants to start using emacs to boost their productivities but have very little idea of anything relates to programming at the beginning of their journey.</description>
     </item>
     
     <item>
       <title>Org &#43; Hugo &#43; Cloudflare for personal blog</title>
-      <link>http://example.org/posts/hugo-quick-start/</link>
+      <link>/posts/hugo-quick-start/</link>
       <pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/hugo-quick-start/</guid>
+      <guid>/posts/hugo-quick-start/</guid>
       <description>Hugo Quick setup Ox-Hugo Source of documentation:
 ox-hugo manual for init.el Backlink 1(use-package ox-hugo 2	:after ox) Handing in org.file
 I use one-page-per-post way to manage the post, the heading section looks the following:
@@ -31,10 +31,10 @@ I use one-page-per-post way to manage the post, the heading section looks the fo
     
     <item>
       <title>Lisp Project - Dotcrafter</title>
-      <link>http://example.org/posts/emacs-lisp-00-final-project/</link>
+      <link>/posts/emacs-lisp-00-final-project/</link>
       <pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/emacs-lisp-00-final-project/</guid>
+      <guid>/posts/emacs-lisp-00-final-project/</guid>
       <description>Use move-folder-to-config-files to move config folders into the /.dotfiles
 Use move-file-to-config-files to move config files into the /.dotfiles
 Use link-config-files to create symblink between the config files in the /.dotfiles and the home-directory

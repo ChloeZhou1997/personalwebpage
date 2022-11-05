@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on My Personal Webpage</title>
-    <link>http://example.org/tags/hugo/</link>
+    <link>/tags/hugo/</link>
     <description>Recent content in hugo on My Personal Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org &#43; Hugo &#43; Cloudflare for personal blog</title>
-      <link>http://example.org/posts/hugo-quick-start/</link>
+      <link>/posts/hugo-quick-start/</link>
       <pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/hugo-quick-start/</guid>
+      <guid>/posts/hugo-quick-start/</guid>
       <description>Hugo Quick setup Ox-Hugo Source of documentation:
 ox-hugo manual for init.el Backlink 1(use-package ox-hugo 2	:after ox) Handing in org.file
 I use one-page-per-post way to manage the post, the heading section looks the following:

@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Learning Elisp 01 Functions | My Personal Webpage</title>
-  <link rel = 'canonical' href = 'http://example.org/posts/emacs-lisp-01-functions/'>
+  <link rel = 'canonical' href = '/posts/emacs-lisp-01-functions/'>
   <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -19,7 +19,7 @@
 <meta property="og:description" content="Define a function Specify the `&amp;optional` or `&amp;rest` argument in the arguments
 1 2(defun multiply-many (x &amp;optional y &amp;rest operands) 3	&#34;Multiplying the result of math expression on the arguments X, Y and OPERANDS&#34; 4	(dolist (i operands) 5	(when i 6	(setq x (* x 7	(or y 1) 8	i)))) 9	x) 10 11(multiply-many 2 3 8 19) Function wihtout names Lambda function - a function without a name" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/emacs-lisp-01-functions/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/emacs-lisp-01-functions/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-10-27T12:14:06-04:00" />
 
@@ -32,7 +32,7 @@
   
   
   
-  <link rel="stylesheet" href="http://example.org/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
 
   
   
@@ -44,7 +44,7 @@
   
 
   
-<link rel="icon" type="image/png" href="http://example.org/images/favicon.ico" />
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
 
   
   
@@ -76,14 +76,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" http://example.org/posts/emacs-lisp-02-variable-and-scope/" aria-label="Previous">
+          <a class="icon" href=" /posts/emacs-lisp-02-variable-and-scope/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://example.org/posts/hugo-quick-start/" aria-label="Next">
+          <a class="icon" href="/posts/hugo-quick-start/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -114,47 +114,47 @@
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2femacs-lisp-01-functions%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&text=Learning%20Elisp%2001%20Functions" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2femacs-lisp-01-functions%2f&text=Learning%20Elisp%2001%20Functions" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&is_video=false&description=Learning%20Elisp%2001%20Functions" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2femacs-lisp-01-functions%2f&is_video=false&description=Learning%20Elisp%2001%20Functions" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Learning%20Elisp%2001%20Functions&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Learning%20Elisp%2001%20Functions&body=Check out this article: %2fposts%2femacs-lisp-01-functions%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&name=Learning%20Elisp%2001%20Functions&description=Define%20a%20function%20Specify%20the%20%60%26amp%3boptional%60%20or%20%60%26amp%3brest%60%20argument%20in%20the%20arguments%0a1%202%28defun%20multiply-many%20%28x%20%26amp%3boptional%20y%20%26amp%3brest%20operands%29%203%09%26%2334%3bMultiplying%20the%20result%20of%20math%20expression%20on%20the%20arguments%20X%2c%20Y%20and%20OPERANDS%26%2334%3b%204%09%28dolist%20%28i%20operands%29%205%09%28when%20i%206%09%28setq%20x%20%28%2a%20x%207%09%28or%20y%201%29%208%09i%29%29%29%29%209%09x%29%2010%2011%28multiply-many%202%203%208%2019%29%20Function%20wihtout%20names%20Lambda%20function%20-%20a%20function%20without%20a%20name" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2femacs-lisp-01-functions%2f&name=Learning%20Elisp%2001%20Functions&description=Define%20a%20function%20Specify%20the%20%60%26amp%3boptional%60%20or%20%60%26amp%3brest%60%20argument%20in%20the%20arguments%0a1%202%28defun%20multiply-many%20%28x%20%26amp%3boptional%20y%20%26amp%3brest%20operands%29%203%09%26%2334%3bMultiplying%20the%20result%20of%20math%20expression%20on%20the%20arguments%20X%2c%20Y%20and%20OPERANDS%26%2334%3b%204%09%28dolist%20%28i%20operands%29%205%09%28when%20i%206%09%28setq%20x%20%28%2a%20x%207%09%28or%20y%201%29%208%09i%29%29%29%29%209%09x%29%2010%2011%28multiply-many%202%203%208%2019%29%20Function%20wihtout%20names%20Lambda%20function%20-%20a%20function%20without%20a%20name" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&t=Learning%20Elisp%2001%20Functions" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2femacs-lisp-01-functions%2f&t=Learning%20Elisp%2001%20Functions" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -411,47 +411,47 @@ i - skip an &ldquo;irrelevant&rdquo; argument</p>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2femacs-lisp-01-functions%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&text=Learning%20Elisp%2001%20Functions" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2femacs-lisp-01-functions%2f&text=Learning%20Elisp%2001%20Functions" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&is_video=false&description=Learning%20Elisp%2001%20Functions" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2femacs-lisp-01-functions%2f&is_video=false&description=Learning%20Elisp%2001%20Functions" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Learning%20Elisp%2001%20Functions&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Learning%20Elisp%2001%20Functions&body=Check out this article: %2fposts%2femacs-lisp-01-functions%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2femacs-lisp-01-functions%2f&title=Learning%20Elisp%2001%20Functions" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&name=Learning%20Elisp%2001%20Functions&description=Define%20a%20function%20Specify%20the%20%60%26amp%3boptional%60%20or%20%60%26amp%3brest%60%20argument%20in%20the%20arguments%0a1%202%28defun%20multiply-many%20%28x%20%26amp%3boptional%20y%20%26amp%3brest%20operands%29%203%09%26%2334%3bMultiplying%20the%20result%20of%20math%20expression%20on%20the%20arguments%20X%2c%20Y%20and%20OPERANDS%26%2334%3b%204%09%28dolist%20%28i%20operands%29%205%09%28when%20i%206%09%28setq%20x%20%28%2a%20x%207%09%28or%20y%201%29%208%09i%29%29%29%29%209%09x%29%2010%2011%28multiply-many%202%203%208%2019%29%20Function%20wihtout%20names%20Lambda%20function%20-%20a%20function%20without%20a%20name" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2femacs-lisp-01-functions%2f&name=Learning%20Elisp%2001%20Functions&description=Define%20a%20function%20Specify%20the%20%60%26amp%3boptional%60%20or%20%60%26amp%3brest%60%20argument%20in%20the%20arguments%0a1%202%28defun%20multiply-many%20%28x%20%26amp%3boptional%20y%20%26amp%3brest%20operands%29%203%09%26%2334%3bMultiplying%20the%20result%20of%20math%20expression%20on%20the%20arguments%20X%2c%20Y%20and%20OPERANDS%26%2334%3b%204%09%28dolist%20%28i%20operands%29%205%09%28when%20i%206%09%28setq%20x%20%28%2a%20x%207%09%28or%20y%201%29%208%09i%29%29%29%29%209%09x%29%2010%2011%28multiply-many%202%203%208%2019%29%20Function%20wihtout%20names%20Lambda%20function%20-%20a%20function%20without%20a%20name" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-01-functions%2f&t=Learning%20Elisp%2001%20Functions" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2femacs-lisp-01-functions%2f&t=Learning%20Elisp%2001%20Functions" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-03T21:46:52-04:00
+lastmod = 2022-11-04T09:39:20-04:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -672,21 +672,23 @@ Add bullet heading style
     it away immediately. Makes sense if the template only needs
     information that can be added automatically.
     ```emacs-lisp
-    (use-package org-roam
-    	:hook
-    	(after-init . org-roam-mode)
-    	(after-init . org-roam-db-autosync-mode)
-    	:custom
-    	(org-roam-directory "~/Notes/RoamNotes")
-    	(org-roam-completion-everywhere t)
-    	:bind (("C-c n l" . org-roam-buffer-toggle)
-    				 ("C-c n f" . org-roam-node-find)
-    				 ("C-c n i" . org-roam-node-insert)
-    				 ("C-c n I" . org-roam-node-insert-immediate)
-    				 :map org-mode-map
-    				 ("C-M-i" . completion-at-point)
-    				 ("C-c n t" . org-roam-tag-add)
-    				 ("C-c n a" . org-roam-alias-add)))
+    	 (use-package org-roam
+    		 :hook
+    		 (after-init . org-roam-mode)
+    		 (after-init . org-roam-db-autosync-mode)
+    		 :custom
+    		 (org-roam-directory "~/Notes/RoamNotes")
+    		 (org-roam-completion-everywhere t)
+    		 :bind (("C-c n l" . org-roam-buffer-toggle)
+    						("C-c n f" . org-roam-node-find)
+    						("C-c n i" . org-roam-node-insert)
+    						("C-c n I" . org-roam-node-insert-immediate)
+    						:map org-mode-map
+    						("C-M-i" . completion-at-point)
+    						("C-c n t" . org-roam-tag-add)
+    						("C-c n a" . org-roam-alias-add)))
+
+    (setq org-roam-completion-system 'ido)
     ```
 
 
@@ -905,6 +907,12 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     (global-set-key (kbd "C-c h b") #'helm-bibtex)
     (global-set-key (kbd "C-c n o") #'org-noter)
     (global-set-key (kbd "C-c h i") #'org-ref-insert-helm)
+    ```
+
+    For the PDF Scrapper, change the formate of the paper key:
+
+    ```emacs-lisp
+    (setq orb-autokey-format "%a%T[3]%y")
     ```
 
 

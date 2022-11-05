@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Learning Elisp 03 Reading and Writing Buffer in Emacs | My Personal Webpage</title>
-  <link rel = 'canonical' href = 'http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/'>
+  <link rel = 'canonical' href = '/posts/emacs-lisp-03-reading-and-writing-buffers/'>
   <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
@@ -20,7 +20,7 @@
 Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or create one (get-buffer-create) 1 2(get-buffer &#34;*scratch*&#34;) Create a buffer if it doesn&rsquo;t already exist:
 1 2(get-buffer-create &#34;Hello World&#34;) Changing the current buffer (set-buffer) 1(progn 2	(set-buffer (get-buffer &#34;*scratch*&#34;)) 3	(current-buffer)) 4 5;;equivalently 6(progn 7	(set-buffer &#34;*scratch*&#34;) 8	(current-buffer)) progn is an expression that allows you to run multiple expression inside of the body." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/emacs-lisp-03-reading-and-writing-buffers/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-27T00:00:00+00:00" />
 <meta property="article:modified_time" content="2022-10-27T14:24:56-04:00" />
 
@@ -34,7 +34,7 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
   
   
   
-  <link rel="stylesheet" href="http://example.org/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+  <link rel="stylesheet" href="/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
 
   
   
@@ -46,7 +46,7 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
   
 
   
-<link rel="icon" type="image/png" href="http://example.org/images/favicon.ico" />
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
 
   
   
@@ -78,14 +78,14 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
       <ul>
         
         <li>
-          <a class="icon" href=" http://example.org/posts/emacs-lisp-00-final-project/" aria-label="Previous">
+          <a class="icon" href=" /posts/emacs-lisp-00-final-project/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://example.org/posts/emacs-lisp-02-variable-and-scope/" aria-label="Next">
+          <a class="icon" href="/posts/emacs-lisp-02-variable-and-scope/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -116,47 +116,47 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: %2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -572,47 +572,47 @@ so it won&rsquo;t through error even if the symblink already exists</li>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&text=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&is_video=false&description=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&body=Check out this article: %2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&title=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&name=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs&description=Basic%20API%20for%20Emacs%20Buffers%20Buffers%20may%20be%20visible%20or%20not.%0aManipulating%20Buffer%20Current%20buffer%201%28current-buffer%29%20Get%20buffer%20by%20name%20or%20create%20one%20%28get-buffer-create%29%201%202%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%20Create%20a%20buffer%20if%20it%20doesn%26rsquo%3bt%20already%20exist%3a%0a1%202%28get-buffer-create%20%26%2334%3bHello%20World%26%2334%3b%29%20Changing%20the%20current%20buffer%20%28set-buffer%29%201%28progn%202%09%28set-buffer%20%28get-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%29%203%09%28current-buffer%29%29%204%205%3b%3bequivalently%206%28progn%207%09%28set-buffer%20%26%2334%3b%2ascratch%2a%26%2334%3b%29%208%09%28current-buffer%29%29%20progn%20is%20an%20expression%20that%20allows%20you%20to%20run%20multiple%20expression%20inside%20of%20the%20body." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2fexample.org%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fposts%2femacs-lisp-03-reading-and-writing-buffers%2f&t=Learning%20Elisp%2003%20Reading%20and%20Writing%20Buffer%20in%20Emacs" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

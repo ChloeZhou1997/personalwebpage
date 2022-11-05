@@ -2,45 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/tags/config/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/tags/config/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/emacs/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/tags/emacs/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/emacs/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/posts/emacs/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/posts/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
-    <lastmod>2022-10-29T09:03:27-04:00</lastmod>
+    <loc>/tags/</loc>
+    <lastmod>2022-11-04T09:39:20-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/hugo/</loc>
+    <loc>/tags/hugo/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/hugo-quick-start/</loc>
+    <loc>/posts/hugo-quick-start/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/emacs-lisp-01-functions/</loc>
+    <loc>/posts/emacs-lisp-01-functions/</loc>
     <lastmod>2022-10-27T12:14:06-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/emacs-lisp-02-variable-and-scope/</loc>
+    <loc>/posts/emacs-lisp-02-variable-and-scope/</loc>
     <lastmod>2022-10-27T12:14:16-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/emacs-lisp-03-reading-and-writing-buffers/</loc>
+    <loc>/posts/emacs-lisp-03-reading-and-writing-buffers/</loc>
     <lastmod>2022-10-27T14:24:56-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/lisp/</loc>
+    <loc>/tags/lisp/</loc>
     <lastmod>2022-10-27T14:24:56-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/emacs-lisp-00-final-project/</loc>
+    <loc>/posts/emacs-lisp-00-final-project/</loc>
     <lastmod>2022-10-27T12:11:55-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>/categories/</loc>
   </url>
 </urlset>
