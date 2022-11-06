@@ -2,7 +2,7 @@
 title = "Configuring org-protocol in AMD build MacOS"
 author = ["Chloe"]
 date = 2022-11-04
-lastmod = 2022-11-04T21:38:40-04:00
+lastmod = 2022-11-05T22:48:18-04:00
 tags = ["config", "emacs"]
 draft = false
 +++

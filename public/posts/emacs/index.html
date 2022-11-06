@@ -21,7 +21,7 @@ This literal configuration, by the time the post was written is still a patchwor
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-04T09:39:20-04:00" />
+<meta property="article:modified_time" content="2022-11-05T22:38:42-04:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -197,21 +197,28 @@ This literal configuration, by the time the post was written is still a patchwor
         <li><a href="#helpful">Helpful</a></li>
         <li><a href="#yasnippet">Yasnippet</a>
           <ul>
+            <li><a href="#basic-setup">Basic setup</a></li>
             <li><a href="#insert-snippet">Insert snippet</a></li>
             <li><a href="#tab-trigger-in-org-code-blocks">Tab trigger in org code blocks</a></li>
             <li><a href="#turn-off-org-mode-snippets-in-code-blocks">Turn off org-mode snippets in code blocks</a></li>
             <li><a href="#snippet-pop-up-manue">Snippet pop up manue</a></li>
-            <li><a href="#misc-packages">Misc packages</a></li>
           </ul>
         </li>
+        <li><a href="#keys-bindings">Keys Bindings</a>
+          <ul>
+            <li><a href="#global-key-bindings">Global Key Bindings</a></li>
+            <li><a href="#which-key">Which-key</a></li>
+          </ul>
+        </li>
+        <li><a href="#misc-packages">Misc packages</a></li>
       </ul>
     </li>
     <li><a href="#org-mode">Org-mode</a>
       <ul>
         <li><a href="#org-mode-face-setting">Org-mode face setting</a>
           <ul>
-            <li><a href="#font-and-list">Font and List</a></li>
             <li><a href="#org-mode-activation">Org mode activation</a></li>
+            <li><a href="#font-and-list">Font and List</a></li>
           </ul>
         </li>
         <li><a href="#babel-setting">Babel Setting</a>
@@ -226,7 +233,11 @@ This literal configuration, by the time the post was written is still a patchwor
             <li><a href="#org-download">Org-download</a></li>
             <li><a href="#org-noter">Org-noter</a></li>
             <li><a href="#org-roam-bibitex">Org-roam-bibitex</a></li>
-            <li><a href="#org-protocol-capture-html"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+          </ul>
+        </li>
+        <li><a href="#org-protocol">Org-protocol</a>
+          <ul>
+            <li><a href="#canceled-org-protocol-capture-html">CANCELED Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->ARCHIVE<!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
           </ul>
         </li>
         <li><a href="#html-or-markdown-preview">Html or Markdown Preview</a>
@@ -235,11 +246,7 @@ This literal configuration, by the time the post was written is still a patchwor
             <li><a href="#dot-md-preview"><code>.md</code> Preview</a></li>
           </ul>
         </li>
-        <li><a href="#for-research">For Research</a>
-          <ul>
-            <li><a href="#org-brain">Org-Brain</a></li>
-          </ul>
-        </li>
+        <li><a href="#org-brain">Org-Brain</a></li>
         <li><a href="#for-file-navigation">For File navigation</a></li>
         <li><a href="#agenda">Agenda</a>
           <ul>
@@ -247,12 +254,6 @@ This literal configuration, by the time the post was written is still a patchwor
           </ul>
         </li>
         <li><a href="#cv-with-org-mode"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> CV with Org-mode <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
-      </ul>
-    </li>
-    <li><a href="#keys-bindings">Keys Bindings</a>
-      <ul>
-        <li><a href="#global-key-bindings">Global Key Bindings</a></li>
-        <li><a href="#which-key">Which-key</a></li>
       </ul>
     </li>
     <li><a href="#editor">Editor</a>
@@ -316,7 +317,7 @@ This literal configuration, by the time the post was written is still a patchwor
           
           <time datetime="2022-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-29</time>
           
-            (Updated: <time datetime="2022-11-04 09:39:20 -0400 EDT" itemprop="dateModified">2022-11-04</time>)
+            (Updated: <time datetime="2022-11-05 22:38:42 -0400 EDT" itemprop="dateModified">2022-11-05</time>)
           
         </div>
         
@@ -324,7 +325,7 @@ This literal configuration, by the time the post was written is still a patchwor
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          20 minute read
+          21 minute read
         </div>
         
         
@@ -492,7 +493,7 @@ like tool bar and scroll bar.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#6272a4">;;set the option and command key to corresponding emacs key</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">mac-command-modifier</span>      <span style="color:#f1fa8c">&#39;meta</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>			<span style="color:#8be9fd;font-style:italic">mac-option-modifier</span>       <span style="color:#f1fa8c">&#39;super</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>			<span style="color:#8be9fd;font-style:italic">mac-right-option-modifier</span> <span style="color:#f1fa8c">&#39;super</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>			<span style="color:#8be9fd;font-style:italic">mac-right-option-modifier</span> <span style="color:#f1fa8c">&#39;hyper</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#6272a4">;; Don&#39;t show the splash screen</span>
@@ -579,6 +580,7 @@ and a different forground color on low-color terminal.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#6272a4">;; Set the variable pitch face</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>(<span style="color:#8be9fd;font-style:italic">set-face-attribute</span> <span style="color:#f1fa8c">&#39;variable-pitch</span> nil <span style="color:#8be9fd;font-style:italic">:font</span> <span style="color:#f1fa8c">&#34;Fira Code&#34;</span> <span style="color:#8be9fd;font-style:italic">:height</span> <span style="color:#bd93f9">180</span> <span style="color:#8be9fd;font-style:italic">:weight</span> <span style="color:#f1fa8c">&#39;regular</span>)
 </span></span></code></pre></div><h4 id="mode-line-config">Mode line config</h4>
+<p>A minimalist design for the modeline, see <a href="https://github.com/seagle0128/doom-modeline">repo</a> for more informati</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">doom-modeline</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>						<span style="color:#8be9fd;font-style:italic">:ensure</span> t
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>						<span style="color:#8be9fd;font-style:italic">:init</span> (<span style="color:#8be9fd;font-style:italic">doom-modeline-mode</span> <span style="color:#bd93f9">1</span>)
@@ -646,16 +648,17 @@ and a different forground color on low-color terminal.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">;;use shift left right up down to switch between windows</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">windmove-default-keybindings</span>)
 </span></span></code></pre></div><p>Use <code>ace window</code> package so when calling M-o, can switch between windows
-using number.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ace-window</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">global-set-key</span> [<span style="color:#8be9fd;font-style:italic">remap</span> <span style="color:#8be9fd;font-style:italic">other-window</span>] <span style="color:#f1fa8c">&#39;ace-window</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	(<span style="color:#8be9fd;font-style:italic">custom-set-faces</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	 <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">aw-leading-char-face</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>		 ((t (<span style="color:#8be9fd;font-style:italic">:inherit</span> <span style="color:#8be9fd;font-style:italic">ace-jump-face-foreground</span> <span style="color:#8be9fd;font-style:italic">:height</span> <span style="color:#bd93f9">3.0</span>)))))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>	(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;M-o&#34;</span>) <span style="color:#f1fa8c">&#39;ace-window</span>))
+using number. ( This is a cool package but it&rsquo;s kind of redundant
+because I won&rsquo;t open that many window at the same time anyway.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">;; (Use-package ace-window</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; 	:ensure t</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;; 	:init</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;; 	(global-set-key [remap other-window] &#39;ace-window)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#6272a4">;; 	(custom-set-faces</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4">;; 	 &#39;(aw-leading-char-face</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#6272a4">;; 		 ((t (:inherit ace-jump-face-foreground :height 3.0)))))</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#6272a4">;; 	:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#6272a4">;; 	(global-set-key (kbd &#34;M-o&#34;) &#39;ace-window))</span>
 </span></span></code></pre></div><ul>
 <li>Both <code>:inherit</code> and <code>:height</code> are face attributes</li>
 <li>The <code>:inherit</code> attribute determines the name of the face to be
@@ -669,7 +672,7 @@ face do but have higher priority.</li>
 <h4 id="buffer-nevigation">Buffer Nevigation</h4>
 <p>Enabling dired like buffer management.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">;;ibuffer</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">defalias</span> <span style="color:#f1fa8c">&#39;list-buffers</span> <span style="color:#f1fa8c">&#39;ibuffer-other-window</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">defalias</span> <span style="color:#f1fa8c">&#39;list-buffers</span> <span style="color:#f1fa8c">&#39;ibuffer-other-window</span>) <span style="color:#6272a4">;;open another buffer window</span>
 </span></span></code></pre></div><p>enabling <strong>ido mode:</strong></p>
 <ul>
 <li>Add flex match</li>
@@ -679,7 +682,8 @@ face do but have higher priority.</li>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">ido-enable-flex-matching</span> t)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">ido-everywhere</span> t)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">ido-mode</span> <span style="color:#bd93f9">1</span>)
-</span></span></code></pre></div><h2 id="global-function-improvement">Global function improvement</h2>
+</span></span></code></pre></div><p>There are other completion system which will be configured later.</p>
+<h2 id="global-function-improvement">Global function improvement</h2>
 <h3 id="helpful">Helpful</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>	(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">helpful</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
@@ -695,6 +699,7 @@ face do but have higher priority.</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">counsel-describe-function-function</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">helpful-callable</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">counsel-describe-variable-function</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">helpful-variable</span>)
 </span></span></code></pre></div><h3 id="yasnippet">Yasnippet</h3>
+<h4 id="basic-setup">Basic setup</h4>
 <ul>
 <li><a href="https://github.com/MooersLab/configorg/blob/main/config.org">Setting from Repo</a>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">yasnippet</span>
@@ -742,7 +747,23 @@ face do but have higher priority.</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>		 <span style="color:#8be9fd;font-style:italic">:isearch</span> t
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>		 )))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">yas/prompt-functions</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">yas/popup-isearch-prompt</span> <span style="color:#8be9fd;font-style:italic">yas/no-prompt</span>))
-</span></span></code></pre></div><h4 id="misc-packages">Misc packages</h4>
+</span></span></code></pre></div><h3 id="keys-bindings">Keys Bindings</h3>
+<h4 id="global-key-bindings">Global Key Bindings</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f5&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;revert-buffer</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;escape&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;keyboard-escape-quit</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-M-j&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-switch-buffer</span>)
+</span></span></code></pre></div><h4 id="which-key">Which-key</h4>
+<p>which-key is  a useful UI panel  that appears when you  start pressing
+any key binding in Emacs to offer you all possible completions for the
+prefix. For  example, if  you press  C-c (hold  control and  press the
+letter c), a  panel will appear at the bottom  of the frame displaying
+all of the bindings under that prefix and which command they run. This
+is very useful  for learning the possible key bindings  in the mode of
+your current buffer.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">which-key</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">which-key-mode</span>))
+</span></span></code></pre></div><h3 id="misc-packages">Misc packages</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>	<span style="color:#6272a4">; Becon mode</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#6272a4">; flashes the cursor&#39;s line when you scroll</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">beacon</span>
@@ -770,7 +791,28 @@ face do but have higher priority.</li>
 </span></span></code></pre></div><h2 id="org-mode">Org-mode</h2>
 <p>Org mode buffer need Font Lock to be turned on.</p>
 <h3 id="org-mode-face-setting">Org-mode face setting</h3>
-<h4 id="font-and-list">Font and List</h4>
+<h4 id="org-mode-activation">Org mode activation</h4>
+<p>Recall pacakge <code>use-package</code>, when setting key-binding using <code>:bind</code> in
+conjunction with <code>:map</code>, which only binds the key locally when the
+package has already been loaded. The key binding before <code>:map</code> are
+global key bindings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:hook</span> ((<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-font-setup</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>				 (<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">turn-on-visual-line-mode</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#8be9fd;font-style:italic">:mode</span> (<span style="color:#f1fa8c">&#34;\\.org&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-mode</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:bind</span> ((<span style="color:#f1fa8c">&#34;C-c a&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-agenda</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>				 (<span style="color:#f1fa8c">&#34;C-c b&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-switchb</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>				 (<span style="color:#f1fa8c">&#34;C-s-s&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-save-all-org-buffers</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>				 (<span style="color:#f1fa8c">&#34;C-c l&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-store-link</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>				 (<span style="color:#f1fa8c">&#34;C-c C-l&#34;</span>  <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-insert-link</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				 <span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">org-mode-map</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				 (<span style="color:#f1fa8c">&#34;s-.&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-todo</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				 (<span style="color:#f1fa8c">&#34;M-p&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-set-property</span>)))
+</span></span></code></pre></div><p>Add bullet heading style</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-bullets</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> () (<span style="color:#8be9fd;font-style:italic">org-bullets-mode</span> <span style="color:#bd93f9">1</span>))))
+</span></span></code></pre></div><h4 id="font-and-list">Font and List</h4>
 <p>The org-font-setup setup the font and also the list style at the end.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">org-font-setup</span> ()
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#6272a4">;; Replace list hyphen with dot</span>
@@ -802,28 +844,6 @@ face do but have higher priority.</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>			<span style="color:#8be9fd;font-style:italic">org-hide-emphasis-markers</span> t))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> <span style="color:#f1fa8c">&#39;org-font-setup</span>)
-</span></span></code></pre></div><h4 id="org-mode-activation">Org mode activation</h4>
-<p>Recall pacakge <code>use-package</code>, when setting key-binding using <code>:bind</code> in
-conjunction with <code>:map</code>, which only binds the key locally when the
-package has already been loaded. The key binding before <code>:map</code> are
-global key bindings.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:hook</span> ((<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-font-setup</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>				 (<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">turn-on-visual-line-mode</span>))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#8be9fd;font-style:italic">:mode</span> (<span style="color:#f1fa8c">&#34;\\.org&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-mode</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:bind</span> ((<span style="color:#f1fa8c">&#34;C-c a&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-agenda</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>				 (<span style="color:#f1fa8c">&#34;C-c b&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-switchb</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>				 (<span style="color:#f1fa8c">&#34;C-s-s&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-save-all-org-buffers</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>				 (<span style="color:#f1fa8c">&#34;C-c l&#34;</span>   <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-store-link</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>				 (<span style="color:#f1fa8c">&#34;C-c C-l&#34;</span>  <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-insert-link</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				 <span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">org-mode-map</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				 (<span style="color:#f1fa8c">&#34;s-.&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-todo</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				 (<span style="color:#f1fa8c">&#34;C-.&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-schedule</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>				 (<span style="color:#f1fa8c">&#34;M-p&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-set-property</span>)))
-</span></span></code></pre></div><p>Add bullet heading style</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-bullets</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> () (<span style="color:#8be9fd;font-style:italic">org-bullets-mode</span> <span style="color:#bd93f9">1</span>))))
 </span></span></code></pre></div><h3 id="babel-setting">Babel Setting</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-babel-load-languages</span>
@@ -882,9 +902,9 @@ and headings with ID.</li>
 it away immediately. Makes sense if the template only needs
 information that can be added automatically.
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>	 (<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-roam</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>		 <span style="color:#8be9fd;font-style:italic">:hook</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		 (<span style="color:#8be9fd;font-style:italic">after-init</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-mode</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		 (<span style="color:#8be9fd;font-style:italic">after-init</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-db-autosync-mode</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>		 <span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">org</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		 <span style="color:#8be9fd;font-style:italic">:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-setup</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		 <span style="color:#8be9fd;font-style:italic">:custom</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-completion-everywhere</span> t)
@@ -1070,7 +1090,27 @@ to run different commands against them.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">orb-autokey-format</span> <span style="color:#f1fa8c">&#34;%a%T[3]%y&#34;</span>)
 </span></span></code></pre></div></li>
 </ul>
-<h4 id="org-protocol-capture-html"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></h4>
+<h3 id="org-protocol">Org-protocol</h3>
+<p>First configuring <code>org-protocol</code> and download <a href="https://github.com/sprig/org-capture-extension">chrome extension</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">server-start</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;load-path</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files/.emacs.d/src/org-mode/lisp&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;org-protocol</span>)
+</span></span></code></pre></div><p>Then configuring capture template accordingly</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">transform-square-brackets-to-round-ones</span>(<span style="color:#8be9fd;font-style:italic">string-to-transform</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	<span style="color:#f1fa8c">&#34;Transforms [ into ( and ] into ), other chars left unchanged.&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	(<span style="color:#50fa7b">concat</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	 (<span style="color:#50fa7b">mapcar</span> <span style="color:#50fa7b">#&#39;</span>(<span style="color:#8be9fd;font-style:italic">lambda</span> (<span style="color:#8be9fd;font-style:italic">c</span>) (<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#50fa7b">equal</span> <span style="color:#8be9fd;font-style:italic">c</span> <span style="color:#f1fa8c">?[</span>) <span style="color:#f1fa8c">?\(</span> (<span style="color:#8be9fd;font-style:italic">if</span> (<span style="color:#50fa7b">equal</span> <span style="color:#8be9fd;font-style:italic">c</span> <span style="color:#f1fa8c">?]</span>) <span style="color:#f1fa8c">?\)</span> <span style="color:#8be9fd;font-style:italic">c</span>))) <span style="color:#8be9fd;font-style:italic">string-to-transform</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-capture-templates</span> <span style="color:#ff79c6">&#39;</span>(
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>															(<span style="color:#f1fa8c">&#34;p&#34;</span> <span style="color:#f1fa8c">&#34;Protocol&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/notes.org&#34;</span> <span style="color:#f1fa8c">&#34;Inbox&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>															 <span style="color:#f1fa8c">&#34;* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>															(<span style="color:#f1fa8c">&#34;L&#34;</span> <span style="color:#f1fa8c">&#34;Protocol Link&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/notes.org&#34;</span> <span style="color:#f1fa8c">&#34;Link&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>															 <span style="color:#f1fa8c">&#34;* %? [[%:link][%(transform-square-brackets-to-round-ones \&#34;%:description\&#34;)]]\n&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>															))
+</span></span></code></pre></div><h4 id="canceled-org-protocol-capture-html">CANCELED Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->ARCHIVE<!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></h4>
 <h3 id="html-or-markdown-preview">Html or Markdown Preview</h3>
 <h4 id="dot-html-preview"><code>.html</code> preview</h4>
 <p><a href="https://github.com/jakebox/org-preview-html">GitHub Repo</a></p>
@@ -1083,8 +1123,7 @@ to run different commands against them.</p>
 </span></span></code></pre></div><h4 id="dot-md-preview"><code>.md</code> Preview</h4>
 <p><a href="https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations">Github Repo</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">grip-mode</span>)
-</span></span></code></pre></div><h3 id="for-research">For Research</h3>
-<h4 id="org-brain">Org-Brain</h4>
+</span></span></code></pre></div><h3 id="org-brain">Org-Brain</h3>
 <p><a href="https://github.com/Kungsgeten/org-brain">More Setting Availiable in GitRepo</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-brain</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
@@ -1120,8 +1159,10 @@ directories of plain text notes.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-default-extension</span> <span style="color:#f1fa8c">&#34;org&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-directory</span> <span style="color:#8be9fd;font-style:italic">org-roam-directory</span>))
 </span></span></code></pre></div><h3 id="agenda">Agenda</h3>
-<p>Add progress logging to the org-agenda file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-log-done</span> <span style="color:#f1fa8c">&#39;note</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-agenda-files</span> (<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#34;~/Notes/Agenda/dailylife.org&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>														 <span style="color:#f1fa8c">&#34;~/.dotfiles/Emacs.org&#34;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;;Add progress logging to the org-agenda file</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-log-done</span> <span style="color:#f1fa8c">&#39;note</span>)
 </span></span></code></pre></div><h4 id="super-agenda">Super-agenda</h4>
 <!-- raw HTML omitted -->
 <ul>
@@ -1132,23 +1173,7 @@ directories of plain text notes.</p>
 </ul>
 <h3 id="cv-with-org-mode"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> CV with Org-mode <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
 <p>link: <a href="https://github.com/zzamboni/vita/">https://github.com/zzamboni/vita/</a></p>
-<h2 id="keys-bindings">Keys Bindings</h2>
-<h3 id="global-key-bindings">Global Key Bindings</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f5&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;revert-buffer</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;escape&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;keyboard-escape-quit</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-M-j&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-switch-buffer</span>)
-</span></span></code></pre></div><h3 id="which-key">Which-key</h3>
-<p>which-key is  a useful UI panel  that appears when you  start pressing
-any key binding in Emacs to offer you all possible completions for the
-prefix. For  example, if  you press  C-c (hold  control and  press the
-letter c), a  panel will appear at the bottom  of the frame displaying
-all of the bindings under that prefix and which command they run. This
-is very useful  for learning the possible key bindings  in the mode of
-your current buffer.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">which-key</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">which-key-mode</span>))
-</span></span></code></pre></div><h2 id="editor">Editor</h2>
+<h2 id="editor">Editor</h2>
 <h3 id="completion">Completion</h3>
 <h4 id="ivy-and-counsel">Ivy and counsel</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
@@ -1527,21 +1552,28 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
         <li><a href="#helpful">Helpful</a></li>
         <li><a href="#yasnippet">Yasnippet</a>
           <ul>
+            <li><a href="#basic-setup">Basic setup</a></li>
             <li><a href="#insert-snippet">Insert snippet</a></li>
             <li><a href="#tab-trigger-in-org-code-blocks">Tab trigger in org code blocks</a></li>
             <li><a href="#turn-off-org-mode-snippets-in-code-blocks">Turn off org-mode snippets in code blocks</a></li>
             <li><a href="#snippet-pop-up-manue">Snippet pop up manue</a></li>
-            <li><a href="#misc-packages">Misc packages</a></li>
           </ul>
         </li>
+        <li><a href="#keys-bindings">Keys Bindings</a>
+          <ul>
+            <li><a href="#global-key-bindings">Global Key Bindings</a></li>
+            <li><a href="#which-key">Which-key</a></li>
+          </ul>
+        </li>
+        <li><a href="#misc-packages">Misc packages</a></li>
       </ul>
     </li>
     <li><a href="#org-mode">Org-mode</a>
       <ul>
         <li><a href="#org-mode-face-setting">Org-mode face setting</a>
           <ul>
-            <li><a href="#font-and-list">Font and List</a></li>
             <li><a href="#org-mode-activation">Org mode activation</a></li>
+            <li><a href="#font-and-list">Font and List</a></li>
           </ul>
         </li>
         <li><a href="#babel-setting">Babel Setting</a>
@@ -1556,7 +1588,11 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
             <li><a href="#org-download">Org-download</a></li>
             <li><a href="#org-noter">Org-noter</a></li>
             <li><a href="#org-roam-bibitex">Org-roam-bibitex</a></li>
-            <li><a href="#org-protocol-capture-html"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+          </ul>
+        </li>
+        <li><a href="#org-protocol">Org-protocol</a>
+          <ul>
+            <li><a href="#canceled-org-protocol-capture-html">CANCELED Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->ARCHIVE<!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
           </ul>
         </li>
         <li><a href="#html-or-markdown-preview">Html or Markdown Preview</a>
@@ -1565,11 +1601,7 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
             <li><a href="#dot-md-preview"><code>.md</code> Preview</a></li>
           </ul>
         </li>
-        <li><a href="#for-research">For Research</a>
-          <ul>
-            <li><a href="#org-brain">Org-Brain</a></li>
-          </ul>
-        </li>
+        <li><a href="#org-brain">Org-Brain</a></li>
         <li><a href="#for-file-navigation">For File navigation</a></li>
         <li><a href="#agenda">Agenda</a>
           <ul>
@@ -1577,12 +1609,6 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
           </ul>
         </li>
         <li><a href="#cv-with-org-mode"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> CV with Org-mode <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
-      </ul>
-    </li>
-    <li><a href="#keys-bindings">Keys Bindings</a>
-      <ul>
-        <li><a href="#global-key-bindings">Global Key Bindings</a></li>
-        <li><a href="#which-key">Which-key</a></li>
       </ul>
     </li>
     <li><a href="#editor">Editor</a>
