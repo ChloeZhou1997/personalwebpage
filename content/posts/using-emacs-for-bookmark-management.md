@@ -2,7 +2,7 @@
 title = "Using Emacs for bookmark management"
 author = ["Chloe"]
 date = 2022-11-08T13:05:00-05:00
-lastmod = 2022-11-08T13:16:21-05:00
+lastmod = 2022-11-08T14:21:10-05:00
 tags = ["emacs", "config"]
 categories = ["tutorial"]
 draft = false

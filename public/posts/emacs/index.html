@@ -21,7 +21,7 @@ This literal configuration, by the time the post was written is still a patchwor
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-08T11:37:31-05:00" />
+<meta property="article:modified_time" content="2022-11-08T14:40:23-05:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -269,7 +269,6 @@ This literal configuration, by the time the post was written is still a patchwor
           </ul>
         </li>
         <li><a href="#flycheck">Flycheck</a></li>
-        <li><a href="#spellcheck">Spellcheck</a></li>
         <li><a href="#grammar-check">Grammar Check</a>
           <ul>
             <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
@@ -299,8 +298,12 @@ This literal configuration, by the time the post was written is still a patchwor
     <li><a href="#auto-tangle">Auto Tangle</a></li>
     <li><a href="#personal-setting">Personal Setting</a>
       <ul>
-        <li><a href="#dotcrafter">dotcrafter</a></li>
-        <li><a href="#helper-function">helper function</a></li>
+        <li><a href="#helper-function">helper function</a>
+          <ul>
+            <li><a href="#open-configuration-file">Open configuration file</a></li>
+            <li><a href="#open-bookmark-capture">Open bookmark capture</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -322,7 +325,7 @@ This literal configuration, by the time the post was written is still a patchwor
           
           <time datetime="2022-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-29</time>
           
-            (Updated: <time datetime="2022-11-08 11:37:31 -0500 EST" itemprop="dateModified">2022-11-08</time>)
+            (Updated: <time datetime="2022-11-08 14:40:23 -0500 EST" itemprop="dateModified">2022-11-08</time>)
           
         </div>
         
@@ -1075,7 +1078,9 @@ to run different commands against them.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">org-roam</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;org-ref</span>)) <span style="color:#6272a4">; optional: if using Org-ref v2 or v3 citation links</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
 <ul>
 <li>
 <p>Templates integrating with bibtex</p>
@@ -1102,8 +1107,6 @@ to run different commands against them.</p>
 </span></span></code></pre></div><p>Note action interface:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">orb-note-actions-interface</span> <span style="color:#f1fa8c">&#39;helm</span>)
 </span></span></code></pre></div></li>
-</ul>
-</li>
 </ul>
 <!-- raw HTML omitted -->
 <ul>
@@ -1178,22 +1181,8 @@ to run different commands against them.</p>
 <p><a href="https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations">Github Repo</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">grip-mode</span>)
 </span></span></code></pre></div><h3 id="for-file-navigation">For File navigation</h3>
-<p>Deft is an Emacs mode for quickly browsing, filtering and editing
-directories of plain text notes. <strong>This package can&rsquo;t search inside content somehow&hellip;</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">deft</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:commands</span> (<span style="color:#8be9fd;font-style:italic">deft</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">deft-directory</span> <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		<span style="color:#8be9fd;font-style:italic">deft-recursive</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		<span style="color:#8be9fd;font-style:italic">deft-extensions</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;md&#34;</span> <span style="color:#f1fa8c">&#34;org&#34;</span> <span style="color:#f1fa8c">&#34;txt&#34;</span>))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	<span style="color:#8be9fd;font-style:italic">:bind</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	(<span style="color:#f1fa8c">&#34;C-c n d&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">deft</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	<span style="color:#8be9fd;font-style:italic">:custom</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-recursive</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-use-filter-string-for-filename</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-default-extension</span> <span style="color:#f1fa8c">&#34;org&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-directory</span> <span style="color:#8be9fd;font-style:italic">org-roam-directory</span>))
-</span></span></code></pre></div><p>I saw good reviews of deadgrep the other day so want to give it a
-try&hellip; ( but I don&rsquo;t know how to use this yet)</p>
+<p>I saw good reviews of deadgrep the other day so want to give it a
+try&hellip; ( but I don&rsquo;t know how to use this yet )</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">deadgrep</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f2&gt;&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">deadgrep</span>)
 </span></span></code></pre></div><h3 id="cv-with-org-mode"><!-- raw HTML omitted -->ONWATCH<!-- raw HTML omitted --> CV with Org-mode <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
@@ -1244,30 +1233,30 @@ try&hellip; ( but I don&rsquo;t know how to use this yet)</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>		(<span style="color:#f1fa8c">&#34;M-x&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">counsel-M-x</span>))
 </span></span></code></pre></div><h4 id="vertico">Vertico</h4>
 <p>light-weighted, integrating with built in emacs completion engine</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>		(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">vertico</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#8be9fd;font-style:italic">:bind</span> (<span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">vertico-map</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span> (<span style="color:#f1fa8c">&#34;C-j&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-next</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span> (<span style="color:#f1fa8c">&#34;C-k&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-previous</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span> (<span style="color:#f1fa8c">&#34;C-f&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-exit</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span> <span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">minibuffer-local-map</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span> (<span style="color:#f1fa8c">&#34;M-h&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">backward-kill-word</span>))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#8be9fd;font-style:italic">:custom</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>(<span style="color:#8be9fd;font-style:italic">vertico-cycle</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#8be9fd;font-style:italic">:init</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>(<span style="color:#8be9fd;font-style:italic">vertico-mode</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">vertico</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#8be9fd;font-style:italic">:bind</span> (<span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">vertico-map</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>							(<span style="color:#f1fa8c">&#34;C-j&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-next</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>							(<span style="color:#f1fa8c">&#34;C-k&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-previous</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>							(<span style="color:#f1fa8c">&#34;C-f&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">vertico-exit</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>							<span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">minibuffer-local-map</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>							(<span style="color:#f1fa8c">&#34;M-h&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">backward-kill-word</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	<span style="color:#8be9fd;font-style:italic">:custom</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	(<span style="color:#8be9fd;font-style:italic">vertico-cycle</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">vertico-mode</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>		(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">savehist</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#8be9fd;font-style:italic">:init</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>(<span style="color:#8be9fd;font-style:italic">savehist-mode</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">savehist</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>	(<span style="color:#8be9fd;font-style:italic">savehist-mode</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>		(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">marginalia</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">vertico</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#8be9fd;font-style:italic">:custom</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>(<span style="color:#8be9fd;font-style:italic">marginalia-annotators</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">marginalia-annotators-heavy</span> <span style="color:#8be9fd;font-style:italic">marginalia-annotators-light</span> nil))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#8be9fd;font-style:italic">:init</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>(<span style="color:#8be9fd;font-style:italic">marginalia-mode</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">marginalia</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">vertico</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>	<span style="color:#8be9fd;font-style:italic">:custom</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>	(<span style="color:#8be9fd;font-style:italic">marginalia-annotators</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">marginalia-annotators-heavy</span> <span style="color:#8be9fd;font-style:italic">marginalia-annotators-light</span> nil))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>	(<span style="color:#8be9fd;font-style:italic">marginalia-mode</span>))
 </span></span></code></pre></div><h4 id="avy-jump-to-a-word">Avy - jump to a word</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; another powerful search tool</span>
@@ -1301,14 +1290,6 @@ in the same way, with visual feedback as you type.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">global-flycheck-mode</span> t))
-</span></span></code></pre></div><h3 id="spellcheck">Spellcheck</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">;; (use-package flyspell)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; (use-package flyspell-correct</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;;   :after flyspell</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;   :bind (:map flyspell-mode-map (&#34;C-c ;&#34; . flyspell-correct-wrapper)))</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4">;; (use-package flyspell-correct-ivy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#6272a4">;;   :after flyspell-correct)</span>
 </span></span></code></pre></div><h3 id="grammar-check">Grammar Check</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">lsp-grammarly</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:hook</span> (<span style="color:#8be9fd;font-style:italic">text-mode</span> <span style="color:#ff79c6">.</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> ()
@@ -1395,8 +1376,7 @@ in the same way, with visual feedback as you type.</p>
 <h3 id="blogging-with-ox-hugo">Blogging with ox-hugo</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-hugo</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">ox</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-export-with-broken-links</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-export-with-broken-links</span> t)
 </span></span></code></pre></div><h2 id="keep-dot-emacs-dot-d-clean">Keep .emacs.d clean</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#6272a4">;; Change the user-emacs-directory to keep unwanted things out of ~/.emacs.d</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">user-emacs-directory</span> (<span style="color:#50fa7b">expand-file-name</span> <span style="color:#f1fa8c">&#34;~/.cache/emacs/&#34;</span>)
@@ -1420,15 +1400,8 @@ in the same way, with visual feedback as you type.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> () (<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;after-save-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">efs/org-babel-tangle-config</span>)))
 </span></span></code></pre></div><h2 id="personal-setting">Personal Setting</h2>
-<h3 id="dotcrafter">dotcrafter</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; (load-file &#34;/Users/zhouqiaohui/.dotfiles/.files/.emacs.d/dotcrafter.el&#34;)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;; (require &#39;dotcrafter)</span>
-</span></span></code></pre></div><h3 id="helper-function">helper function</h3>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>Open configuration file</p>
+<h3 id="helper-function">helper function</h3>
+<h4 id="open-configuration-file">Open configuration file</h4>
 <p>To quickly open my configuration org file. I have a alias setting in
 my zshconfig too named <code>emacsconfig</code> which opens my <code>init.el</code> in VsCode,
 allowing me to quickly edit my init files to open emacs correctly (I
@@ -1437,22 +1410,13 @@ am very bad at debug in emacs and I personally find this way easier).</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#f1fa8c">&#34;open my personal config&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">switch-to-buffer</span> (<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/Emacs.org&#34;</span>)))
-</span></span></code></pre></div></li>
-</ul>
-<!-- raw HTML omitted -->
-<ul>
-<li>
-<p>Open bookmark capture</p>
-<p>Open captured information from browser:
-#+begin_src emacs-lisp
-(defun joz/mycapture ()
-&ldquo;Open my captued info from interent&rdquo;
-(interactive)
-(switch-to-buffer (find-file-noselect &ldquo;~/Notes/captures.org&rdquo;)))</p>
-<p>#+</p>
-</li>
-</ul>
-<div class="footnotes" role="doc-endnotes">
+</span></span></code></pre></div><h4 id="open-bookmark-capture">Open bookmark capture</h4>
+<p>Open captured information from browser:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">joz/mycapture</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#f1fa8c">&#34;Open my captued info from interent&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">switch-to-buffer</span> (<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span>)))
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
@@ -1666,7 +1630,6 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
           </ul>
         </li>
         <li><a href="#flycheck">Flycheck</a></li>
-        <li><a href="#spellcheck">Spellcheck</a></li>
         <li><a href="#grammar-check">Grammar Check</a>
           <ul>
             <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
@@ -1696,8 +1659,12 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
     <li><a href="#auto-tangle">Auto Tangle</a></li>
     <li><a href="#personal-setting">Personal Setting</a>
       <ul>
-        <li><a href="#dotcrafter">dotcrafter</a></li>
-        <li><a href="#helper-function">helper function</a></li>
+        <li><a href="#helper-function">helper function</a>
+          <ul>
+            <li><a href="#open-configuration-file">Open configuration file</a></li>
+            <li><a href="#open-bookmark-capture">Open bookmark capture</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>

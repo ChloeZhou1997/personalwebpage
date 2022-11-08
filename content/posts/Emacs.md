@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-08T11:37:31-05:00
+lastmod = 2022-11-08T14:40:23-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -911,38 +911,38 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     	(require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
     ```
 
-    <!--list-separator-->
+<!--list-separator-->
 
-    -  Templates integrating with bibtex
+-  Templates integrating with bibtex
 
-        ```emacs-lisp
+    ```emacs-lisp
 
-        (setq orb-preformat-keywords
-        			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
-        			orb-process-file-keyword t
-        			orb-attached-file-extensions '("pdf"))
+    (setq orb-preformat-keywords
+    			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
+    			orb-process-file-keyword t
+    			orb-attached-file-extensions '("pdf"))
 
-        (setq org-roam-capture-templates
-        			'(("r" "bibliography reference" plain
-        				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
-        				 :target
-        				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-        				("t" "thought" plain
-        				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
-        				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        				 :unnarrowed t)
-        				("d" "default" plain
-        				 "%?"
-        				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-        				 :unnarrowed t)
-        				))
-        ```
+    (setq org-roam-capture-templates
+    			'(("r" "bibliography reference" plain
+    				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
+    				 :target
+    				 (file+head "${citekey}.org" "#+title: ${title}\n"))
+    				("t" "thought" plain
+    				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
+    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+    				 :unnarrowed t)
+    				("d" "default" plain
+    				 "%?"
+    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+    				 :unnarrowed t)
+    				))
+    ```
 
-        Note action interface:
+    Note action interface:
 
-        ```emacs-lisp
-        (setq orb-note-actions-interface 'helm)
-        ```
+    ```emacs-lisp
+    (setq orb-note-actions-interface 'helm)
+    ```
 
 <!--list-separator-->
 
@@ -1065,26 +1065,8 @@ Then configuring capture template accordingly
 
 ### For File navigation {#for-file-navigation}
 
-Deft is an Emacs mode for quickly browsing, filtering and editing
-directories of plain text notes. **This package can't search inside content somehow...**
-
-```emacs-lisp
-(use-package deft
-	:commands (deft)
-	:config (setq deft-directory "~/Notes"
-		deft-recursive t
-		deft-extensions '("md" "org" "txt"))
-	:bind
-	("C-c n d" . deft)
-	:custom
-	(deft-recursive t)
-	(deft-use-filter-string-for-filename t)
-	(deft-default-extension "org")
-	(deft-directory org-roam-directory))
-```
-
 I saw good reviews of deadgrep the other day so want to give it a
-try... ( but I don't know how to use this yet)
+try... ( but I don't know how to use this yet )
 
 ```emacs-lisp
 (use-package deadgrep)
@@ -1161,30 +1143,30 @@ Swiper makes in-files search easier:
 light-weighted, integrating with built in emacs completion engine
 
 ```emacs-lisp
-		(use-package vertico
-:ensure t
-:bind (:map vertico-map
- ("C-j" . vertico-next)
- ("C-k" . vertico-previous)
- ("C-f" . vertico-exit)
- :map minibuffer-local-map
- ("M-h" . backward-kill-word))
-:custom
-(vertico-cycle t)
-:init
-(vertico-mode))
+(use-package vertico
+	:ensure t
+	:bind (:map vertico-map
+							("C-j" . vertico-next)
+							("C-k" . vertico-previous)
+							("C-f" . vertico-exit)
+							:map minibuffer-local-map
+							("M-h" . backward-kill-word))
+	:custom
+	(vertico-cycle t)
+	:init
+	(vertico-mode))
 
-		(use-package savehist
-:init
-(savehist-mode))
+(use-package savehist
+	:init
+	(savehist-mode))
 
-		(use-package marginalia
-:after vertico
-:ensure t
-:custom
-(marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-:init
-(marginalia-mode))
+(use-package marginalia
+	:after vertico
+	:ensure t
+	:custom
+	(marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+	:init
+	(marginalia-mode))
 ```
 
 
@@ -1247,20 +1229,6 @@ in the same way, with visual feedback as you type.
 	:ensure t
 	:init
 	(global-flycheck-mode t))
-```
-
-
-### Spellcheck {#spellcheck}
-
-```emacs-lisp
-;; (use-package flyspell)
-;; (use-package flyspell-correct
-;;   :after flyspell
-;;   :bind (:map flyspell-mode-map ("C-c ;" . flyspell-correct-wrapper)))
-
-;; (use-package flyspell-correct-ivy
-;;   :after flyspell-correct)
-
 ```
 
 
@@ -1391,7 +1359,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 ```emacs-lisp
 (use-package ox-hugo
 	:after ox)
-
 (setq org-export-with-broken-links t)
 ```
 
@@ -1431,46 +1398,34 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 ## Personal Setting {#personal-setting}
 
 
-### dotcrafter {#dotcrafter}
+### helper function {#helper-function}
+
+
+#### Open configuration file {#open-configuration-file}
+
+To quickly open my configuration org file. I have a alias setting in
+my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
+allowing me to quickly edit my init files to open emacs correctly (I
+am very bad at debug in emacs and I personally find this way easier).
 
 ```emacs-lisp
-
-;; (load-file "/Users/zhouqiaohui/.dotfiles/.files/.emacs.d/dotcrafter.el")
-;; (require 'dotcrafter)
-
+(defun joz/myconfig ()
+	"open my personal config"
+	(interactive)
+	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
 ```
 
 
-### helper function {#helper-function}
+#### Open bookmark capture {#open-bookmark-capture}
 
-<!--list-separator-->
+Open captured information from browser:
 
--  Open configuration file
-
-    To quickly open my configuration org file. I have a alias setting in
-    my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
-    allowing me to quickly edit my init files to open emacs correctly (I
-    am very bad at debug in emacs and I personally find this way easier).
-
-    ```emacs-lisp
-    (defun joz/myconfig ()
-    	"open my personal config"
-    	(interactive)
-    	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
-    ```
-
-<!--list-separator-->
-
--  Open bookmark capture
-
-    Open captured information from browser:
-    \#+begin_src emacs-lisp
-    (defun joz/mycapture ()
-    	"Open my captued info from interent"
-    	(interactive)
-    	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
-
-    \#+
+```emacs-lisp
+(defun joz/mycapture ()
+	"Open my captued info from interent"
+	(interactive)
+	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
+```
 
 [^fn:1]: `#'foo` and `'foo` are equivalent when `foo` is a symbol, but the
     former is prefered when `foo` is a function. `#'` is intended to be a
