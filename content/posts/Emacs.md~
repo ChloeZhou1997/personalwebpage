@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-05T10:00:09-04:00
+lastmod = 2022-11-06T10:10:28-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -150,7 +150,7 @@ like tool bar and scroll bar.
 ;;set the option and command key to corresponding emacs key
 (setq mac-command-modifier      'meta
 			mac-option-modifier       'super
-			mac-right-option-modifier 'super)
+			mac-right-option-modifier 'hyper)
 
 
 ;; Don't show the splash screen
@@ -251,6 +251,8 @@ and a different forground color on low-color terminal.
 
 #### Mode line config {#mode-line-config}
 
+A minimalist design for the modeline, see [repo](https://github.com/seagle0128/doom-modeline) for more informati
+
 ```emacs-lisp
 (use-package doom-modeline
 						:ensure t
@@ -348,18 +350,19 @@ Be able to use shift to nevigate between different windows
 ```
 
 Use `ace window` package so when calling M-o, can switch between windows
-using number.
+using number. ( This is a cool package but it's kind of redundant
+because I won't open that many window at the same time anyway.)
 
 ```emacs-lisp
-(use-package ace-window
-	:ensure t
-	:init
-	(global-set-key [remap other-window] 'ace-window)
-	(custom-set-faces
-	 '(aw-leading-char-face
-		 ((t (:inherit ace-jump-face-foreground :height 3.0)))))
-	:config
-	(global-set-key (kbd "M-o") 'ace-window))
+;; (Use-package ace-window
+;; 	:ensure t
+;; 	:init
+;; 	(global-set-key [remap other-window] 'ace-window)
+;; 	(custom-set-faces
+;; 	 '(aw-leading-char-face
+;; 		 ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+;; 	:config
+;; 	(global-set-key (kbd "M-o") 'ace-window))
 ```
 
 -   Both `:inherit` and `:height` are face attributes
@@ -375,7 +378,7 @@ Enabling dired like buffer management.
 
 ```emacs-lisp
 ;;ibuffer
-(defalias 'list-buffers 'ibuffer-other-window)
+(defalias 'list-buffers 'ibuffer-other-window) ;;open another buffer window
 ```
 
 enabling **ido mode:**
@@ -390,6 +393,8 @@ enabling **ido mode:**
 (setq ido-everywhere t)
 (ido-mode 1)
 ```
+
+There are other completion system which will be configured later.
 
 
 ## Global function improvement {#global-function-improvement}
@@ -415,6 +420,9 @@ enabling **ido mode:**
 
 
 ### Yasnippet {#yasnippet}
+
+
+#### Basic setup {#basic-setup}
 
 -   [Setting from Repo](https://github.com/MooersLab/configorg/blob/main/config.org)
     ```emacs-lisp
@@ -487,7 +495,36 @@ enabling **ido mode:**
 ```
 
 
-#### Misc packages {#misc-packages}
+### Keys Bindings {#keys-bindings}
+
+
+#### Global Key Bindings {#global-key-bindings}
+
+```emacs-lisp
+(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
+```
+
+
+#### Which-key {#which-key}
+
+which-key is  a useful UI panel  that appears when you  start pressing
+any key binding in Emacs to offer you all possible completions for the
+prefix. For  example, if  you press  C-c (hold  control and  press the
+letter c), a  panel will appear at the bottom  of the frame displaying
+all of the bindings under that prefix and which command they run. This
+is very useful  for learning the possible key bindings  in the mode of
+your current buffer.
+
+```emacs-lisp
+(use-package which-key
+	:ensure t
+	:config (which-key-mode))
+```
+
+
+### Misc packages {#misc-packages}
 
 ```emacs-lisp
 	; Becon mode
@@ -526,6 +563,38 @@ Org mode buffer need Font Lock to be turned on.
 ### Org-mode face setting {#org-mode-face-setting}
 
 
+#### Org mode activation {#org-mode-activation}
+
+Recall pacakge `use-package`, when setting key-binding using `:bind` in
+conjunction with `:map`, which only binds the key locally when the
+package has already been loaded. The key binding before `:map` are
+global key bindings.
+
+```emacs-lisp
+(use-package org
+	:hook ((org-mode . org-font-setup)
+				 (org-mode . turn-on-visual-line-mode))
+	:mode ("\\.org" . org-mode)
+	:bind (("C-c a"   . 'org-agenda)
+				 ("C-c b"   . 'org-switchb)
+				 ("C-s-s"   . 'org-save-all-org-buffers)
+				 ("C-c l"   . 'org-store-link)
+				 ("C-c C-l"  . 'org-insert-link)
+				 :map org-mode-map
+				 ("s-."     . 'org-todo)
+				 ("M-p"     . 'org-set-property)))
+
+```
+
+Add bullet heading style
+
+```emacs-lisp
+(use-package org-bullets
+	:config
+	(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+```
+
+
 #### Font and List {#font-and-list}
 
 The org-font-setup setup the font and also the list style at the end.
@@ -561,39 +630,6 @@ The org-font-setup setup the font and also the list style at the end.
 			org-hide-emphasis-markers t))
 
 (add-hook 'org-mode-hook 'org-font-setup)
-```
-
-
-#### Org mode activation {#org-mode-activation}
-
-Recall pacakge `use-package`, when setting key-binding using `:bind` in
-conjunction with `:map`, which only binds the key locally when the
-package has already been loaded. The key binding before `:map` are
-global key bindings.
-
-```emacs-lisp
-(use-package org
-	:hook ((org-mode . org-font-setup)
-				 (org-mode . turn-on-visual-line-mode))
-	:mode ("\\.org" . org-mode)
-	:bind (("C-c a"   . 'org-agenda)
-				 ("C-c b"   . 'org-switchb)
-				 ("C-s-s"   . 'org-save-all-org-buffers)
-				 ("C-c l"   . 'org-store-link)
-				 ("C-c C-l"  . 'org-insert-link)
-				 :map org-mode-map
-				 ("s-."     . 'org-todo)
-				 ("C-."     . 'org-schedule)
-				 ("M-p"     . 'org-set-property)))
-
-```
-
-Add bullet heading style
-
-```emacs-lisp
-(use-package org-bullets
-	:config
-	(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 ```
 
 
@@ -672,23 +708,31 @@ Add bullet heading style
     it away immediately. Makes sense if the template only needs
     information that can be added automatically.
     ```emacs-lisp
-    	 (use-package org-roam
-    		 :hook
-    		 (after-init . org-roam-mode)
-    		 (after-init . org-roam-db-autosync-mode)
-    		 :custom
-    		 (org-roam-directory "~/Notes/RoamNotes")
-    		 (org-roam-completion-everywhere t)
-    		 :bind (("C-c n l" . org-roam-buffer-toggle)
-    						("C-c n f" . org-roam-node-find)
-    						("C-c n i" . org-roam-node-insert)
-    						("C-c n I" . org-roam-node-insert-immediate)
-    						:map org-mode-map
-    						("C-M-i" . completion-at-point)
-    						("C-c n t" . org-roam-tag-add)
-    						("C-c n a" . org-roam-alias-add)))
+    			(use-package org-roam
+    				:after org
+    				:config
+    				(org-roam-setup)
+    				:custom
+    				(org-roam-directory "~/Notes/RoamNotes")
+    				(org-roam-completion-everywhere nil)
+    				:bind (("C-c n l" . org-roam-buffer-toggle)
+    							 ("C-c n f" . org-roam-node-find)
+    							 ("C-c n i" . org-roam-node-insert)
+    							 ("C-c n I" . org-roam-node-insert-immediate)
+    							 :map org-mode-map
+    							 ("C-M-i" . completion-at-point)
+    							 ("C-c n t" . org-roam-tag-add)
+    							 ("C-c n a" . org-roam-alias-add)))
 
-    (setq org-roam-completion-system 'ido)
+    	 (setq org-roam-completion-system 'ivy)
+
+    ;;The official one has deprecated, use self-defined one instead.
+    (defun org-roam-node-insert-immediate (arg &rest args)
+    	(interactive "P")
+    	(let ((args (cons arg args))
+    				(org-roam-capture-templates (list (append (car org-roam-capture-templates)
+    																									'(:immediate-finish t)))))
+    		(apply #'org-roam-node-insert args)))
     ```
 
 
@@ -868,6 +912,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     Configuring for templates integrating with org-noter:
 
     ```emacs-lisp
+
     (setq orb-preformat-keywords
     			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
     			orb-process-file-keyword t
@@ -878,10 +923,15 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
     				 :target
     				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-    				("d" "default" plain
+    				("t" "thought" plain
     				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
     				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)))
+    				 :unnarrowed t)
+    				("d" "default" plain
+    				 "%?"
+    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+    				 :unnarrowed t)
+    				))
     ```
 
     Note action interface:
@@ -916,7 +966,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     ```
 
 
-#### <span class="org-todo done CANCELED">CANCELED</span> Org-protocol-capture-html <span class="tag"><span class="_download">@download</span></span> {#org-protocol-capture-html}
+### Org-protocol {#org-protocol}
 
 First configuring `org-protocol` and download [chrome extension](https://github.com/sprig/org-capture-extension).
 
@@ -944,6 +994,9 @@ Then configuring capture template accordingly
 															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
 															))
 ```
+
+
+#### CANCELED Org-protocol-capture-html <span class="tag"><span class="ARCHIVE">ARCHIVE</span><span class="_download">@download</span></span> {#canceled-org-protocol-capture-html}
 
 
 ### Html or Markdown Preview {#html-or-markdown-preview}
@@ -1021,9 +1074,10 @@ directories of plain text notes.
 
 ### Agenda {#agenda}
 
-Add progress logging to the org-agenda file
-
 ```emacs-lisp
+(setq org-agenda-files (list "~/Notes/Agenda/dailylife.org"
+														 "~/.dotfiles/Emacs.org"))
+;;Add progress logging to the org-agenda file
 (setq org-log-done 'note)
 ```
 
@@ -1042,35 +1096,6 @@ Add progress logging to the org-agenda file
 ### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
 
 link: <https://github.com/zzamboni/vita/>
-
-
-## Keys Bindings {#keys-bindings}
-
-
-### Global Key Bindings {#global-key-bindings}
-
-```emacs-lisp
-(global-set-key (kbd "<f5>") 'revert-buffer)
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
-```
-
-
-### Which-key {#which-key}
-
-which-key is  a useful UI panel  that appears when you  start pressing
-any key binding in Emacs to offer you all possible completions for the
-prefix. For  example, if  you press  C-c (hold  control and  press the
-letter c), a  panel will appear at the bottom  of the frame displaying
-all of the bindings under that prefix and which command they run. This
-is very useful  for learning the possible key bindings  in the mode of
-your current buffer.
-
-```emacs-lisp
-(use-package which-key
-	:ensure t
-	:config (which-key-mode))
-```
 
 
 ## Editor {#editor}

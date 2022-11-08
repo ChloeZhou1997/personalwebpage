@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-05T22:38:42-04:00
+lastmod = 2022-11-07T09:13:29-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -498,15 +498,6 @@ There are other completion system which will be configured later.
 ### Keys Bindings {#keys-bindings}
 
 
-#### Global Key Bindings {#global-key-bindings}
-
-```emacs-lisp
-(global-set-key (kbd "<f5>") 'revert-buffer)
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
-```
-
-
 #### Which-key {#which-key}
 
 which-key is  a useful UI panel  that appears when you  start pressing
@@ -519,7 +510,6 @@ your current buffer.
 
 ```emacs-lisp
 (use-package which-key
-	:ensure t
 	:config (which-key-mode))
 ```
 
@@ -586,12 +576,19 @@ global key bindings.
 
 ```
 
-Add bullet heading style
+
+#### Beautify org roam {#beautify-org-roam}
 
 ```emacs-lisp
 (use-package org-bullets
-	:config
-	(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+	:hook
+	(org-mode . (lambda () (org-bullets-mode 1)))
+	(org-mode . (lambda ()
+							"Beautify Org Checkbox Symbol"
+							(push '("[ ]" . "☐" ) prettify-symbols-alist)
+							(push '("[X]" . "☑" ) prettify-symbols-alist)
+							(push '("[-]" . "⊡" ) prettify-symbols-alist)
+							(prettify-symbols-mode))))
 ```
 
 
@@ -627,7 +624,7 @@ The org-font-setup setup the font and also the list style at the end.
 	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
 	(setq org-ellipsis " ▼"
-			org-hide-emphasis-markers t))
+				org-hide-emphasis-markers t))
 
 (add-hook 'org-mode-hook 'org-font-setup)
 ```
@@ -677,7 +674,7 @@ The org-font-setup setup the font and also the list style at the end.
 ```
 
 
-### Strcture Template {#strcture-template}
+#### Strcture Template {#strcture-template}
 
 ```emacs-lisp
 
@@ -708,23 +705,36 @@ The org-font-setup setup the font and also the list style at the end.
     it away immediately. Makes sense if the template only needs
     information that can be added automatically.
     ```emacs-lisp
-    	 (use-package org-roam
-    		 :after org
-    		 :config
-    		 (org-roam-setup)
-    		 :custom
-    		 (org-roam-directory "~/Notes/RoamNotes")
-    		 (org-roam-completion-everywhere t)
-    		 :bind (("C-c n l" . org-roam-buffer-toggle)
-    						("C-c n f" . org-roam-node-find)
-    						("C-c n i" . org-roam-node-insert)
-    						("C-c n I" . org-roam-node-insert-immediate)
-    						:map org-mode-map
-    						("C-M-i" . completion-at-point)
-    						("C-c n t" . org-roam-tag-add)
-    						("C-c n a" . org-roam-alias-add)))
+    			(use-package org-roam
+    				:after org
+    				:config
+    				(org-roam-setup)
+    				:custom
+    				(org-roam-directory "~/Notes/RoamNotes")
+    				(org-roam-completion-everywhere nil)
+    				:bind (("C-c n l" . org-roam-buffer-toggle)
+    							 ("C-c n f" . org-roam-node-find)
+    							 ("C-c n i" . org-roam-node-insert)
+    							 ("C-c n I" . org-roam-node-insert-immediate)
+    							 :map org-mode-map
+    							 ("C-M-i" . completion-at-point)
+    							 ("C-c n t" . org-roam-tag-add)
+    							 ("C-c n a" . org-roam-alias-add)))
 
-    (setq org-roam-completion-system 'ido)
+    	 (setq org-roam-completion-system 'ivy)
+
+    ;;The official one has deprecated, use self-defined one instead.
+    (defun org-roam-node-insert-immediate (arg &rest args)
+    	(interactive "P")
+    	(let ((args (cons arg args))
+    				(org-roam-capture-templates (list (append (car org-roam-capture-templates)
+    																									'(:immediate-finish t)))))
+    		(apply #'org-roam-node-insert args)))
+
+    ;;add tag in the node-find mini-buffer
+    (setq org-roam-node-display-template
+    			(concat "${title:*} "
+    							(propertize "${tags:10}" 'face 'org-tag)))
     ```
 
 
@@ -904,6 +914,7 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     Configuring for templates integrating with org-noter:
 
     ```emacs-lisp
+
     (setq orb-preformat-keywords
     			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
     			orb-process-file-keyword t
@@ -914,10 +925,15 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
     				 :target
     				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-    				("d" "default" plain
+    				("t" "thought" plain
     				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
     				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)))
+    				 :unnarrowed t)
+    				("d" "default" plain
+    				 "%?"
+    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+    				 :unnarrowed t)
+    				))
     ```
 
     Note action interface:
@@ -974,9 +990,9 @@ Then configuring capture template accordingly
 	)
 
 (setq org-capture-templates '(
-															("p" "Protocol" entry (file+headline "~/Notes/notes.org" "Inbox")
+															("p" "Protocol" entry (file+headline "~/Notes/captures.org" "Inbox")
 															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-															("L" "Protocol Link" entry (file+headline "~/Notes/notes.org" "Link")
+															("L" "Protocol Link" entry (file+headline "~/Notes/captures.org" "Link")
 															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
 															))
 ```
@@ -1011,36 +1027,10 @@ Then configuring capture template accordingly
 ```
 
 
-### Org-Brain {#org-brain}
-
-[More Setting Availiable in GitRepo](https://github.com/Kungsgeten/org-brain)
-
-```emacs-lisp
-(use-package org-brain
-	:ensure t
-	:init
-	(setq org-brain-path "~/Notes/Brain")
-	:config
-	(bind-key "C-c b" "~/Notes")
-	(setq org-id-track-globally t)
-	(setq org-id-locations-file "~/.emacs.d/.org-id-locations")
-	(add-hook 'before-save-hook 'org-brain-ensure-ids-in-buffer)
-	(setq org-brain-visualize-default-choices 'all)
-	(setq org-brain-title-max-length 12)
-	(setq org-brain-include-file-entries nil
-	org-brain-file-entries-use-title nil))
-
-;; Allows you to edit entries directly from org-brain-visualize
-(use-package polymode
-	:config
-	(add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode))
-```
-
-
 ### For File navigation {#for-file-navigation}
 
 Deft is an Emacs mode for quickly browsing, filtering and editing
-directories of plain text notes.
+directories of plain text notes. **This package can't search inside content somehow...**
 
 ```emacs-lisp
 (use-package deft
@@ -1055,6 +1045,14 @@ directories of plain text notes.
 	(deft-use-filter-string-for-filename t)
 	(deft-default-extension "org")
 	(deft-directory org-roam-directory))
+```
+
+I saw good reviews of deadgrep the other day so want to give it a
+try... ( but I don't know how to use this yet)
+
+```emacs-lisp
+(use-package deadgrep)
+(global-set-key (kbd "<f2>") #'deadgrep)
 ```
 
 
@@ -1124,36 +1122,20 @@ link: <https://github.com/zzamboni/vita/>
 	(counsel-mode 1))
 ```
 
-counsel, ivy and swiper usually come tgh, and is a useful completion framework.
+Swiper makes in-files search easier:
 
 ```emacs-lisp
 (use-package swiper
-	:ensure try
 	:config
-	(progn
 		(ivy-mode)
 		(setq ivy-use-virtual-buffers t)
 		(setq enable-recursive-minibuffers t)
 		;; enable this if you want `swiper' to use it
 		;; (setq search-default-mode #'char-fold-to-regexp)
-		(global-set-key "\C-s" 'swiper)
-		(global-set-key (kbd "C-c C-r") 'ivy-resume)
-		(global-set-key (kbd "<f6>") 'ivy-resume)
-		(global-set-key (kbd "M-x") 'counsel-M-x)
-		(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-		(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-		(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-		(global-set-key (kbd "<f1> o") 'counsel-describe-symbol)
-		(global-set-key (kbd "<f1> l") 'counsel-find-library)
-		(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-		(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-		(global-set-key (kbd "C-c g") 'counsel-git)
-		(global-set-key (kbd "C-c j") 'counsel-git-grep)
-		(global-set-key (kbd "C-c k") 'counsel-ag)
-		(global-set-key (kbd "C-x l") 'counsel-locate)
-		(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-		(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
-		))
+		:bind
+		("\C-s" . swiper)
+		("C-c C-r" . ivy-resume)
+		("M-x" . counsel-M-x))
 
 
 ```
@@ -1233,6 +1215,16 @@ in the same way, with visual feedback as you type.
 ```
 
 
+#### (experiment)Blink {#experiment--blink}
+
+[see repo](https://github.com/manateelazycat/blink-search)
+
+```emacs-lisp
+(add-to-list 'load-path "~/.dotfiles/.files/.emacs.d/blink-search")
+(require 'blink-search)
+```
+
+
 ### Flycheck {#flycheck}
 
 ```emacs-lisp
@@ -1246,18 +1238,31 @@ in the same way, with visual feedback as you type.
 ### Spellcheck {#spellcheck}
 
 ```emacs-lisp
-(use-package flyspell)
-(use-package flyspell-correct
-	:after flyspell
-	:bind (:map flyspell-mode-map ("C-c ;" . flyspell-correct-wrapper)))
+;; (use-package flyspell)
+;; (use-package flyspell-correct
+;;   :after flyspell
+;;   :bind (:map flyspell-mode-map ("C-c ;" . flyspell-correct-wrapper)))
 
-(use-package flyspell-correct-ivy
-	:after flyspell-correct)
+;; (use-package flyspell-correct-ivy
+;;   :after flyspell-correct)
 
 ```
 
 
-### <span class="org-todo todo TODO">TODO</span> lsp-grammarly <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#lsp-grammarly}
+### Grammar Check {#grammar-check}
+
+```emacs-lisp
+(use-package lsp-grammarly
+	:hook (text-mode . (lambda ()
+											 (require 'lsp-grammarly)
+											 (lsp))))  ; or lsp-deferred
+```
+
+
+#### <span class="org-todo done DONE">DONE</span> lsp-grammarly <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#lsp-grammarly}
+
+-   State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2022-11-06 Sun 12:37] </span></span> <br />
+    `s-l a a` - select from options of actions
 
 link:<https://github.com/emacs-grammarly/lsp-grammarly>
 
@@ -1366,23 +1371,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 ## Export {#export}
 
 
-### Reveal.js {#reveal-dot-js}
-
-Reveal.js is a tool for creating good-looking HTML presentations, authored by Hakim El Hattab.
-For an example of a reveal.js presentation
-
-```emacs-lisp
-(use-package ox-reveal
-	:ensure ox-reveal)
-
-(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
-(setq org-reveal-mathjax t)
-
-(use-package htmlize
-	:ensure t)
-```
-
-
 ### Blogging with ox-hugo {#blogging-with-ox-hugo}
 
 ```emacs-lisp
@@ -1435,6 +1423,31 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 
 ;; (load-file "/Users/zhouqiaohui/.dotfiles/.files/.emacs.d/dotcrafter.el")
 ;; (require 'dotcrafter)
+
+```
+
+
+### helper function {#helper-function}
+
+To quickly open my configuration org file. I have a alias setting in
+my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
+allowing me to quickly edit my init files to open emacs correctly (I
+am very bad at debug in emacs and I personally find this way easier).
+
+```emacs-lisp
+(defun joz/myconfig ()
+	"open my personal config"
+	(interactive)
+	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
+```
+
+Open captured information from browser:
+
+```emacs-lisp
+(defun joz/mycapture ()
+	"Open my captued info from interent"
+	(interactive)
+	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
 
 ```
 

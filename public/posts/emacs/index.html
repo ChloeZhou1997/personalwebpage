@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Emacs Configuration | My Personal Webpage</title>
+  <title> Emacs Configuration | Chloe Jo</title>
   <link rel = 'canonical' href = '/posts/emacs/'>
   <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@ This literal configuration, by the time the post was written is still a patchwor
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-05T22:38:42-04:00" />
+<meta property="article:modified_time" content="2022-11-07T09:13:29-05:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -206,7 +206,6 @@ This literal configuration, by the time the post was written is still a patchwor
         </li>
         <li><a href="#keys-bindings">Keys Bindings</a>
           <ul>
-            <li><a href="#global-key-bindings">Global Key Bindings</a></li>
             <li><a href="#which-key">Which-key</a></li>
           </ul>
         </li>
@@ -218,15 +217,16 @@ This literal configuration, by the time the post was written is still a patchwor
         <li><a href="#org-mode-face-setting">Org-mode face setting</a>
           <ul>
             <li><a href="#org-mode-activation">Org mode activation</a></li>
+            <li><a href="#beautify-org-roam">Beautify org roam</a></li>
             <li><a href="#font-and-list">Font and List</a></li>
           </ul>
         </li>
         <li><a href="#babel-setting">Babel Setting</a>
           <ul>
             <li><a href="#python-autocompletion">Python autocompletion</a></li>
+            <li><a href="#strcture-template">Strcture Template</a></li>
           </ul>
         </li>
-        <li><a href="#strcture-template">Strcture Template</a></li>
         <li><a href="#org-roam">Org-roam</a>
           <ul>
             <li><a href="#basic-config">Basic Config</a></li>
@@ -246,7 +246,6 @@ This literal configuration, by the time the post was written is still a patchwor
             <li><a href="#dot-md-preview"><code>.md</code> Preview</a></li>
           </ul>
         </li>
-        <li><a href="#org-brain">Org-Brain</a></li>
         <li><a href="#for-file-navigation">For File navigation</a></li>
         <li><a href="#agenda">Agenda</a>
           <ul>
@@ -265,11 +264,16 @@ This literal configuration, by the time the post was written is still a patchwor
             <li><a href="#avy-jump-to-a-word">Avy - jump to a word</a></li>
             <li><a href="#auto-completion">Auto-completion</a></li>
             <li><a href="#multiple-editing">Multiple editing</a></li>
+            <li><a href="#experiment--blink">(experiment)Blink</a></li>
           </ul>
         </li>
         <li><a href="#flycheck">Flycheck</a></li>
         <li><a href="#spellcheck">Spellcheck</a></li>
-        <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#grammar-check">Grammar Check</a>
+          <ul>
+            <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+          </ul>
+        </li>
         <li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
         <li><a href="#terminal">Terminal</a>
           <ul>
@@ -287,7 +291,6 @@ This literal configuration, by the time the post was written is still a patchwor
     </li>
     <li><a href="#export">Export</a>
       <ul>
-        <li><a href="#reveal-dot-js">Reveal.js</a></li>
         <li><a href="#blogging-with-ox-hugo">Blogging with ox-hugo</a></li>
       </ul>
     </li>
@@ -296,6 +299,7 @@ This literal configuration, by the time the post was written is still a patchwor
     <li><a href="#personal-setting">Personal Setting</a>
       <ul>
         <li><a href="#dotcrafter">dotcrafter</a></li>
+        <li><a href="#helper-function">helper function</a></li>
       </ul>
     </li>
   </ul>
@@ -317,7 +321,7 @@ This literal configuration, by the time the post was written is still a patchwor
           
           <time datetime="2022-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-29</time>
           
-            (Updated: <time datetime="2022-11-05 22:38:42 -0400 EDT" itemprop="dateModified">2022-11-05</time>)
+            (Updated: <time datetime="2022-11-07 09:13:29 -0500 EST" itemprop="dateModified">2022-11-07</time>)
           
         </div>
         
@@ -748,11 +752,7 @@ face do but have higher priority.</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>		 )))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">yas/prompt-functions</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">yas/popup-isearch-prompt</span> <span style="color:#8be9fd;font-style:italic">yas/no-prompt</span>))
 </span></span></code></pre></div><h3 id="keys-bindings">Keys Bindings</h3>
-<h4 id="global-key-bindings">Global Key Bindings</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f5&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;revert-buffer</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;escape&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;keyboard-escape-quit</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-M-j&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-switch-buffer</span>)
-</span></span></code></pre></div><h4 id="which-key">Which-key</h4>
+<h4 id="which-key">Which-key</h4>
 <p>which-key is  a useful UI panel  that appears when you  start pressing
 any key binding in Emacs to offer you all possible completions for the
 prefix. For  example, if  you press  C-c (hold  control and  press the
@@ -761,8 +761,7 @@ all of the bindings under that prefix and which command they run. This
 is very useful  for learning the possible key bindings  in the mode of
 your current buffer.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">which-key</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">which-key-mode</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">which-key-mode</span>))
 </span></span></code></pre></div><h3 id="misc-packages">Misc packages</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>	<span style="color:#6272a4">; Becon mode</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#6272a4">; flashes the cursor&#39;s line when you scroll</span>
@@ -808,10 +807,16 @@ global key bindings.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				 <span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">org-mode-map</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				 (<span style="color:#f1fa8c">&#34;s-.&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-todo</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				 (<span style="color:#f1fa8c">&#34;M-p&#34;</span>     <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;org-set-property</span>)))
-</span></span></code></pre></div><p>Add bullet heading style</p>
+</span></span></code></pre></div><h4 id="beautify-org-roam">Beautify org roam</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-bullets</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> () (<span style="color:#8be9fd;font-style:italic">org-bullets-mode</span> <span style="color:#bd93f9">1</span>))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:hook</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> () (<span style="color:#8be9fd;font-style:italic">org-bullets-mode</span> <span style="color:#bd93f9">1</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">org-mode</span> <span style="color:#ff79c6">.</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>							<span style="color:#f1fa8c">&#34;Beautify Org Checkbox Symbol&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>							(<span style="color:#8be9fd;font-style:italic">push</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;[ ]&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;☐&#34;</span> ) <span style="color:#8be9fd;font-style:italic">prettify-symbols-alist</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>							(<span style="color:#8be9fd;font-style:italic">push</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;[X]&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;☑&#34;</span> ) <span style="color:#8be9fd;font-style:italic">prettify-symbols-alist</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>							(<span style="color:#8be9fd;font-style:italic">push</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;[-]&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;⊡&#34;</span> ) <span style="color:#8be9fd;font-style:italic">prettify-symbols-alist</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>							(<span style="color:#8be9fd;font-style:italic">prettify-symbols-mode</span>))))
 </span></span></code></pre></div><h4 id="font-and-list">Font and List</h4>
 <p>The org-font-setup setup the font and also the list style at the end.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">org-font-setup</span> ()
@@ -841,7 +846,7 @@ global key bindings.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>	(<span style="color:#8be9fd;font-style:italic">set-face-attribute</span> <span style="color:#f1fa8c">&#39;org-checkbox</span> nil <span style="color:#8be9fd;font-style:italic">:inherit</span> <span style="color:#f1fa8c">&#39;fixed-pitch</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-ellipsis</span> <span style="color:#f1fa8c">&#34; ▼&#34;</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>			<span style="color:#8be9fd;font-style:italic">org-hide-emphasis-markers</span> t))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>				<span style="color:#8be9fd;font-style:italic">org-hide-emphasis-markers</span> t))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-mode-hook</span> <span style="color:#f1fa8c">&#39;org-font-setup</span>)
 </span></span></code></pre></div><h3 id="babel-setting">Babel Setting</h3>
@@ -877,7 +882,7 @@ global key bindings.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;python-mode-hook</span> <span style="color:#f1fa8c">&#39;jedi:setup</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;python-mode-hook</span> <span style="color:#f1fa8c">&#39;jedi:ac-setup</span>))
-</span></span></code></pre></div><h3 id="strcture-template">Strcture Template</h3>
+</span></span></code></pre></div><h4 id="strcture-template">Strcture Template</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#6272a4">;;quick parser</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#6272a4">;;be aware here use-pacakges won&#39;t work</span>
@@ -901,23 +906,36 @@ and headings with ID.</li>
 <li><code>:immediate-finish</code> : do not offer to edit the information, just file
 it away immediately. Makes sense if the template only needs
 information that can be added automatically.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>	 (<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-roam</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>		 <span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">org</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		 <span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-setup</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		 <span style="color:#8be9fd;font-style:italic">:custom</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		 (<span style="color:#8be9fd;font-style:italic">org-roam-completion-everywhere</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>		 <span style="color:#8be9fd;font-style:italic">:bind</span> ((<span style="color:#f1fa8c">&#34;C-c n l&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-buffer-toggle</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>						(<span style="color:#f1fa8c">&#34;C-c n f&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-find</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>						(<span style="color:#f1fa8c">&#34;C-c n i&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-insert</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>						(<span style="color:#f1fa8c">&#34;C-c n I&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-insert-immediate</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>						<span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">org-mode-map</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>						(<span style="color:#f1fa8c">&#34;C-M-i&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">completion-at-point</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>						(<span style="color:#f1fa8c">&#34;C-c n t&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-tag-add</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>						(<span style="color:#f1fa8c">&#34;C-c n a&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-alias-add</span>)))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>			(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-roam</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>				<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">org</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>				<span style="color:#8be9fd;font-style:italic">:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>				(<span style="color:#8be9fd;font-style:italic">org-roam-setup</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>				<span style="color:#8be9fd;font-style:italic">:custom</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>				(<span style="color:#8be9fd;font-style:italic">org-roam-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>				(<span style="color:#8be9fd;font-style:italic">org-roam-completion-everywhere</span> nil)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>				<span style="color:#8be9fd;font-style:italic">:bind</span> ((<span style="color:#f1fa8c">&#34;C-c n l&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-buffer-toggle</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>							 (<span style="color:#f1fa8c">&#34;C-c n f&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-find</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>							 (<span style="color:#f1fa8c">&#34;C-c n i&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-insert</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>							 (<span style="color:#f1fa8c">&#34;C-c n I&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-insert-immediate</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>							 <span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">org-mode-map</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>							 (<span style="color:#f1fa8c">&#34;C-M-i&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">completion-at-point</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>							 (<span style="color:#f1fa8c">&#34;C-c n t&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-tag-add</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>							 (<span style="color:#f1fa8c">&#34;C-c n a&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">org-roam-alias-add</span>)))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-roam-completion-system</span> <span style="color:#f1fa8c">&#39;ido</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>	 (<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-roam-completion-system</span> <span style="color:#f1fa8c">&#39;ivy</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#6272a4">;;The official one has deprecated, use self-defined one instead.</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-insert-immediate</span> (<span style="color:#8be9fd;font-style:italic">arg</span> <span style="color:#ff79c6">&amp;rest</span> <span style="color:#8be9fd;font-style:italic">args</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span> <span style="color:#f1fa8c">&#34;P&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">args</span> (<span style="color:#50fa7b">cons</span> <span style="color:#8be9fd;font-style:italic">arg</span> <span style="color:#8be9fd;font-style:italic">args</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>				(<span style="color:#8be9fd;font-style:italic">org-roam-capture-templates</span> (<span style="color:#50fa7b">list</span> (<span style="color:#50fa7b">append</span> (<span style="color:#50fa7b">car</span> <span style="color:#8be9fd;font-style:italic">org-roam-capture-templates</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>																									<span style="color:#ff79c6">&#39;</span>(<span style="color:#8be9fd;font-style:italic">:immediate-finish</span> t)))))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>		(<span style="color:#50fa7b">apply</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">org-roam-node-insert</span> <span style="color:#8be9fd;font-style:italic">args</span>)))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#6272a4">;;add tag in the node-find mini-buffer</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-roam-node-display-template</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>			(<span style="color:#50fa7b">concat</span> <span style="color:#f1fa8c">&#34;${title:*} &#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>							(<span style="color:#50fa7b">propertize</span> <span style="color:#f1fa8c">&#34;${tags:10}&#34;</span> <span style="color:#f1fa8c">&#39;face</span> <span style="color:#f1fa8c">&#39;org-tag</span>)))
 </span></span></code></pre></div></li>
 </ul>
 <h4 id="org-download">Org-download</h4>
@@ -1057,20 +1075,26 @@ to run different commands against them.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;org-ref</span>)) <span style="color:#6272a4">; optional: if using Org-ref v2 or v3 citation links</span>
 </span></span></code></pre></div><p>Configuring for templates integrating with org-noter:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">orb-preformat-keywords</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>			<span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;citekey&#34;</span> <span style="color:#f1fa8c">&#34;title&#34;</span> <span style="color:#f1fa8c">&#34;url&#34;</span> <span style="color:#f1fa8c">&#34;author-or-editor&#34;</span> <span style="color:#f1fa8c">&#34;keywords&#34;</span> <span style="color:#f1fa8c">&#34;file&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>			<span style="color:#8be9fd;font-style:italic">orb-process-file-keyword</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>			<span style="color:#8be9fd;font-style:italic">orb-attached-file-extensions</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;pdf&#34;</span>))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-roam-capture-templates</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>			<span style="color:#ff79c6">&#39;</span>((<span style="color:#f1fa8c">&#34;r&#34;</span> <span style="color:#f1fa8c">&#34;bibliography reference&#34;</span> <span style="color:#8be9fd;font-style:italic">plain</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>				 (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes/Templates/cite_temp.org&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>				 <span style="color:#8be9fd;font-style:italic">:target</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				 (<span style="color:#8be9fd;font-style:italic">file+head</span> <span style="color:#f1fa8c">&#34;${citekey}.org&#34;</span> <span style="color:#f1fa8c">&#34;#+title: ${title}\n&#34;</span>))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				(<span style="color:#f1fa8c">&#34;d&#34;</span> <span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#8be9fd;font-style:italic">plain</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				 (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes/Templates/thought_temp.org&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>				 <span style="color:#8be9fd;font-style:italic">:if-new</span> (<span style="color:#8be9fd;font-style:italic">file+head</span> <span style="color:#f1fa8c">&#34;%&lt;%Y%m%d%H%M%S&gt;-${slug}.org&#34;</span> <span style="color:#f1fa8c">&#34;#+title: ${title}\n&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>				 <span style="color:#8be9fd;font-style:italic">:unnarrowed</span> t)))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">orb-preformat-keywords</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>			<span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;citekey&#34;</span> <span style="color:#f1fa8c">&#34;title&#34;</span> <span style="color:#f1fa8c">&#34;url&#34;</span> <span style="color:#f1fa8c">&#34;author-or-editor&#34;</span> <span style="color:#f1fa8c">&#34;keywords&#34;</span> <span style="color:#f1fa8c">&#34;file&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>			<span style="color:#8be9fd;font-style:italic">orb-process-file-keyword</span> t
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>			<span style="color:#8be9fd;font-style:italic">orb-attached-file-extensions</span> <span style="color:#ff79c6">&#39;</span>(<span style="color:#f1fa8c">&#34;pdf&#34;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-roam-capture-templates</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>			<span style="color:#ff79c6">&#39;</span>((<span style="color:#f1fa8c">&#34;r&#34;</span> <span style="color:#f1fa8c">&#34;bibliography reference&#34;</span> <span style="color:#8be9fd;font-style:italic">plain</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>				 (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes/Templates/cite_temp.org&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>				 <span style="color:#8be9fd;font-style:italic">:target</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>				 (<span style="color:#8be9fd;font-style:italic">file+head</span> <span style="color:#f1fa8c">&#34;${citekey}.org&#34;</span> <span style="color:#f1fa8c">&#34;#+title: ${title}\n&#34;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>				(<span style="color:#f1fa8c">&#34;t&#34;</span> <span style="color:#f1fa8c">&#34;thought&#34;</span> <span style="color:#8be9fd;font-style:italic">plain</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>				 (<span style="color:#8be9fd;font-style:italic">file</span> <span style="color:#f1fa8c">&#34;~/Notes/RoamNotes/Templates/thought_temp.org&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>				 <span style="color:#8be9fd;font-style:italic">:if-new</span> (<span style="color:#8be9fd;font-style:italic">file+head</span> <span style="color:#f1fa8c">&#34;%&lt;%Y%m%d%H%M%S&gt;-${slug}.org&#34;</span> <span style="color:#f1fa8c">&#34;#+title: ${title}\n&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>				 <span style="color:#8be9fd;font-style:italic">:unnarrowed</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>				(<span style="color:#f1fa8c">&#34;d&#34;</span> <span style="color:#f1fa8c">&#34;default&#34;</span> <span style="color:#8be9fd;font-style:italic">plain</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>				 <span style="color:#f1fa8c">&#34;%?&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>				 <span style="color:#8be9fd;font-style:italic">:if-new</span> (<span style="color:#8be9fd;font-style:italic">file+head</span> <span style="color:#f1fa8c">&#34;%&lt;%Y%m%d%H%M%S&gt;-${slug}.org&#34;</span> <span style="color:#f1fa8c">&#34;#+title: ${title}\n&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>				 <span style="color:#8be9fd;font-style:italic">:unnarrowed</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>				))
 </span></span></code></pre></div><p>Note action interface:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">orb-note-actions-interface</span> <span style="color:#f1fa8c">&#39;helm</span>)
 </span></span></code></pre></div></li>
@@ -1105,9 +1129,9 @@ to run different commands against them.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-capture-templates</span> <span style="color:#ff79c6">&#39;</span>(
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>															(<span style="color:#f1fa8c">&#34;p&#34;</span> <span style="color:#f1fa8c">&#34;Protocol&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/notes.org&#34;</span> <span style="color:#f1fa8c">&#34;Inbox&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>															(<span style="color:#f1fa8c">&#34;p&#34;</span> <span style="color:#f1fa8c">&#34;Protocol&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span> <span style="color:#f1fa8c">&#34;Inbox&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>															 <span style="color:#f1fa8c">&#34;* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>															(<span style="color:#f1fa8c">&#34;L&#34;</span> <span style="color:#f1fa8c">&#34;Protocol Link&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/notes.org&#34;</span> <span style="color:#f1fa8c">&#34;Link&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>															(<span style="color:#f1fa8c">&#34;L&#34;</span> <span style="color:#f1fa8c">&#34;Protocol Link&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span> <span style="color:#f1fa8c">&#34;Link&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>															 <span style="color:#f1fa8c">&#34;* %? [[%:link][%(transform-square-brackets-to-round-ones \&#34;%:description\&#34;)]]\n&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>															))
 </span></span></code></pre></div><h4 id="canceled-org-protocol-capture-html">CANCELED Org-protocol-capture-html <!-- raw HTML omitted --><!-- raw HTML omitted -->ARCHIVE<!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted --></h4>
@@ -1123,29 +1147,9 @@ to run different commands against them.</p>
 </span></span></code></pre></div><h4 id="dot-md-preview"><code>.md</code> Preview</h4>
 <p><a href="https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations">Github Repo</a></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">grip-mode</span>)
-</span></span></code></pre></div><h3 id="org-brain">Org-Brain</h3>
-<p><a href="https://github.com/Kungsgeten/org-brain">More Setting Availiable in GitRepo</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">org-brain</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-brain-path</span> <span style="color:#f1fa8c">&#34;~/Notes/Brain&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>	(<span style="color:#8be9fd;font-style:italic">bind-key</span> <span style="color:#f1fa8c">&#34;C-c b&#34;</span> <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-id-track-globally</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-id-locations-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/.org-id-locations&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;before-save-hook</span> <span style="color:#f1fa8c">&#39;org-brain-ensure-ids-in-buffer</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-brain-visualize-default-choices</span> <span style="color:#f1fa8c">&#39;all</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-brain-title-max-length</span> <span style="color:#bd93f9">12</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-brain-include-file-entries</span> nil
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>	<span style="color:#8be9fd;font-style:italic">org-brain-file-entries-use-title</span> nil))
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#6272a4">;; Allows you to edit entries directly from org-brain-visualize</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">polymode</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>	(<span style="color:#8be9fd;font-style:italic">add-hook</span> <span style="color:#f1fa8c">&#39;org-brain-visualize-mode-hook</span> <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">org-brain-polymode</span>))
 </span></span></code></pre></div><h3 id="for-file-navigation">For File navigation</h3>
 <p>Deft is an Emacs mode for quickly browsing, filtering and editing
-directories of plain text notes.</p>
+directories of plain text notes. <strong>This package can&rsquo;t search inside content somehow&hellip;</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">deft</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:commands</span> (<span style="color:#8be9fd;font-style:italic">deft</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span> (<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">deft-directory</span> <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>
@@ -1158,6 +1162,10 @@ directories of plain text notes.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-use-filter-string-for-filename</span> t)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-default-extension</span> <span style="color:#f1fa8c">&#34;org&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>	(<span style="color:#8be9fd;font-style:italic">deft-directory</span> <span style="color:#8be9fd;font-style:italic">org-roam-directory</span>))
+</span></span></code></pre></div><p>I saw good reviews of deadgrep the other day so want to give it a
+try&hellip; ( but I don&rsquo;t know how to use this yet)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">deadgrep</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f2&gt;&#34;</span>) <span style="color:#50fa7b">#&#39;</span><span style="color:#8be9fd;font-style:italic">deadgrep</span>)
 </span></span></code></pre></div><h3 id="agenda">Agenda</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-agenda-files</span> (<span style="color:#50fa7b">list</span> <span style="color:#f1fa8c">&#34;~/Notes/Agenda/dailylife.org&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>														 <span style="color:#f1fa8c">&#34;~/.dotfiles/Emacs.org&#34;</span>))
@@ -1205,34 +1213,18 @@ directories of plain text notes.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>				 (<span style="color:#f1fa8c">&#34;C-r&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#39;counsel-minibuffer-history</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>	(<span style="color:#8be9fd;font-style:italic">counsel-mode</span> <span style="color:#bd93f9">1</span>))
-</span></span></code></pre></div><p>counsel, ivy and swiper usually come tgh, and is a useful completion framework.</p>
+</span></span></code></pre></div><p>Swiper makes in-files search easier:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">swiper</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> <span style="color:#8be9fd;font-style:italic">try</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>	(<span style="color:#8be9fd;font-style:italic">progn</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		(<span style="color:#8be9fd;font-style:italic">ivy-mode</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">ivy-use-virtual-buffers</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">enable-recursive-minibuffers</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>		<span style="color:#6272a4">;; enable this if you want `swiper&#39; to use it</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		<span style="color:#6272a4">;; (setq search-default-mode #&#39;char-fold-to-regexp)</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> <span style="color:#f1fa8c">&#34;\C-s&#34;</span> <span style="color:#f1fa8c">&#39;swiper</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c C-r&#34;</span>) <span style="color:#f1fa8c">&#39;ivy-resume</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f6&gt;&#34;</span>) <span style="color:#f1fa8c">&#39;ivy-resume</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;M-x&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-M-x</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-x C-f&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-find-file</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f1&gt; f&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-describe-function</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f1&gt; v&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-describe-variable</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f1&gt; o&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-describe-symbol</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f1&gt; l&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-find-library</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f2&gt; i&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-info-lookup-symbol</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;&lt;f2&gt; u&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-unicode-char</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c g&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-git</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c j&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-git-grep</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-c k&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-ag</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-x l&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-locate</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>		(<span style="color:#8be9fd;font-style:italic">global-set-key</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-S-o&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-rhythmbox</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>		(<span style="color:#50fa7b">define-key</span> <span style="color:#8be9fd;font-style:italic">minibuffer-local-map</span> (<span style="color:#8be9fd;font-style:italic">kbd</span> <span style="color:#f1fa8c">&#34;C-r&#34;</span>) <span style="color:#f1fa8c">&#39;counsel-minibuffer-history</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>		))
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>	<span style="color:#8be9fd;font-style:italic">:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>		(<span style="color:#8be9fd;font-style:italic">ivy-mode</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">ivy-use-virtual-buffers</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>		(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">enable-recursive-minibuffers</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>		<span style="color:#6272a4">;; enable this if you want `swiper&#39; to use it</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>		<span style="color:#6272a4">;; (setq search-default-mode #&#39;char-fold-to-regexp)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>		<span style="color:#8be9fd;font-style:italic">:bind</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>		(<span style="color:#f1fa8c">&#34;\C-s&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">swiper</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>		(<span style="color:#f1fa8c">&#34;C-c C-r&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">ivy-resume</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>		(<span style="color:#f1fa8c">&#34;M-x&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">counsel-M-x</span>))
 </span></span></code></pre></div><h4 id="vertico">Vertico</h4>
 <p>light-weighted, integrating with built in emacs completion engine</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>		(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">vertico</span>
@@ -1283,20 +1275,33 @@ you to alter one occurrence of some text in a buffer (possibly
 narrowed) or region, and simultaneously have other occurrences changed
 in the same way, with visual feedback as you type.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">iedit</span>)
+</span></span></code></pre></div><h4 id="experiment--blink">(experiment)Blink</h4>
+<p><a href="https://github.com/manateelazycat/blink-search">see repo</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;load-path</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files/.emacs.d/blink-search&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;blink-search</span>)
 </span></span></code></pre></div><h3 id="flycheck">Flycheck</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">flycheck</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:init</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">global-flycheck-mode</span> t))
 </span></span></code></pre></div><h3 id="spellcheck">Spellcheck</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">flyspell</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">flyspell-correct</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">flyspell</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#8be9fd;font-style:italic">:bind</span> (<span style="color:#8be9fd;font-style:italic">:map</span> <span style="color:#8be9fd;font-style:italic">flyspell-mode-map</span> (<span style="color:#f1fa8c">&#34;C-c ;&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#8be9fd;font-style:italic">flyspell-correct-wrapper</span>)))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#6272a4">;; (use-package flyspell)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; (use-package flyspell-correct</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;;   :after flyspell</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;   :bind (:map flyspell-mode-map (&#34;C-c ;&#34; . flyspell-correct-wrapper)))</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">flyspell-correct-ivy</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">flyspell-correct</span>)
-</span></span></code></pre></div><h3 id="lsp-grammarly"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></h3>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4">;; (use-package flyspell-correct-ivy</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#6272a4">;;   :after flyspell-correct)</span>
+</span></span></code></pre></div><h3 id="grammar-check">Grammar Check</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">lsp-grammarly</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:hook</span> (<span style="color:#8be9fd;font-style:italic">text-mode</span> <span style="color:#ff79c6">.</span> (<span style="color:#8be9fd;font-style:italic">lambda</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>											 (<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;lsp-grammarly</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>											 (<span style="color:#8be9fd;font-style:italic">lsp</span>))))  <span style="color:#6272a4">; or lsp-deferred</span>
+</span></span></code></pre></div><h4 id="lsp-grammarly"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></h4>
+<ul>
+<li>State &ldquo;DONE&rdquo;       from &ldquo;TODO&rdquo;       <!-- raw HTML omitted --><!-- raw HTML omitted -->[2022-11-06 Sun 12:37] <!-- raw HTML omitted --><!-- raw HTML omitted --> <!-- raw HTML omitted -->
+<code>s-l a a</code> - select from options of actions</li>
+</ul>
 <p>link:<a href="https://github.com/emacs-grammarly/lsp-grammarly">https://github.com/emacs-grammarly/lsp-grammarly</a></p>
 <h3 id="syntax-highlighting">Syntax Highlighting</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">rainbow-delimiters</span>
@@ -1370,18 +1375,7 @@ in the same way, with visual feedback as you type.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>	(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">dired-open-extensions</span> <span style="color:#ff79c6">&#39;</span>((<span style="color:#f1fa8c">&#34;png&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;feh&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>																(<span style="color:#f1fa8c">&#34;mkv&#34;</span> <span style="color:#ff79c6">.</span> <span style="color:#f1fa8c">&#34;mpv&#34;</span>))))
 </span></span></code></pre></div><h2 id="export">Export</h2>
-<h3 id="reveal-dot-js">Reveal.js</h3>
-<p>Reveal.js is a tool for creating good-looking HTML presentations, authored by Hakim El Hattab.
-For an example of a reveal.js presentation</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-reveal</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> <span style="color:#8be9fd;font-style:italic">ox-reveal</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-reveal-root</span> <span style="color:#f1fa8c">&#34;http://cdn.jsdelivr.net/reveal.js/3.0.0/&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-reveal-mathjax</span> t)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">htmlize</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t)
-</span></span></code></pre></div><h3 id="blogging-with-ox-hugo">Blogging with ox-hugo</h3>
+<h3 id="blogging-with-ox-hugo">Blogging with ox-hugo</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-hugo</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:ensure</span> t            <span style="color:#6272a4">;Auto-install the package from Melpa (optional)</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">ox</span>)
@@ -1414,6 +1408,20 @@ For an example of a reveal.js presentation</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#6272a4">;; (load-file &#34;/Users/zhouqiaohui/.dotfiles/.files/.emacs.d/dotcrafter.el&#34;)</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#6272a4">;; (require &#39;dotcrafter)</span>
+</span></span></code></pre></div><h3 id="helper-function">helper function</h3>
+<p>To quickly open my configuration org file. I have a alias setting in
+my zshconfig too named <code>emacsconfig</code> which opens my <code>init.el</code> in VsCode,
+allowing me to quickly edit my init files to open emacs correctly (I
+am very bad at debug in emacs and I personally find this way easier).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">joz/myconfig</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#f1fa8c">&#34;open my personal config&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">switch-to-buffer</span> (<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/Emacs.org&#34;</span>)))
+</span></span></code></pre></div><p>Open captured information from browser:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">joz/mycapture</span> ()
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#f1fa8c">&#34;Open my captued info from interent&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#8be9fd;font-style:italic">interactive</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">switch-to-buffer</span> (<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span>)))
 </span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -1433,9 +1441,9 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
    
 
    
-      
-   
 
+   
+      
    
 
    
@@ -1561,7 +1569,6 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
         </li>
         <li><a href="#keys-bindings">Keys Bindings</a>
           <ul>
-            <li><a href="#global-key-bindings">Global Key Bindings</a></li>
             <li><a href="#which-key">Which-key</a></li>
           </ul>
         </li>
@@ -1573,15 +1580,16 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
         <li><a href="#org-mode-face-setting">Org-mode face setting</a>
           <ul>
             <li><a href="#org-mode-activation">Org mode activation</a></li>
+            <li><a href="#beautify-org-roam">Beautify org roam</a></li>
             <li><a href="#font-and-list">Font and List</a></li>
           </ul>
         </li>
         <li><a href="#babel-setting">Babel Setting</a>
           <ul>
             <li><a href="#python-autocompletion">Python autocompletion</a></li>
+            <li><a href="#strcture-template">Strcture Template</a></li>
           </ul>
         </li>
-        <li><a href="#strcture-template">Strcture Template</a></li>
         <li><a href="#org-roam">Org-roam</a>
           <ul>
             <li><a href="#basic-config">Basic Config</a></li>
@@ -1601,7 +1609,6 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
             <li><a href="#dot-md-preview"><code>.md</code> Preview</a></li>
           </ul>
         </li>
-        <li><a href="#org-brain">Org-Brain</a></li>
         <li><a href="#for-file-navigation">For File navigation</a></li>
         <li><a href="#agenda">Agenda</a>
           <ul>
@@ -1620,11 +1627,16 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
             <li><a href="#avy-jump-to-a-word">Avy - jump to a word</a></li>
             <li><a href="#auto-completion">Auto-completion</a></li>
             <li><a href="#multiple-editing">Multiple editing</a></li>
+            <li><a href="#experiment--blink">(experiment)Blink</a></li>
           </ul>
         </li>
         <li><a href="#flycheck">Flycheck</a></li>
         <li><a href="#spellcheck">Spellcheck</a></li>
-        <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+        <li><a href="#grammar-check">Grammar Check</a>
+          <ul>
+            <li><a href="#lsp-grammarly"><!-- raw HTML omitted -->DONE<!-- raw HTML omitted --> lsp-grammarly <!-- raw HTML omitted --><!-- raw HTML omitted -->@download<!-- raw HTML omitted --><!-- raw HTML omitted -->@emacs<!-- raw HTML omitted --><!-- raw HTML omitted --></a></li>
+          </ul>
+        </li>
         <li><a href="#syntax-highlighting">Syntax Highlighting</a></li>
         <li><a href="#terminal">Terminal</a>
           <ul>
@@ -1642,7 +1654,6 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
     </li>
     <li><a href="#export">Export</a>
       <ul>
-        <li><a href="#reveal-dot-js">Reveal.js</a></li>
         <li><a href="#blogging-with-ox-hugo">Blogging with ox-hugo</a></li>
       </ul>
     </li>
@@ -1651,6 +1662,7 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
     <li><a href="#personal-setting">Personal Setting</a>
       <ul>
         <li><a href="#dotcrafter">dotcrafter</a></li>
+        <li><a href="#helper-function">helper function</a></li>
       </ul>
     </li>
   </ul>
@@ -1735,7 +1747,7 @@ function call. <a href="https://emacs.stackexchange.com/a/10943/36783">More expl
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2022  My Personal Webpage 
+    Copyright  &copy; 2022  Chloe Jo 
   </div>
   <div class="footer-right">
     <nav>

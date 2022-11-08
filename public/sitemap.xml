@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/</loc>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
+  </url><url>
     <loc>/tags/config/</loc>
-    <lastmod>2022-11-05T22:48:18-04:00</lastmod>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
   </url><url>
     <loc>/posts/emacs-config-org-protocol/</loc>
     <lastmod>2022-11-05T22:48:18-04:00</lastmod>
   </url><url>
     <loc>/tags/emacs/</loc>
-    <lastmod>2022-11-05T22:48:18-04:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2022-11-05T22:48:18-04:00</lastmod>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-11-05T22:48:18-04:00</lastmod>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2022-11-05T22:48:18-04:00</lastmod>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
   </url><url>
     <loc>/posts/emacs/</loc>
-    <lastmod>2022-11-05T22:38:42-04:00</lastmod>
+    <lastmod>2022-11-07T09:13:29-05:00</lastmod>
   </url><url>
     <loc>/tags/hugo/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>
