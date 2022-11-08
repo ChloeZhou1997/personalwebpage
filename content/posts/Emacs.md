@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-07T09:13:29-05:00
+lastmod = 2022-11-08T11:37:31-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -608,10 +608,10 @@ The org-font-setup setup the font and also the list style at the end.
 									(org-level-2 . 1.1)
 									(org-level-3 . 1.05)
 									(org-level-4 . 1.0)
-									(org-level-5 . 1.1)
-									(org-level-6 . 1.1)
-									(org-level-7 . 1.1)
-									(org-level-8 . 1.1)))
+									(org-level-5 . 0.8)
+									(org-level-6 . 0.8)
+									(org-level-7 . 0.8)
+									(org-level-8 . 0.8)))
 		(set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
 
 	;; Ensure that anything that should be fixed-pitch in Org files appears that way
@@ -911,36 +911,38 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
     	(require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
     ```
 
-    Configuring for templates integrating with org-noter:
+    <!--list-separator-->
 
-    ```emacs-lisp
+    -  Templates integrating with bibtex
 
-    (setq orb-preformat-keywords
-    			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
-    			orb-process-file-keyword t
-    			orb-attached-file-extensions '("pdf"))
+        ```emacs-lisp
 
-    (setq org-roam-capture-templates
-    			'(("r" "bibliography reference" plain
-    				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
-    				 :target
-    				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-    				("t" "thought" plain
-    				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
-    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)
-    				("d" "default" plain
-    				 "%?"
-    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)
-    				))
-    ```
+        (setq orb-preformat-keywords
+        			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
+        			orb-process-file-keyword t
+        			orb-attached-file-extensions '("pdf"))
 
-    Note action interface:
+        (setq org-roam-capture-templates
+        			'(("r" "bibliography reference" plain
+        				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
+        				 :target
+        				 (file+head "${citekey}.org" "#+title: ${title}\n"))
+        				("t" "thought" plain
+        				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
+        				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+        				 :unnarrowed t)
+        				("d" "default" plain
+        				 "%?"
+        				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+        				 :unnarrowed t)
+        				))
+        ```
 
-    ```emacs-lisp
-    (setq orb-note-actions-interface 'helm)
-    ```
+        Note action interface:
+
+        ```emacs-lisp
+        (setq orb-note-actions-interface 'helm)
+        ```
 
 <!--list-separator-->
 
@@ -1001,6 +1003,40 @@ Then configuring capture template accordingly
 #### CANCELED Org-protocol-capture-html <span class="tag"><span class="ARCHIVE">ARCHIVE</span><span class="_download">@download</span></span> {#canceled-org-protocol-capture-html}
 
 
+### Agenda {#agenda}
+
+
+#### Basic Setup {#basic-setup}
+
+```emacs-lisp
+(setq org-agenda-files (list "~/Notes/Agenda/dailylife.org"
+														 "~/.dotfiles/Emacs.org"
+														 "~/Notes/blogideas.org"))
+;;Add progress logging to the org-agenda file
+(setq org-log-done 'note)
+
+;;Add some captures related to agenda
+(add-to-list 'org-capture-templates '("t" "Todo" entry (file+headline "~/Notes/Agenda/dailylife.org" "Task")
+																			 "* TODO %?\n %i\n"))
+
+(add-to-list 'org-capture-templates '("b" "Blog Idea" plain
+																			 (file+headline "~/Notes/blogideas.org" "Inbox")
+																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
+																			))
+```
+
+
+#### Super-agenda {#super-agenda}
+
+<!--list-separator-->
+
+- <span class="org-todo todo REVIEW">REVIEW</span>  Config super-agenda according to [git repo](https://github.com/alphapapa/org-super-agenda#screenshots) to make it looks nicer. <span class="tag"><span class="_emacs">@emacs</span><span class="_review">@review</span></span>
+
+    ```emacs-lisp
+    (use-package org-super-agenda)
+    ```
+
+
 ### Html or Markdown Preview {#html-or-markdown-preview}
 
 
@@ -1054,27 +1090,6 @@ try... ( but I don't know how to use this yet)
 (use-package deadgrep)
 (global-set-key (kbd "<f2>") #'deadgrep)
 ```
-
-
-### Agenda {#agenda}
-
-```emacs-lisp
-(setq org-agenda-files (list "~/Notes/Agenda/dailylife.org"
-														 "~/.dotfiles/Emacs.org"))
-;;Add progress logging to the org-agenda file
-(setq org-log-done 'note)
-```
-
-
-#### Super-agenda {#super-agenda}
-
-<!--list-separator-->
-
-- <span class="org-todo todo REVIEW">REVIEW</span>  Config super-agenda according to [git repo](https://github.com/alphapapa/org-super-agenda#screenshots) to make it looks nicer. <span class="tag"><span class="_emacs">@emacs</span><span class="_review">@review</span></span>
-
-    ```emacs-lisp
-    (use-package org-super-agenda)
-    ```
 
 
 ### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
@@ -1375,7 +1390,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 
 ```emacs-lisp
 (use-package ox-hugo
-	:ensure t            ;Auto-install the package from Melpa (optional)
 	:after ox)
 
 (setq org-export-with-broken-links t)
@@ -1429,27 +1443,34 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 
 ### helper function {#helper-function}
 
-To quickly open my configuration org file. I have a alias setting in
-my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
-allowing me to quickly edit my init files to open emacs correctly (I
-am very bad at debug in emacs and I personally find this way easier).
+<!--list-separator-->
 
-```emacs-lisp
-(defun joz/myconfig ()
-	"open my personal config"
-	(interactive)
-	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
-```
+-  Open configuration file
 
-Open captured information from browser:
+    To quickly open my configuration org file. I have a alias setting in
+    my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
+    allowing me to quickly edit my init files to open emacs correctly (I
+    am very bad at debug in emacs and I personally find this way easier).
 
-```emacs-lisp
-(defun joz/mycapture ()
-	"Open my captued info from interent"
-	(interactive)
-	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
+    ```emacs-lisp
+    (defun joz/myconfig ()
+    	"open my personal config"
+    	(interactive)
+    	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
+    ```
 
-```
+<!--list-separator-->
+
+-  Open bookmark capture
+
+    Open captured information from browser:
+    \#+begin_src emacs-lisp
+    (defun joz/mycapture ()
+    	"Open my captued info from interent"
+    	(interactive)
+    	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
+
+    \#+
 
 [^fn:1]: `#'foo` and `'foo` are equivalent when `foo` is a symbol, but the
     former is prefered when `foo` is a function. `#'` is intended to be a
