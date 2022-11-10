@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-09T19:51:31-05:00
+lastmod = 2022-11-09T23:39:14-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -755,7 +755,7 @@ taken from [here](https://github.com/abo-abo/org-download/issues/131#issuecommen
 	:defer nil
 	:custom
 	(org-download-method 'directory)
-	(org-download-image-dir "~/Notes/img")
+	(org-download-image-dir "~/Notes/static/images")
 	(org-download-heading-lvl 0)
 	(org-download-timestamp "org_%Y%m%d-%H%M%S_")
 	(org-image-actual-width 900)
@@ -1055,7 +1055,7 @@ Then configuring capture template accordingly
 														 "~/.dotfiles/Emacs.org"
 														 "~/Notes/blogideas.org"
 														 "~/Notes/Questions.org"
-														 "~/Notes/readinglists.org"))
+														 "~/Notes/RoamNotes/readinglists.org"))
 ;;Add progress logging to the org-agenda file
 (setq org-log-done 'note)
 
