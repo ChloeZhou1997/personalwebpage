@@ -96,5 +96,14 @@ Define a command that automaticaly tangle the `.org` files in your dotfiles fold
 1(defun 2	dotfiles-tangle-org-file(&amp;amp;optional org-file) 3	&amp;#34;Tangles a single .</description>
     </item>
     
+    <item>
+      <title>About me</title>
+      <link>/about/</link>
+      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Github: monkeyWzr</description>
+    </item>
+    
   </channel>
 </rss>
