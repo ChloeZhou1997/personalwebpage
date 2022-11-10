@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-09T19:51:31-05:00
+lastmod = 2022-11-09T07:12:56-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -147,8 +147,8 @@ like tool bar and scroll bar.
 ```emacs-lisp
 
 ;; Opening frame
-(add-to-list 'default-frame-alist '(height . 100))
-(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 200))
+(add-to-list 'default-frame-alist '(width . 200))
 
 ;;set the option and command key to corresponding emacs key
 (setq mac-command-modifier      'meta
@@ -541,6 +541,7 @@ your current buffer.
 
 	; expand the marked region in semantic increments (negative prefix to reduce region)
 	(use-package expand-region
+		:ensure t
 		:config
 		(global-set-key (kbd "C-=") 'er/expand-region))
 
@@ -713,7 +714,7 @@ The org-font-setup setup the font and also the list style at the end.
     				(org-roam-setup)
     				:custom
     				(org-roam-directory "~/Notes/RoamNotes")
-    				(org-roam-completion-everywhere t)
+    				(org-roam-completion-everywhere nil)
     				:bind (("C-c n l" . org-roam-buffer-toggle)
     							 ("C-c n f" . org-roam-node-find)
     							 ("C-c n i" . org-roam-node-insert)
@@ -723,8 +724,7 @@ The org-font-setup setup the font and also the list style at the end.
     							 ("C-c n t" . org-roam-tag-add)
     							 ("C-c n a" . org-roam-alias-add)))
 
-    (setq org-roam-file-extensions '("org" "md"))
-    (setq org-roam-completion-system 'vertico)
+    	 (setq org-roam-completion-system 'ivy)
 
     ;;The official one has deprecated, use self-defined one instead.
     (defun org-roam-node-insert-immediate (arg &rest args)
@@ -1001,15 +1001,6 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
 ```
 
 
-#### Md-Read {#md-read}
-
-```emacs-lisp
-(add-to-list  'load-path "~/.dotfiles/.files/.emacs.d/md-roam")
-(require 'md-roam)
-(setq md-roam-file-extension "md") ; default "md". Specify an extension such as "markdown"
-```
-
-
 ### Org-protocol {#org-protocol}
 
 First configuring `org-protocol` and download [chrome extension](https://github.com/sprig/org-capture-extension).
@@ -1037,8 +1028,6 @@ Then configuring capture template accordingly
 															("L" "Protocol Link" entry (file+headline "~/Notes/captures.org" "Link")
 															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
 															))
-
-(global-set-key (kbd "C-c c") 'org-capture)
 ```
 
 
@@ -1054,8 +1043,7 @@ Then configuring capture template accordingly
 (setq org-agenda-files (list "~/Notes/Agenda/dailylife.org"
 														 "~/.dotfiles/Emacs.org"
 														 "~/Notes/blogideas.org"
-														 "~/Notes/Questions.org"
-														 "~/Notes/readinglists.org"))
+														 "~/Notes/Questions.org"))
 ;;Add progress logging to the org-agenda file
 (setq org-log-done 'note)
 
@@ -1067,8 +1055,6 @@ Then configuring capture template accordingly
 																			 (file+headline "~/Notes/blogideas.org" "Inbox")
 																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
 																			))
-
-(message "the org-capture updated")
 ```
 
 
@@ -1076,13 +1062,12 @@ Then configuring capture template accordingly
 
 ```emacs-lisp
 (use-package org-ql)
-(use-package org-super-agenda
-	:hook org-agenda-mode)
+(use-package org-super-agenda)
 
 (setq org-super-agenda-groups
 			'(
 				(:name "Research"
-							 :tag "research")
+							 :tag "@research")
 				(:name "Questions to answer"
 							 :todo "QUE")
 				(:name "Project"
@@ -1092,6 +1077,48 @@ Then configuring capture template accordingly
 <!--list-separator-->
 
 - <span class="org-todo done DONE">DONE</span>  Config super-agenda according to [git repo](https://github.com/alphapapa/org-super-agenda#screenshots) to make it looks nicer. <span class="tag"><span class="ARCHIVE">ARCHIVE</span><span class="_emacs">@emacs</span><span class="_review">@review</span></span>
+
+
+### Html or Markdown Preview {#html-or-markdown-preview}
+
+
+#### `.html` preview {#dot-html-preview}
+
+[GitHub Repo](https://github.com/jakebox/org-preview-html)
+
+```emacs-lisp
+
+(use-package org-preview-html)
+
+;; Set the default browser to xwidget
+(setq-default org-preview-html-viewer 'xwidget)
+(setq-default org-preview-html-refresh-configuration 'save)
+```
+
+
+#### `.md` Preview {#dot-md-preview}
+
+[Github Repo](https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations)
+
+```emacs-lisp
+(use-package grip-mode)
+```
+
+
+### For File navigation {#for-file-navigation}
+
+I saw good reviews of deadgrep the other day so want to give it a
+try... ( but I don't know how to use this yet )
+
+```emacs-lisp
+(use-package deadgrep)
+(global-set-key (kbd "<f2>") #'deadgrep)
+```
+
+
+### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
+
+link: <https://github.com/zzamboni/vita/>
 
 
 ## Editor {#editor}
@@ -1214,7 +1241,7 @@ light-weighted, integrating with built in emacs completion engine
 ```
 
 
-#### Iedit (for multi editing) {#iedit--for-multi-editing}
+#### Multiple editing {#multiple-editing}
 
 Using Iedit: This package includes Emacs minor modes (iedit-mode and
 iedit-rectangle-mode) based on a API library (iedit-lib) and allows
@@ -1241,25 +1268,17 @@ in the same way, with visual feedback as you type.
 
 ```emacs-lisp
 (use-package smartparens)
-(smartparens-global-mode t)
 ```
 
 
 #### Company (in conjunction with org-roam) {#company--in-conjunction-with-org-roam}
 
 ```emacs-lisp
-(use-package company
-	:ensure t
-	:after org-roam
-	:config
-	(add-hook 'after-init-hook 'global-company-mode)
-	(setq company-minimum-prefix-length 2)
-	(setq company-idle-delay 0.25)
-	:bind
-		(:map company-active-map
-			("C-n" . company-select-next)
-			("C-p" . company-select-previous)))
-
+(use-package company)
+(smartparens-global-mode t)
+(global-company-mode)
+(setq company-minimum-prefix-length 2)
+(setq company-idle-delay 0.25)
 (setq company-backends '(company-capf))
 ```
 
@@ -1393,50 +1412,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 ```
 
 
-### Magit {#magit}
-
-```emacs-lisp
-(use-package magit)
-```
-
-
-### For File navigation {#for-file-navigation}
-
-I saw good reviews of deadgrep the other day so want to give it a
-try... ( but I don't know how to use this yet )
-
-```emacs-lisp
-(use-package deadgrep)
-(global-set-key (kbd "C-c n d") #'deadgrep)
-```
-
-
-### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
-
-
-### Obsidian {#obsidian}
-
-```emacs-lisp
-(use-package obsidian
-	:demand t
-	:config
-	(obsidian-specify-path "~/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Research")
-	(global-obsidian-mode t)
-	:custom
-	;; This directory will be used for `obsidian-capture' if set.
-	(obsidian-inbox-directory "Inbox")
-	:bind (:map obsidian-mode-map
-	;; Replace C-c C-o with Obsidian.el's implementation. It's ok to use another key binding.
-	("C-c C-o" . obsidian-follow-link-at-point)
-	;; Jump to backlinks
-	("C-c C-b" . obsidian-backlink-jump)
-	;; If you prefer you can use `obsidian-insert-link'
-	("C-c C-l" . obsidian-insert-wikilink)))
-```
-
-link: <https://github.com/zzamboni/vita/>
-
-
 ## Export {#export}
 
 
@@ -1446,15 +1421,6 @@ link: <https://github.com/zzamboni/vita/>
 (use-package ox-hugo
 	:after ox)
 (setq org-export-with-broken-links t)
-```
-
-
-### `.md` Preview {#dot-md-preview}
-
-[Github Repo](https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations)
-
-```emacs-lisp
-(use-package grip-mode)
 ```
 
 
