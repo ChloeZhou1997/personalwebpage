@@ -2,7 +2,7 @@
 title = "Notes for The Brothers Karamazov"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-10T23:11:37-05:00
+lastmod = 2022-11-11T02:10:59-05:00
 tags = ["literatures"]
 draft = false
 +++
@@ -37,3 +37,41 @@ Heavily referenced in Camus' _Rabel_.
     real life, no doubt he will be treated like a buffoon. However,
     the character in the book sometimes displays insights into certain
     issues and also seems to possess a noble heart.
+
+
+## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-11 Fri&gt; </span></span> : Reading Progress - 71% {#reading-progress-71}
+
+Dmitri can't defend himself to be innocent and was put into prison.
+Kolya went to see Illusha and brought him back the dogs.
+The conversation between Kolya and the Peasant is hilarious.
+
+> “Nothing could stop me, now I am once off. Hey, good morning,
+> peasant!” A sturdy-looking peasant, with a round, simple face and
+> grizzled beard, who was walking by, raised his head and looked at the
+> boy. He seemed not quite sober.
+> “Good morning, if you are not laughing at me,” he said deliberately in
+> reply.
+> “And if I am?” laughed Kolya.
+> “Well, a joke’s a joke. Laugh away. I don’t mind. There’s no harm in a joke.”
+> “I beg your pardon, brother, it was a joke.”
+> “Well, God forgive you!”
+> “Do you forgive me, too?”
+> “I quite forgive you. Go along.”
+> “I say, you seem a clever peasant.”
+> “Cleverer than you,” the peasant answered unexpectedly, with the same gravity. “I doubt it,”
+> said Kolya, somewhat taken aback.
+> “It’s true, though.” “Perhaps it is.”
+> “It is, brother.”
+> “Good-bye, peasant!”
+> “Good-bye!”
+> “There are all sorts of peasants,” Kolya observed to Smurov after a brief
+> silence. “How could I tell I had hit on a clever one? I am always
+> ready to recognise intelligence in the peasantry.”
+
+...no records before
+
+
+## Relevant {#relevant}
