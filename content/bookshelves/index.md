@@ -2,7 +2,7 @@
 title = "readinglists"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-10T10:12:32-05:00
+lastmod = 2022-11-11T09:11:25-05:00
 draft = false
 +++
 
@@ -19,10 +19,10 @@ reading that I find inspiring and interesting.
 ## Literature {#literature}
 
 
-### <span class="org-todo todo READING">READING</span> [The Brothers Karamazov]({{< relref "dostoyevskyBrothersKaramazov2012.md" >}}) <span class="tag"><span class="literatures">literatures</span></span> {#the-brothers-karamazov--dostoyevskybrotherskaramazov2012-dot-md}
+### <span class="org-todo todo READING">READING</span>  <span class="tag"><span class="literatures">literatures</span></span> {#d41d8c}
 
 
 ## Computer Science {#computer-science}
 
 
-### <span class="org-todo todo READING">READING</span> [Computer Systems: A Programmer's Perspective]({{< relref "dostoyevskyBrothersKaramazov2012.md" >}}) <span class="tag"><span class="books">books</span><span class="cs">cs</span><span class="programming">programming</span></span> {#computer-systems-a-programmer-s-perspective--bryantcomputersystemsprogrammer2015-dot-md}
+### <span class="org-todo todo READING">READING</span>  <span class="tag"><span class="books">books</span><span class="cs">cs</span><span class="programming">programming</span></span> {#d41d8c}

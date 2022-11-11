@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-10T23:10:03-05:00
+lastmod = 2022-11-11T09:11:14-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -541,8 +541,12 @@ The straight version of org is not working, using straight to make sure using th
 	:straight (
 		org :type built-in
 	)
+	:hook ((org-mode . org-font-setup)
+				 (org-mode . turn-on-visual-line-mode))
 	:bind
-	("C-c a" . org-agenda))
+	("C-c a" . org-agenda)
+	("C-c l"   . 'org-store-link)
+	("C-c C-l"  . 'org-insert-link))
 ```
 
 ```emacs-lisp

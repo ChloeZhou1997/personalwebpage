@@ -2,7 +2,7 @@
 title = "Computer Systems: A Programmer's Perspective"
 author = ["Chloe"]
 date = 2022-11-10
-lastmod = 2022-11-10T22:03:38-05:00
+lastmod = 2022-11-11T09:15:05-05:00
 draft = false
 +++
 
