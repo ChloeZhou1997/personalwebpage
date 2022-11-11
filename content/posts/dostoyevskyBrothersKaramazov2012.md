@@ -2,25 +2,21 @@
 title = "Notes for The Brothers Karamazov"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-09T23:26:03-05:00
+lastmod = 2022-11-10T21:11:29-05:00
 tags = ["literatures"]
 draft = false
 +++
 
-tags
-:
-
-
-keywords
-: Dostoyevsky,Fiction / Classics
-
-
-## Info {#info}
-
 {{< figure src="/images/Public/org_20221109-215726_screenshot.png" >}}
 
+tags
+: Fiction/Classics
 
-## Motivation of reading {#motivation-of-reading}
+author
+: [Fyodor Dostoevsky](https://en.wikipedia.org/wiki/Fyodor_Dostoevsky)
+
+
+## Motivation for reading {#motivation-for-reading}
 
 Heavily referenced in Camus' _Rabel_.
 
@@ -41,11 +37,3 @@ Heavily referenced in Camus' _Rabel_.
     seems to have a noble heart while people who are professional and by
     current standard, only merely try to do their works right, somehow
     seems mediocor to the point of evil.
-
-
-## The Brothers Karamazov {#dostoyevskyBrothersKaramazov2012}
-
-
-## Outside link {#outside-link}
-
-[Obsidian Notes](<~/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Research/Readwise/Books/The Brothers Karamazov.md>)

@@ -2,28 +2,16 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-09T23:39:14-05:00
+lastmod = 2022-11-10T20:25:05-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
 
-This is the Emacs configuration built from scratch following [system crafter](https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ&index=1&t=0s)
-and [Mike Zamansky](https://www.youtube.com/watch?v=49kBWM3RQQ8&list=PL9KxKa8NpFxIcNQa9js7dQQIHc81b0-Xg)'s youtube videos. As someone with only limited
-experience in running statistical models in R it's been a confusing
-exprience to finally build vague understanding of what's going on
-behind the scene.
-
-This literal configuration, by the time the post was written is still
-a patchwork of pieces I have taken from different places. My goal is
-to taking notes of concepts and syntax along the way when reorganizing
-the configuration file so that the documentation will be
-self-contained and "dummy-friendly" for people like me who wants to
-start using emacs to boost their productivities but have very little
-idea of anything relates to programming at the beginning of their
-journey.
+Rewrite my config to get rid of the redunant functions and build the
+system from stratch using `straight.el` for package management.
 
 
-## Package System Steup {#package-system-steup}
+## Package System Setup {#package-system-setup}
 
 
 ### use-package {#use-package}
@@ -124,209 +112,45 @@ To keep all the package up to date, use `auto-package-update` option:
 ```
 
 
-### <span class="org-todo todo ONWATCH">ONWATCH</span> straigt.el <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#straigt-dot-el}
+### straigt.el <span class="tag"><span class="download">download</span><span class="emacs">emacs</span></span> {#straigt-dot-el}
 
 -   Note taken on <span class="timestamp-wrapper"><span class="timestamp">[2022-11-03 Thu 21:38] </span></span> <br />
     Better way of organizing the package, according to system crafter,
     better switch to straight.el once and for all to avoice weird
     behavior. Make sure to backup the current init.el first.
 
-
-## General UI Improvement {#general-ui-improvement}
-
-
-### Interface twick {#interface-twick}
-
-Some easy changes like change the size of the welcome windows, set the
-most common key-map, change annoying default settings and hide stuff
-like tool bar and scroll bar.
-
-
-#### Some general settings {#some-general-settings}
+`straight.el` needs to be bootstrapped into the system. There's
+motivation in using it because it makes life easier for installing
+package from Git repo.
 
 ```emacs-lisp
+	(defvar bootstrap-version)
+	(let ((bootstrap-file
+	(expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+	(bootstrap-version 5))
+		(unless (file-exists-p bootstrap-file)
+			(with-current-buffer
+		(url-retrieve-synchronously
+		"https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+		'silent 'inhibit-cookies)
+	(goto-char (point-max))
+	(eval-print-last-sexp)))
+		(load bootstrap-file nil 'nomessage))
 
-;; Opening frame
-(add-to-list 'default-frame-alist '(height . 100))
-(add-to-list 'default-frame-alist '(width . 100))
+	(straight-use-package 'use-package)
 
-;;set the option and command key to corresponding emacs key
-(setq mac-command-modifier      'meta
-			mac-option-modifier       'super
-			mac-right-option-modifier 'hyper)
-
-
-;; Don't show the splash screen
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-;; don't flash whent he bell rings
-(setq visible-bell nil)
-
-;; hide the tool-bar-mode
-(tool-bar-mode -1)
-
-;;diable the scrool bar
-(scroll-bar-mode -1)
-
-;;short form of yes or no
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;;when displaying picture, don't display actual size(they can be huge)
-(setq org-image-actual-width nil)
-
-;;show line number on the left of the window
-(global-display-line-numbers-mode 1)
-
-;;store the recently opened files in order
-(recentf-mode 1)
-
-;; Don't pop up UI dialogs when prompting
-(setq use-dialog-box nil)
-
-;; The the global scale tab-width
-(setq-default tab-width 2)
+(setq straight-use-package-by-default t)
 ```
 
 
-#### Indentation setting {#indentation-setting}
+## General {#general}
 
-The electric indent-mode is a minor mode introduced after Emacs 24.1,
-which will trigger reindentation by certain characters. This mode is
-better used with care because it will break major mode such as <span class="underline">python</span>
-and <span class="underline">org</span>. So turn the mode off by set the value to `-1`. Read more from
-[here](https://emacsredux.com/blog/2013/03/29/automatic-electric-indentation/). Turn on `auto-fill-mode` so that the paragraph doesn't get super
-long.
+
+### Some general settings {#some-general-settings}
+
+Auto-revert, save history etc to improve general usage
 
 ```emacs-lisp
-(require 'org-indent)
-(when (fboundp 'electric-indent-mode) (electric-indent-mode -1))
-(add-hook 'org-mode-hook 'turn-on-auto-fill)
-```
-
-More explanation on the code:
-
--   `fboundp` - querying the state of the lisp environment, asking whether
-    a particular name is bound to a function or macro. [Read more from this post](https://blog.cneufeld.ca/2014/01/the-less-familiar-parts-of-lisp-for-beginners-fboundp/).
-
-
-#### Face setting {#face-setting}
-
-More on the **concept of face**
-
--   The <span class="underline">face attributes</span> determine the visual appearance of a face. A **face**
-
-is a collection of graphical attributes for displaying text:
-font. forground color, background color, optional underling etc. It
-determins how **text is displayed in buffer**.
-
--   `set-face-attribute` is a face attribute function, which returns the
-
-value of the _attribute_ (attribute for face on frame). It overrides the
-face specs belonging to _face_.
-
--   The **standard faces** includes
-    -   default : the face used for <span class="underline">ordinary text</span> that doesn't specify any
-        face. It's color is used as frame's background color。
-    -   fixed-pitch: this face forces use of a fixed-width font. Customize
-        it to use a different fixed-width font.
-    -   variable-pitch: forces use of a variable-width font
-    -   There are also standard face such as `region`, `highlight`, `underline`
-        which control the display of text.
--   Usually we use `defface` macro to define a face. The macro associate a
-
-face name with a default _face spec_, a **construct** which specifies what
-attributes a face should have on any given terminal. For example, a
-face spec might specify one foreground color on high-color terminals
-and a different forground color on low-color terminal.
-
-```emacs-lisp
-
-(set-face-attribute 'default nil :font "Fira Code" :height 180)
-
-;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 180)
-
-;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "Fira Code" :height 180 :weight 'regular)
-
-```
-
-
-#### Mode line config {#mode-line-config}
-
-A minimalist design for the modeline, see [repo](https://github.com/seagle0128/doom-modeline) for more informati
-
-```emacs-lisp
-(use-package doom-modeline
-						:ensure t
-						:init (doom-modeline-mode 1)
-						:hook (after-init . doom-modeline-mode)
-						:custom
-						(doom-modeline-height 10)
-						(doom-modeline-enable-word-count nil)
-						(doom-modeline-minor-modes t))
-(minions-mode 1)
-
-```
-
-
-#### Add line number {#add-line-number}
-
-```emacs-lisp
-
-;;neivigating throught lines
-(column-number-mode)
-
-;; Disable line numbers for some modes
-(dolist (mode '(org-mode-hook
-		term-mode-hook
-		eshell-mode-hook))
-	(add-hook 'mode (lambda ()(display-line-numbers-mode 0))))
-
-```
-
-
-#### Theme {#theme}
-
-```emacs-lisp
-
-(use-package doom-themes
-	:ensure all-the-icons
-	:config
-	(load-theme 'doom-one t)
-	;; all-the-icons has to be installed, enabling custom neotree theme
-	(doom-themes-neotree-config)
-	;; for treemacs user
-	(setq doom-themes-treemacs-theme "doom-atom")
-	(doom-themes-treemacs-config)
-	;;conrrect the org-mode's native fontification
-	(doom-themes-org-config))
-
-```
-
-
-### Functional twick {#functional-twick}
-
-
-#### General Settings {#general-settings}
-
--   be able to view c source file
--   move customization variables to a seperate file and load it.
--   auto-revert-mode at global level
--   auto revert dired and other buffers
--   rememeber and restore the last cursor location of opened files
-
-...
-
-```emacs-lisp
-
-;; Set the source-directory
-(setq find-function-C-source-directory "~/emacs-28.2/src")
-
-;; move customization variables to a separate file and load it
-(setq custom-file (locate-user-emacs-file "custom-vars.el"))
-(load custom-file 'noerror 'nomessage)
-
 ;; Revert buffers when the underlying file has changed
 (global-auto-revert-mode 1)
 
@@ -340,176 +164,288 @@ A minimalist design for the modeline, see [repo](https://github.com/seagle0128/d
 ;; Remember and restore the last cursor location of opened files
 (save-place-mode 1)
 
+;; Turn on auto-fill-mode so the paragraph doesn't get super long
+(auto-fill-mode 1)
+
+;; Turn of the electric indent mode
+(electric-indent-mode -1)
 ```
 
-
-#### Windows Nevigation {#windows-nevigation}
-
-Be able to use shift to nevigate between different windows
+Using shit to switch between windows:
 
 ```emacs-lisp
-;;use shift left right up down to switch between windows
 (windmove-default-keybindings)
 ```
 
-Use `ace window` package so when calling M-o, can switch between windows
-using number. ( This is a cool package but it's kind of redundant
-because I won't open that many window at the same time anyway.)
+Use ibuffer to nevigate the buffers:
 
 ```emacs-lisp
-;; (Use-package ace-window
-;; 	:ensure t
-;; 	:init
-;; 	(global-set-key [remap other-window] 'ace-window)
-;; 	(custom-set-faces
-;; 	 '(aw-leading-char-face
-;; 		 ((t (:inherit ace-jump-face-foreground :height 3.0)))))
-;; 	:config
-;; 	(global-set-key (kbd "M-o") 'ace-window))
-```
-
--   Both `:inherit` and `:height` are face attributes
--   The `:inherit` attribute determines the name of the face to be
-    inherited from
-    -   the inherited value will merge into the face like the underlying
-        face do but have higher priority.
-
-
-#### Buffer Nevigation {#buffer-nevigation}
-
-Enabling dired like buffer management.
-
-```emacs-lisp
-;;ibuffer
+;;use ibuffer
 (defalias 'list-buffers 'ibuffer-other-window) ;;open another buffer window
 ```
 
-enabling **ido mode:**
 
--   Add flex match
--   be able to search files and buffer by typing key-words and hit &lt;TAB&gt;
-
-<!--listend-->
-
-```emacs-lisp
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-```
-
-There are other completion system which will be configured later.
+### UI setting {#ui-setting}
 
 
-## Global function improvement {#global-function-improvement}
+#### Most general setting {#most-general-setting}
 
-
-### Helpful {#helpful}
+Stuff like get rid of the tool-bar, splashing lines etc.
 
 ```emacs-lisp
-	(use-package helpful)
-
-;; Note that the built-in `describe-function' includes both functions
-;; and macros. `helpful-function' is functions only, so we provide
-;; `helpful-callable' as a drop-in replacement.
-(global-set-key (kbd "C-h f") #'helpful-callable)
-
-(global-set-key (kbd "C-h v") #'helpful-variable)
-(global-set-key (kbd "C-h k") #'helpful-key)
-(global-set-key (kbd "C-h o") #'helpful-symbol)
-
-(setq counsel-describe-function-function #'helpful-callable)
-(setq counsel-describe-variable-function #'helpful-variable)
+;; Don't show the splash screen
+(setq inhibit-splash-screen t)
+;; Don't show startup message
+(setq inhibit-startup-message t)
+;; don't flash when the bell rings
+(setq visible-bell nil)
+;; hide the tool-bar-mode
+(tool-bar-mode -1)
+;;diable the scrool bar
+(scroll-bar-mode -1)
+;;short form of yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+;;when displaying picture, don't display actual size(they can be huge)
+(setq org-image-actual-width nil)
+;;show line number on the left of the window
+(global-display-line-numbers-mode 1)
+;;store the recently opened files in order
+(recentf-mode 1)
+;; Don't pop up UI dialogs when prompting
+(setq use-dialog-box nil)
+;; The the global scale tab-width
+(setq-default tab-width 2)
 ```
 
-
-### Yasnippet {#yasnippet}
-
-
-#### Basic setup {#basic-setup}
-
--   [Setting from Repo](https://github.com/MooersLab/configorg/blob/main/config.org)
-    ```emacs-lisp
-    (use-package yasnippet
-    	:ensure t
-    	:init
-    	(yas-global-mode 1))
-
-    ```
-
-
-#### Insert snippet {#insert-snippet}
+By defult, Mac use option for `meta` key, and `Command` for super-key, I'd like to swap the functionality of it:
 
 ```emacs-lisp
-
-(global-set-key "\C-o" 'yas-expand)
-
+;; Set the option, command key to corresponding emacs key
+	(setq mac-command-modifier      'meta
+				mac-option-modifier       'super
+				mac-right-option-modifier 'hyper)
 ```
 
-
-#### Tab trigger in org code blocks {#tab-trigger-in-org-code-blocks}
+Org-mode code block related setting:
 
 ```emacs-lisp
 (setq   org-src-tab-acts-natively t
 				org-confirm-babel-evaluate nil
 				org-edit-src-content-indentation 0)
-
 ```
 
+To disable the auto indentation in org-mode
 
-#### Turn off org-mode snippets in code blocks {#turn-off-org-mode-snippets-in-code-blocks}
+
+#### Misc {#misc}
 
 ```emacs-lisp
-(defun my-org-mode-hook ()
-	(setq-local yas-buffer-local-condition
-							'(not (org-in-src-block-p t))))
-'my-org-mode-hook
-(add-hook 'org-mode-hook `my-org-mode-hook)
+;; flash cursor lines when scroll
+(use-package beacon
+	:config
+	(beacon-mode 2))
 ```
 
 
-#### Snippet pop up manue {#snippet-pop-up-manue}
+#### Face {#face}
+
+<!--list-separator-->
+
+-  Font
+
+    The `:height` stands for the height of the font, which also determines the size of the font.
+
+    ```emacs-lisp
+    ;; Set the default face to larger font.
+    (set-face-attribute 'default nil :font "Fira Code" :height 180)
+
+    ;; Set the fixed pitch face
+    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 180)
+
+    ;; Set the variable pitch face
+    (set-face-attribute 'variable-pitch nil :font "Fira Code" :height 180 :weight 'regular)
+    ```
+
+    Define a `font-setup` function
+
+    ```emacs-lisp
+    (defun org-font-setup ()
+    	;; Set faces for heading levels
+    	(dolist (face '((org-level-1 . 1.2)
+    									(org-level-2 . 1.1)
+    									(org-level-3 . 1.05)
+    									(org-level-4 . 1.0)
+    									(org-level-5 . 0.8)
+    									(org-level-6 . 0.8)
+    									(org-level-7 . 0.8)
+    									(org-level-8 . 0.8)))
+    		(set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
+
+    	;; Ensure that anything that should be fixed-pitch in Org files appears that way
+    	(set-face-attribute 'org-block nil :foreground nil  :inherit 'fixed-pitch)
+    	(set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
+    	(set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
+    	(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+    	(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+    	(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+    	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+
+    (add-hook 'org-mode-hook 'org-font-setup)
+    ```
+
+<!--list-separator-->
+
+-  Beautify
+
+    ```emacs-lisp
+    ;;replace list hyphen with dot
+    (font-lock-add-keywords 'org-mode
+    												'(("^ *\\([-]\\) "
+    													 (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+    ;;add emphasis markets at the end of the list
+    (setq org-ellipsis " ▼"
+    			org-hide-emphasis-markers t)
+
+    (use-package org-bullets
+    	:hook
+    	(org-mode . (lambda () (org-bullets-mode 1)))
+    	(org-mode . (lambda ()
+    							"Beautify Org Checkbox Symbol"
+    							(push '("[ ]" . "☐" ) prettify-symbols-alist)
+    							(push '("[X]" . "☑" ) prettify-symbols-alist)
+    							(push '("[-]" . "⊡" ) prettify-symbols-alist)
+    							(prettify-symbols-mode))))
+    ```
+
+<!--list-separator-->
+
+-  Theme
+
+    Use `:ensure` to make sure the `all-the-icons` package will be autoinstalled when `doom-themes` is installed.
+
+    ```emacs-lisp
+    (use-package doom-themes
+    		 :ensure  all-the-icons
+    		 :config
+    		 (load-theme 'doom-one t)
+    		 ;; all-the-icons has to be installed, enabling custom neotree theme
+    		 (doom-themes-neotree-config)
+    		 ;; for treemacs user
+    		 (setq doom-themes-treemacs-theme "doom-atom")
+    		 (doom-themes-treemacs-config)
+    		 ;;conrrect the org-mode's native fontification
+    		 (doom-themes-org-config))
+    ```
+
+    Also, use `doom-modeline` to prettify the mode-line section
+
+    ```emacs-lisp
+    (use-package doom-modeline
+    	:ensure t
+    	:init (doom-modeline-mode 1)
+    	:hook (after-init . doom-modeline-mode)
+    	:custom
+    	(doom-modeline-height 10)
+    	(doom-modeline-enable-word-count nil)
+    	(doom-modeline-minor-modes t))
+    (minions-mode 1)
+    ```
+
+
+### Helpful {#helpful}
 
 ```emacs-lisp
-(use-package popup
-	:ensure t)
-
-;; add some shotcuts in popup menu mode
-(define-key popup-menu-keymap (kbd "M-n") 'popup-next)
-(define-key popup-menu-keymap (kbd "TAB") 'popup-next)
-(define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
-(define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
-(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
-
-(defun yas/popup-isearch-prompt (prompt choices &optional display-fn)
-	(when (featurep 'popup)
-		(popup-menu*
-		 (mapcar
-			(lambda (choice)
-				(popup-make-item
-				 (or (and display-fn (funcall display-fn choice))
-						 choice)
-				 :value choice))
-			choices)
-		 :prompt prompt
-		 ;; start isearch mode immediately
-		 :isearch t
-		 )))
-(setq yas/prompt-functions '(yas/popup-isearch-prompt yas/no-prompt))
+(use-package helpful
+	:bind
+	("C-h f" . helpful-callable)
+	("C-h v" . helpful-variable)
+	("C-h k" . helpful-key)
+	("C-h o" . helpful-symbol))
 ```
 
 
-### Keys Bindings {#keys-bindings}
+### Completion {#completion}
+
+
+#### Vertico {#vertico}
+
+Minimalistic auto completion setting: `vertico` + `savehist` + `marginalia`
+
+```emacs-lisp
+;;enable Vertico
+(use-package vertico
+	:init
+	(vertico-mode)
+
+	;; Different scroll margin
+	;; (setq vertico-scroll-margin 0)
+
+	;; Show more candidates
+	;; (setq vertico-count 20)
+
+	;; Grow and shrink the Vertico minibuffer
+	;; (setq vertico-resize t)
+
+	;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
+	;; (setq vertico-cycle t)
+	)
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+	:init
+	(savehist-mode))
+
+;; Show info of files at the marginal
+(use-package marginalia
+	:after vertico
+	:ensure t
+	:custom
+	(marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+	:init
+	(marginalia-mode))
+
+;; Optionally use the `orderless' completion style, so no need to worry about the
+;; order of keywords when trying to search for command.
+(use-package orderless
+	:init
+	;; Configure a custom style dispatcher (see the Consult wiki)
+	;; (setq orderless-style-dispatchers '(+orderless-dispatch)
+	;;       orderless-component-separator #'orderless-escapable-split-on-space)
+	(setq completion-styles '(orderless basic)
+				completion-category-defaults nil
+				completion-category-overrides '((file (styles partial-completion)))))
+```
+
+
+#### Company {#company}
+
+```emacs-lisp
+(use-package company
+	:config
+	(setq company-minimum-prefix-length 2)
+	(setq company-idle-delay 0.25)
+	(setq company-backends '(company-capf company-semantic company-keywords company-etags company-dabbrev-code))
+	(global-company-mode)
+	:bind
+	("M-/" . company-active-map)
+	(:map company-active-map
+				("C-n" . company-select-next)
+				("C-p" . company-select-previous)))
+```
+
+
+#### Pair {#pair}
+
+```emacs-lisp
+(use-package smartparens
+	:config
+	(smartparens-global-mode t))
+```
 
 
 #### Which-key {#which-key}
 
-which-key is  a useful UI panel  that appears when you  start pressing
-any key binding in Emacs to offer you all possible completions for the
-prefix. For  example, if  you press  C-c (hold  control and  press the
-letter c), a  panel will appear at the bottom  of the frame displaying
-all of the bindings under that prefix and which command they run. This
-is very useful  for learning the possible key bindings  in the mode of
-your current buffer.
+This package offer all the possible completions for the prefix.
 
 ```emacs-lisp
 (use-package which-key
@@ -517,242 +453,133 @@ your current buffer.
 ```
 
 
-### Misc packages {#misc-packages}
+#### Expansion {#expansion}
+
+The basic expansion comes in handy by using `org-tempo`
 
 ```emacs-lisp
-	; Becon mode
-	; flashes the cursor's line when you scroll
-	(use-package beacon
-		:ensure t
-		:config
-		(beacon-mode 2)
-	; this color looks good for the zenburn theme but not for the one
-	; I'm using for the videos
-	; (setq beacon-color "#666600")
-	)
-
-	; Hungty Deleteo Mode
-	; deletes all the whitespace when you hit backspace or delete
-;;   (use-package hungry-delete
-;;     :ensure t
-;;     :config
-;;     (global-hungry-delete-mode))
-
-
-	; expand the marked region in semantic increments (negative prefix to reduce region)
-	(use-package expand-region
-		:config
-		(global-set-key (kbd "C-=") 'er/expand-region))
-
-```
-
-
-## Org-mode {#org-mode}
-
-Org mode buffer need Font Lock to be turned on.
-
-
-### Org-mode face setting {#org-mode-face-setting}
-
-
-#### Org mode activation {#org-mode-activation}
-
-Recall pacakge `use-package`, when setting key-binding using `:bind` in
-conjunction with `:map`, which only binds the key locally when the
-package has already been loaded. The key binding before `:map` are
-global key bindings.
-
-```emacs-lisp
-(use-package org
-	:hook ((org-mode . org-font-setup)
-				 (org-mode . turn-on-visual-line-mode))
-	:mode ("\\.org" . org-mode)
-	:bind (("C-c a"   . 'org-agenda)
-				 ("C-c b"   . 'org-switchb)
-				 ("C-s-s"   . 'org-save-all-org-buffers)
-				 ("C-c l"   . 'org-store-link)
-				 ("C-c C-l"  . 'org-insert-link)
-				 :map org-mode-map
-				 ("s-."     . 'org-todo)
-				 ("M-p"     . 'org-set-property)))
-
-```
-
-
-#### Beautify org roam {#beautify-org-roam}
-
-```emacs-lisp
-(use-package org-bullets
-	:hook
-	(org-mode . (lambda () (org-bullets-mode 1)))
-	(org-mode . (lambda ()
-							"Beautify Org Checkbox Symbol"
-							(push '("[ ]" . "☐" ) prettify-symbols-alist)
-							(push '("[X]" . "☑" ) prettify-symbols-alist)
-							(push '("[-]" . "⊡" ) prettify-symbols-alist)
-							(prettify-symbols-mode))))
-```
-
-
-#### Font and List {#font-and-list}
-
-The org-font-setup setup the font and also the list style at the end.
-
-```emacs-lisp
-(defun org-font-setup ()
-	;; Replace list hyphen with dot
-	(font-lock-add-keywords 'org-mode
-													'(("^ *\\([-]\\) "
-														 (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-	;; Set faces for heading levels
-	(dolist (face '((org-level-1 . 1.2)
-									(org-level-2 . 1.1)
-									(org-level-3 . 1.05)
-									(org-level-4 . 1.0)
-									(org-level-5 . 0.8)
-									(org-level-6 . 0.8)
-									(org-level-7 . 0.8)
-									(org-level-8 . 0.8)))
-		(set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
-
-	;; Ensure that anything that should be fixed-pitch in Org files appears that way
-	(set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
-	(set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
-	(set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
-	(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-	(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-	(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
-
-	(setq org-ellipsis " ▼"
-				org-hide-emphasis-markers t))
-
-(add-hook 'org-mode-hook 'org-font-setup)
-```
-
-
-### Babel Setting {#babel-setting}
-
-```emacs-lisp
-
-(setq org-babel-load-languages
-			'((awk        . t)
-				(calc       . t)
-				(css        . t)
-				(ditaa      . t)
-				(emacs-lisp . t)
-				(gnuplot    . t)
-				(haskell    . t)
-				(js         . t)
-				(lisp       . t)
-				(org        . t)
-				(plantuml   . t)
-				(python     . t)
-				(scheme     . t)
-				(shell      . t)
-				(sql        . t)
-				(java				. t)))
-
-;; Activate Babel languages
-(org-babel-do-load-languages 'org-babel-load-languages org-babel-load-languages)
-
-;; Cancel Confirmation
-(setq org-confirm-babel-evaluate nil
-			org-src-fontify-natively t
-			org-src-tab-acts-natively t)
-
-```
-
-
-#### Python autocompletion {#python-autocompletion}
-
-```emacs-lisp
-(use-package jedi
-	:ensure t
-	:init
-	(add-hook 'python-mode-hook 'jedi:setup)
-	(add-hook 'python-mode-hook 'jedi:ac-setup))
-```
-
-
-#### Strcture Template {#strcture-template}
-
-```emacs-lisp
-
-;;quick parser
-;;be aware here use-pacakges won't work
 (require  'org-tempo)
-
 (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 (add-to-list 'org-structure-template-alist '("ja" . "src java"))
-(add-to-list 'org-structure-template-alist '("quo" . "src quote"))
-(add-to-list 'org-structure-template-alist '("ex" . "src example"))
+(add-to-list 'org-structure-template-alist '("quo" . "quote"))
+(add-to-list 'org-structure-template-alist '("ex" . "example"))
 ```
 
 
-### Org-roam {#org-roam}
-
--   Org-roam v2 doesn't recognize `file:` link but only recognizes files
-    and headings with ID.
--   `org-roam-mode` is no longer a global minor mode
+### Movement and editing {#movement-and-editing}
 
 
-#### Basic Config {#basic-config}
+#### Consult {#consult}
 
--   The template property:
--   `:immediate-finish` : do not offer to edit the information, just file
-    it away immediately. Makes sense if the template only needs
-    information that can be added automatically.
-    ```emacs-lisp
-    			(use-package org-roam
-    				:after org
-    				:config
-    				(org-roam-setup)
-    				:custom
-    				(org-roam-directory "~/Notes/RoamNotes")
-    				(org-roam-completion-everywhere t)
-    				:bind (("C-c n l" . org-roam-buffer-toggle)
-    							 ("C-c n f" . org-roam-node-find)
-    							 ("C-c n i" . org-roam-node-insert)
-    							 ("C-c n I" . org-roam-node-insert-immediate)
-    							 :map org-mode-map
-    							 ("C-M-i" . completion-at-point)
-    							 ("C-c n t" . org-roam-tag-add)
-    							 ("C-c n a" . org-roam-alias-add)))
+```emacs-lisp
+;;define prefix C-s for search map
+(define-prefix-command 'search-map)
+(global-set-key (kbd "C-s") 'search-map)
 
-    (setq org-roam-file-extensions '("org" "md"))
-    (setq org-roam-completion-system 'vertico)
-
-    ;;The official one has deprecated, use self-defined one instead.
-    (defun org-roam-node-insert-immediate (arg &rest args)
-    	(interactive "P")
-    	(let ((args (cons arg args))
-    				(org-roam-capture-templates (list (append (car org-roam-capture-templates)
-    																									'(:immediate-finish t)))))
-    		(apply #'org-roam-node-insert args)))
-
-    ;;add tag in the node-find mini-buffer
-    (setq org-roam-node-display-template
-    			(concat "${title:*} "
-    							(propertize "${tags:10}" 'face 'org-tag)))
-    ```
+(use-package consult
+	:bind
+	("C-x b" . consult-buffer)
+	(:map search-map
+				("s" . consult-line)
+				("l" . consult-goto-line)
+				("o" . consult-outline)
+				("S" . consult-line-multi)))
+```
 
 
-#### Org-download {#org-download}
+#### Multi-editing {#multi-editing}
 
-I use org-download to copy paste images online and show in org-mode,
-in doing so, download the `pngpaste` from Homebrew and then bind the
-`org-download-clipboard` to `C-M-y`. Except for that, the
-`org-download-screeshot-method` won't work as expected. The solution is
-taken from [here](https://github.com/abo-abo/org-download/issues/131#issuecomment-702236082).
+```emacs-lisp
+(use-package iedit)
+```
+
+
+#### Misc {#misc}
+
+```emacs-lisp
+;;expand region basiced semantics
+(use-package expand-region
+	:bind
+	("C-=" . er/expand-region))
+```
+
+
+### Snippet {#snippet}
+
+```emacs-lisp
+(defun my-org-mode-hook ()
+	(setq-local yas-buffer-local-condition
+							'(not (org-in-src-block-p t))))
+
+(use-package yasnippet
+	:init
+	(yas-global-mode 1)
+	:bind
+	("<TAB>" . yas-expand)
+	:config
+	(add-hook 'org-mode-hook 'my-org-mode-hook))
+
+(use-package yasnippet-snippets)
+```
+
+
+## Org-roam {#org-roam}
+
+
+### Basic config {#basic-config}
+
+The straight version of org is not working, using straight to make sure using the built-in version
+
+```emacs-lisp
+(use-package org
+	:straight (
+		org :type built-in
+	)
+	:bind
+	("C-c a" . org-agenda))
+```
+
+```emacs-lisp
+;;The official one has deprecated, use self-defined one instead.
+(defun org-roam-node-insert-immediate (arg &rest args)
+	(interactive "P")
+	(let ((args (cons arg args))
+				(org-roam-capture-templates (list (append (car org-roam-capture-templates)
+																									'(:immediate-finish t)))))
+		(apply #'org-roam-node-insert args)))
+
+
+
+(use-package org-roam
+	:after org
+	:config
+	(org-roam-setup)
+	:custom
+	(org-roam-directory "~/Notes/RoamNotes")
+	(org-roam-completion-everywhere t)
+	(org-roam-file-extensions '("org" "md"))
+	(org-roam-completion-system 'vertico)
+	:bind (("C-c n l" . org-roam-buffer-toggle)
+				 ("C-c n f" . org-roam-node-find)
+				 ("C-c n i" . org-roam-node-insert)
+				 ("C-c n I" . org-roam-node-insert-immediate)
+				 ("C-M-i" . completion-at-point)
+				 ("C-c n t" . org-roam-tag-add)
+				 ("C-c n a" . org-roam-alias-add)))
+
+;;add tag in the node-find mini-buffer
+(setq org-roam-node-display-template
+			(concat "${title:*} "
+							(propertize "${tags:10}" 'face 'org-tag)))
+```
+
+
+### Org-download {#org-download}
 
 ```emacs-lisp
 (use-package org-download
-	:after org
-	:defer nil
 	:custom
 	(org-download-method 'directory)
 	(org-download-image-dir "~/Notes/static/images")
@@ -761,15 +588,11 @@ taken from [here](https://github.com/abo-abo/org-download/issues/131#issuecommen
 	(org-image-actual-width 900)
 	(org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
 	:bind
-	("C-M-y" . org-download-clipboard)
-	:config
-	(require 'org-download))
+	("C-M-y" . org-download-clipboard))
 ```
 
 
-#### Org-noter {#org-noter}
-
-Pre-requisite: `pdf-tools`
+### Org-noter + Pdf-tool {#org-noter-plus-pdf-tool}
 
 ```emacs-lisp
 (pdf-tools-install)
@@ -814,177 +637,78 @@ With a prefix ARG, remove start location."
 ```
 
 
-#### Org-roam-bibitex {#org-roam-bibitex}
-
-In order to make all the functionality work, need three packages to
-coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
-`org-ref`.
-
-<!--list-separator-->
-
--  Installing org-roam-bibtex and hard dependencies
-
-    -   `Bibtex-completion` allows one to access your reference from anywhere
-    -   Org-ref allows one to insert `'cite:'` links into the Org-mode buffer.
-
-    <!--listend-->
-
-    ```emacs-lisp
-    (use-package helm-bibtex)
-    (use-package org-ref)
-    ```
-
-    The minimalist configuration
-
-    ```emacs-lisp
-    (setq bibtex-completion-bibliography
-    			'("/Users/zhouqiaohui/Documents/MyLibrary.bib"))
-    ```
-
-    In bibtex, the bibtexcompletion will search for pdf files that have
-    the suffix same as the BibTex key entry.
-
-    ```emacs-lisp
-    (setq bibtex-completion-library-path '("~/Notes/RoamNotes/Paper"))
-    (setq bibtex-completion-pdf-field "File")
-    ```
-
-    If one file per publication is preferred, bibtex-completion-notes-path
-    should point to the directory used for storing the notes files:
-
-    ```emacs-lisp
-    (setq bibtex-completion-notes-path "~/Notes/RoamNotes")
-    ```
-
-<!--list-separator-->
-
--  Installing soft dependencies
-
-    -   Citar (Yet I don't think it's used...)
-
-    This package provides a completing-read front-end to browse and act on
-    BibTeX, BibLaTeX, and CSL JSON bibliographic data, and LaTeX,
-    markdown, and org-cite editing support.
-
-    When used with vertico, embark, and marginalia, it provides similar
-    functionality to helm-bibtex and ivy-bibtex: quick filtering and
-    selecting of bibliographic entries from the minibuffer, and the option
-    to run different commands against them.
-
-    See the [repo](https://github.com/emacs-citar/citar) here.
-
-    ```emacs-lisp
-    (use-package citar
-    	:no-require
-    	:custom
-    	(org-cite-global-bibliography '("/Users/zhouqiaohui/Documents/MyLibrary.bib"))
-    	(org-cite-insert-processor 'citar)
-    	(org-cite-follow-processor 'citar)
-    	(org-cite-activate-processor 'citar)
-    	(citar-bibliography org-cite-global-bibliography)
-    	;; optional: org-cite-insert is also bound to C-c C-x C-@
-    	:bind
-    	(:map org-mode-map :package org ("C-c b" . #'org-cite-insert)))
-    ```
-
-    This integrate directly with Org-Roam:
-
-    -   multiple reference per note,
-    -   multiple reference notes per file
-    -   query note citation by reference
-    -   live aupdating Citar UI for presence of notes
-
-    <!--listend-->
-
-    ```emacs-lisp
-    (use-package citar-org-roam
-    	:after citar org-roam
-    	:no-require
-    	:config (citar-org-roam-mode))
-    ```
-
-<!--list-separator-->
-
--  Installing org-roam-bibtex itself
-
-    ```emacs-lisp
-    (use-package org-roam-bibtex
-    	:after org-roam
-    	:config
-    	(require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
-    ```
-
-<!--list-separator-->
-
--  Templates integrating with bibtex
-
-    ```emacs-lisp
-
-    (setq orb-preformat-keywords
-    			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
-    			orb-process-file-keyword t
-    			orb-attached-file-extensions '("pdf"))
-
-    (setq org-roam-capture-templates
-    			'(("r" "bibliography reference" plain
-    				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
-    				 :target
-    				 (file+head "${citekey}.org" "#+title: ${title}\n"))
-    				("t" "thought" plain
-    				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
-    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)
-    				("d" "default" plain
-    				 "%?"
-    				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
-    				 :unnarrowed t)
-    				))
-    ```
-
-    Note action interface:
-
-    ```emacs-lisp
-    (setq orb-note-actions-interface 'helm)
-    ```
-
-<!--list-separator-->
-
--  Other Global Setting
-
-    Up to this point, all the citations and backlink are correctly set up.
-
-    ```emacs-lisp
-    (org-roam-db-autosync-mode 1)
-    (org-roam-bibtex-mode 1)
-    ```
-
-    Set global key for `helm-bibtex` and `org-noter`
-
-    ```emacs-lisp
-    (global-set-key (kbd "C-c h b") #'helm-bibtex)
-    (global-set-key (kbd "C-c n o") #'org-noter)
-    (global-set-key (kbd "C-c h i") #'org-ref-insert-helm)
-    ```
-
-    For the PDF Scrapper, change the formate of the paper key:
-
-    ```emacs-lisp
-    (setq orb-autokey-format "%a%T[3]%y")
-    ```
+### Org-bibtex {#org-bibtex}
 
 
-#### Org-roam-graph {#org-roam-graph}
+#### bibtex completion system {#bibtex-completion-system}
 
 ```emacs-lisp
-;;Setting for MacOS
-(setq org-roam-graph-viewer
-		(lambda (file)
-			(let ((org-roam-graph-viewer "/Applications/Arc.app/Contents/MacOS/Arc"))
-				(org-roam-graph--open (concat "file://" file)))))
+;;download  org-ref
+(use-package org-ref)
+
+;;download helm completion
+(use-package helm-bibtex
+	:custom
+	(bibtex-completion-bibliography '("/Users/zhouqiaohui/Documents/MyLibrary.bib"))
+	(bibtex-completion-library-path '("~/Notes/RoamNotes/Paper"))
+	(bibtex-completion-pdf-field "File")
+	(bibtex-completion-notes-path "~/Notes/RoamNotes"))
 ```
 
 
-#### Org-roam-ui {#org-roam-ui}
+#### org-roam-bibtex {#org-roam-bibtex}
+
+This allows roam like citation backlink
+
+```emacs-lisp
+(use-package org-roam-bibtex
+	:after org-roam)
+```
+
+
+#### template {#template}
+
+```emacs-lisp
+(setq orb-preformat-keywords
+			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
+			orb-process-file-keyword t
+			orb-attached-file-extensions '("pdf"))
+
+(setq org-roam-capture-templates
+			'(("r" "bibliography reference" plain
+				 (file "~/Notes/RoamNotes/Templates/cite_temp.org")
+				 :target
+				 (file+head "${citekey}.org" "#+title: ${title}\n"))
+				("t" "thought" plain
+				 (file "~/Notes/RoamNotes/Templates/thought_temp.org")
+				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+				 :unnarrowed t)
+				("d" "default" plain
+				 "%?"
+				 :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+				 :unnarrowed t)
+				))
+```
+
+
+#### other-setting {#other-setting}
+
+Set global key for `helm-bibtex` and `org-noter`
+
+```emacs-lisp
+(global-set-key (kbd "C-c h b") #'helm-bibtex)
+(global-set-key (kbd "C-c n o") #'org-noter)
+(global-set-key (kbd "C-c h i") #'org-ref-insert-helm)
+```
+
+For the PDF Scrapper, change the formate of the paper key:
+
+```emacs-lisp
+(setq orb-autokey-format "%a%T[3]%y")
+```
+
+
+### Org-roam-ui {#org-roam-ui}
 
 ```emacs-lisp
 (use-package org-roam-ui
@@ -1001,28 +725,13 @@ coordinate: `Org-roam`, `bibtex-completion (help-bibtex & ivy-bibtex)`,
 ```
 
 
-#### Md-Read {#md-read}
-
-```emacs-lisp
-(add-to-list  'load-path "~/.dotfiles/.files/.emacs.d/md-roam")
-(require 'md-roam)
-(setq md-roam-file-extension "md") ; default "md". Specify an extension such as "markdown"
-```
-
-
-### Org-protocol {#org-protocol}
-
-First configuring `org-protocol` and download [chrome extension](https://github.com/sprig/org-capture-extension).
+## Org-protocol {#org-protocol}
 
 ```emacs-lisp
 (server-start)
 (add-to-list 'load-path "~/.dotfiles/.files/.emacs.d/src/org-mode/lisp")
 (require 'org-protocol)
-```
 
-Then configuring capture template accordingly
-
-```emacs-lisp
 (setq org-directory "~/Notes/")
 
 (defun transform-square-brackets-to-round-ones(string-to-transform)
@@ -1042,13 +751,10 @@ Then configuring capture template accordingly
 ```
 
 
-#### CANCELED Org-protocol-capture-html <span class="tag"><span class="ARCHIVE">ARCHIVE</span><span class="_download">@download</span></span> {#canceled-org-protocol-capture-html}
+## Agenda {#agenda}
 
 
-### Agenda {#agenda}
-
-
-#### Basic Setup {#basic-setup}
+### Basic Setup {#basic-setup}
 
 ```emacs-lisp
 (setq org-agenda-files (list "~/Notes/Agenda/dailylife.org"
@@ -1068,11 +774,21 @@ Then configuring capture template accordingly
 																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
 																			))
 
-(message "the org-capture updated")
+;;set todo keywords
+(setq org-todo-keywords
+			'((sequence "TODO(t)" "|" "DONE(d)")
+				(sequence "TOREAD(t)" "READING(r)" "|" "CANCELLED(c)" "STALLED(s)" "DONE(d)")
+				(sequence "|" "CANCELED(c)")))
+
+;;set faces
+(setq org-todo-keyword-faces
+			'(("TODO" . (:foreground "#ff39a3" :weight bold))
+				("READING" . "yellow")
+				("QUE" . (:foreground "red" :background "white"))))
 ```
 
 
-#### Super-agenda {#super-agenda}
+### Super-agenda {#super-agenda}
 
 ```emacs-lisp
 (use-package org-ql)
@@ -1080,7 +796,11 @@ Then configuring capture template accordingly
 	:hook org-agenda-mode)
 
 (setq org-super-agenda-groups
-			'(
+			'((:name "Priority"
+							 :tag "priority")
+				(:name "Reading List"
+							 :file-path "~/Notes/RoamNotes/readinglists.org"
+							 :todo "READING")
 				(:name "Research"
 							 :tag "research")
 				(:name "Questions to answer"
@@ -1089,189 +809,8 @@ Then configuring capture template accordingly
 							 :children t)))
 ```
 
-<!--list-separator-->
 
-- <span class="org-todo done DONE">DONE</span>  Config super-agenda according to [git repo](https://github.com/alphapapa/org-super-agenda#screenshots) to make it looks nicer. <span class="tag"><span class="ARCHIVE">ARCHIVE</span><span class="_emacs">@emacs</span><span class="_review">@review</span></span>
-
-
-## Editor {#editor}
-
-
-### Completion {#completion}
-
-
-#### Ivy and counsel {#ivy-and-counsel}
-
-```emacs-lisp
-
-(use-package ivy
-	:diminish
-	:bind (("C-s" . swiper)
-				 ("C-M-j" . ivy-immediate-done)
-				 :map ivy-minibuffer-map
-				 ("TAB" . ivy-alt-done)
-				 ("C-l" . ivy-alt-done)
-				 ("C-j" . ivy-next-line)
-				 ("C-k" . ivy-previous-line)
-				 :map ivy-switch-buffer-map
-				 ("C-k" . ivy-previous-line)
-				 ("C-l" . ivy-done)
-				 ("C-d" . ivy-switch-buffer-kill)
-				 :map ivy-reverse-i-search-map
-				 ("C-k" . ivy-previous-line)
-				 ("C-d" . ivy-reverse-i-search-kill))
-	:config
-	(ivy-mode 1))
-
-(use-package ivy-rich
-	:init
-	(ivy-rich-mode 1))
-
-(use-package counsel
-	:bind (:map minibuffer-local-map
-				 ("C-r" . 'counsel-minibuffer-history))
-	:config
-	(counsel-mode 1))
-```
-
-Swiper makes in-files search easier:
-
-```emacs-lisp
-(use-package swiper
-	:config
-		(ivy-mode)
-		(setq ivy-use-virtual-buffers t)
-		(setq enable-recursive-minibuffers t)
-		;; enable this if you want `swiper' to use it
-		;; (setq search-default-mode #'char-fold-to-regexp)
-		:bind
-		("\C-s" . swiper)
-		("C-c C-r" . ivy-resume)
-		("M-x" . counsel-M-x))
-
-
-```
-
-
-#### Vertico {#vertico}
-
-light-weighted, integrating with built in emacs completion engine
-
-```emacs-lisp
-(use-package vertico
-	:ensure t
-	:bind (:map vertico-map
-							("C-j" . vertico-next)
-							("C-k" . vertico-previous)
-							("C-f" . vertico-exit)
-							:map minibuffer-local-map
-							("M-h" . backward-kill-word))
-	:custom
-	(vertico-cycle t)
-	:init
-	(vertico-mode))
-
-(use-package savehist
-	:init
-	(savehist-mode))
-
-(use-package marginalia
-	:after vertico
-	:ensure t
-	:custom
-	(marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-	:init
-	(marginalia-mode))
-```
-
-
-#### Avy - jump to a word {#avy-jump-to-a-word}
-
-```emacs-lisp
-
-;; another powerful search tool
-(use-package avy
-	:ensure t
-	:bind ("M-s" . avy-goto-char))
-
-```
-
-
-#### Auto-completion {#auto-completion}
-
-```emacs-lisp
-;;auto-completion
-(use-package auto-complete
-	:ensure t
-	:init
-	(ac-config-default)
-	:config
-	(global-auto-complete-mode t)
-	(setq ac-auto-show-menu 0.5))
-
-(set-face-underline 'ac-candidate-face "darkgray")
-
-```
-
-
-#### Iedit (for multi editing) {#iedit--for-multi-editing}
-
-Using Iedit: This package includes Emacs minor modes (iedit-mode and
-iedit-rectangle-mode) based on a API library (iedit-lib) and allows
-you to alter one occurrence of some text in a buffer (possibly
-narrowed) or region, and simultaneously have other occurrences changed
-in the same way, with visual feedback as you type.
-
-```emacs-lisp
-(use-package iedit)
-```
-
-
-#### (experiment)Blink {#experiment--blink}
-
-[see repo](https://github.com/manateelazycat/blink-search)
-
-```emacs-lisp
-(add-to-list 'load-path "~/.dotfiles/.files/.emacs.d/blink-search")
-(require 'blink-search)
-```
-
-
-#### Smartparens (auto-completing brakets) {#smartparens--auto-completing-brakets}
-
-```emacs-lisp
-(use-package smartparens)
-(smartparens-global-mode t)
-```
-
-
-#### Company (in conjunction with org-roam) {#company--in-conjunction-with-org-roam}
-
-```emacs-lisp
-(use-package company
-	:ensure t
-	:after org-roam
-	:config
-	(add-hook 'after-init-hook 'global-company-mode)
-	(setq company-minimum-prefix-length 2)
-	(setq company-idle-delay 0.25)
-	:bind
-		(:map company-active-map
-			("C-n" . company-select-next)
-			("C-p" . company-select-previous)))
-
-(setq company-backends '(company-capf))
-```
-
-
-### Flycheck {#flycheck}
-
-```emacs-lisp
-(use-package flycheck
-	:ensure t
-	:init
-	(global-flycheck-mode t))
-```
+## Editing {#editing}
 
 
 ### Grammar Check {#grammar-check}
@@ -1284,20 +823,32 @@ in the same way, with visual feedback as you type.
 ```
 
 
-#### <span class="org-todo done DONE">DONE</span> lsp-grammarly <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#lsp-grammarly}
-
--   State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2022-11-06 Sun 12:37] </span></span> <br />
-    `s-l a a` - select from options of actions
-
-link:<https://github.com/emacs-grammarly/lsp-grammarly>
-
-
 ### Syntax Highlighting {#syntax-highlighting}
 
 ```emacs-lisp
 (use-package rainbow-delimiters
 	:hook (prog-mode . rainbow-delimiters-mode))
 ```
+
+
+### Undo Tree {#undo-tree}
+
+```emacs-lisp
+(use-package undo-tree
+:ensure t
+:init
+(global-undo-tree-mode))
+```
+
+
+### Magit {#magit}
+
+```emacs-lisp
+(use-package magit)
+```
+
+
+## Others {#others}
 
 
 ### Terminal {#terminal}
@@ -1313,31 +864,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 :config
 (eshell-git-prompt-use-theme 'powerline))
 ```
-
-
-### Undo Tree {#undo-tree}
-
-```emacs-lisp
-(use-package undo-tree
-:ensure t
-:init
-(global-undo-tree-mode))
-```
-
-
-### Markdown mode {#markdown-mode}
-
-```emacs-lisp
-
-(use-package markdown-mode
-	:ensure t
-	:mode ("README\\.md\\'" . gfm-mode)
-	:init (setq markdown-command "multimarkdown"))
-
-```
-
-
-## File management {#file-management}
 
 
 ### Dired {#dired}
@@ -1393,27 +919,6 @@ link:<https://github.com/emacs-grammarly/lsp-grammarly>
 ```
 
 
-### Magit {#magit}
-
-```emacs-lisp
-(use-package magit)
-```
-
-
-### For File navigation {#for-file-navigation}
-
-I saw good reviews of deadgrep the other day so want to give it a
-try... ( but I don't know how to use this yet )
-
-```emacs-lisp
-(use-package deadgrep)
-(global-set-key (kbd "C-c n d") #'deadgrep)
-```
-
-
-### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="_download">@download</span><span class="_emacs">@emacs</span></span> {#cv-with-org-mode}
-
-
 ### Obsidian {#obsidian}
 
 ```emacs-lisp
@@ -1437,6 +942,15 @@ try... ( but I don't know how to use this yet )
 link: <https://github.com/zzamboni/vita/>
 
 
+### For File navigation {#for-file-navigation}
+
+```emacs-lisp
+(use-package deadgrep
+	:bind
+	("C-c n d" . deadgrep))
+```
+
+
 ## Export {#export}
 
 
@@ -1449,13 +963,7 @@ link: <https://github.com/zzamboni/vita/>
 ```
 
 
-### `.md` Preview {#dot-md-preview}
-
-[Github Repo](https://github.com/seagle0128/grip-mode/tree/e1e8ee952f75cdca93327b6e7dcd79244ca66bc0#limitations)
-
-```emacs-lisp
-(use-package grip-mode)
-```
+### <span class="org-todo todo ONWATCH">ONWATCH</span> CV with Org-mode <span class="tag"><span class="download">download</span><span class="emacs">emacs</span></span> {#cv-with-org-mode}
 
 
 ## Keep .emacs.d clean {#keep-dot-emacs-dot-d-clean}
@@ -1480,13 +988,11 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 ## Auto Tangle {#auto-tangle}
 
 ```emacs-lisp
-(defun efs/org-babel-tangle-config ()
+(defun joz/org-babel-tangle-config ()
 	(when (string-equal (buffer-file-name)
-		(expand-file-name "~/.dotfiles/Emacs.org"))
+		(expand-file-name "~/.dotfiles/Emacs_new.org"))
 	(let ((org-confim-babel-evaluate t))
 		(org-babel-tangle))))
-
-(add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
 ```
 
 

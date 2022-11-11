@@ -6,7 +6,7 @@
     <description>Recent content in Posts on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Emacs for bookmark management</title>
       <link>/posts/using-emacs-for-bookmark-management/</link>
@@ -17,13 +17,23 @@
     </item>
     
     <item>
+      <title>Computer Systems: A Programmer&#39;s Perspective</title>
+      <link>/posts/bryantcomputersystemsprogrammer2015/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/bryantcomputersystemsprogrammer2015/</guid>
+      <description>tags :
+keywords :
+Info </description>
+    </item>
+    
+    <item>
       <title>Notes for The Brothers Karamazov</title>
       <link>/posts/dostoyevskybrotherskaramazov2012/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/dostoyevskybrotherskaramazov2012/</guid>
-      <description>tags :
-keywords Dostoyevsky,Fiction / Classics Info Motivation of reading Heavily referenced in Camus&amp;rsquo; Rabel.
+      <description>tags Fiction/Classics author Fyodor Dostoevsky Motivation for reading Heavily referenced in Camus&amp;rsquo; Rabel.
 Memo Quote Ivan&amp;rsquo;s view of the physical world and religion I have a Euclidian earthly mind, and how could I solve problems that are not of this world? And I advise you never to think about it either, my dear Alyosha, especially about God, whether He exists or not. All such questions are utterly inappropriate for a mind created with an idea of only three dimensions.</description>
     </item>
     
@@ -44,8 +54,11 @@ First, load org-protocol.el to the init.el configuration file:
       <pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/emacs/</guid>
-      <description>This is the Emacs configuration built from scratch following system crafter and Mike Zamansky&amp;rsquo;s youtube videos. As someone with only limited experience in running statistical models in R it&amp;rsquo;s been a confusing exprience to finally build vague understanding of what&amp;rsquo;s going on behind the scene.
-This literal configuration, by the time the post was written is still a patchwork of pieces I have taken from different places. My goal is to taking notes of concepts and syntax along the way when reorganizing the configuration file so that the documentation will be self-contained and &amp;ldquo;dummy-friendly&amp;rdquo; for people like me who wants to start using emacs to boost their productivities but have very little idea of anything relates to programming at the beginning of their journey.</description>
+      <description>Rewrite my config to get rid of the redunant functions and build the system from stratch using straight.el for package management.
+Package System Setup use-package GitRepo for the documentations. See quick tutorial for how to use use-package use-package is a way to organize the code neat but itself is not a pckage manager.
+Few most common keywords:
+:init : executing the keywords before the code is executed.
+:config: executing codes after the package is loaded</description>
     </item>
     
     <item>
