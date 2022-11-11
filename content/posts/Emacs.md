@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-10T20:25:05-05:00
+lastmod = 2022-11-10T23:10:03-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -165,7 +165,7 @@ Auto-revert, save history etc to improve general usage
 (save-place-mode 1)
 
 ;; Turn on auto-fill-mode so the paragraph doesn't get super long
-(auto-fill-mode 1)
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 ;; Turn of the electric indent mode
 (electric-indent-mode -1)
@@ -389,6 +389,10 @@ Minimalistic auto completion setting: `vertico` + `savehist` + `marginalia`
 	;; Optionally enable cycling for `vertico-next' and `vertico-previous'.
 	;; (setq vertico-cycle t)
 	)
+
+(define-key vertico-map "?" #'minibuffer-completion-help)
+(define-key vertico-map (kbd "M-RET") #'minibuffer-force-complete)
+(define-key vertico-map (kbd "M-TAB") #'minibuffer-complete)
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist

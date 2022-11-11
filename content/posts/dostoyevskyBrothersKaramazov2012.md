@@ -2,7 +2,7 @@
 title = "Notes for The Brothers Karamazov"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-10T21:11:29-05:00
+lastmod = 2022-11-10T23:11:37-05:00
 tags = ["literatures"]
 draft = false
 +++
@@ -33,7 +33,7 @@ Heavily referenced in Camus' _Rabel_.
 
 ## Impression {#impression}
 
--   Chracters are very complicated. Even the "bad" one by convension
-    seems to have a noble heart while people who are professional and by
-    current standard, only merely try to do their works right, somehow
-    seems mediocor to the point of evil.
+-   Characters are very complicated. If someone sees a person like Demitri in
+    real life, no doubt he will be treated like a buffoon. However,
+    the character in the book sometimes displays insights into certain
+    issues and also seems to possess a noble heart.
