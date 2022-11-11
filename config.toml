@@ -16,7 +16,7 @@ weight = 2
 
 [[menu.main]]
 name = 'Bookshelf'
-url = "/bookshelves"
+url = "/bookshelves/readinglists"
 weight = 3
 
 [[menu.main]]

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bookshelves on Chloe Jo</title>
+    <link>/bookshelves/</link>
+    <description>Recent content in Bookshelves on Chloe Jo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/bookshelves/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Systems: A Programmer&#39;s Perspective</title>
+      <link>/bookshelves/bryantcomputersystemsprogrammer2015/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/bryantcomputersystemsprogrammer2015/</guid>
+      <description> tags ComputerScience/Testbook keywords SystemOperations </description>
+    </item>
+    
+    <item>
+      <title>Notes for The Brothers Karamazov</title>
+      <link>/bookshelves/dostoyevskybrotherskaramazov2012/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/dostoyevskybrotherskaramazov2012/</guid>
+      <description>tags Fiction/Classics author Fyodor Dostoevsky Motivation for reading Heavily referenced in Camus&amp;rsquo; Rabel.
+Memo Quote Ivan&amp;rsquo;s view of the physical world and religion I have a Euclidian earthly mind, and how could I solve problems that are not of this world? And I advise you never to think about it either, my dear Alyosha, especially about God, whether He exists or not. All such questions are utterly inappropriate for a mind created with an idea of only three dimensions.</description>
+    </item>
+    
+    <item>
+      <title>readinglists</title>
+      <link>/bookshelves/readinglists/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/readinglists/</guid>
+      <description>I am a heavy reader who loves reading about philosophy, history and politics. I also love classic literature a lot. Sometimes I read reviews, analyses and background stories that relate to the pieces I am reading and the desire to put all those dots together motivates me to create this site in the first place.
+This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting.</description>
+    </item>
+    
+  </channel>
+</rss>
