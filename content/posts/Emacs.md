@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-11T09:11:14-05:00
+lastmod = 2022-11-11T11:17:11-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -290,7 +290,7 @@ To disable the auto indentation in org-mode
     	(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
     	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
-    (add-hook 'org-mode-hook 'org-font-setup)
+    ;; (add-hook 'org-mode-hook 'org-font-setup)
     ```
 
 <!--list-separator-->
@@ -521,7 +521,7 @@ The basic expansion comes in handy by using `org-tempo`
 	:init
 	(yas-global-mode 1)
 	:bind
-	("<TAB>" . yas-expand)
+	("\C-o" . yas-expand)
 	:config
 	(add-hook 'org-mode-hook 'my-org-mode-hook))
 
@@ -541,6 +541,7 @@ The straight version of org is not working, using straight to make sure using th
 	:straight (
 		org :type built-in
 	)
+	:mode ("\\.org" . org-mode)
 	:hook ((org-mode . org-font-setup)
 				 (org-mode . turn-on-visual-line-mode))
 	:bind
@@ -748,13 +749,6 @@ For the PDF Scrapper, change the formate of the paper key:
 	 (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
 	)
 
-(setq org-capture-templates '(
-															("p" "Protocol" entry (file+headline "~/Notes/captures.org" "Inbox")
-															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-															("L" "Protocol Link" entry (file+headline "~/Notes/captures.org" "Link")
-															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
-															))
-
 (global-set-key (kbd "C-c c") 'org-capture)
 ```
 
@@ -773,14 +767,25 @@ For the PDF Scrapper, change the formate of the paper key:
 ;;Add progress logging to the org-agenda file
 (setq org-log-done 'note)
 
-;;Add some captures related to agenda
-(add-to-list 'org-capture-templates '("t" "Todo" entry (file+headline "~/Notes/Agenda/dailylife.org" "Task")
-																			 "* TODO %?\n %i\n"))
-
-(add-to-list 'org-capture-templates '("b" "Blog Idea" plain
-																			 (file+headline "~/Notes/blogideas.org" "Inbox")
-																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
-																			))
+;;Add captures template
+(setq org-capture-templates '(
+															("p" "Protocol" entry
+															 (file+headline "~/Notes/captures.org" "Inbox")
+															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+															("L" "Protocol Link" entry
+															 (file+headline "~/Notes/captures.org" "Link")
+															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
+															("t" "Todo" entry
+															 (file+headline "~/Notes/Agenda/dailylife.org" "Task")
+															 "* TODO %?\n %i\n")
+															("b" "Blog Idea" plain
+															 (file+headline "~/Notes/blogideas.org" "Inbox")
+															 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
+															 )
+															("f" "emacs problem" plain
+															 (file+headline "~/Notes/captures.org" "Emacs Problems")
+															 "- [ ] %?\n")
+															))
 
 ;;set todo keywords
 (setq org-todo-keywords
@@ -998,7 +1003,7 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 ```emacs-lisp
 (defun joz/org-babel-tangle-config ()
 	(when (string-equal (buffer-file-name)
-		(expand-file-name "~/.dotfiles/Emacs_new.org"))
+		(expand-file-name "~/.dotfiles/Emacs.org"))
 	(let ((org-confim-babel-evaluate t))
 		(org-babel-tangle))))
 ```

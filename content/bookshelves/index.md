@@ -2,7 +2,7 @@
 title = "readinglists"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-11T09:11:25-05:00
+lastmod = 2022-11-11T11:58:43-05:00
 draft = false
 +++
 
@@ -16,13 +16,17 @@ This page is dedicated to the list of books and articles I have read and current
 reading that I find inspiring and interesting.
 
 
-## Literature {#literature}
+## Reading {#reading}
 
 
-### <span class="org-todo todo READING">READING</span>  <span class="tag"><span class="literatures">literatures</span></span> {#d41d8c}
+### [The Brothers Karamazov]({{< relref "dostoyevskyBrothersKaramazov2012.md" >}}) {#the-brothers-karamazov--dostoyevskybrotherskaramazov2012-dot-md}
 
 
-## Computer Science {#computer-science}
+### [Computer Systems: A Programmer's Perspective]({{< relref "bryantComputerSystemsProgrammer2015.md" >}}) {#computer-systems-a-programmer-s-perspective--bryantcomputersystemsprogrammer2015-dot-md}
 
 
-### <span class="org-todo todo READING">READING</span>  <span class="tag"><span class="books">books</span><span class="cs">cs</span><span class="programming">programming</span></span> {#d41d8c}
+## Bookshelves {#bookshelves}
+
+-   [ ] figuring out how to get the info from douban and goodread...
+-   [ ] check whether export works.
+-   [ ] Reference to files only works when it's in the posts path
