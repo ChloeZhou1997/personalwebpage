@@ -2,13 +2,21 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-11T09:11:14-05:00
+lastmod = 2022-11-12T01:51:03-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
 
 Rewrite my config to get rid of the redunant functions and build the
 system from stratch using `straight.el` for package management.
+
+
+## <span class="org-todo todo TODO">TODO</span> Emacs configurations <code>[/]</code> {#emacs-configurations}
+
+-   [ ] [ox-json](https://github.com/jlumpe/ox-json) + [pyorg](https://github.com/jlumpe/pyorg) to obtain `json` data from org files, check [org ele
+    API](https://orgmode.org/worg/dev/org-element-api.html#attributes) also
+-   [ ] Install [blink-search](https://github.com/manateelazycat/blink-search) and explore it.
+-   [ ] Check on `embark` to see if it's an alternative to `which-key`
 
 
 ## Package System Setup {#package-system-setup}
@@ -290,7 +298,7 @@ To disable the auto indentation in org-mode
     	(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
     	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
-    (add-hook 'org-mode-hook 'org-font-setup)
+    ;; (add-hook 'org-mode-hook 'org-font-setup)
     ```
 
 <!--list-separator-->
@@ -521,7 +529,7 @@ The basic expansion comes in handy by using `org-tempo`
 	:init
 	(yas-global-mode 1)
 	:bind
-	("<TAB>" . yas-expand)
+	("\C-o" . yas-expand)
 	:config
 	(add-hook 'org-mode-hook 'my-org-mode-hook))
 
@@ -541,8 +549,10 @@ The straight version of org is not working, using straight to make sure using th
 	:straight (
 		org :type built-in
 	)
+	:mode ("\\.org" . org-mode)
 	:hook ((org-mode . org-font-setup)
-				 (org-mode . turn-on-visual-line-mode))
+				 (org-mode . turn-on-visual-line-mode)
+				 (org-mode . company-mode))
 	:bind
 	("C-c a" . org-agenda)
 	("C-c l"   . 'org-store-link)
@@ -593,8 +603,10 @@ The straight version of org is not working, using straight to make sure using th
 	(org-download-image-dir "~/Notes/static/images")
 	(org-download-heading-lvl 0)
 	(org-download-timestamp "org_%Y%m%d-%H%M%S_")
-	(org-image-actual-width 900)
+	(org-image-actual-width 400)
 	(org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
+	(org-download-image-html-width 400)
+	(org-download-image-org-width 400)
 	:bind
 	("C-M-y" . org-download-clipboard))
 ```
@@ -676,6 +688,12 @@ This allows roam like citation backlink
 
 #### template {#template}
 
+-   `${slug}` is by default the title of the note, it's the text passed
+    into the template system from the search. Also according to
+    wikipedia,[it's the human readable part of the url](https://en.wikipedia.org/wiki/Clean_URL#Slug).
+
+<!--listend-->
+
 ```emacs-lisp
 (setq orb-preformat-keywords
 			'("citekey" "title" "url" "author-or-editor" "keywords" "file")
@@ -748,13 +766,6 @@ For the PDF Scrapper, change the formate of the paper key:
 	 (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
 	)
 
-(setq org-capture-templates '(
-															("p" "Protocol" entry (file+headline "~/Notes/captures.org" "Inbox")
-															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-															("L" "Protocol Link" entry (file+headline "~/Notes/captures.org" "Link")
-															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
-															))
-
 (global-set-key (kbd "C-c c") 'org-capture)
 ```
 
@@ -773,14 +784,25 @@ For the PDF Scrapper, change the formate of the paper key:
 ;;Add progress logging to the org-agenda file
 (setq org-log-done 'note)
 
-;;Add some captures related to agenda
-(add-to-list 'org-capture-templates '("t" "Todo" entry (file+headline "~/Notes/Agenda/dailylife.org" "Task")
-																			 "* TODO %?\n %i\n"))
-
-(add-to-list 'org-capture-templates '("b" "Blog Idea" plain
-																			 (file+headline "~/Notes/blogideas.org" "Inbox")
-																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
-																			))
+;;Add captures template
+(setq org-capture-templates '(
+															("p" "Protocol" entry
+															 (file+headline "~/Notes/captures.org" "Inbox")
+															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+															("L" "Protocol Link" entry
+															 (file+headline "~/Notes/captures.org" "Link")
+															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
+															("t" "Todo" entry
+															 (file+headline "~/Notes/Agenda/dailylife.org" "Task")
+															 "* TODO %?\n %i\n")
+															("b" "Blog Idea" plain
+															 (file+headline "~/Notes/blogideas.org" "Inbox")
+															 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
+															 )
+															("f" "emacs problem" plain
+															 (file+headline "~/Notes/captures.org" "Emacs Problems")
+															 "- [ ] %?\n")
+															))
 
 ;;set todo keywords
 (setq org-todo-keywords
@@ -998,7 +1020,7 @@ url-history-file (expand-file-name "url/history" user-emacs-directory))
 ```emacs-lisp
 (defun joz/org-babel-tangle-config ()
 	(when (string-equal (buffer-file-name)
-		(expand-file-name "~/.dotfiles/Emacs_new.org"))
+		(expand-file-name "~/.dotfiles/Emacs.org"))
 	(let ((org-confim-babel-evaluate t))
 		(org-babel-tangle))))
 ```

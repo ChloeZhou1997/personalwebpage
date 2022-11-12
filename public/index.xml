@@ -6,7 +6,7 @@
     <description>Recent content on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Nov 2022 13:05:00 -0500</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Emacs for bookmark management</title>
       <link>/posts/using-emacs-for-bookmark-management/</link>
@@ -17,11 +17,29 @@
     </item>
     
     <item>
-      <title>readinglists</title>
-      <link>/bookshelves/</link>
+      <title>Computer Systems: A Programmer&#39;s Perspective</title>
+      <link>/bookshelves/bryantcomputersystemsprogrammer2015/</link>
+      <pubDate>Thu, 10 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/bryantcomputersystemsprogrammer2015/</guid>
+      <description> tags ComputerScience/Testbook keywords SystemOperations Motivation for reading </description>
+    </item>
+    
+    <item>
+      <title>Notes for The Brothers Karamazov</title>
+      <link>/bookshelves/dostoyevskybrotherskaramazov2012/</link>
       <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>/bookshelves/</guid>
+      <guid>/bookshelves/dostoyevskybrotherskaramazov2012/</guid>
+      <description>bookshelves</description>
+    </item>
+    
+    <item>
+      <title>readinglists</title>
+      <link>/bookshelves/readinglists/</link>
+      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/readinglists/</guid>
       <description>I am a heavy reader who loves reading about philosophy, history and politics. I also love classic literature a lot. Sometimes I read reviews, analyses and background stories that relate to the pieces I am reading and the desire to put all those dots together motivates me to create this site in the first place.
 This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting.</description>
     </item>
@@ -44,10 +62,7 @@ First, load org-protocol.el to the init.el configuration file:
       
       <guid>/posts/emacs/</guid>
       <description>Rewrite my config to get rid of the redunant functions and build the system from stratch using straight.el for package management.
-Package System Setup use-package GitRepo for the documentations. See quick tutorial for how to use use-package use-package is a way to organize the code neat but itself is not a pckage manager.
-Few most common keywords:
-:init : executing the keywords before the code is executed.
-:config: executing codes after the package is loaded</description>
+TODO Emacs configurations [/] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Package System Setup use-package GitRepo for the documentations. See quick tutorial for how to use use-package use-package is a way to organize the code neat but itself is not a pckage manager.</description>
     </item>
     
     <item>
