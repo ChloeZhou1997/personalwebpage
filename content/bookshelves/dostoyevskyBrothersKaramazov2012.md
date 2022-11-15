@@ -2,7 +2,7 @@
 title = "Notes for The Brothers Karamazov"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-12T01:57:19-05:00
+lastmod = 2022-11-15T01:47:17-05:00
 tags = ["literatures"]
 draft = false
 +++
@@ -37,9 +37,26 @@ Heavily referenced in Camus' _Rabel_.
     real life, no doubt he will be treated like a buffoon. However,
     the character in the book sometimes displays insights into certain
     issues and also seems to possess a noble heart.
+-   Love is a frequent theme in Dostoyevsky's work, if not the most
+    frequent...
 
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-15 Tue&gt; </span></span> : Reading Progress : 100% {#reading-progress-100}
+
+-   A very exciting confrontation between the prosecutor and the defender.
+-   Love the state of what qualifies a person to be a true father.
+
+> the father is not merely he who begets the child, but he who begets it and does his duty by it.
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-13 Sun&gt; </span></span> : Reading Progress : 84% {#reading-progress-84}
+
+-   Smerdyakov kills himself
+-   Ivan was in delirium and believed Smerdyakov mocked him before he
+    committed suicide
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-12 Sat&gt; </span></span> : Reading Progress : 79% {#reading-progress-79}

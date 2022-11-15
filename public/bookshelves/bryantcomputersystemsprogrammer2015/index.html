@@ -51,43 +51,160 @@
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
 
-    <header id="header">
-  <a href="/">
-  
-    <div id="logo" style="background-image: url(/images/logo.png)"></div>
-  
-  <div id="title">
-    <h1>Chloe Jo</h1>
-  </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
-      </li>
-      
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
         <li><a href="/">Home</a></li>
-      
+         
         <li><a href="/posts">Blog</a></li>
-      
+         
         <li><a href="/bookshelves/readinglists">Bookshelf</a></li>
-      
+         
         <li><a href="/tags">Tags</a></li>
-      
+         
         <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" /bookshelves/dostoyevskybrotherskaramazov2012/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="/posts/using-emacs-for-bookmark-management/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
       
-    </ul>
-  </div>
-</header>
-
-
-
-    
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <div class="content" itemprop="articleBody">
+      <ul>
   
-    <figure><img src="/images/org_20221110-214248_screenshot.png"/>
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&text=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&is_video=false&description=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective&body=Check out this article: %2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&name=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective&description=%20tags%20ComputerScience%2fTestbook%20keywords%20SystemOperations%20Motivation%20for%20reading%20" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&t=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation-for-reading">Motivation for reading</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Computer Systems: A Programmer&#39;s Perspective
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2022-11-10 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-11-10</time>
+          
+            (Updated: <time datetime="2022-11-11 09:15:05 -0500 EST" itemprop="dateModified">2022-11-11</time>)
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          0 minute read
+        </div>
+        
+        
+        
+      </div>
+    </header>
+
+  
+  
+    <div class="content" itemprop="articleBody">
+      <figure><img src="/images/org_20221110-214248_screenshot.png"/>
 </figure>
 
 <dl>
@@ -98,10 +215,9 @@
 </dl>
 <h2 id="motivation-for-reading">Motivation for reading</h2>
 
-  
-  </div>
-  <div class="post-content" itemprop="articleBody">
-    
+    </div>
+    <div class="post-content" itemprop="articleBody">
+      
 
 
    
@@ -166,11 +282,122 @@
     </div>
   </div>
 
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Blog</a></li>
+         
+          <li><a href="/bookshelves/readinglists">Bookshelf</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#motivation-for-reading">Motivation for reading</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&text=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&is_video=false&description=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective&body=Check out this article: %2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&title=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&name=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective&description=%20tags%20ComputerScience%2fTestbook%20keywords%20SystemOperations%20Motivation%20for%20reading%20" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=%2fbookshelves%2fbryantcomputersystemsprogrammer2015%2f&t=Computer%20Systems%3a%20A%20Programmer%27s%20Perspective" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
   </div>
-</article>
+</div>
 
 
-    <footer id="footer">
+  <footer id="footer">
   <div class="footer-left">
     Copyright  &copy; 2022  Chloe Jo 
   </div>
@@ -198,6 +425,29 @@
 </body>
 
 <link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<link rel="stylesheet" href=/lib/overwrite/css/style.css>
 <script src=/lib/jquery/jquery.min.js></script>
 <script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 </html>

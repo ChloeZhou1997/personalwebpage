@@ -2,7 +2,7 @@
 title = "readinglists"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-12T01:53:29-05:00
+lastmod = 2022-11-15T01:50:11-05:00
 draft = false
 +++
 
@@ -19,13 +19,13 @@ reading that I find inspiring and interesting.
 ## Reading {#reading}
 
 
-### [The Brothers Karamazov]({{< relref "dostoyevskyBrothersKaramazov2012.md" >}}) {#the-brothers-karamazov--dostoyevskybrotherskaramazov2012-dot-md}
-
-
 ### [Computer Systems: A Programmer's Perspective]({{< relref "bryantComputerSystemsProgrammer2015.md" >}}) {#computer-systems-a-programmer-s-perspective--bryantcomputersystemsprogrammer2015-dot-md}
 
 
 ## Bookshelves {#bookshelves}
+
+
+### [The Brothers Karamazov]({{< relref "dostoyevskyBrothersKaramazov2012.md" >}}) {#the-brothers-karamazov--dostoyevskybrotherskaramazov2012-dot-md}
 
 
 ## Things left undone {#things-left-undone}
