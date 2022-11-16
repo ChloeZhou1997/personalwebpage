@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-15T01:33:38-05:00
+lastmod = 2022-11-15T18:25:21-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -1198,5 +1198,5 @@ link: <https://github.com/zzamboni/vita/>
 
 ```emacs-lisp
 (use-package ox-altacv
-  :straight (org-cv :type git :host gitlab :repo "Titan-C/org-cv"))
+  :straight (org-cv :type git :host gitlab :repo "ChloeZhou1997/org-cv"))
 ```
