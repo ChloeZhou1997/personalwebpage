@@ -1,0 +1,12 @@
+.bookCategory {
+	background-color: #A2CFA4;
+	margin: 2px;
+	padding: 3px;
+	border-radius: 5px;
+	font-size:smaller;
+}
+
+a {
+	padding:3px;
+	margin:2px;
+}

@@ -6,7 +6,17 @@
     <description>Recent content on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Beyond Good and Evil - Ch1 Prejudices of Philosophers</title>
+      <link>/evergreen/notes-beyondgoodandevil-ch1/</link>
+      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/evergreen/notes-beyondgoodandevil-ch1/</guid>
+      <description>1 . Nietzsche starts the first chapter of the book by questioning the &amp;ldquo;Will of Truth&amp;rdquo; - if there&amp;rsquo;s a will to truth, why not untruth? Nietzsche pointed that philosophers devoted themselves to the &amp;ldquo;Will of Truth&amp;rdquo; without questioning the origin of the will. He also mentioned such question is Dangerous.
+Background Sphnix and Oedipus Sphnix is a mythical creature with a head of a human, the body of a lion and the wings of a falcon.</description>
+    </item>
+    
     <item>
       <title>Using Emacs for bookmark management</title>
       <link>/posts/using-emacs-for-bookmark-management/</link>
@@ -14,6 +24,15 @@
       
       <guid>/posts/using-emacs-for-bookmark-management/</guid>
       <description>This post is inspired by Mike Zamansky&amp;rsquo;s video channel on youtube1.Since I am now using Arc as my main browser so usually I don&amp;rsquo;t usually need to manage my bookmark, sometimes when I saw interesting blogs and information, I still want to have it somewhere and preferably an annotation to tell me why I store it at the first place, to have this sort of bookmark in my emacs comes in handy.</description>
+    </item>
+    
+    <item>
+      <title>Beyond Good and Evil</title>
+      <link>/bookshelves/nietzschegoodevilprelude1907/</link>
+      <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/bookshelves/nietzschegoodevilprelude1907/</guid>
+      <description> tags Philosophy keywords Existentialism Motivation for reading Memo Quote Background Impression Reading log &amp;lt;2022-11-16 Wed&amp;gt; : Reading Progress : 1% I was attempated to read it faster then realize I can&amp;rsquo;t understand anything if reading at that pace&amp;hellip; So my current goal is to read at least one section a day and build a more solid understanding of the book. By chapter Ch1 Prejudices of Philosophers Relevant </description>
     </item>
     
     <item>
@@ -36,16 +55,6 @@ Memo Quote Ivan&amp;rsquo;s view of the physical world and religion I have a Euc
     </item>
     
     <item>
-      <title>readinglists</title>
-      <link>/bookshelves/readinglists/</link>
-      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/bookshelves/readinglists/</guid>
-      <description>I am a heavy reader who loves reading about philosophy, history and politics. I also love classic literature a lot. Sometimes I read reviews, analyses and background stories that relate to the pieces I am reading and the desire to put all those dots together motivates me to create this site in the first place.
-This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting.</description>
-    </item>
-    
-    <item>
       <title>Configuring org-protocol in AMD build MacOS</title>
       <link>/posts/emacs-config-org-protocol/</link>
       <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
@@ -63,10 +72,7 @@ First, load org-protocol.el to the init.el configuration file:
       
       <guid>/posts/emacs/</guid>
       <description>Rewrite my config to get rid of the redunant functions and build the system from stratch using straight.el for package management.
-Package System Setup use-package GitRepo for the documentations. See quick tutorial for how to use use-package use-package is a way to organize the code neat but itself is not a pckage manager.
-Few most common keywords:
-:init : executing the keywords before the code is executed.
-:config: executing codes after the package is loaded</description>
+TODO Emacs configurations [4/7] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Install Projectile rewrite the super-agenda to make it nicer. improvement of performance of emacs (not really&amp;hellip; but I tried&amp;hellip;) reconfiuring eshell Setup before everything else 1(setq package-enable-at-startup nil) Performance Monitoring Define a function that will monitor how long it takes for Emacs to startup:</description>
     </item>
     
     <item>

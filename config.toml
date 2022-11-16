@@ -16,7 +16,7 @@ weight = 2
 
 [[menu.main]]
 name = 'Bookshelf'
-url = "/bookshelves/readinglists"
+url = "/bookshelves"
 weight = 3
 
 [[menu.main]]
@@ -45,7 +45,7 @@ weight = 5
     style = "dracula"
     tabWidth = 4
 
-[params]
+[params] 
 	googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
   showAllPostsArchive = false # default
 
@@ -75,3 +75,9 @@ weight = 5
   [[params.social]]
     name = "email"
     link = "qz111@georgetown.edu"  # no need for "mailto:" in the head
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  status = 'status'
+  bookCate = 'bookCate'

@@ -1,0 +1,41 @@
+{{ define "main"}}
+<link rel="stylesheet" href={{"/lib/overwrite/css/booktag.css" | relURL}}>
+<div class="intro">
+  <p>I am a heavy reader who loves reading about philosophy, history and politics. I also love classic literature a lot. Sometimes I read reviews, analyses and background stories that relate to the pieces I am reading and the desire to put all those dots together motivates me to create this site in the first place.</p>
+
+  <p>This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting. </p>
+</div>
+<div id="archive">
+  <ul class="post-list">
+
+  {{ $pages := .Paginator.Pages }}
+  {{ if .Site.Params.showAllPostsArchive }}
+    {{ $pages = .Pages }}
+  {{ end }}
+
+  {{ range (.Pages.ByParam "stauts") }}
+    {{ $pageStatus := (.Params.status) }}
+    {{ if (ne $pageStatus ($.Scratch.Get "status")) }}
+    {{ $.Scratch.Set "status" $pageStatus }}
+    <h2>{{ $pageStatus }}</h2>
+    {{ end }}
+    
+    <li class="post-item">
+      {{/*  <div class="meta">
+        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+      </div>  */}}
+      <div class="bookCategory">
+        <div class="customTag">{{ (.Params.bookCate) }}</div>
+      </div>
+      <span>    
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+      </span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ if eq .Site.Params.showAllPostsArchive false }}
+    {{ partial "pagination.html" . }}
+  {{ end }}
+</div>
+
+{{ end }}
