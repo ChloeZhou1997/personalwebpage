@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-11T09:11:14-05:00
+lastmod = 2022-11-16T20:31:58-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -331,7 +331,7 @@ To disable the auto indentation in org-mode
       (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
       (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
 
-    ;; (add-hook 'org-mode-hook 'org-font-setup)
+    (add-hook 'org-mode-hook 'org-font-setup)
     ```
 
 <!--list-separator-->
@@ -549,17 +549,29 @@ This package offer all the possible completions for the prefix.
 ```
 
 
-#### Expansion {#expansion}
-
-The basic expansion comes in handy by using `org-tempo`
+#### Snippet {#snippet}
 
 ```emacs-lisp
-(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-(add-to-list 'org-structure-template-alist '("py" . "src python"))
-(add-to-list 'org-structure-template-alist '("ja" . "src java"))
-(add-to-list 'org-structure-template-alist '("quo" . "quote"))
-(add-to-list 'org-structure-template-alist '("ex" . "example"))
+(defun my-org-mode-hook ()
+  (setq-local yas-buffer-local-condition
+              '(not (org-in-src-block-p t))))
+
+(use-package yasnippet
+  :init
+  (yas-global-mode 1)
+  :custom
+  (yas-snippet-dirs '("~/.emacs.d/snippets"
+                      "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
+  :bind
+  ("\C-o" . yas-expand)
+  :config
+  (add-hook 'org-mode-hook 'my-org-mode-hook))
+
+;;download snippets lib
+(use-package yasnippet-snippets)
+
+;;integration with consult
+(use-package consult-yasnippet)
 ```
 
 
@@ -604,29 +616,6 @@ The basic expansion comes in handy by using `org-tempo`
 ```
 
 
-### Snippet {#snippet}
-
-```emacs-lisp
-(defun my-org-mode-hook ()
-  (setq-local yas-buffer-local-condition
-              '(not (org-in-src-block-p t))))
-
-(use-package yasnippet
-	:init
-	(yas-global-mode 1)
-	:bind
-	("<TAB>" . yas-expand)
-	:config
-	(add-hook 'org-mode-hook 'my-org-mode-hook))
-
-;;download snippets lib
-(use-package yasnippet-snippets)
-
-;;integration with consult
-(use-package consult-yasnippet)
-```
-
-
 ### Project {#project}
 
 ```emacs-lisp
@@ -658,15 +647,25 @@ The straight version of org is not working, using straight to make sure using th
 
 ```emacs-lisp
 (use-package org
-	:straight (
-		org :type built-in
-	)
-	:hook ((org-mode . org-font-setup)
-				 (org-mode . turn-on-visual-line-mode))
-	:bind
-	("C-c a" . org-agenda)
-	("C-c l"   . 'org-store-link)
-	("C-c C-l"  . 'org-insert-link))
+  ;; :straight (
+  ;; 	org :type built-in
+  ;; )
+  :mode ("\\.org" . org-mode)
+  :hook ((org-mode . org-font-setup)
+         (org-mode . turn-on-visual-line-mode)
+         (org-mode . company-mode))
+  :bind
+  ("C-c a" . org-agenda)
+  ("C-c l"   . 'org-store-link)
+  ("C-c C-l"  . 'org-insert-link))
+
+;;load babel after org has loaded
+(with-eval-after-load 'org
+  (org-babel-do-load-languages
+      'org-babel-load-languages
+      '((emacs-lisp . t)
+      (python . t))))
+
 ```
 
 ```emacs-lisp
@@ -754,6 +753,7 @@ The straight version of org is not working, using straight to make sure using th
 
 ```emacs-lisp
 (use-package pdf-tools)
+(pdf-tools-install) ;;it has to be called otherwise org-noter won't integrate.
 (use-package org-noter
   :bind
   ("C-c n o" . org-noter))
@@ -897,13 +897,6 @@ For the PDF Scrapper, change the formate of the paper key:
    (mapcar #'(lambda (c) (if (equal c ?[) ?\( (if (equal c ?]) ?\) c))) string-to-transform))
   )
 
-(setq org-capture-templates '(
-															("p" "Protocol" entry (file+headline "~/Notes/captures.org" "Inbox")
-															 "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-															("L" "Protocol Link" entry (file+headline "~/Notes/captures.org" "Link")
-															 "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
-															))
-
 (global-set-key (kbd "C-c c") 'org-capture)
 ```
 
@@ -920,16 +913,27 @@ For the PDF Scrapper, change the formate of the paper key:
                              "~/Notes/Questions.org"
                              "~/Notes/RoamNotes/readinglists.org"))
 ;;Add progress logging to the org-agenda file
-(setq org-log-done 'note)
-
-;;Add some captures related to agenda
-(add-to-list 'org-capture-templates '("t" "Todo" entry (file+headline "~/Notes/Agenda/dailylife.org" "Task")
-																			 "* TODO %?\n %i\n"))
-
-(add-to-list 'org-capture-templates '("b" "Blog Idea" plain
-																			 (file+headline "~/Notes/blogideas.org" "Inbox")
-																			 (file "~/Notes/RoamNotes/Templates/blog_temp.org")
-																			))
+;; (setq org-log-done 'note)
+(setq org-log-done t)
+;;Add captures template
+(setq org-capture-templates '(
+                              ("p" "Protocol" entry
+                               (file+headline "~/Notes/captures.org" "Inbox")
+                               "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+                              ("L" "Protocol Link" entry
+                               (file+headline "~/Notes/captures.org" "Link")
+                               "* %? [[%:link][%(transform-square-brackets-to-round-ones \"%:description\")]]\n")
+                              ("t" "Todo" entry
+                               (file+headline "~/Notes/Agenda/dailylife.org" "Task")
+                               "* TODO %?\n %i\n")
+                              ("b" "Blog Idea" plain
+                               (file+headline "~/Notes/blogideas.org" "Inbox")
+                               (file "~/Notes/RoamNotes/Templates/blog_temp.org")
+                               )
+                              ("f" "emacs problem" plain
+                               (file+headline "~/Notes/captures.org" "Emacs Problems")
+                               "- [ ] %?\n")
+                              ))
 
 ;;set todo keywords
 (setq org-todo-keywords
@@ -1182,52 +1186,7 @@ link: <https://github.com/zzamboni/vita/>
 ```emacs-lisp
 (use-package ox-altacv
   :straight (org-cv :type git :host gitlab :repo "ChloeZhou1997/org-cv"))
+
+(use-package ox-awesomecv
+  :straight (org-cv :type git :host gitlab :repo "ChloeZhou1997/org-cv"))
 ```
-
-
-## Auto Tangle {#auto-tangle}
-
-```emacs-lisp
-(defun joz/org-babel-tangle-config ()
-	(when (string-equal (buffer-file-name)
-		(expand-file-name "~/.dotfiles/Emacs_new.org"))
-	(let ((org-confim-babel-evaluate t))
-		(org-babel-tangle))))
-```
-
-
-## Personal Setting {#personal-setting}
-
-
-### helper function {#helper-function}
-
-
-#### Open configuration file {#open-configuration-file}
-
-To quickly open my configuration org file. I have a alias setting in
-my zshconfig too named `emacsconfig` which opens my `init.el` in VsCode,
-allowing me to quickly edit my init files to open emacs correctly (I
-am very bad at debug in emacs and I personally find this way easier).
-
-```emacs-lisp
-(defun joz/myconfig ()
-	"open my personal config"
-	(interactive)
-	(switch-to-buffer (find-file-noselect "~/.dotfiles/Emacs.org")))
-```
-
-
-#### Open bookmark capture {#open-bookmark-capture}
-
-Open captured information from browser:
-
-```emacs-lisp
-(defun joz/mycapture ()
-	"Open my captued info from interent"
-	(interactive)
-	(switch-to-buffer (find-file-noselect "~/Notes/captures.org")))
-```
-
-[^fn:1]: `#'foo` and `'foo` are equivalent when `foo` is a symbol, but the
-    former is prefered when `foo` is a function. `#'` is intended to be a
-    function call. [More explanations here.](https://emacs.stackexchange.com/a/10943/36783)
