@@ -2,14 +2,14 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-17T00:00:09-05:00
+lastmod = 2022-11-18T02:55:47-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
 weight = 2001
 +++
 
-## 1 . Nietzsche starts the first chapter of the book by questioning the "Will of Truth" - if there's a will to truth, why not untruth? {#1-dot-nietzsche-starts-the-first-chapter-of-the-book-by-questioning-the-will-of-truth-if-there-s-a-will-to-truth-why-not-untruth}
+## 1. Nietzsche starts the first chapter of the book by questioning the "Will of Truth" - if there's a will to truth, why not untruth? {#1-dot-nietzsche-starts-the-first-chapter-of-the-book-by-questioning-the-will-of-truth-if-there-s-a-will-to-truth-why-not-untruth}
 
 Nietzsche pointed that philosophers devoted themselves to the "Will of
 Truth" without questioning the origin of the will. He also mentioned
@@ -37,10 +37,8 @@ herself from her high rock and died.
 ## 2. The fundamental belief of metaphysicians is _the belief in antitheses of values_. Metaphysicians hold no doubt of this presupposition. Venturing into questioning such belief is dangerous but inevitable. {#2-dot-the-fundamental-belief-of-metaphysicians-is-the-belief-in-antitheses-of-values-dot-metaphysicians-hold-no-doubt-of-this-presupposition-dot-venturing-into-questioning-such-belief-is-dangerous-but-inevitable-dot}
 
 -   Nietzsche questions the fundamental belief in metaphysics, that
-
-things cannot originate from their opposition. The highest values must come
-into being.
-
+    things cannot originate from their opposition. The highest values
+    must come into being.
 -   If we venture to question such belief: virtues might steam from
     vise. The fundamental values of life might be attributed to the
     pretense, the will to deception etc.
@@ -57,3 +55,18 @@ into being.
         from this Nietzsche criticizes the foundation the philosophy is
         built upon - a truth that is absolute and unarguable, built from
         the philosopher's own prejudice.
+
+
+## 3. The assertion of being conscious of thinking and unaffected by physical condition and value is only an illusion and is maintained to have a definite mode of life. {#3-dot-the-assertion-of-being-conscious-of-thinking-and-unaffected-by-physical-condition-and-value-is-only-an-illusion-and-is-maintained-to-have-a-definite-mode-of-life-dot}
+
+
+### Need further investigation <code>[0/2]</code> {#need-further-investigation}
+
+-   [ ] Where do all the assertions that philosophical thinking is not
+    free from instinctive and decisive sense stem from? Up to this
+    point, the three points seem to talk about the same thing...
+-   [ ] What's the meaning of "measure of life" at the end of the
+    paragraph?
+
+
+## 4. The usual falseness of opinion needs little doubt, what matter is to find the opinions that are life-furthering and species-raring. What we are undoubled about so far is only a negation of life and to recognize the untruth is the movement that places itself beyond good and evil. {#4-dot-the-usual-falseness-of-opinion-needs-little-doubt-what-matter-is-to-find-the-opinions-that-are-life-furthering-and-species-raring-dot-what-we-are-undoubled-about-so-far-is-only-a-negation-of-life-and-to-recognize-the-untruth-is-the-movement-that-places-itself-beyond-good-and-evil-dot}

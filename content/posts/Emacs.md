@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-16T20:31:58-05:00
+lastmod = 2022-11-18T01:34:25-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -172,7 +172,7 @@ Upgrade straight package using `straight-pull-all`.
 ;; From this point on we should be able to use `use-package
 (use-package straight
   :config
-  (setq straight-host-usernames '((github . "mrvdb"))) ; Move to personal information?
+  (setq straight-host-usernames '((github . "ChloeZhou1997"))) ; Move to personal information?
   ;; Make sure packages do not pull in internal org, we pregister org from straight.el
   (straight-register-package 'org)
   (straight-register-package 'org-contrib)
@@ -184,7 +184,7 @@ Upgrade straight package using `straight-pull-all`.
 ```
 
 
-## General {#general}
+## Genseral {#genseral}
 
 
 ### Some general settings {#some-general-settings}
@@ -227,6 +227,166 @@ Use ibuffer to nevigate the buffers:
 
 
 ### UI setting {#ui-setting}
+
+
+#### Misc {#misc}
+
+```emacs-lisp
+;; flash cursor lines when scroll
+(use-package beacon
+  :config
+  (beacon-mode 2))
+```
+
+
+#### Face {#face}
+
+<!--list-separator-->
+
+-  Font
+
+    The `:height` stands for the height of the font, which also determines the size of the font.
+
+    ```emacs-lisp
+    ;; Set the default face to larger font.
+    ;; (set-face-attribute 'default nil :font "Fira Code" :height 100)
+
+    ;;Set the fixed pitch face
+    ;; (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 100)
+
+    ;; Set the variable pitch face
+    ;; (set-face-attribute 'variable-pitch nil :font "Fira Code" :height 1 :weight 'regular)
+    ```
+
+    Define a `font-setup` function
+
+    ```emacs-lisp
+    ;; (defun org-font-setup ()
+    ;; 	;; Set faces for heading levels
+    ;; 	(dolist (face '((org-level-1 . 1.2)
+    ;; 									(org-level-2 . 1.1)
+    ;; 									(org-level-3 . 1.05)
+    ;; 									(org-level-4 . 1.0)
+    ;; 									(org-level-5 . 0.8)
+    ;; 									(org-level-6 . 0.8)
+    ;; 									(org-level-7 . 0.8)
+    ;; 									(org-level-8 . 0.8)))
+    ;; 		(set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
+
+      ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+    ;; 	(set-face-attribute 'org-block nil :foreground nil  :inherit 'fixed-pitch)
+    ;; 	(set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
+    ;; 	(set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
+    ;; 	(set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+    ;; 	(set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+    ;; 	(set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+    ;; 	(set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
+
+    ;; (add-hook 'org-mode-hook 'org-font-setup)
+    ```
+
+<!--list-separator-->
+
+-  Beautify
+
+    ```emacs-lisp
+    ;;replace list hyphen with dot
+    (font-lock-add-keywords 'org-mode
+                            '(("^ *\\([-]\\) "
+                               (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+    ;;add emphasis markets at the end of the list
+    (setq org-ellipsis " ▼"
+          org-hide-emphasis-markers t)
+
+    (use-package org-bullets
+      :hook
+      (org-mode . (lambda () (org-bullets-mode 1)))
+      (org-mode . (lambda ()
+                    "Beautify Org Checkbox Symbol"
+                    (push '("[ ]" . "☐" ) prettify-symbols-alist)
+                    (push '("[X]" . "☑" ) prettify-symbols-alist)
+                    (push '("[-]" . "⊡" ) prettify-symbols-alist)
+                    (prettify-symbols-mode))))
+    ```
+
+<!--list-separator-->
+
+-  Theme
+
+    <!--list-separator-->
+
+    -  Doom bundled
+
+        Use `:ensure` to make sure the `all-the-icons` package will be autoinstalled when `doom-themes` is installed.
+
+        ```emacs-lisp
+
+        ;; (use-package treemacs)
+        ;; (use-package all-the-icons)
+        ;; (use-package minions
+        ;; 	:config (minions-mode 1))
+
+        ;;dometheme
+
+        ;; (use-package doom-themes
+        ;; 	:config
+        ;; 	(load-theme 'doom-one t)
+        ;; 	;; all-the-icons has to be installed, enabling custom neotree theme
+        ;; 	(doom-themes-neotree-config)
+        ;; 	;; for treemacs user
+        ;; 	(setq doom-themes-treemacs-theme "doom-atom")
+        ;; 	(doom-themes-treemacs-config)
+        ;; 	;;conrrect the org-mode's native fontification
+        ;; 	(doom-themes-org-config))
+
+
+        ```
+
+        Also, use `doom-modeline` to prettify the mode-line section
+
+        ```emacs-lisp
+        ;; (use-package doom-modeline
+        ;; 	:ensure t
+        ;; 	:init (doom-modeline-mode 1)
+        ;; 	:hook (after-init . doom-modeline-mode)
+        ;; 	:custom
+        ;; 	(doom-modeline-height 10)
+        ;; 	(doom-modeline-enable-word-count nil)
+        ;; 	(doom-modeline-minor-modes t))
+        ```
+
+    <!--list-separator-->
+
+    -  Nano theme
+
+        ```emacs-lisp
+        ;; nano writer theme
+        (setq nano-font-family-monospaced "Roboto Mono")
+        (setq nano-font-family-proportional nil)
+        (setq nano-font-size 17)
+
+        (use-package nano-base-colors
+          :straight (nano-emacs :host github :repo "rougier/nano-emacs")
+          :config
+          ;; (require 'nano-theme-dark)
+          ;; (require 'nano-theme)
+          (require 'nano-faces)
+          (require 'nano-modeline)
+          (require 'nano-layout)
+          (require 'nano-session)
+          (require 'nano-colors)
+          (require 'nano-writer))
+
+        (use-package nano-theme
+          :straight (nano-theme :host github :repo "rougier/nano-theme"))
+
+        (nano-mode)
+        (nano-faces)
+
+        ;; (nano-theme-set-dark)
+        ;; (nano-theme)
+        (nano-modeline)
+        ```
 
 
 #### Most general setting {#most-general-setting}
@@ -278,366 +438,6 @@ Org-mode code block related setting:
 To disable the auto indentation in org-mode
 
 
-#### Misc {#misc}
-
-```emacs-lisp
-;; flash cursor lines when scroll
-(use-package beacon
-  :config
-  (beacon-mode 2))
-```
-
-
-#### Face {#face}
-
-<!--list-separator-->
-
--  Font
-
-    The `:height` stands for the height of the font, which also determines the size of the font.
-
-    ```emacs-lisp
-    ;; Set the default face to larger font.
-    (set-face-attribute 'default nil :font "Fira Code" :height 180)
-
-    ;; Set the fixed pitch face
-    (set-face-attribute 'fixed-pitch nil :font "Fira Code" :height 180)
-
-    ;; Set the variable pitch face
-    (set-face-attribute 'variable-pitch nil :font "Fira Code" :height 180 :weight 'regular)
-    ```
-
-    Define a `font-setup` function
-
-    ```emacs-lisp
-    (defun org-font-setup ()
-      ;; Set faces for heading levels
-      (dolist (face '((org-level-1 . 1.2)
-                      (org-level-2 . 1.1)
-                      (org-level-3 . 1.05)
-                      (org-level-4 . 1.0)
-                      (org-level-5 . 0.8)
-                      (org-level-6 . 0.8)
-                      (org-level-7 . 0.8)
-                      (org-level-8 . 0.8)))
-        (set-face-attribute (car face) nil :font "Fira Code" :weight 'regular :height (cdr face)))
-
-      ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-      (set-face-attribute 'org-block nil :foreground nil  :inherit 'fixed-pitch)
-      (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch))
-
-    (add-hook 'org-mode-hook 'org-font-setup)
-    ```
-
-<!--list-separator-->
-
--  Beautify
-
-    ```emacs-lisp
-    ;;replace list hyphen with dot
-    (font-lock-add-keywords 'org-mode
-                            '(("^ *\\([-]\\) "
-                               (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-    ;;add emphasis markets at the end of the list
-    (setq org-ellipsis " ▼"
-          org-hide-emphasis-markers t)
-
-    (use-package org-bullets
-      :hook
-      (org-mode . (lambda () (org-bullets-mode 1)))
-      (org-mode . (lambda ()
-                    "Beautify Org Checkbox Symbol"
-                    (push '("[ ]" . "☐" ) prettify-symbols-alist)
-                    (push '("[X]" . "☑" ) prettify-symbols-alist)
-                    (push '("[-]" . "⊡" ) prettify-symbols-alist)
-                    (prettify-symbols-mode))))
-    ```
-
-<!--list-separator-->
-
--  Theme
-
-    Use `:ensure` to make sure the `all-the-icons` package will be autoinstalled when `doom-themes` is installed.
-
-    ```emacs-lisp
-    (use-package treemacs)
-    (use-package all-the-icons)
-    (use-package minions
-      :config (minions-mode 1))
-    (use-package doom-themes
-      :config
-      (load-theme 'doom-one t)
-      ;; all-the-icons has to be installed, enabling custom neotree theme
-      (doom-themes-neotree-config)
-      ;; for treemacs user
-      (setq doom-themes-treemacs-theme "doom-atom")
-      (doom-themes-treemacs-config)
-      ;;conrrect the org-mode's native fontification
-      (doom-themes-org-config))
-    ```
-
-    Also, use `doom-modeline` to prettify the mode-line section
-
-    ```emacs-lisp
-    (use-package doom-modeline
-      :ensure t
-      :init (doom-modeline-mode 1)
-      :hook (after-init . doom-modeline-mode)
-      :custom
-      (doom-modeline-height 10)
-      (doom-modeline-enable-word-count nil)
-      (doom-modeline-minor-modes t))
-    ```
-
-
-### Helpful {#helpful}
-
-```emacs-lisp
-(use-package helpful
-  :bind
-  ("C-h f" . helpful-callable)
-  ("C-h v" . helpful-variable)
-  ("C-h k" . helpful-key)
-  ("C-h o" . helpful-symbol))
-```
-
-
-### Completion {#completion}
-
-
-#### Vertico {#vertico}
-
-Minimalistic auto completion setting: `vertico` + `savehist` + `marginalia`
-Reference to [this tutorial](https://kristofferbalintona.me/posts/202202211546/).
-
-```emacs-lisp
-;;enable Vertico
-(use-package vertico
-  :custom
-  (vertico-count 13)
-  (vertico-resize t)
-  (vertico-cycle nil)
-  ;; Extensions
-  (vertico-grid-separator "       ")
-  (vertico-grid-lookahead 50)
-  (vertico-buffer-display-action '(display-buffer-reuse-window))
-  (vertico-multiform-categories
-   '((file reverse)
-     (consult-grep buffer)
-     (consult-location)
-     (imenu buffer)
-     (library reverse indexed)
-     (org-roam-node reverse indexed)
-     (t reverse)
-     ))
-  (vertico-multiform-commands
-   '(("flyspell-correct-*" grid reverse)
-     (org-refile grid reverse indexed)
-     (consult-yank-pop indexed)
-     (consult-lsp-diagnostics)
-     ))
-  :bind
-  (:map vertico-map
-        ( "?" . minibuffer-completion-help)
-        ("M-RET" . minibuffer-force-complete)
-        ("M-TAB" . minibuffer-complete)
-        ("C-M-n" . vertico-next-group)
-        ("C-M-p" . vertico-previous-group)
-        )
-  :hook ((rfn-eshadow-update-overlay . vertico-directory-tidy) ; Clean up file path when typing
-         )
-  :init
-  (vertico-mode))
-
-;; Persist history over Emacs restarts. Vertico sorts by history position.
-(use-package savehist
-  :init
-  (savehist-mode))
-
-;; Show info of files at the marginal
-(use-package marginalia
-  :after vertico
-  :custom
-  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
-  :init
-  (marginalia-mode))
-
-;;icon's completion in minibuffer
-(use-package all-the-icons-completion
-  :after (marginalia all-the-icons)
-  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
-  :init
-  (all-the-icons-completion-mode))
-
-;; Optionally use the `orderless' completion style, so no need to worry about the
-;; order of keywords when trying to search for command.
-(use-package orderless
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
-```
-
-
-#### Embark {#embark}
-
-```emacs-lisp
-(use-package embark
-  :bind
-  (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-:" . embark-dwim)        ;; good alternative: M-.
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
-  :init
-  ;; Optionally replace the key help with a completing-read interface
-  (setq prefix-help-command #'embark-prefix-help-command)
-  :config
-  ;; Hide the mode line of the Embark live/completions buffers
-  (add-to-list 'display-buffer-alist
-               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
-                 nil
-                 (window-parameters (mode-line-format . none)))))
-
-;; Consult users will also want the embark-consult package.
-(use-package embark-consult
-  :hook
-  (embark-collect-mode . consult-preview-at-point-mode))
-```
-
-
-#### Company {#company}
-
-```emacs-lisp
-(use-package company
-  :init
-  (global-company-mode)
-  :custom
-  (company-minimum-prefix-length 2)
-  (company-idle-delay 0.25)
-  (company-backends '((company-capf company-semantic company-keywords company-etags company-dabbrev-code company-yasnippet)))
-  (company-files-exclusions '(".git/" ".DS_Store"))
-  :bind
-  (:map company-active-map
-        ("C-n" . company-select-next)
-        ("C-p" . company-select-previous)))
-```
-
-
-#### Pair {#pair}
-
-```emacs-lisp
-(use-package smartparens
-  :config
-  (smartparens-global-mode t))
-```
-
-
-#### Which-key {#which-key}
-
-This package offer all the possible completions for the prefix.
-
-```emacs-lisp
-(use-package which-key
-  :config (which-key-mode))
-```
-
-
-#### Snippet {#snippet}
-
-```emacs-lisp
-(defun my-org-mode-hook ()
-  (setq-local yas-buffer-local-condition
-              '(not (org-in-src-block-p t))))
-
-(use-package yasnippet
-  :init
-  (yas-global-mode 1)
-  :custom
-  (yas-snippet-dirs '("~/.emacs.d/snippets"
-                      "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
-  :bind
-  ("\C-o" . yas-expand)
-  :config
-  (add-hook 'org-mode-hook 'my-org-mode-hook))
-
-;;download snippets lib
-(use-package yasnippet-snippets)
-
-;;integration with consult
-(use-package consult-yasnippet)
-```
-
-
-### Movement and editing {#movement-and-editing}
-
-
-#### Consult {#consult}
-
-```emacs-lisp
-;;define prefix C-s for search map
-(define-prefix-command 'search-map)
-(global-set-key (kbd "C-s") 'search-map)
-
-(use-package consult
-  :bind
-  ("C-x b" . consult-buffer)
-  ("M-y" . consult-yank-pop)
-  (:map search-map
-        ("s" . consult-line)
-        ("l" . consult-goto-line)
-        ("o" . consult-outline)
-        ("S" . consult-line-multi)))
-```
-
-
-#### Multi-editing {#multi-editing}
-
-```emacs-lisp
-(use-package iedit
-  :bind
-  ("C-;" . iedit-mode))
-```
-
-
-#### Misc {#misc}
-
-```emacs-lisp
-;;expand region basiced semantics
-(use-package expand-region
-  :bind
-  ("C-=" . er/expand-region))
-```
-
-
-### Project {#project}
-
-```emacs-lisp
-(use-package projectile
-  :config
-  (setq projectile-project-search-path '("~/Blogs" "~/Desktop/ZeroToMastery"))
-  (setq projectile-switch-project-action #'projectile-dired)
-  :bind
-  (:map projectile-mode-map
-        ("s-p" . projectile-command-map)
-        ("C-c p" . projectile-command-map)))
-```
-
-Integration with consult:
-
-```emacs-lisp
-(use-package consult-projectile
-  :straight (consult-projectile :type git :host gitlab :repo "OlMon/consult-projectile" :branch "master")
-  :after projectile)
-```
-
-
 ## Org-roam {#org-roam}
 
 
@@ -651,8 +451,7 @@ The straight version of org is not working, using straight to make sure using th
   ;; 	org :type built-in
   ;; )
   :mode ("\\.org" . org-mode)
-  :hook ((org-mode . org-font-setup)
-         (org-mode . turn-on-visual-line-mode)
+  :hook ((org-mode . turn-on-visual-line-mode)
          (org-mode . company-mode))
   :bind
   ("C-c a" . org-agenda)
@@ -824,7 +623,7 @@ This allows roam like citation backlink
 ```emacs-lisp
 (use-package org-roam-bibtex
   :after org-roam
-  :hook (org-roam-mode . org-roam-bibtex-mode))
+  :hook org-mode)
 ```
 
 
@@ -853,7 +652,7 @@ This allows roam like citation backlink
          :unnarrowed t)
         ("d" "default" plain
          "%?"
-         :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
          :unnarrowed t)
         ))
 ```
@@ -1045,6 +844,174 @@ For the PDF Scrapper, change the formate of the paper key:
 ## Others {#others}
 
 
+### Completion {#completion}
+
+
+#### Vertico {#vertico}
+
+Minimalistic auto completion setting: `vertico` + `savehist` + `marginalia`
+Reference to [this tutorial](https://kristofferbalintona.me/posts/202202211546/).
+
+```emacs-lisp
+;;enable Vertico
+(use-package vertico
+  :custom
+  (vertico-count 13)
+  (vertico-resize t)
+  (vertico-cycle nil)
+  ;; Extensions
+  (vertico-grid-separator "       ")
+  (vertico-grid-lookahead 50)
+  (vertico-buffer-display-action '(display-buffer-reuse-window))
+  (vertico-multiform-categories
+   '((file reverse)
+     (consult-grep buffer)
+     (consult-location)
+     (imenu buffer)
+     (library reverse indexed)
+     (org-roam-node reverse indexed)
+     (t reverse)
+     ))
+  (vertico-multiform-commands
+   '(("flyspell-correct-*" grid reverse)
+     (org-refile grid reverse indexed)
+     (consult-yank-pop indexed)
+     (consult-lsp-diagnostics)
+     ))
+  :bind
+  (:map vertico-map
+        ( "?" . minibuffer-completion-help)
+        ("M-RET" . minibuffer-force-complete)
+        ("M-TAB" . minibuffer-complete)
+        ("C-M-n" . vertico-next-group)
+        ("C-M-p" . vertico-previous-group)
+        )
+  :hook ((rfn-eshadow-update-overlay . vertico-directory-tidy) ; Clean up file path when typing
+         )
+  :init
+  (vertico-mode))
+
+;; Persist history over Emacs restarts. Vertico sorts by history position.
+(use-package savehist
+  :init
+  (savehist-mode))
+
+;; Show info of files at the marginal
+(use-package marginalia
+  :after vertico
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
+  (marginalia-mode))
+
+;;icon's completion in minibuffer
+(use-package all-the-icons-completion
+  :after (marginalia all-the-icons)
+  :hook (marginalia-mode . all-the-icons-completion-marginalia-setup)
+  :init
+  (all-the-icons-completion-mode))
+
+;; Optionally use the `orderless' completion style, so no need to worry about the
+;; order of keywords when trying to search for command.
+(use-package orderless
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+```
+
+
+#### Embark {#embark}
+
+```emacs-lisp
+(use-package embark
+  :bind
+  (("C-." . embark-act)         ;; pick some comfortable binding
+   ("C-:" . embark-dwim)        ;; good alternative: M-.
+   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+  :init
+  ;; Optionally replace the key help with a completing-read interface
+  (setq prefix-help-command #'embark-prefix-help-command)
+  :config
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+;; Consult users will also want the embark-consult package.
+(use-package embark-consult
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
+```
+
+
+#### Company {#company}
+
+```emacs-lisp
+(use-package company
+  :init
+  (global-company-mode)
+  :custom
+  (company-minimum-prefix-length 2)
+  (company-idle-delay 0.25)
+  (company-backends '((company-capf company-semantic company-keywords company-etags company-dabbrev-code company-yasnippet)))
+  (company-files-exclusions '(".git/" ".DS_Store"))
+  :bind
+  (:map company-active-map
+        ("C-n" . company-select-next)
+        ("C-p" . company-select-previous)))
+```
+
+
+#### Pair {#pair}
+
+```emacs-lisp
+(use-package smartparens
+  :config
+  (smartparens-global-mode t))
+```
+
+
+#### Which-key {#which-key}
+
+This package offer all the possible completions for the prefix.
+
+```emacs-lisp
+(use-package which-key
+  :config (which-key-mode))
+```
+
+
+#### Snippet {#snippet}
+
+```emacs-lisp
+(defun my-org-mode-hook ()
+  (setq-local yas-buffer-local-condition
+              '(not (org-in-src-block-p t))))
+
+(use-package yasnippet
+  :init
+  (yas-global-mode 1)
+  :custom
+  (yas-snippet-dirs '("~/.emacs.d/snippets"
+                      "~/.emacs.d/straight/repos/yasnippet-snippets/snippets"))
+  :bind
+  ("\C-o" . yas-expand)
+  :config
+  (add-hook 'org-mode-hook 'my-org-mode-hook))
+
+;;download snippets lib
+(use-package yasnippet-snippets)
+
+;;integration with consult
+(use-package consult-yasnippet)
+```
+
+
 ### Terminal {#terminal}
 
 
@@ -1166,6 +1133,294 @@ link: <https://github.com/zzamboni/vita/>
 ```
 
 
+### Miniframe (with Nono) {#miniframe--with-nono}
+
+```emacs-lisp
+;; Nicolas .P Rougier emacs configuration - mini-frame configuration
+;; ---------------------------------------------------------------------
+(use-package mini-frame)
+
+(defun minibuffer-setup ()
+
+  ;; This prevents the header line to spill over second line
+  (let ((inhibit-message t))
+    (toggle-truncate-lines 1))
+
+  (setq enable-recursive-minibuffers t)
+
+  ;; This allows to have a consistent full width (fake) header like
+  (setq display-table (make-display-table))
+  (set-display-table-slot display-table
+                          'truncation (make-glyph-code ?\  'nano-subtle))
+  (set-display-table-slot display-table
+                          'wrap (make-glyph-code ?\  'nano-subtle))
+  (setq buffer-display-table display-table)
+
+  (cursor-intangible-mode)
+  (face-remap-add-relative 'default :foreground "black")
+  (face-remap-add-relative 'completions-first-difference :foreground "black")
+  (let* ((left  (concat (propertize " "
+                                    'face '(nano-subtle)
+                                    'display '(raise +0.20))
+                        (propertize " Minibuffer"
+                                    'face 'nano-subtle)
+                        (propertize " "
+                                    'face 'nano-subtle
+                                    'display '(raise -0.30))))
+         (right (propertize "C-g: abort"
+                            'face '(:inherit (nano-faded nano-subtle)
+                                    :weight light)))
+         (spacer (propertize (make-string (- (window-width)
+                                             (length left)
+                                             (length right)
+                                             1) ?\ )
+                             'face 'nano-subtle))
+         (header (concat left spacer right " "))
+         (overlay (make-overlay (+ (point-min) 0) (+ (point-min) 0))))
+    (overlay-put overlay 'before-string
+        (concat
+         (propertize " " 'display header)
+         "\n"
+         ;; This provides a vertical gap (half a line) above the prompt.
+         (propertize " " 'face `(:extend t)
+                     'display '(raise .33)
+                     'read-only t 'cursor-intangible t)))))
+
+ (add-hook 'minibuffer-setup-hook #'minibuffer-setup)
+
+
+;; (defun minibuffer-exit ())
+;; (add-hook 'minibuffer-exit-hook #'minibuffer-exit)
+
+;; Prefix/Affix the current candidate. From
+;; https://github.com/minad/vertico/wiki#prefix-current-candidate-with-arrow
+(defun minibuffer-format-candidate (orig cand prefix suffix index _start)
+  (let ((prefix (if (= vertico--index index)
+                    "  " "   ")))
+    (funcall orig cand prefix suffix index _start)))
+
+(advice-add #'vertico--format-candidate
+            :around #'minibuffer-format-candidate)
+
+(with-eval-after-load 'vertico
+  (setq completion-styles '(basic substring partial-completion flex))
+  (setq vertico-count 10)
+  (setq vertico-count-format nil)
+  (setq vertico-grid-separator
+        #("  |  " 2 3 (display (space :width (1))
+                               face (:background "#ECEFF1"))))
+  (define-key vertico-map (kbd "<backtab>") #'minibuffer-complete)
+  (set-face-attribute 'vertico-current nil
+                      :inherit '(nano-strong nano-subtle))
+  (set-face-attribute 'completions-first-difference nil
+                      :inherit '(nano-default))
+  (set-face-attribute 'minibuffer-prompt nil
+                      :inherit '(nano-default nano-strong))
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+
+  (defun vertico--prompt-selection ()
+    "Highlight the prompt"
+    (let ((inhibit-modification-hooks t))
+      (set-text-properties (minibuffer-prompt-end) (point-max)
+                           '(face (nano-strong nano-salient))))))
+
+(with-eval-after-load 'marginalia
+  (setq truncate-string-ellipsis "…")
+  (setq marginalia--ellipsis "…")
+  (setq marginalia-align 'right)
+  (setq marginalia-align-offset -1))
+
+
+(with-eval-after-load 'mini-frame
+  (set-face-background 'child-frame-border (face-foreground 'nano-faded))
+  (setq mini-frame-default-height vertico-count)
+  (setq mini-frame-create-lazy t)
+  (setq mini-frame-show-parameters 'mini-frame-dynamic-parameters)
+  (setq mini-frame-ignore-commands
+        '("edebug-eval-expression" debugger-eval-expression))
+  (setq mini-frame-internal-border-color (face-foreground 'nano-subtle-i))
+  ;; (setq mini-frame-resize 'grow-only) ;; -> buggy as of 01/05/2021
+  ;; (setq mini-frame-resize 'not-set)
+  ;; (setq mini-frame-resize nil)
+  (setq mini-frame-resize t)
+  (setq mini-frame-resize-min-height 3)
+
+
+  (defun mini-frame-dynamic-parameters ()
+    (let* ((edges       (window-pixel-edges))      ;; (left top right bottom)
+           (body-edges  (window-body-pixel-edges)) ;; (left top right bottom)
+           (left   (nth 0 edges))      ;; Take margins into account
+           (top    (nth 1 edges)) ;; Drop header line
+           (right  (nth 2 edges))      ;; Take margins into account
+           (bottom (nth 3 body-edges)) ;; Drop header line
+           (left   (if (eq left-fringe-width 0)
+                       left
+                     (- left (frame-parameter nil 'left-fringe))))
+           (right  (nth 2 edges))
+           (right  (if (eq right-fringe-width 0)
+                       right
+                     (+ right (frame-parameter nil 'right-fringe))))
+           (fringe-left 0)
+           (fringe-right 0)
+           (border 1)
+           ;; (width (- (frame-pixel-width) (* 2 (+ fringe border))))
+           (width (- right left fringe-left fringe-right (* 0 border)))
+           (y (- top border)))
+    `((left . ,(- left border))
+      (top . ,y)
+      (alpha . 1.0)
+      (width . (text-pixels . ,width))
+      (left-fringe . ,fringe-left)
+      (right-fringe . ,fringe-right)
+      (child-frame-border-width . ,border)
+      (internal-border-width . ,border)
+      (foreground-color . ,(face-foreground 'nano-default))
+      (background-color . ,(face-background 'highlight)))))
+  )
+
+(custom-set-variables
+ '(mini-frame-show-parameters
+   '((top . 10)
+     (width . 0.7)
+     (left . 0.5))))
+
+(mini-frame-mode)
+(nano-dark)
+```
+
+
+### Svg-subject {#svg-subject}
+
+```emacs-lisp
+(use-package svg)
+(use-package svg-tag-mode)
+(use-package svg-lib)
+
+(defun svg-font-lock-tag (label)
+  (svg-lib-tag label nil :margin 0))
+
+(defun svg-font-lock-todo ()
+  (svg-lib-tag "TODO" nil :margin 0
+               :font-family "Roboto Mono" :font-weight 500
+               :foreground "#FFFFFF" :background "#673AB7"))
+
+(defun svg-font-lock-done ()
+  (svg-lib-tag "DONE" nil :margin 0
+               :font-family "Roboto Mono" :font-weight 400
+               :foreground "#B0BEC5" :background "white"))
+
+(defun svg-font-lock-progress_percent (value)
+  (svg-image (svg-lib-concat
+              (svg-lib-progress-bar (/ (string-to-number value) 100.0)
+                                nil :margin 0 :stroke 2 :radius 3 :padding 2 :width 12)
+              (svg-lib-tag (concat value "%")
+                           nil :stroke 0 :margin 0)) :ascent 'center))
+
+(defun svg-font-lock-progress_count (value)
+  (let* ((seq (mapcar #'string-to-number (split-string value "/")))
+         (count (float (car seq)))
+         (total (float (cadr seq))))
+  (svg-image (svg-lib-concat
+              (svg-lib-progress-bar (/ count total) nil
+                                :margin 0 :stroke 2 :radius 3 :padding 2 :width 12)
+              (svg-lib-tag value nil
+                           :stroke 0 :margin 0)) :ascent 'center)))
+
+(defvar svg-font-lock-keywords
+  `(("TODO"
+     (0 (list 'face nil 'display (svg-font-lock-todo))))
+    ("\\:\\([0-9a-zA-Z]+\\)\\:"
+     (0 (list 'face nil 'display (svg-font-lock-tag (match-string 1)))))
+    ("DONE"
+     (0 (list 'face nil 'display (svg-font-lock-done))))
+    ("\\[\\([0-9]\\{1,3\\}\\)%\\]"
+     (0 (list 'face nil 'display (svg-font-lock-progress_percent (match-string 1)))))
+    ("\\[\\([0-9]+/[0-9]+\\)\\]"
+     (0 (list 'face nil 'display (svg-font-lock-progress_count (match-string 1)))))))
+
+;; Activate
+(push 'display font-lock-extra-managed-props)
+(font-lock-add-keywords 'org-mode svg-font-lock-keywords)
+(font-lock-flush (point-min) (point-max))
+```
+
+
+### Helpful {#helpful}
+
+```emacs-lisp
+(use-package helpful
+  :bind
+  ("C-h f" . helpful-callable)
+  ("C-h v" . helpful-variable)
+  ("C-h k" . helpful-key)
+  ("C-h o" . helpful-symbol))
+```
+
+
+### Movement and editing {#movement-and-editing}
+
+
+#### Consult {#consult}
+
+```emacs-lisp
+;;define prefix C-s for search map
+(define-prefix-command 'search-map)
+(global-set-key (kbd "C-s") 'search-map)
+
+(use-package consult
+  :bind
+  ("C-x b" . consult-buffer)
+  ("M-y" . consult-yank-pop)
+  (:map search-map
+        ("s" . consult-line)
+        ("l" . consult-goto-line)
+        ("o" . consult-outline)
+        ("S" . consult-line-multi)))
+```
+
+
+#### Multi-editing {#multi-editing}
+
+```emacs-lisp
+(use-package iedit
+  :bind
+  ("C-;" . iedit-mode))
+```
+
+
+#### Misc {#misc}
+
+```emacs-lisp
+;;expand region basiced semantics
+(use-package expand-region
+  :bind
+  ("C-=" . er/expand-region))
+```
+
+
+### Project {#project}
+
+```emacs-lisp
+(use-package projectile
+  :config
+  (setq projectile-project-search-path '("~/Blogs" "~/Desktop/ZeroToMastery"))
+  (setq projectile-switch-project-action #'projectile-dired)
+  :bind
+  (:map projectile-mode-map
+        ("s-p" . projectile-command-map)
+        ("C-c p" . projectile-command-map)))
+```
+
+Integration with consult:
+
+```emacs-lisp
+(use-package consult-projectile
+  :straight (consult-projectile :type git :host gitlab :repo "OlMon/consult-projectile" :branch "master")
+  :after projectile)
+```
+
+
 ## Export {#export}
 
 
@@ -1189,4 +1444,167 @@ link: <https://github.com/zzamboni/vita/>
 
 (use-package ox-awesomecv
   :straight (org-cv :type git :host gitlab :repo "ChloeZhou1997/org-cv"))
+```
+
+
+## Email {#email}
+
+```emacs-lisp
+(use-package mu4e
+  :straight (:host github
+                    :files ("build/mu4e/*.el")
+                    :branch "master"
+                    :repo "djcb/mu"
+                    :pre-build (("meson" "build")
+                                ("ninja" "-C" "build"))))
+
+(require 'smtpmail)
+
+;; we installed this with homebrew
+(setq mu4e-mu-binary (executable-find "mu"))
+
+;; this is the directory we created before:
+(setq mu4e-maildir "~/.maildir")
+
+;; this command is called to sync imap servers:
+(setq mu4e-get-mail-command "mbsync -a")
+;; how often to call it in seconds:
+(setq mu4e-update-interval 300)
+
+;; save attachment to desktop by default
+;; or another choice of yours:
+(setq mu4e-attachment-dir "~/Desktop")
+
+;; rename files when moving - needed for mbsync:
+(setq mu4e-change-filenames-when-moving t)
+
+(setq mu4e-drafts-folder "/[Gmail]/Drafts")
+(setq mu4e-sent-folder "/[Gmail]/Sent Mail")
+(setq mu4e-refile-folder "/[Gmail]/All Mail")
+(setq mu4e-refile-folder "/[Gmail]/Trash")
+
+;; list of your email adresses:
+(setq mu4e-user-mail-address-list '("zhouqiaohui97@gmail.com"))
+
+;; check your ~/.maildir to see how the subdirectories are called
+;; for the generic imap account:
+;; e.g `ls ~/.maildir/example'
+(setq   mu4e-maildir-shortcuts
+        '(("/INBOX" . ?g)
+          ("/[Gmail]/Sent Mail" . ?G)))
+
+;; the following is to show shortcuts in the main view.
+;; (add-to-list 'mu4e-bookmarks
+;;              (mu4e-bookmark-define
+;; 							"Inbox - Gmail"
+;;               "maildir:/gmail/INBOX"
+;; 							"?g"))
+
+;;context
+;; (setq mu4e-contexts
+;;       `(,(make-mu4e-context
+;;           :name "gmail"
+;;           :enter-func
+;;           (lambda () (mu4e-message "Enter zhouqiaohui97@gmail.com context"))
+;;           :leave-func
+;;           (lambda () (mu4e-message "Leave zhouqiaohui97@gmail.com context"))
+;;           :match-func
+;;           (lambda (msg)
+;;             (when msg
+;;               (mu4e-message-contact-field-matches msg
+;;                                                   :to "zhouqiaohui97@gmail.com")))
+;;           :vars '((user-mail-address . "zhouqiaohui97@gmail.com")
+;;                   (user-full-name . "qiaohui zhou")
+;;                   (mu4e-drafts-folder . "/[Gmail]/Drafts")
+;;                   (mu4e-sent-folder . "/[Gmail]/Sent Mail")
+;;                   (mu4e-trash-folder . "/[Gmail]/Trash")))))
+
+(setq mu4e-context-policy 'pick-first) ;; start with the first (default) context;
+(setq mu4e-compose-context-policy 'ask) ;; ask for context if no context matches;
+
+;; gpg encryptiom & decryption:
+;; this can be left alone
+(require 'epa-file)
+(epa-file-enable)
+(setq epa-pinentry-mode 'loopback)
+(auth-source-forget-all-cached)
+
+;; don't keep message compose buffers around after sending:
+(setq message-kill-buffer-on-exit t)
+
+;; send function:
+(setq send-mail-function 'sendmail-send-it
+      message-send-mail-function 'sendmail-send-it)
+
+;; send program:
+;; this is exeranal. remember we installed it before.
+(setq sendmail-program (executable-find "msmtp"))
+
+;; select the right sender email from the context.
+(setq message-sendmail-envelope-from 'header)
+
+;; chose from account before sending
+;; this is a custom function that works for me.
+;; well I stole it somewhere long ago.
+;; I suggest using it to make matters easy
+;; of course adjust the email adresses and account descriptions
+(defun timu/set-msmtp-account ()
+  (if (message-mail-p)
+      (save-excursion
+        (let*
+            ((from (save-restriction
+                     (message-narrow-to-headers)
+                     (message-fetch-field "from")))
+             (account
+              (cond
+               ((string-match "zhouqiaohui97@gmail.com" from) "gmail"))))
+          (setq message-sendmail-extra-arguments (list '"-a" account))))))
+
+(add-hook 'message-send-mail-hook 'timu/set-msmtp-account)
+
+;; mu4e cc & bcc
+;; this is custom as well
+(add-hook 'mu4e-compose-mode-hook
+          (defun timu/add-cc-and-bcc ()
+            "My Function to automatically add Cc & Bcc: headers.
+    This is in the mu4e compose mode."
+            (save-excursion (message-add-header "Cc:\n"))
+            (save-excursion (message-add-header "Bcc:\n"))))
+
+;; mu4e address completion
+(add-hook 'mu4e-compose-mode-hook 'company-mode)
+
+;;optional
+;; store link to message if in header view, not to header query:
+(setq org-mu4e-link-query-in-headers-mode nil)
+;; don't have to confirm when quitting:
+(setq mu4e-confirm-quit nil)
+;; number of visible headers in horizontal split view:
+(setq mu4e-headers-visible-lines 20)
+;; don't show threading by default:
+(setq mu4e-headers-show-threads nil)
+;; hide annoying "mu4e Retrieving mail..." msg in mini buffer:
+(setq mu4e-hide-index-messages t)
+;; customize the reply-quote-string:
+(setq message-citation-line-format "%N @ %Y-%m-%d %H:%M :\n")
+;; M-x find-function RET message-citation-line-format for docs:
+(setq message-citation-line-function 'message-insert-formatted-citation-line)
+;; by default do not show related emails:
+(setq mu4e-headers-include-related nil)
+;; by default do not show threads:
+(setq mu4e-headers-show-threads nil)
+```
+
+
+### Set mu4e theme {#set-mu4e-theme}
+
+```emacs-lisp
+;; (use-package mu4e-thread-folding
+;; 	:straight(mu4e-thread-folding :host github :repo "rougier/mu4e-thread-folding"))
+
+;; (use-package mu4e-dashboard
+;; 	:straight(mu4e-dashboard :host github :repo "rougier/mu4e-dashboard"))
+
+;; (use-package nano-mu4e
+;; 	:straight (nano-emacs :host github :repo "rougier/nano-emacs"))
 ```
