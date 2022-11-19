@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-11-18T02:55:43-05:00
+lastmod = 2022-11-19T01:23:08-05:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"
@@ -18,13 +18,16 @@ keywords
 
 ## Motivation for reading {#motivation-for-reading}
 
+He's the one that paved the way for existentialism, and he's work is heavily referenced in Camus'
+work... I have long wanted to read about him.
+
 
 ## Memo Quote {#memo-quote}
 
 
 ### Ch1-3 {#ch1-3}
 
-> As little as the act of birth comes into consideration in the whole process and procedure of heredity, just as little is “being-conscious” opposed to the instinctive in any decisive sense; the greater part of the conscious thinking of a philosopher is secretly influenced by his instincts, and forced into definite channels. And behind all logic and its seeming sovereignty of movement, there are valuations, or to speak more plainly, physiological demands, for the maintenance of a definite mode of life.
+> As little as the act of birth comes into consideration in the whole process and procedure of heredity, just as little is “being-conscious” as opposed to the instinctive in any decisive sense; the greater part of the conscious thinking of a philosopher is secretly influenced by his instincts, and forced into definite channels. And behind all logic and its seeming sovereignty of movement, there are valuations, or to speak more plainly, physiological demands, for the maintenance of a definite mode of life.
 
 
 ### Ch1-4 {#ch1-4}
@@ -37,8 +40,17 @@ keywords
 
 ## Impression {#impression}
 
+-   Nietzsche seems particularly unsatisfied with Kant's philosophy of morality (which is
+
+absolute)... see [quote](#reading-progress-3).
+
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-19 Sat&gt; </span></span> : Reading Progress :  3% {#reading-progress-3}
+
+> The spectacle of the Tartuffery of old Kant, equally stiff and decent, with which he entices us into the dialectic by-ways that lead (more correctly mislead) to his “categorical imperative”—makes us fastidious ones smile, we who find no small amusement in spying out the subtle tricks of old moralists and ethical preachers.
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-18 Fri&gt; </span></span> : Reading Progress : 3% {#reading-progress-3}

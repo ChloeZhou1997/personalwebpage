@@ -1,8 +1,8 @@
 +++
-title = "1984 - Orwell 1984"
+title = "1984 - Orwell"
 author = ["Chloe"]
 date = 2022-11-18
-lastmod = 2022-11-19T00:41:34-05:00
+lastmod = 2022-11-19T01:24:19-05:00
 tags = ["literatures"]
 draft = false
 status = "reading"
