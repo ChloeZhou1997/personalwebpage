@@ -3,49 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/evergreen/notes-beyondgoodandevil-ch1/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
   </url><url>
     <loc>/posts/using-emacs-for-bookmark-management/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/evergreen/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/tags/literatures/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/categories/notes/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-11-17T00:00:09-05:00</lastmod>
-  </url><url>
-    <loc>/bookshelves/nietzschegoodevilprelude1907/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <loc>/bookshelves/orwell1984orwell2020/</loc>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
   </url><url>
     <loc>/bookcate/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
   </url><url>
-    <loc>/tags/philosophy/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
   </url><url>
-    <loc>/bookcate/philosophy/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <loc>/bookcate/literature/</loc>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
+  </url><url>
+    <loc>/tags/literatures/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
   </url><url>
     <loc>/status/reading/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
   </url><url>
     <loc>/status/</loc>
-    <lastmod>2022-11-16T23:52:35-05:00</lastmod>
+    <lastmod>2022-11-19T00:41:34-05:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
+  </url><url>
+    <loc>/categories/notes/</loc>
+    <lastmod>2022-11-19T01:18:59-05:00</lastmod>
+  </url><url>
+    <loc>/bookshelves/nietzschegoodevilprelude1907/</loc>
+    <lastmod>2022-11-18T02:55:43-05:00</lastmod>
+  </url><url>
+    <loc>/tags/philosophy/</loc>
+    <lastmod>2022-11-18T02:55:43-05:00</lastmod>
+  </url><url>
+    <loc>/bookcate/philosophy/</loc>
+    <lastmod>2022-11-18T02:55:43-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/bryantcomputersystemsprogrammer2015/</loc>
     <lastmod>2022-11-16T01:21:26-05:00</lastmod>
@@ -56,20 +62,17 @@
     <loc>/status/finished/</loc>
     <lastmod>2022-11-16T01:22:14-05:00</lastmod>
   </url><url>
-    <loc>/bookcate/literature/</loc>
-    <lastmod>2022-11-16T01:22:14-05:00</lastmod>
-  </url><url>
     <loc>/bookshelves/dostoyevskybrotherskaramazov2012/</loc>
     <lastmod>2022-11-16T01:22:14-05:00</lastmod>
   </url><url>
     <loc>/tags/config/</loc>
-    <lastmod>2022-11-16T20:31:58-05:00</lastmod>
+    <lastmod>2022-11-18T20:33:12-05:00</lastmod>
   </url><url>
     <loc>/tags/emacs/</loc>
-    <lastmod>2022-11-16T20:31:58-05:00</lastmod>
+    <lastmod>2022-11-18T20:33:12-05:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-11-16T20:31:58-05:00</lastmod>
+    <lastmod>2022-11-18T20:33:12-05:00</lastmod>
   </url><url>
     <loc>/categories/tutorial/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
@@ -78,7 +81,7 @@
     <lastmod>2022-11-08T14:33:00-05:00</lastmod>
   </url><url>
     <loc>/posts/emacs/</loc>
-    <lastmod>2022-11-16T20:31:58-05:00</lastmod>
+    <lastmod>2022-11-18T20:33:12-05:00</lastmod>
   </url><url>
     <loc>/tags/hugo/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>
