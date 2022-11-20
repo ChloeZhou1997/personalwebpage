@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-19T21:56:35-05:00
+lastmod = 2022-11-19T22:01:53-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -71,7 +71,7 @@ The tendency to seek out and believe in the truth even in hard circumstances. (B
 How did he work up to this conclusion?
 
 -   Nietzsche doesn't believe in the "impulse to knowledge" as the
-    father of philosophy. Instead the impulse to knowledge steam from
+    father of philosophy. Instead, the impulse to knowledge stems from
     the need to use them as a tool.
 -   However, he believes whoever thinks of himself as creative and
     inspiring and certainly possesses that "impulse" are certainly
