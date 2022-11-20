@@ -34,7 +34,7 @@ First, load org-protocol.el to the init.el configuration file:
       
       <guid>/posts/emacs/</guid>
       <description>Rewrite my config to get rid of the redunant functions and build the system from stratch using straight.el for package management.
-TODO Emacs configurations [4/7] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Install Projectile rewrite the super-agenda to make it nicer. improvement of performance of emacs (not really&amp;hellip; but I tried&amp;hellip;) reconfiuring eshell Setup before everything else 1(setq package-enable-at-startup nil) Performance Monitoring Define a function that will monitor how long it takes for Emacs to startup:</description>
+TODO Emacs configurations [4/7] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Install Projectile rewrite the super-agenda to make it nicer. improvement of performance of emacs (not really&amp;hellip; but I tried&amp;hellip;) reconfiuring eshell Setup before everything else 1(setq package-enable-at-startup nil) 2(setq fill-column 2000) Performance Monitoring Define a function that will monitor how long it takes for Emacs to startup:</description>
     </item>
     
     <item>

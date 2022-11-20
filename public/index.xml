@@ -6,7 +6,16 @@
     <description>Recent content on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Can history be completely remade? Has it ever happened in history? What is the limitation to this ambition?</title>
+      <link>/evergreen/can-history-be-remade/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/evergreen/can-history-be-remade/</guid>
+      <description>Inspired by Chapter 3 of 1984 - Orwell, where Winston tries to remember what happened to his family and what happened in the past. However, the past was rewritten and the process of &amp;ldquo;rectifying&amp;rdquo; the history was vividly depicted in Chapter 4. However, to have the absolute power of dictate even the language requires real management skills and also a set of conditions&amp;hellip; I am curious how feasible it is in real life and what are conditions needed to make it happens.</description>
+    </item>
+    
     <item>
       <title>Beyond Good and Evil - Ch1 Prejudices of Philosophers</title>
       <link>/evergreen/notes-beyondgoodandevil-ch1/</link>
@@ -83,7 +92,7 @@ First, load org-protocol.el to the init.el configuration file:
       
       <guid>/posts/emacs/</guid>
       <description>Rewrite my config to get rid of the redunant functions and build the system from stratch using straight.el for package management.
-TODO Emacs configurations [4/7] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Install Projectile rewrite the super-agenda to make it nicer. improvement of performance of emacs (not really&amp;hellip; but I tried&amp;hellip;) reconfiuring eshell Setup before everything else 1(setq package-enable-at-startup nil) Performance Monitoring Define a function that will monitor how long it takes for Emacs to startup:</description>
+TODO Emacs configurations [4/7] ox-json + pyorg to obtain json data from org files, check org ele API also Install blink-search and explore it. Check on embark to see if it&amp;rsquo;s an alternative to which-key Install Projectile rewrite the super-agenda to make it nicer. improvement of performance of emacs (not really&amp;hellip; but I tried&amp;hellip;) reconfiuring eshell Setup before everything else 1(setq package-enable-at-startup nil) 2(setq fill-column 2000) Performance Monitoring Define a function that will monitor how long it takes for Emacs to startup:</description>
     </item>
     
     <item>

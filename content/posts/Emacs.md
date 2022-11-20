@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-18T20:33:12-05:00
+lastmod = 2022-11-19T13:12:21-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -27,6 +27,7 @@ system from stratch using `straight.el` for package management.
 
 ```emacs-lisp
 (setq package-enable-at-startup nil)
+(setq fill-column 2000)
 ```
 
 
@@ -375,7 +376,8 @@ Use ibuffer to nevigate the buffers:
           (require 'nano-layout)
           (require 'nano-session)
           (require 'nano-colors)
-          (require 'nano-writer))
+          (require 'nano-writer)
+          (require 'nano-help))
 
         (use-package nano-theme
           :straight (nano-theme :host github :repo "rougier/nano-theme"))
@@ -789,6 +791,9 @@ For the PDF Scrapper, change the formate of the paper key:
   :hook (text-mode . (lambda ()
                        (require 'lsp-grammarly)
                        (lsp))))  ; or lsp-deferred
+
+(define-key flymake-mode-map (kbd "M-n") 'flymake-goto-next-error)
+(define-key flymake-mode-map (kbd "M-p") 'flymake-goto-prev-error)
 ```
 
 
