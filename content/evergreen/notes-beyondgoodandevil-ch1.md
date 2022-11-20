@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-19T21:50:45-05:00
+lastmod = 2022-11-19T21:56:35-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -91,4 +91,6 @@ How did he work up to this conclusion?
 
 -   [ ] In Ch1-6, Nietzsche said the "impulse" is imperious and tends to
     philosophize itself. What does making philosophy do with **impulse**?
-    (see [quote]({{< relref "nietzscheGoodEvilPrelude1907#2022-11-19-sat-reading-progress-4" >}}))
+    (see quote&nbsp;[^fn:1])
+
+[^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
