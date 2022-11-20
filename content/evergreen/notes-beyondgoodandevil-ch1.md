@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-19T01:18:59-05:00
+lastmod = 2022-11-19T21:44:33-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -50,7 +50,7 @@ The tendency to seek out and believe in the truth even in hard circumstances. (B
 ## 4. The usual falseness of opinion needs little doubt, what matter is to find the opinions that are life-furthering and species-raring. What we are undoubled about so far is only a negation of life and to recognize the untruth is the movement that places itself beyond good and evil. {#4-dot-the-usual-falseness-of-opinion-needs-little-doubt-what-matter-is-to-find-the-opinions-that-are-life-furthering-and-species-raring-dot-what-we-are-undoubled-about-so-far-is-only-a-negation-of-life-and-to-recognize-the-untruth-is-the-movement-that-places-itself-beyond-good-and-evil-dot}
 
 
-## 5. The reason people tend to distrust and make fun of philosophers is not because they keep making innocent mistakes or because they seem childish, but because philosophers are not honest about their opinions. Instead of admitting that they might be biased, philosophers pretend that their opinions are based on a logical, reasoning process, when really they are just defending their own prejudices. {#5-dot-the-reason-people-tend-to-distrust-and-make-fun-of-philosophers-is-not-because-they-keep-making-innocent-mistakes-or-because-they-seem-childish-but-because-philosophers-are-not-honest-about-their-opinions-dot-instead-of-admitting-that-they-might-be-biased-philosophers-pretend-that-their-opinions-are-based-on-a-logical-reasoning-process-when-really-they-are-just-defending-their-own-prejudices-dot}
+## 5. The reason people tend to distrust and make fun of philosophers is not because they keep making innocent mistakes or because they seem childish, but because philosophers are not honest about their opinions. Instead of admitting that they might be biased, philosophers pretend that their opinions are based on a logical, reasoning process when really they are just defending their own prejudices. {#5-dot-the-reason-people-tend-to-distrust-and-make-fun-of-philosophers-is-not-because-they-keep-making-innocent-mistakes-or-because-they-seem-childish-but-because-philosophers-are-not-honest-about-their-opinions-dot-instead-of-admitting-that-they-might-be-biased-philosophers-pretend-that-their-opinions-are-based-on-a-logical-reasoning-process-when-really-they-are-just-defending-their-own-prejudices-dot}
 
 -   Nietzsche mocked both Kant and Spinoza for their philosophy. For Kant, it's his dialetics that leads to categorical imperative; for Spinoza, it's his claims for embedded the mathematical form in his philosophy, and called it "hocuspocus"... (he only used them to scare people away for he himself is not confident about he's thought)
 
@@ -64,3 +64,29 @@ The tendency to seek out and believe in the truth even in hard circumstances. (B
 
 -   Imperative: absolute command or order
 -   The categorical imperative is an ethical principle developed by Kant. It states that an action is morally good if it can be willed as a universal law, i.e. if it could be applied to everyone without leading to a contradiction.
+
+
+## 6. To understand a difficult metaphysical assertion from a philsopher, one only needs to figure out what morality the philosopher is aiming at. For it's the moral purpose of the philosopher that dictates the shape his philosophy will eventually grow in. There's nothing in philosophy that is absolutely impersonal. {#6-dot-to-understand-a-difficult-metaphysical-assertion-from-a-philsopher-one-only-needs-to-figure-out-what-morality-the-philosopher-is-aiming-at-dot-for-it-s-the-moral-purpose-of-the-philosopher-that-dictates-the-shape-his-philosophy-will-eventually-grow-in-dot-there-s-nothing-in-philosophy-that-is-absolutely-impersonal-dot}
+
+How did he work up to this conclusion?
+
+-   Nietzsche doesn't believe in the "impulse to knowledge" as the
+    father of philosophy. Instead the impulse to knowledge steam from
+    the need to use them as a tool.
+-   However, he believes whoever thinks of himself as creative and
+    inspiring and certainly possesses that "impulse" are certainly
+    willing to consider themselves superior to others as it's what
+    impulse does - imperious and hence tend to "philosophize".
+-   Unlike scientific scholars, even though most of their impulses might
+    be driven by material interests, there might be a tiny bit of
+    interests that are purely driven by curiosity and the genuine
+    interest itself. And the fact that most of the interests are in
+    money making or family, is what makes it impersonal. For the
+    actions and what they do usually don't characterize what they are.
+-   This is not the case for philosophers. What they choose for their
+    moral compass is the testimony of where their natures stand.
+
+
+### Need further investigation <code>[0/1]</code> {#need-further-investigation}
+
+-   [ ] In Ch1-6, Nietzsche said the "impulse" is imperious and tends to philosophize itself. What does making philosophy do with **impulse**? (see [quote]({{< relref "#d41d8c" >}}))
