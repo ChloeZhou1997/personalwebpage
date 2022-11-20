@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-19T21:44:33-05:00
+lastmod = 2022-11-19T21:50:45-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -89,4 +89,6 @@ How did he work up to this conclusion?
 
 ### Need further investigation <code>[0/1]</code> {#need-further-investigation}
 
--   [ ] In Ch1-6, Nietzsche said the "impulse" is imperious and tends to philosophize itself. What does making philosophy do with **impulse**? (see [quote]({{< relref "#d41d8c" >}}))
+-   [ ] In Ch1-6, Nietzsche said the "impulse" is imperious and tends to
+    philosophize itself. What does making philosophy do with **impulse**?
+    (see [quote]({{< relref "nietzscheGoodEvilPrelude1907#2022-11-19-sat-reading-progress-4" >}}))
