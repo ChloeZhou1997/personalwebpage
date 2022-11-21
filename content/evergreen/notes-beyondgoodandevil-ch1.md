@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-20T23:50:05-05:00
+lastmod = 2022-11-20T23:54:27-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -108,6 +108,8 @@ How did he work up to this conclusion?
 > Adventavit asinus, Pulcher et fortissimus.
 
 -   Nietzsche made reference to the religious story from old testament,
-    which narrates about a donkey's words upon granted speech by god.
+    which narrates about a donkey's words upon granted speech by
+    god.[^fn:2]
 
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
+[^fn:2]: Read more [from there](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.)).
