@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Emacs Configuration | Chloe Jo</title>
   <link rel = 'canonical' href = '/posts/emacs/'>
-  <meta name="description" content="This is my personal webpage. I am currently a PhD student from Georgetown University. I studied Economics while in undergraduate but switched to Biostatistics in graduate school. This personal webpage is still under construction.">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -21,7 +21,7 @@ TODO Emacs configurations [4/7] ox-json &#43; pyorg to obtain json data from org
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-19T13:12:21-05:00" />
+<meta property="article:modified_time" content="2022-11-20T23:28:35-05:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -67,7 +67,7 @@ TODO Emacs configurations [4/7] ox-json &#43; pyorg to obtain json data from org
          
         <li><a href="/bookshelves">Bookshelf</a></li>
          
-        <li><a href="/tags">Tags</a></li>
+        <li><a href="/evergreen">Evergreen</a></li>
          
         <li><a href="/about">About</a></li>
         
@@ -310,7 +310,7 @@ TODO Emacs configurations [4/7] ox-json &#43; pyorg to obtain json data from org
           
           <time datetime="2022-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-29</time>
           
-            (Updated: <time datetime="2022-11-19 13:12:21 -0500 EST" itemprop="dateModified">2022-11-19</time>)
+            (Updated: <time datetime="2022-11-20 23:28:35 -0500 EST" itemprop="dateModified">2022-11-20</time>)
           
         </div>
         
@@ -895,7 +895,7 @@ wikipedia,<a href="https://en.wikipedia.org/wiki/Clean_URL#Slug">it&rsquo;s the 
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#6272a4">;;set todo keywords</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-todo-keywords</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>      <span style="color:#ff79c6">&#39;</span>((<span style="color:#8be9fd;font-style:italic">sequence</span> <span style="color:#f1fa8c">&#34;TODO(t)&#34;</span> <span style="color:#f1fa8c">&#34;|&#34;</span> <span style="color:#f1fa8c">&#34;DONE(d)&#34;</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        (<span style="color:#8be9fd;font-style:italic">sequence</span> <span style="color:#f1fa8c">&#34;TOREAD(t)&#34;</span> <span style="color:#f1fa8c">&#34;READING(r)&#34;</span> <span style="color:#f1fa8c">&#34;|&#34;</span> <span style="color:#f1fa8c">&#34;CANCELLED(c)&#34;</span> <span style="color:#f1fa8c">&#34;STALLED(s)&#34;</span> <span style="color:#f1fa8c">&#34;DONE(d)&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        (<span style="color:#8be9fd;font-style:italic">sequence</span> <span style="color:#f1fa8c">&#34;TOREAD(t@/!)&#34;</span> <span style="color:#f1fa8c">&#34;READING(r@/!)&#34;</span> <span style="color:#f1fa8c">&#34;|&#34;</span> <span style="color:#f1fa8c">&#34;CANCELLED(c)&#34;</span> <span style="color:#f1fa8c">&#34;STALLED(s)&#34;</span> <span style="color:#f1fa8c">&#34;DONE(d)&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        (<span style="color:#8be9fd;font-style:italic">sequence</span> <span style="color:#f1fa8c">&#34;|&#34;</span> <span style="color:#f1fa8c">&#34;CANCELED(c)&#34;</span>)))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span><span style="color:#6272a4">;;set faces</span>
@@ -1742,7 +1742,7 @@ Prompt and colors</a>, <a href="https://github.com/mclear-tools/dotemacs/blob/11
          
           <li><a href="/bookshelves">Bookshelf</a></li>
          
-          <li><a href="/tags">Tags</a></li>
+          <li><a href="/evergreen">Evergreen</a></li>
          
           <li><a href="/about">About</a></li>
         
@@ -1971,7 +1971,7 @@ Prompt and colors</a>, <a href="https://github.com/mclear-tools/dotemacs/blob/11
          
         <li><a href="/bookshelves">Bookshelf</a></li>
          
-        <li><a href="/tags">Tags</a></li>
+        <li><a href="/evergreen">Evergreen</a></li>
          
         <li><a href="/about">About</a></li>
         

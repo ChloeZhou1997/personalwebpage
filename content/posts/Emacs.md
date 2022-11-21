@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-19T13:12:21-05:00
+lastmod = 2022-11-20T23:28:35-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -739,7 +739,7 @@ For the PDF Scrapper, change the formate of the paper key:
 ;;set todo keywords
 (setq org-todo-keywords
       '((sequence "TODO(t)" "|" "DONE(d)")
-        (sequence "TOREAD(t)" "READING(r)" "|" "CANCELLED(c)" "STALLED(s)" "DONE(d)")
+        (sequence "TOREAD(t@/!)" "READING(r@/!)" "|" "CANCELLED(c)" "STALLED(s)" "DONE(d)")
         (sequence "|" "CANCELED(c)")))
 
 ;;set faces

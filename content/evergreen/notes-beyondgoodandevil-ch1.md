@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-19T22:01:53-05:00
+lastmod = 2022-11-20T23:50:05-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -92,5 +92,22 @@ How did he work up to this conclusion?
 -   [ ] In Ch1-6, Nietzsche said the "impulse" is imperious and tends to
     philosophize itself. What does making philosophy do with **impulse**?
     (see quote&nbsp;[^fn:1])
+
+
+## 7. Philosophers can be malicious. Taking Epicurus for example, he called Plato and he follows  "ACTORS" but there's no geniuenity in himself but jealousy over Platonians' ability to be grandiose. It took Greek hundred of years to figure out who truly have more superior knowledge and intelligence. {#7-dot-philosophers-can-be-malicious-dot-taking-epicurus-for-example-he-called-plato-and-he-follows-actors-but-there-s-no-geniuenity-in-himself-but-jealousy-over-platonians-ability-to-be-grandiose-dot-it-took-greek-hundred-of-years-to-figure-out-who-truly-have-more-superior-knowledge-and-intelligence-dot}
+
+
+### Need further investigation <code>[0/1]</code> {#need-further-investigation}
+
+-   [ ] I actually don't know what's Nietzsche's opinion of Plato... Need
+    more investigation.
+
+
+### 8. "The ass arrives, beautiful and most brave". {#8-dot-the-ass-arrives-beautiful-and-most-brave-dot}
+
+> Adventavit asinus, Pulcher et fortissimus.
+
+-   Nietzsche made reference to the religious story from old testament,
+    which narrates about a donkey's words upon granted speech by god.
 
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."

@@ -1,0 +1,9 @@
+{
+	"grammarly.selectors": [
+		{
+			"language": "toml",
+			"scheme": "file",
+			"pattern": "config.toml"
+		}
+	]
+}

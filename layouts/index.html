@@ -1,10 +1,14 @@
 {{ define "main" }}
   <section id="about">
-  {{ if isset .Site.Params "description" }}
+  {{/*  {{ if isset .Site.Params "description" }}
     {{ .Site.Params.description | $.Page.RenderString }}
-  {{ end }}
+  {{ end }}  */}}
+  <div class="intro">
+    <p>This is my digital garden. I am currently a PhD student at Georgetown University. I studied Economics during my undergraduate but switched to Biostatistics in graduate school. I firmly believe a person's thoughts and substance are best reflected by the books he/she reads. Please check <a href="/bookshelves">my bookshelf</a> for the recent books I am reading and all the notes I have taken.</p>
+  </div>
+  
   {{ if isset .Site.Params "social" }}
-      <p>Find me on
+      <p>You can also find me through
       {{ $length := (len .Site.Params.social) }}
       {{ range $index, $elem := .Site.Params.social}}
       {{ if eq $elem.name "email" }}
