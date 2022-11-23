@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-20T23:28:35-05:00
+lastmod = 2022-11-22T14:49:46-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -791,7 +791,7 @@ For the PDF Scrapper, change the formate of the paper key:
   :hook (text-mode . (lambda ()
                        (require 'lsp-grammarly)
                        (lsp))))  ; or lsp-deferred
-
+(use-package flymake)
 (define-key flymake-mode-map (kbd "M-n") 'flymake-goto-next-error)
 (define-key flymake-mode-map (kbd "M-p") 'flymake-goto-prev-error)
 ```
@@ -1084,6 +1084,10 @@ Reference to [this tutorial](https://kristofferbalintona.me/posts/202202211546/)
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles partial-completion)))))
+
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
 ```
 
 

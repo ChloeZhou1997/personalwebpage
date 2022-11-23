@@ -2,7 +2,7 @@
 title = "1984 - Orwell"
 author = ["Chloe"]
 date = 2022-11-18
-lastmod = 2022-11-19T19:26:35-05:00
+lastmod = 2022-11-22T22:58:09-05:00
 tags = ["literatures"]
 draft = false
 status = "reading"
@@ -40,17 +40,31 @@ Beside, he's very happy about the widespread allgiance to Stalinism among the le
 
 ### On language and thought {#on-language-and-thought}
 
+-   Ideas that are orthodoxy has the authority, the power dictates all
+    other different ideas. However, such ideas are unquestionable, and
+    things are unquestionable and can only remain that way when people
+    believe unconsciously.
+
 > The whole literature of the past will have been destroyed. Chaucer, Shakespeare, Milton, Byron – they’ll exist only in Newspeak versions, not merely changed into something different, but actually changed into something contradictory of what they used to be. Even the literature of the Party will change. Even the slogans will change. How could you have a slogan like “freedom is slavery” when the concept of freedom has been abolished? The whole climate of thought will be different. In fact there will be no thought, as we understand it now. **Orthodoxy means not thinking – not needing to think. Orthodoxy is unconsciousness**.
 
+-   If reality can be fabricated, the mind can be controlled. Can anything
+    truthful only inside of one's mind still have the credibility to be truthful?
 
-### On what's the implication a "future" {#on-what-s-the-implication-a-future}
+<!--listend-->
+
+```emacs-lisp
+If both the past and the external world exist only in the mind, and if the mind itself is controllable–what then?
+```
+
+
+### On what's the implication of a "future" {#on-what-s-the-implication-of-a-future}
 
 -   There's no future, if future only resamble the present.
 
 > For whom, it suddenly occurred to him to wonder, was he writing this diary? For the future, for the unborn. His mind hovered for a moment round the doubtful date on the page, and then fetched up with a bump against the Newspeak word doublethink. For the first time the magnitude of what he had undertaken came home to him. How could you communicate with the future? It was of its nature impossible. Either the future would resemble the present, in which case it would not listen to him: or it would be different from it, and his predicament would be meaningless.
 
 
-### On group polorization (during three mins hates) {#on-group-polorization--during-three-mins-hates}
+### On group polarization (during three mins hates) {#on-group-polarization--during-three-mins-hates}
 
 > The little sandy-haired woman had turned bright pink, and her mouth was opening and shutting like that of a landed fish. Even O’Brien’s heavy face was flushed. He was sitting very straight in his chair, his powerful chest swelling and quivering as though he were standing up to the assault of a wave. The dark-haired girl behind Winston had begun crying out ‘Swine! Swine! Swine!’, and suddenly she picked up a heavy Newspeak dictionary and flung it at the screen. It struck Goldstein’s nose and bounced off: the voice continued inexorably. In a lucid moment Winston found that he was shouting with the others and kicking his heel violently against the rung of his chair. **The horrible thing about the Two Minutes Hate was not that one was obliged to act a part, but that it was impossible to avoid joining in.**
 
@@ -60,9 +74,38 @@ Beside, he's very happy about the widespread allgiance to Stalinism among the le
 > It was even possible, at moments, to switch one’s hatred this way or that by a voluntary act. Suddenly, by the sort of violent effort with which one wrenches one’s head away from the pillow in a nightmare, Winston succeeded in transferring his hatred from the face on the screen to the dark-haired girl behind him. Vivid, beautiful hallucinations flashed through his mind. He would flog her to death with a rubber truncheon. He would tie her naked to a stake and shoot her full of arrows like Saint Sebastian. He would ravish her and cut her throat at the moment of climax. Better than before, moreover, he realized why it was that he hated her. He hated her because she was young and pretty and sexless, because he wanted to go to bed with her and would never do so, because round her sweet supple waist, which seemed to ask you to encircle it with your arm, there was only the odious scarlet sash, aggressive symbol of chastity.
 
 
+### On rebellion {#on-rebellion}
+
+```emacs-lisp
+If there is hope, wrote Winston, it lies in the proles.
+```
+
+-   But even if they succeed, what's the future they lead?
+
+<!--listend-->
+
+```emacs-lisp
+Until they(proles) become conscious they will never rebel, and until after they have rebelled they cannot become conscious.
+```
+
+
+### On Freedom {#on-freedom}
+
+-   Freedom is the freedom of speaking the truth. Speaking of what's
+    unalterable.
+
+<!--listend-->
+
+```emacs-lisp
+Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.
+```
+
+
 ## Impression {#impression}
 
 -   It's more intriguing than I expected at first...
+-   He uses a lot of "What was adj. was not that... but that..." or similar
+    form lol.
 
 
 ## Questions inspired: {#questions-inspired}
@@ -80,11 +123,32 @@ Beside, he's very happy about the widespread allgiance to Stalinism among the le
 ## Reading log {#reading-log}
 
 
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-22 Tue&gt; </span></span> : Reading Progress : 41% {#reading-progress-41}
+
+-   Winston's visit to where proles live, he tries to interview an old
+    man and want to have a picture of the past. But the attempt was a
+    failure because the old man cannot recall anything that provides big
+    picture but only details.
+-   On the way back Winston encountered the girl he thought must be
+    the spy, but it turns out the girl loves him.
+-   They are meeting in some place to witness public trials of war
+    prisoners.
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt; </span></span> : Reading Progress : 31% {#reading-progress-31}
+
+-   Winston's diary about his wife, the prostitute, and his memory about
+    three earlier revolutionary heroes who were prosecuted and their
+    fabricated crimes being written and written again and again. His
+    craving for true love and his hope for changing the
+    circumstances from the proles.
+
+
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-19 Sat&gt; </span></span> : Reading Progress : 23% {#reading-progress-23}
 
--   I am where Wilson is having a conversation with Syme, and it's so
+-   I am where Winston is having a conversation with Syme, and it's so
     funny Winston has the conviction that he will definitely be
-    vaporized one day..."One day he will disppear. It's written in his
+    vaporized one day..."One day he will disappear. It's written in his
     face." This conviction in plain English is just hilarious.
 
 > One of these days, thought Winston with sudden deep conviction, Syme will be vaporized. He is too intelligent. He sees too clearly and speaks too plainly. The Party does not like such people. One day he will disappear. It is written in his face.

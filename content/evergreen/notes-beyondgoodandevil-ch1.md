@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-20T23:54:27-05:00
+lastmod = 2022-11-22T23:35:08-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -103,7 +103,7 @@ How did he work up to this conclusion?
     more investigation.
 
 
-### 8. "The ass arrives, beautiful and most brave". {#8-dot-the-ass-arrives-beautiful-and-most-brave-dot}
+## 8. "The ass arrives, beautiful and most brave". {#8-dot-the-ass-arrives-beautiful-and-most-brave-dot}
 
 > Adventavit asinus, Pulcher et fortissimus.
 
@@ -111,5 +111,29 @@ How did he work up to this conclusion?
     which narrates about a donkey's words upon granted speech by
     god.[^fn:2]
 
+
+## 9. What Stoics claim to "live according to nature" is only "live according to life". The fact that people dedicate their morality to nature proves again that people can only make out of what they are. Stoicism is self-tyranny, so it also tries to tyrannize nature. {#9-dot-what-stoics-claim-to-live-according-to-nature-is-only-live-according-to-life-dot-the-fact-that-people-dedicate-their-morality-to-nature-proves-again-that-people-can-only-make-out-of-what-they-are-dot-stoicism-is-self-tyranny-so-it-also-tries-to-tyrannize-nature-dot}
+
+
+### Stoics {#stoics}
+
+The Stoics were a school of thought founded by Zeno of Citium in the
+3rd century BCE. They believed that the best way to live was in
+accordance with nature, and that the goal of life was to achieve
+virtue and wisdom.
+
+
+### causa prima {#causa-prima}
+
+The first cause, the cause of all the causes.
+
+
+## 10. People in Europe are eager to figure out what's the truth and are even willing to resort to a sure nothingness than accept a world with the possibility (Nihilism). For Nihilists, they seem to be otherwise, they speak a lot of "perspectives" but even district the most obvious, and what they can derive from their appearance. Who knows if they are not secretly looking for something as sure as the old religion and even something as sure as immortal? Theirs disbelieves towards the modern world is the lack of courage to face the true world. {#10-dot-people-in-europe-are-eager-to-figure-out-what-s-the-truth-and-are-even-willing-to-resort-to-a-sure-nothingness-than-accept-a-world-with-the-possibility--nihilism--dot-for-nihilists-they-seem-to-be-otherwise-they-speak-a-lot-of-perspectives-but-even-district-the-most-obvious-and-what-they-can-derive-from-their-appearance-dot-who-knows-if-they-are-not-secretly-looking-for-something-as-sure-as-the-old-religion-and-even-something-as-sure-as-immortal-theirs-disbelieves-towards-the-modern-world-is-the-lack-of-courage-to-face-the-true-world-dot}
+
+-   The paragraph is a criticism of nihilism?
+-   Don't quite understand the paragraph... the language is too
+    complicated T.T
+-   [Here](https://kirbyyardley.medium.com/010-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-442388529707) seems to have a convincing interpretation.
+
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
-[^fn:2]: Read more [from there](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.)).
+[^fn:2]: Read more [from here](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.).

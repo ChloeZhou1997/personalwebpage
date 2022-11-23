@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-11-19T21:46:49-05:00
+lastmod = 2022-11-23T10:16:22-05:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"
@@ -50,6 +50,18 @@ work... I have long wanted to read about him.
     stands...
 
 
+## Ch1-9 {#ch1-9}
+
+```emacs-lisp
+this is an old and everlasting story: what happened in old times with the Stoics still happens today, as soon as ever a philosophy begins to believe in itself. It always creates the world in its own image; it cannot do otherwise; philosophy is this tyrannical impulse itself, the most spiritual Will to Power, the will to "creation of the world," the will to the causa prima.
+```
+
+-   Philosophy is the "will to power", the impulse to "creation of the
+    world", and the will to the cause of all causes. (Isn't it the will
+    to the truth even though it probably only is the creation of its own
+    imagery? )
+
+
 ## Impression {#impression}
 
 -   Nietzsche seems particularly unsatisfied with Kant's philosophy of morality (which is
@@ -60,13 +72,25 @@ absolute)... see [quote](#reading-progress-3).
 ## Reading log {#reading-log}
 
 
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-22 Tue&gt; </span></span> : Reading Progress : 5% {#reading-progress-5}
+
+-   This passage (ch1-10) is too hard to understand T-T
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-21 Mon&gt; </span></span> : Reading Progress : 5% {#reading-progress-5}
+
+-   Nietzsche turns to Stoics...
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-20 Sun&gt; </span></span> : Reading Progress : 4% {#reading-progress-4}
+
+-   Nietzsche turns his criticism on Greek philosophers.
+
+
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-19 Sat&gt; </span></span> : Reading Progress : 4% {#reading-progress-4}
 
 -   The 6th point consists of a long sentence and is so hard to
     understand...
--   Passage from the section:
-
-> But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize.
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-19 Sat&gt; </span></span> : Reading Progress : 3% {#reading-progress-3}
@@ -91,7 +115,7 @@ absolute)... see [quote](#reading-progress-3).
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-16 Wed&gt; </span></span> : Reading Progress : 1% {#reading-progress-1}
 
--   I was attempated to read it faster then realize I can't understand
+-   I was attempted to read it faster then realize I can't understand
     anything if reading at that pace... So my current goal is to read at
     least one section a day and build a more solid understanding of the
     book.

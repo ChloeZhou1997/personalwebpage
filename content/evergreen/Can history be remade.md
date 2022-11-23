@@ -2,7 +2,7 @@
 title = "Can history be completely remade? Has it ever happened in history? What is the limitation to this ambition?"
 author = ["Chloe"]
 date = 2022-11-19
-lastmod = 2022-11-19T19:27:18-05:00
+lastmod = 2022-11-21T00:02:13-05:00
 categories = ["politics"]
 draft = false
 weight = 2001
