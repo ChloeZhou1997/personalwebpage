@@ -2,10 +2,10 @@
 title = "1984 - Orwell"
 author = ["Chloe"]
 date = 2022-11-18
-lastmod = 2022-11-22T22:58:09-05:00
+lastmod = 2022-12-05T22:46:39-05:00
 tags = ["literatures"]
 draft = false
-status = "reading"
+status = "finished"
 bookCate = "literature"
 +++
 
@@ -19,18 +19,17 @@ keywords
 
 ## Motivation for reading {#motivation-for-reading}
 
-The book itself is well known by people in general but I have always always been one of which who never read the book before. Being well known as a dystopia book, the book is well known for depicting a despotism regime. And because of its reputation, I have been kept saying my own home country converging towards the world in 1984 in an accelerating book.
-
-I just think it's the time I should sit down and read the book in details to be mentally prepared for what's waiting for my country in the foreseeable forture...
+Having said so many times that my own country is rushing into the
+story of 1984 so many times I am finally reading the book in detail.
 
 
 ## Background {#background}
 
-The book is published in 1949, but Orwell has more in mind than the anti-comminist sentiments in the work. In Orwell's thought, he found analogy between the British Labour Party and the Communist Party under Stalin and consider himself the left of the left. In his idea, both parties claimed to present the interest of working classes and fight against the communist, but in reality concerned only with perpetuating their own power.
+The book is published in 1949, but Orwell has more in mind than the anti-communist sentiments in the work. In Orwell's thought, he found analogy between the British Labour Party and the Communist Party under Stalin and consider himself the left of the left. In his idea, both parties claimed to present the interest of the working classes and fight against the communist, but in reality, concerned only with perpetuating their power.
 
-In 1945, the Tory-led labour party won the British eletorate and got the first time opportunity to reshape the Biritish society along the socialist line. However, according to his letters, he was worried how likely the Labour will stick with its original ideals and choose not to extend the scope of its power. (Judging by the plot of the book he's probably very negative about the prospect...)
+In 1945, the Tory-led labour party won the British electorate and got the first time opportunity to reshape the Biritish society along the socialist line. However, according to his letters, he was worried how likely the Labour will stick with its original ideals and choose not to extend the scope of its power. (Judging by the plot of the book he's probably very negative about the prospect...)
 
-Beside, he's very happy about the widespread allgiance to Stalinism among the lefe despite overwelming evidence of its evil nature, as uncovered from one of his letter he wrote in March of 1948:
+Besides, he's very happy about the widespread allgiance to Stalinism among the lefe despite overwhelming evidence of its evil nature, as uncovered from one of his letter he wrote in March of 1948:
 
 > For somewhat complex reasons, nearly the whole of the English Left has been driven to accept the Russian regime as “Socialist”, while silently recognizing that its spirit and practice are quite alien to anything that is meant by “Socialism” in this country. Hence there has arisen a sort of schizophrenic manner of thinking, in which words like “democracy” can bear two irreconcilable meanings, and such things as concentration camps and mass deportations can be right and wrong simultaneously.
 
@@ -50,11 +49,7 @@ Beside, he's very happy about the widespread allgiance to Stalinism among the le
 -   If reality can be fabricated, the mind can be controlled. Can anything
     truthful only inside of one's mind still have the credibility to be truthful?
 
-<!--listend-->
-
-```emacs-lisp
-If both the past and the external world exist only in the mind, and if the mind itself is controllable–what then?
-```
+> If both the past and the external world exist only in the mind, and if the mind itself is controllable–what then?
 
 
 ### On what's the implication of a "future" {#on-what-s-the-implication-of-a-future}
@@ -76,17 +71,11 @@ If both the past and the external world exist only in the mind, and if the mind 
 
 ### On rebellion {#on-rebellion}
 
-```emacs-lisp
-If there is hope, wrote Winston, it lies in the proles.
-```
+> If there is hope, wrote Winston, it lies in the proles.
 
 -   But even if they succeed, what's the future they lead?
 
-<!--listend-->
-
-```emacs-lisp
-Until they(proles) become conscious they will never rebel, and until after they have rebelled they cannot become conscious.
-```
+> Until they(proles) become conscious they will never rebel, and until after they have rebelled they cannot become conscious.
 
 
 ### On Freedom {#on-freedom}
@@ -94,11 +83,7 @@ Until they(proles) become conscious they will never rebel, and until after they 
 -   Freedom is the freedom of speaking the truth. Speaking of what's
     unalterable.
 
-<!--listend-->
-
-```emacs-lisp
-Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.
-```
+> Freedom is the freedom to say that two plus two make four. If that is granted, all else follows.
 
 
 ## Impression {#impression}
@@ -106,6 +91,17 @@ Freedom is the freedom to say that two plus two make four. If that is granted, a
 -   It's more intriguing than I expected at first...
 -   He uses a lot of "What was adj. was not that... but that..." or similar
     form lol.
+-   I have more hope for humanity than sank itself into a dystopia
+    FOREVER. The book itself is almost like a modern version of Job and
+    God, in this case, Winston is the Job that eventually comes to love
+    the God, the party, the big brother. (this reminds me of Camus'
+    perception of communism, he thinks the concept of communism is
+    people's attempt to construct a god in this human world). I don't
+    believe the all mighty everywhere presented god could ever
+    exist. It is against both the good side and the dark side of the humanity.
+-   One day Big Brother will collpase, its image will be taken down and
+    it will be killed, physically and metaphorically. Just like god is
+    killed.
 
 
 ## Questions inspired: {#questions-inspired}
@@ -121,6 +117,26 @@ Freedom is the freedom to say that two plus two make four. If that is granted, a
 
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-28 Mon&gt; </span></span> : Reading Progress : 100% {#reading-progress-100}
+
+-   finished the book. I don't really like the ending. It's very rushy.
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-24 Thu&gt; </span></span> : Reading Progress : 64% {#reading-progress-64}
+
+-   Winston met O'Brien and confirmed the existence of the brotherhood.
+-   The way the brotherhood is organized is very interesting.
+-   At the section where Winston is reading _the book_.
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-24 Thu&gt; </span></span> : Reading Progress : 52% {#reading-progress-52}
+
+-   I like the first time Winston had sex with Julia and think it's a
+    political act.
+-   At where Winston is renting the old second-hand stores upstairs and
+    having affairs with Julia.
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-22 Tue&gt; </span></span> : Reading Progress : 41% {#reading-progress-41}

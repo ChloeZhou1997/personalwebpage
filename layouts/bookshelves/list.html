@@ -45,7 +45,7 @@
     {{ $pages = .Pages }}
   {{ end }}
 
-  {{ range (.Pages.ByParam "stauts") }}
+  {{ range (.Pages.ByParam "status") }}
     {{ $pageStatus := (.Params.status) }}
     {{ if (ne $pageStatus ($.Scratch.Get "status")) }}
     {{ $.Scratch.Set "status" $pageStatus }}

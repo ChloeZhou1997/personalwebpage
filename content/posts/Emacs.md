@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-11-22T14:49:46-05:00
+lastmod = 2022-12-04T16:54:36-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -597,6 +597,16 @@ With a prefix ARG, remove start location."
 ```
 
 
+### Epub reading {#epub-reading}
+
+```emacs-lisp
+(use-package nov)
+(setq nov-unzip-program (executable-find "bsdtar")
+      nov-unzip-args '("-xC" directory "-f" filename))
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+```
+
+
 ### Org-bibtex {#org-bibtex}
 
 
@@ -690,6 +700,8 @@ For the PDF Scrapper, change the formate of the paper key:
 
 ```emacs-lisp
 (server-start)
+(add-to-list 'load-path "~/.emacs.d/straight/build/org/org-protocol.el")
+(require 'org-protocol)
 (setq org-directory "~/Notes/")
 
 (defun transform-square-brackets-to-round-ones(string-to-transform)

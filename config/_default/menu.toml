@@ -1,0 +1,25 @@
+# Main menu which appears below site header.
+[[main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Blog"
+url = "/posts"
+weight = 2
+
+[[main]]
+name = 'Bookshelf'
+url = "/bookshelves"
+weight = 3
+
+[[main]]
+name = "Evergreen"
+url = "/evergreen"
+weight = 4
+
+[[main]]
+name = "About"
+url = "/about"
+weight = 5

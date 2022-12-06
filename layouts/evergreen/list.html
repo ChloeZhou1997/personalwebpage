@@ -1,8 +1,7 @@
 {{ define "main"}}
 {{ range .Data.Pages }}
-{{/*  {{ .Data.Pages  }}  */}}
 <li>
-  <a href="{{ .Permalink | relURL }}">{{ .Title }}</a> - <time>{{ .Date.Format "02 Jan 2006" }}</time>
+  <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
 </li>
 {{ end }}
 {{ end }}

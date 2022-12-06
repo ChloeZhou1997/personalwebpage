@@ -1,0 +1,34 @@
+googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
+showAllPostsArchive = false # default
+
+# description = ""
+# The discription is not very convenient if I want to incorporae link... 
+
+mainSection = "posts"
+
+tagsOverview = true
+
+showProjectsList = true # show projects list by default (if projects data file exists).
+projectsUrl = "https://github.com/gohugoio" # title link for projects list
+
+# Post page settings
+show_updated = true # default
+showReadTime = true # default
+
+# Mathsjax syntax
+mathjax = true
+	
+	# the value of name should be an valid font awesome icon name (brands type)
+  # https://fontawesome.com/icons?d=gallery&s=brands
+[[social]]
+	name = "github"
+	link = "https://github.com/ChloeZhou1997"
+[[social]]
+	name = "linkedin"
+	link = "https://www.linkedin.com/in/qiaohui-zhou-9082b099/"
+[[social]]
+	name = "email"
+	link = "qz111@georgetown.edu"  # no need for "mailto:" in the head
+[[bookshelf]]
+	name = "goodreads"
+	link = "https://www.goodreads.com/user/show/24168276-chloe-zhou"

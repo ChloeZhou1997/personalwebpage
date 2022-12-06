@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-11-23T10:16:22-05:00
+lastmod = 2022-12-03T06:52:47-05:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"
@@ -33,12 +33,12 @@ work... I have long wanted to read about him.
 
 ### Ch1-3 {#ch1-3}
 
-> As little as the act of birth comes into consideration in the whole process and procedure of heredity, just as little is “being-conscious” as opposed to the instinctive in any decisive sense; the greater part of the conscious thinking of a philosopher is secretly influenced by his instincts, and forced into definite channels. And behind all logic and its seeming sovereignty of movement, there are valuations, or to speak more plainly, physiological demands, for the maintenance of a definite mode of life.
+> As little as the act of birth comes into consideration in the whole process and procedure of heredity, just as little is “being-conscious” as opposed to the instinctive in any decisive sense; the greater part of the conscious thinking of a philosopher is secretly influenced by his instincts and forced into definite channels. And behind all logic and its seeming sovereignty of movement, there are valuations, or to speak more plainly, physiological demands, for the maintenance of a definite mode of life.
 
 
 ### Ch1-4 {#ch1-4}
 
-> To recognize untruth as a condition of life; is certainly to impugn the traditional ideas of value in a dangerous manner, and a philosophy that ventures to do so, has thereby alone placed itself beyond good and evil.
+> To recognize untruth as a condition of life; is certainly to impugn the traditional ideas of value dangerously, and a philosophy that ventures to do so, has thereby alone placed itself beyond good and evil.
 
 
 ### Ch1-6 {#ch1-6}
@@ -52,9 +52,7 @@ work... I have long wanted to read about him.
 
 ## Ch1-9 {#ch1-9}
 
-```emacs-lisp
-this is an old and everlasting story: what happened in old times with the Stoics still happens today, as soon as ever a philosophy begins to believe in itself. It always creates the world in its own image; it cannot do otherwise; philosophy is this tyrannical impulse itself, the most spiritual Will to Power, the will to "creation of the world," the will to the causa prima.
-```
+> this is an old and everlasting story: what happened in old times with the Stoics still happens today, as soon as ever a philosophy begins to believe in itself. It always creates the world in its own image; it cannot do otherwise; philosophy is this tyrannical impulse itself, the most spiritual Will to Power, the will to "creation of the world," the will to the causa prima.
 
 -   Philosophy is the "will to power", the impulse to "creation of the
     world", and the will to the cause of all causes. (Isn't it the will
@@ -70,6 +68,11 @@ absolute)... see [quote](#reading-progress-3).
 
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-03 Sat&gt; </span></span> : Reading Progress : 8% {#reading-progress-8}
+
+-   Nietzsche's criticism of Kant is really acute...
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-11-22 Tue&gt; </span></span> : Reading Progress : 5% {#reading-progress-5}

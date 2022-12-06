@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-11-22T23:35:08-05:00
+lastmod = 2022-12-05T22:37:21-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -47,10 +47,10 @@ The tendency to seek out and believe in the truth even in hard circumstances. (B
     -   Suppose a man is not the _measure of things_: the measure of things means the standard by which everything else is measured. Here, Nietzsche tries to ask people to suppose maybe man is not the standard by which everything else is measured...
 
 
-## 4. The usual falseness of opinion needs little doubt, what matter is to find the opinions that are life-furthering and species-raring. What we are undoubled about so far is only a negation of life and to recognize the untruth is the movement that places itself beyond good and evil. {#4-dot-the-usual-falseness-of-opinion-needs-little-doubt-what-matter-is-to-find-the-opinions-that-are-life-furthering-and-species-raring-dot-what-we-are-undoubled-about-so-far-is-only-a-negation-of-life-and-to-recognize-the-untruth-is-the-movement-that-places-itself-beyond-good-and-evil-dot}
+## 4. People needn't invest in doubting trivial opinions. What matter is to find the opinions that are truly important to the future of humanity. What we preassumed about ourselves only implies a negation of life and to recognize the untruth is the movement that places itself beyond good and evil. {#4-dot-people-needn-t-invest-in-doubting-trivial-opinions-dot-what-matter-is-to-find-the-opinions-that-are-truly-important-to-the-future-of-humanity-dot-what-we-preassumed-about-ourselves-only-implies-a-negation-of-life-and-to-recognize-the-untruth-is-the-movement-that-places-itself-beyond-good-and-evil-dot}
 
 
-## 5. The reason people tend to distrust and make fun of philosophers is not because they keep making innocent mistakes or because they seem childish, but because philosophers are not honest about their opinions. Instead of admitting that they might be biased, philosophers pretend that their opinions are based on a logical, reasoning process when really they are just defending their own prejudices. {#5-dot-the-reason-people-tend-to-distrust-and-make-fun-of-philosophers-is-not-because-they-keep-making-innocent-mistakes-or-because-they-seem-childish-but-because-philosophers-are-not-honest-about-their-opinions-dot-instead-of-admitting-that-they-might-be-biased-philosophers-pretend-that-their-opinions-are-based-on-a-logical-reasoning-process-when-really-they-are-just-defending-their-own-prejudices-dot}
+## 5. The reason people tend to distrust and make fun of philosophers is not that they keep making innocent mistakes or because they seem childish, but because philosophers are not honest about their opinions. Instead of admitting that they might be biased, philosophers pretend that their opinions are based on a logical, reasoning process when they are just defending their prejudices. {#5-dot-the-reason-people-tend-to-distrust-and-make-fun-of-philosophers-is-not-that-they-keep-making-innocent-mistakes-or-because-they-seem-childish-but-because-philosophers-are-not-honest-about-their-opinions-dot-instead-of-admitting-that-they-might-be-biased-philosophers-pretend-that-their-opinions-are-based-on-a-logical-reasoning-process-when-they-are-just-defending-their-prejudices-dot}
 
 -   Nietzsche mocked both Kant and Spinoza for their philosophy. For Kant, it's his dialetics that leads to categorical imperative; for Spinoza, it's his claims for embedded the mathematical form in his philosophy, and called it "hocuspocus"... (he only used them to scare people away for he himself is not confident about he's thought)
 
@@ -66,7 +66,7 @@ The tendency to seek out and believe in the truth even in hard circumstances. (B
 -   The categorical imperative is an ethical principle developed by Kant. It states that an action is morally good if it can be willed as a universal law, i.e. if it could be applied to everyone without leading to a contradiction.
 
 
-## 6. To understand a difficult metaphysical assertion from a philsopher, one only needs to figure out what morality the philosopher is aiming at. For it's the moral purpose of the philosopher that dictates the shape his philosophy will eventually grow in. There's nothing in philosophy that is absolutely impersonal. {#6-dot-to-understand-a-difficult-metaphysical-assertion-from-a-philsopher-one-only-needs-to-figure-out-what-morality-the-philosopher-is-aiming-at-dot-for-it-s-the-moral-purpose-of-the-philosopher-that-dictates-the-shape-his-philosophy-will-eventually-grow-in-dot-there-s-nothing-in-philosophy-that-is-absolutely-impersonal-dot}
+## 6. To understand a difficult metaphysical assertion from a philosopher, one only needs to figure out what morality the philosopher is aiming at. For it's the moral purpose of the philosopher that dictates the shape his philosophy will eventually grow in. There's nothing in philosophy that is impersonal. {#6-dot-to-understand-a-difficult-metaphysical-assertion-from-a-philosopher-one-only-needs-to-figure-out-what-morality-the-philosopher-is-aiming-at-dot-for-it-s-the-moral-purpose-of-the-philosopher-that-dictates-the-shape-his-philosophy-will-eventually-grow-in-dot-there-s-nothing-in-philosophy-that-is-impersonal-dot}
 
 How did he work up to this conclusion?
 
@@ -128,12 +128,70 @@ virtue and wisdom.
 The first cause, the cause of all the causes.
 
 
-## 10. People in Europe are eager to figure out what's the truth and are even willing to resort to a sure nothingness than accept a world with the possibility (Nihilism). For Nihilists, they seem to be otherwise, they speak a lot of "perspectives" but even district the most obvious, and what they can derive from their appearance. Who knows if they are not secretly looking for something as sure as the old religion and even something as sure as immortal? Theirs disbelieves towards the modern world is the lack of courage to face the true world. {#10-dot-people-in-europe-are-eager-to-figure-out-what-s-the-truth-and-are-even-willing-to-resort-to-a-sure-nothingness-than-accept-a-world-with-the-possibility--nihilism--dot-for-nihilists-they-seem-to-be-otherwise-they-speak-a-lot-of-perspectives-but-even-district-the-most-obvious-and-what-they-can-derive-from-their-appearance-dot-who-knows-if-they-are-not-secretly-looking-for-something-as-sure-as-the-old-religion-and-even-something-as-sure-as-immortal-theirs-disbelieves-towards-the-modern-world-is-the-lack-of-courage-to-face-the-true-world-dot}
+## 10. People in Europe are eager to figure out what's the truth and are even willing to resort to a sure nothingness than accept a world with the possibility (Nihilism). For Nihilists, they seem to be otherwise, they speak a lot of "perspectives" but even disbelieve the most obvious. Who knows if they are not secretly looking for something as sure as the old religion and even something as sure as immortal? Their disbelief towards the modern world is the lack of courage to face the true world. {#10-dot-people-in-europe-are-eager-to-figure-out-what-s-the-truth-and-are-even-willing-to-resort-to-a-sure-nothingness-than-accept-a-world-with-the-possibility--nihilism--dot-for-nihilists-they-seem-to-be-otherwise-they-speak-a-lot-of-perspectives-but-even-disbelieve-the-most-obvious-dot-who-knows-if-they-are-not-secretly-looking-for-something-as-sure-as-the-old-religion-and-even-something-as-sure-as-immortal-their-disbelief-towards-the-modern-world-is-the-lack-of-courage-to-face-the-true-world-dot}
 
 -   The paragraph is a criticism of nihilism?
 -   Don't quite understand the paragraph... the language is too
     complicated T.T
 -   [Here](https://kirbyyardley.medium.com/010-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-442388529707) seems to have a convincing interpretation.
+
+
+## 11. German theologians love Kant using a means and his Synthetic judgment a priori. But none of these buy Nietzsches. The way Kant justifies the existence of a prior is at best cyclical. In Nietzsches' view, the more pressing question to be answered is: why do we must believe an _a prior_ to be true. The belief in "Virtus Dormitiva" is a mere antidote to the overwhelming sensualism overflowing in German. {#11-dot-german-theologians-love-kant-using-a-means-and-his-synthetic-judgment-a-priori-dot-but-none-of-these-buy-nietzsches-dot-the-way-kant-justifies-the-existence-of-a-prior-is-at-best-cyclical-dot-in-nietzsches-view-the-more-pressing-question-to-be-answered-is-why-do-we-must-believe-an-a-prior-to-be-true-dot-the-belief-in-virtus-dormitiva-is-a-mere-antidote-to-the-overwhelming-sensualism-overflowing-in-german-dot}
+
+-   Summary: Kant was proud of having discovered a new faculty in man, the faculty of synthetic judgment a priori, and the development of German philosophy was due to his pride. However, his answer to his own question of how synthetic judgments a priori were possible, was unsatisfactory. This led to a period of exuberant discovery of new faculties, which eventually gave way to a more sober view. The influence of German philosophy was due in part to its ability to provide an antidote to the sensualism of the previous century.
+
+
+### Table of Categories {#table-of-categories}
+
+Immanuel Kant's Table of Categories is a categorization of the twelve
+fundamental concepts of the understanding (Verstand) that Kant
+believed to be necessary for any meaningful experience. The Table of
+Categories consists of four sets of three categories each,
+representing the four primary functions of the understanding:
+quantity, quality, relation, and modality.
+
+
+### Synthetic judgement a priori {#synthetic-judgement-a-priori}
+
+Synthetic judgment a priori is a term used to refer to a type of
+judgment that is based on an innate knowledge or ability of the human
+mind. It is a judgment that does not rely on empirical evidence or
+experience, and is instead based purely on the logical reasoning of
+the mind.
+
+
+### By means of a means (faculty) {#by-means-of-a-means--faculty}
+
+-   faculty refers to the mental powers or capabilities of an individual
+    or group, such as the ability to think, reason, or make decisions.
+-   the most important faculty Nietzsches is unhappy about the faculty
+    of "transcendental": the faculty allows one to have a direct,
+    intuitive understanding of the world beyond what can be seen and
+    experienced through physical senses. It's referred to by Schelling
+    as **intellectual intuition**, and is associated with a naturally pious
+    inclination.
+-   Kant's idea was happily received by theologians belongs to the
+    Tubingen institution: The Tübingen School, also known as the
+    Tubingen institution, was a German theological movement in the 19th
+    century that aimed to interpret the Bible in a historical-critical
+    manner. It was led by theologians such as Friedrich Schleiermacher,
+    Albrecht Ritschl, and Adolf von Harnack.
+-   However, to Nietzsche, the claim of a "by means of a means" is a
+    cyclical statement. To demonstrate this point, he made an example of
+    a person asking a doctor, how opium induce sleep, and the
+    doctor answer, there's a power in it that induces sleep, and the
+    nature of that power is to make sense to become drowsy. It's
+    immediately seen that the statement lacks any substance in it but
+    only comical.
+
+
+### Virtus dormitiva {#virtus-dormitiva}
+
+Virtus dormitiva is a Latin phrase meaning "powers of sleep". It is
+used to refer to a faculty or ability that induces sleep. In this
+document, the author is suggesting that this faculty can be used to
+achieve a desired effect which could be compared to a "circulus
+vitiosus deus" (a vicious cycle of God).
 
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
 [^fn:2]: Read more [from here](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.).
