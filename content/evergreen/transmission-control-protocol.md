@@ -1,10 +1,10 @@
 +++
 title = "Transmission Control Protocol (TCP)"
 author = ["Chloe"]
-date = 2022-12-05
-lastmod = 2022-12-06T10:16:45-05:00
+date = 2022-12-06T12:00:00-05:00
+lastmod = 2022-12-06T12:00:30-05:00
 tags = ["concept"]
-draft = true
+draft = false
 weight = 1004
 +++
 

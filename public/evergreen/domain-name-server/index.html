@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> DNS (Domain Name Server) | Chloe Jo</title>
+  <link rel = 'canonical' href = '/evergreen/domain-name-server/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="DNS (Domain Name Server)" />
+<meta property="og:description" content="What is a DNS server A domain name server (DNS) is a server that translates human-readable domain names into the numerical IP addresses that computers use to communicate with each other on the internet. When you enter a domain name into your web browser&rsquo;s address bar, your computer sends a request to the DNS server to look up the corresponding IP address for the website. The DNS server then responds with the IP address, and your computer uses that address to send a request for the website&rsquo;s content to the appropriate server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/evergreen/domain-name-server/" /><meta property="article:section" content="evergreen" />
+<meta property="article:published_time" content="2022-12-06T12:00:00-05:00" />
+<meta property="article:modified_time" content="2022-12-06T12:00:14-05:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DNS (Domain Name Server)"/>
+<meta name="twitter:description" content="What is a DNS server A domain name server (DNS) is a server that translates human-readable domain names into the numerical IP addresses that computers use to communicate with each other on the internet. When you enter a domain name into your web browser&rsquo;s address bar, your computer sends a request to the DNS server to look up the corresponding IP address for the website. The DNS server then responds with the IP address, and your computer uses that address to send a request for the website&rsquo;s content to the appropriate server."/>
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="/">
+  
+    <div id="logo" style="background-image: url(/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>Chloe Jo</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Blog</a></li>
+      
+        <li><a href="/bookshelves">Bookshelf</a></li>
+      
+        <li><a href="/evergreen">Evergreen</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<div class="grid-container">
+  <div class="grid">
+    <div class="page" data-level="1">
+      <div class="content">
+        <h1>DNS (Domain Name Server)</h1>
+        <h2 id="what-is-a-dns-server">What is a DNS server</h2>
+<p>A domain name server (DNS) is a server that translates human-readable
+domain names into the numerical IP addresses that computers use to
+communicate with each other on the internet. When you enter a domain
+name into your web browser&rsquo;s address bar, your computer sends a
+request to the DNS server to look up the corresponding IP address for
+the website. The DNS server then responds with the IP address, and
+your computer uses that address to send a request for the website&rsquo;s
+content to the appropriate server. This process allows you to access
+websites using easy-to-remember domain names instead of having to
+remember the numerical IP addresses of the servers hosting those
+websites.</p>
+<h2 id="where-is-the-dns-server">Where is the DNS server?</h2>
+<p>Because DNS servers are distributed across the internet, there is no
+single location where they are all located. DNS servers are located in
+many different places, including data centers, internet exchange
+points, and other locations that are connected to the internet.</p>
+<h2 id="the-process-of-figuring-out-the-corresponding-ip-address">The process of figuring out the corresponding IP address</h2>
+<p>When a browser needs to access a website, it first checks its own
+cache to see if the DNS record is stored there. If not, it will then
+make a system call to the OS cache <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, followed by the router
+cache and ISP DNS cache<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, before initiating a recursive search
+beginning with the root nameserver. The DNS server will often have the
+.com nameservers in cache, which can speed up the process because
+there&rsquo;s no need to hit the root.</p>
+<figure><img src="/images/DNS_%28Domain_Name_Server%29/org_20221205-010837_screenshot.png" width="400px"/>
+</figure>
+
+<h2 id="why-is-it-worrisome-if-the-entire-domain-only-points-to-a-single-ip-address">Why is it worrisome if the entire domain only points to a single IP address?</h2>
+<p>Having an entire domain map to a single IP address can be worrying
+because if the IP address is lost or compromised, the entire domain
+could go down. This could mean that any websites, services, and
+applications associated with the domain would become inaccessible. It
+also makes it easier for malicious actors to target a domain, as they
+only need to target the single IP address instead of multiple IP
+addresses.</p>
+<h2 id="the-solutions-regarding-the-map-between-the-domain-address-and-ip-address">The solutions regarding the map between the domain address and IP address</h2>
+<p>Round-robin DNS is a way of assigning multiple IP addresses to a
+single domain name, while <strong>load-balancers</strong> are pieces of hardware used
+to forward requests to other servers. Geographic DNS is used to map a
+domain name to different IP addresses based on a user&rsquo;s location, and
+anycast<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> is a routing technique where one IP address can be directed to
+multiple physical servers, although it is not often used with TCP.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>the browser makes system call and check whether OS cached it&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>ISP DNS cache: A DNS cache maintained by an Internet Service
+Provider (ISP) for faster DNS lookups. It stores the DNS records of
+recently visited websites so that the DNS lookup can be done from the
+cache instead of from the root nameserver. DNS caches help reduce the
+latency of DNS lookups, as they can be retrieved quickly from the
+cache without performing a recursive search.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Most of the DNS servers themselves use anycast to achieve high
+availability and low latency of the DNS lookups. Users of an anycast
+service (DNS is an excellent example) will always connect to the
+&lsquo;closest&rsquo; (from a routing protocol perspective) DNS server. This
+reduces latency, as well as provides a level of load-balancing
+(assuming that your consumers are evenly distributed around your
+network).&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      </div>
+      
+
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+      
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+
+<hr>
+
+  <div class="bl-section">
+    <h4>Links to this note</h4>
+    <div class="backlinks">
+      <ul>
+       
+          <li><a href="/evergreen/how-web-work/">What happened behind the scene when you type an url and request the browser for information</a></li>
+       
+     </ul>
+    </div>
+  </div>
+
+      </div>
+   </div>
+</div>
+
+<script src=/js/URI.js></script>
+<script src=/js/page.js></script>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  Chloe Jo 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Blog</a></li>
+         
+        <li><a href="/bookshelves">Bookshelf</a></li>
+         
+        <li><a href="/evergreen">Evergreen</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

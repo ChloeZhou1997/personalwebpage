@@ -253,15 +253,15 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
 <p>Buffers may be visible or not.</p>
 <h3 id="manipulating-buffer">Manipulating Buffer</h3>
 <h4 id="current-buffer">Current buffer</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">current-buffer</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">current-buffer</span>)
 </span></span></code></pre></div><h4 id="get-buffer-by-name-or-create-one--get-buffer-create">Get buffer by name or create one (<code>get-buffer-create</code>)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>)
 </span></span></code></pre></div><p>Create a buffer if it doesn&rsquo;t already exist:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-buffer-create</span> <span style="color:#f1fa8c">&#34;Hello World&#34;</span>)
 </span></span></code></pre></div><h4 id="changing-the-current-buffer--set-buffer">Changing the current buffer (<code>set-buffer</code>)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#50fa7b">set-buffer</span> (<span style="color:#50fa7b">get-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
@@ -277,13 +277,13 @@ Manipulating Buffer Current buffer 1(current-buffer) Get buffer by name or creat
 command that&rsquo;s supposed to run in other buffer now run in the
 <em><strong>scratch</strong></em> buffer because that&rsquo;s what set by the <code>set-buffer</code> function.</p>
 <p>Solution: using <code>save-current-buffer</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#8be9fd;font-style:italic">save-current-buffer</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#50fa7b">set-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Current buffer: %s&#34;</span> (<span style="color:#50fa7b">current-buffer</span>)))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
 </span></span></code></pre></div><p>Alternatively,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">progn</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	(<span style="color:#8be9fd;font-style:italic">with-current-buffer</span> <span style="color:#f1fa8c">&#34;*scratch*&#34;</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Current buffer: %s&#34;</span> (<span style="color:#50fa7b">current-buffer</span>)))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#50fa7b">current-buffer</span>))
@@ -291,7 +291,7 @@ command that&rsquo;s supposed to run in other buffer now run in the
 <h4 id="file-of-the-current-buffer--buffer-file-name">File of the current buffer (<code>buffer-file-name</code>)</h4>
 <p>use <code>buffer-file-name</code> to find/obatin the file name and the full path of the
 file the buffer represented:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">buffer-file-name</span>)
 </span></span></code></pre></div><p>Find the <em>existing</em> buffer that is represented by the file path (provide
 as much information as possible about the file path) using
@@ -301,10 +301,10 @@ as much information as possible about the file path) using
 return <code>nil</code></li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">get-file-buffer</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/reading-and-writing-buffers.org&#34;</span>)
 </span></span></code></pre></div><h4 id="load-files-into-a-buffer--find-file-noselect">Load files into a buffer (<code>find-file-noselect</code>)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span>)
 </span></span></code></pre></div><ul>
 <li>If running the command more than once the file will be loaded into
 the same buffer and sometimes it&rsquo;s not what we want (the buffer may
@@ -313,7 +313,7 @@ not refect the most recent change of the file)</li>
 modified and differ from the buffer</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span> t)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">find-file-noselect</span> <span style="color:#f1fa8c">&#34;function.org&#34;</span> t)
 </span></span></code></pre></div><h4 id="manipulating-file-paths--prefix-file-name">Manipulating file paths (prefix <code>file-name</code>)</h4>
 <p>In Emacs, file paths are decomposed into two parts: 1. directory
 part; 2. file name and extension.</p>
@@ -328,7 +328,7 @@ period</li>
 <li><code>-as-directory</code> - turn the file name into a directory name</li>
 </ul>
 <p>An interesting example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-name-as-directory</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-name-as-directory</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> (<span style="color:#8be9fd;font-style:italic">file-name-sans-extension</span> (<span style="color:#50fa7b">buffer-file-name</span>))) <span style="color:#6272a4">;; turn the current file name into another path</span>
 </span></span></code></pre></div><h4 id="resolving-file-paths--file-name-absolute-p-etc">Resolving file paths (<code>file-name-absolute-p</code> etc)</h4>
 <ul>
@@ -339,7 +339,7 @@ path</li>
 specified directory</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">file-name-absolute-p</span> (<span style="color:#50fa7b">buffer-file-name</span>)) <span style="color:#6272a4">;;t</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">file-relative-name</span> (<span style="color:#50fa7b">buffer-file-name</span>) <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>)
@@ -350,10 +350,10 @@ specified directory</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>(<span style="color:#50fa7b">expand-file-name</span> <span style="color:#f1fa8c">&#34;Emacs.org&#34;</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>)
 </span></span></code></pre></div><p>If resolving files that contains <strong>Environmental Variable</strong>,
 <code>expand-file-name</code> won&rsquo;t work, use <code>substitute-in-file-name</code> instead</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">substitute-in-file-name</span> <span style="color:#f1fa8c">&#34;$HOME/.emacs.d&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">substitute-in-file-name</span> <span style="color:#f1fa8c">&#34;$HOME/.emacs.d&#34;</span>)
 </span></span></code></pre></div><h4 id="check-if-file-exists">Check if file exists</h4>
 <p><code>file-exists-p</code> - check if the file or directory exsits;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-exists-p</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files/.emacs.d&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#50fa7b">file-exists-p</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.files/.emacs.d&#34;</span>)
 </span></span></code></pre></div><p>Other options:</p>
 <ul>
 <li><code>file-readable-p</code></li>
@@ -362,7 +362,7 @@ specified directory</li>
 </ul>
 <h3 id="manipulating-directories">Manipulating Directories</h3>
 <h4 id="creating-directories--make-directory">Creating directories (<code>make-directory</code>)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">make-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/Test&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;create directory with path that doesn&#39;t exist</span>
@@ -371,7 +371,7 @@ specified directory</li>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">make-directory</span> <span style="color:#f1fa8c">&#34;~/Notes/Emacs/test1/test2&#34;</span> t)
 </span></span></code></pre></div><h4 id="listing-files-in-directories">Listing files in directories</h4>
 <p>Using <code>directory-files</code> and <code>directory-files-recursively</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span>) <span style="color:#6272a4">;;return a list of files names with extension</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> t) <span style="color:#6272a4">;;return the full path of files in the list</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(<span style="color:#50fa7b">directory-files</span> <span style="color:#f1fa8c">&#34;~/.dotfiles&#34;</span> t <span style="color:#f1fa8c">&#34;.org&#34;</span>) <span style="color:#6272a4">;; Get all file containing &#39;.org&#39;</span>
@@ -397,7 +397,7 @@ another dir</li>
 </ul>
 <p><strong>Caveat</strong>: elisp treat <code>/folder</code> and <code>/folder/</code> differently, if you want to
 present the symbol as a folder, be sure to include <code>/</code> at the end of it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/exp/&#34;</span>) <span style="color:#6272a4">;; if using &#34;~/exp&#34; will throw err</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/exp/&#34;</span>) <span style="color:#6272a4">;; if using &#34;~/exp&#34; will throw err</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#6272a4">;; (directory-files &#34;~/exp&#34;)</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#6272a4">;;to ignore that the file already exists</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;~/exp/&#34;</span> t)
@@ -414,7 +414,7 @@ present the symbol as a folder, be sure to include <code>/</code> at the end of 
 <li><code>rename-file</code> : rename a file or directory</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">copy-file</span> <span style="color:#f1fa8c">&#34;~/.emacs.d/init.el&#34;</span> <span style="color:#f1fa8c">&#34;/tmp/&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#50fa7b">rename-file</span> <span style="color:#f1fa8c">&#34;/tmp/init.el&#34;</span> <span style="color:#f1fa8c">&#34;/tmp/init-rename.el&#34;</span>)
 </span></span></code></pre></div><h4 id="deleting">Deleting</h4>
@@ -424,7 +424,7 @@ folder)</li>
 <li><code>delete-directory</code> : Delete a directory, including files if disired</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">delete-file</span> <span style="color:#f1fa8c">&#34;/tmp/init-rename.el&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;;delete folder (optionally, including the contents)</span>
@@ -437,14 +437,14 @@ folder)</li>
 so it won&rsquo;t through error even if the symblink already exists</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">make-symbolic-link</span> <span style="color:#f1fa8c">&#34;~/.dotfiles/.zshrc&#34;</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span> t)
 </span></span></code></pre></div><ul>
 <li><code>file-symlink-p</code>: check if the file is a symblink file</li>
 <li><code>file-truename</code>: return the fule resolved path of the symblink file</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">file-symlink-p</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">file-truename</span> <span style="color:#f1fa8c">&#34;~/.zshrc&#34;</span>)
 </span></span></code></pre></div>
@@ -526,7 +526,21 @@ so it won&rsquo;t through error even if the symblink already exists</li>
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
+   
+
    
 
    

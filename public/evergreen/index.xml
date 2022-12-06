@@ -1,12 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Evergreens on Chloe Jo</title>
+    <title>test on Chloe Jo</title>
     <link>/evergreen/</link>
-    <description>Recent content in Evergreens on Chloe Jo</description>
+    <description>Recent content in test on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="/evergreen/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2016 17:51:42 +0000</lastBuildDate><atom:link href="/evergreen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CDN(Content Delivery Network)</title>
+      <link>/evergreen/content-delivery-network/</link>
+      <pubDate>Tue, 06 Dec 2022 11:59:00 -0500</pubDate>
+      
+      <guid>/evergreen/content-delivery-network/</guid>
+      <description>What is CDN A content delivery network (CDN) is a group of geographically distributed servers that speed up the delivery of web content by bringing it closer to where users are. Data centers across the globe use caching, a process that temporarily stores copies of files, so that you can access internet content from a web-enabled device or browser more quickly through a server near you. CDNs cache content like web pages, images, and video in proxy servers near to your physical location.</description>
+    </item>
+    
+    <item>
+      <title>DNS (Domain Name Server)</title>
+      <link>/evergreen/domain-name-server/</link>
+      <pubDate>Tue, 06 Dec 2022 12:00:00 -0500</pubDate>
+      
+      <guid>/evergreen/domain-name-server/</guid>
+      <description>What is a DNS server A domain name server (DNS) is a server that translates human-readable domain names into the numerical IP addresses that computers use to communicate with each other on the internet. When you enter a domain name into your web browser&amp;rsquo;s address bar, your computer sends a request to the DNS server to look up the corresponding IP address for the website. The DNS server then responds with the IP address, and your computer uses that address to send a request for the website&amp;rsquo;s content to the appropriate server.</description>
+    </item>
+    
+    <item>
+      <title>Hypertext Transfer Protocol (HTTP)</title>
+      <link>/evergreen/hyptertext-transfer-protocol/</link>
+      <pubDate>Tue, 06 Dec 2022 12:00:00 -0500</pubDate>
+      
+      <guid>/evergreen/hyptertext-transfer-protocol/</guid>
+      <description>What is HTTP Hyper Text Transfer Protocol (HTTP) is a protocol for transferring files on the World Wide Web. It is the foundation of data communication for the World Wide Web. It is a set of rules that defines how data is transmitted and formatted between web clients and servers. HTTP is a stateless protocol, meaning that each request and response are independent of each other and do not maintain any information about previous requests or responses.</description>
+    </item>
+    
+    <item>
+      <title>Transmission Control Protocol (TCP)</title>
+      <link>/evergreen/transmission-control-protocol/</link>
+      <pubDate>Tue, 06 Dec 2022 12:00:00 -0500</pubDate>
+      
+      <guid>/evergreen/transmission-control-protocol/</guid>
+      <description>TCP (Transmission Control Protocol): A protocol that provides a reliable, ordered delivery of data over an IP network. TCP uses a three-way handshake to establish a connection and uses sequence numbers to ensure that data is delivered in the correct order.
+TCP socket stream A TCP (Transmission Control Protocol) socket is a type of network socket that is used to create a connection between a client and a server. A socket is a software endpoint that establishes bidirectional communication between a server and one or more clients.</description>
+    </item>
+    
+    <item>
+      <title>Transport Layer Security (TLS)</title>
+      <link>/evergreen/transport-layer-security/</link>
+      <pubDate>Tue, 06 Dec 2022 12:00:00 -0500</pubDate>
+      
+      <guid>/evergreen/transport-layer-security/</guid>
+      <description>What is TLS Transport Layer Security (TLS) is a cryptographic protocol designed to provide secure communication over a computer network. It is widely used in web browsers and other applications. TLS versions refer to the different versions of the TLS protocol, which have been released over the years and provide varying levels of security. The latest version is TLS 1.3, which was published in 2018.
+The Process of TLS handshaking In the process of establishing an HTTPS connection, the client and server both exchange data about the TLS version, cipher algorithms, compression methods, certificates, and public keys in order to create a secure, encrypted connection using a symmetric key.</description>
+    </item>
+    
+    <item>
+      <title>What happened behind the scene when you type an url and request the browser for information</title>
+      <link>/evergreen/how-web-work/</link>
+      <pubDate>Tue, 06 Dec 2022 12:00:00 -0500</pubDate>
+      
+      <guid>/evergreen/how-web-work/</guid>
+      <description>parse the URL by first, check the protocol (usually HTTP), and retrieve the main (index) page (from &amp;ldquo;/&amp;rdquo;) the browser sends a request to a Domain Name Server translate the domain name into an IP address (the domain name server response with the ip address of the website) once the browser receives the IP address, opening of a socket (TCP socket) + TLS handshake (to establish the secure connection) browser send a GET request to the IP address for the website&amp;rsquo;s content.</description>
+    </item>
+    
     <item>
       <title>Can history be completely remade? Has it ever happened in history? What is the limitation to this ambition?</title>
       <link>/evergreen/can-history-be-remade/</link>

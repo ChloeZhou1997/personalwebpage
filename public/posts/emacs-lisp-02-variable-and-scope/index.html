@@ -256,7 +256,7 @@ Set variables Variables are symbols binds to values, what setq means is &ldquo;s
 <h3 id="set-variables">Set variables</h3>
 <p><strong>Variables are symbols binds to values</strong>, what <code>setq</code> means is &ldquo;set
 quote&rdquo;, a convient way to write</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#50fa7b">set</span> <span style="color:#f1fa8c">&#39;tab-width</span> <span style="color:#bd93f9">4</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#6272a4">;; The variable doesn&#39;t have to exist or be pre-defined</span>
@@ -272,12 +272,12 @@ default value, the assigned defult value from the <code>defvar</code> function
 won&rsquo;t work <strong>(don&rsquo;t seem to apply in my case&hellip;)</strong></li>
 </ol>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">defvar</span> <span style="color:#8be9fd;font-style:italic">i-dont-exist</span> <span style="color:#bd93f9">100</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#f1fa8c">&#34;This is a variable to test whether the default value is the existing
 </span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#f1fa8c">one or the newly assigned one&#34;</span>)
 </span></span></code></pre></div><h4 id="set-buffer-local-value-for-variables">Set buffer-local value for variables</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">some-value</span> <span style="color:#bd93f9">2</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">setq-local</span> <span style="color:#8be9fd;font-style:italic">some-value</span> <span style="color:#bd93f9">5</span>)
@@ -285,18 +285,18 @@ won&rsquo;t work <strong>(don&rsquo;t seem to apply in my case&hellip;)</strong>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#6272a4">;; after using setq-local, the setq will only set the buffer-local binding</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">some-value</span> <span style="color:#bd93f9">4</span>)
 </span></span></code></pre></div><h4 id="making-a-variable-local-for-all-buffers">Making a variable local for all buffers</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">not-local-yet</span> t)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#50fa7b">make-variable-buffer-local</span> <span style="color:#f1fa8c">&#39;not-local-yet</span>)
 </span></span></code></pre></div><h4 id="setting-default-values">Setting default values</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq-default</span> <span style="color:#8be9fd;font-style:italic">not-local-yet</span> nil)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq-default</span> <span style="color:#8be9fd;font-style:italic">not-local-yet</span> nil)
 </span></span></code></pre></div><h2 id="scope">Scope</h2>
 <p>Define a local scope using <code>let</code>, the region inside that <code>let</code> is
 another scope.</p>
 <h3 id="define-a-locals-cope-with-let">Define a locals cope with <code>let</code></h3>
 <p>If defining a loop and set the variable in global scope, the function</p>
 <p>will only be able to run once:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#bd93f9">0</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">do-the-loop</span> ()
@@ -308,7 +308,7 @@ another scope.</p>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>(<span style="color:#8be9fd;font-style:italic">do-the-loop</span>)
 </span></span></code></pre></div><p>To avoid the problem:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">do-the-loop</span> ()
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>	(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#bd93f9">0</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>		(<span style="color:#50fa7b">message</span> <span style="color:#f1fa8c">&#34;Starting the loop at %d&#34;</span> <span style="color:#8be9fd;font-style:italic">x</span>)
@@ -323,7 +323,7 @@ another scope.</p>
 is also a <code>list</code> of (sort of) <em>key-value</em> pair.</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#bd93f9">5</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#bd93f9">7</span>))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#50fa7b">*</span> <span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#8be9fd;font-style:italic">y</span>))
@@ -336,7 +336,7 @@ is also a <code>list</code> of (sort of) <em>key-value</em> pair.</li>
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">let*</span> ((<span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#bd93f9">5</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>		(<span style="color:#8be9fd;font-style:italic">z</span> (<span style="color:#50fa7b">+</span> <span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#bd93f9">5</span>)))
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#50fa7b">*</span> <span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#8be9fd;font-style:italic">z</span>))
@@ -344,7 +344,7 @@ is also a <code>list</code> of (sort of) <em>key-value</em> pair.</li>
 <li><code>let*</code> is in essence a nested <code>let</code></li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#bd93f9">5</span>)) (<span style="color:#8be9fd;font-style:italic">let</span> ((<span style="color:#8be9fd;font-style:italic">z</span> (<span style="color:#50fa7b">+</span> <span style="color:#8be9fd;font-style:italic">y</span> <span style="color:#bd93f9">5</span>))) (<span style="color:#50fa7b">*</span> <span style="color:#8be9fd;font-style:italic">z</span> <span style="color:#8be9fd;font-style:italic">y</span>)))
 </span></span></code></pre></div><h3 id="dynamic-scope">Dynamic scope</h3>
 <ul>
@@ -353,7 +353,7 @@ an expression gets evaluated</li>
 <li>If the function is executed in a local scope predicated by <code>let</code>, the variable will be evaluated based on the value inside the scope of <code>let</code></li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">x</span> <span style="color:#bd93f9">5</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>(<span style="color:#8be9fd;font-style:italic">defun</span> <span style="color:#8be9fd;font-style:italic">do-math</span> (<span style="color:#8be9fd;font-style:italic">y</span>)
@@ -371,24 +371,38 @@ those variables without coding.</p>
 <p>The variables defined to be customized and <code>setq</code> might not trigger the
 behavior! The correct way to set those customized variable is to use
 <code>cutomize-set-variable</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">customize-set-variable</span> <span style="color:#f1fa8c">&#39;tab-width</span> <span style="color:#bd93f9">2</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">customize-set-variable</span> <span style="color:#f1fa8c">&#39;org-directory</span> <span style="color:#f1fa8c">&#34;~/Notes&#34;</span>)
 </span></span></code></pre></div><p>If using <code>use-package</code>, use <code>:custom</code> section</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">emacs</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#8be9fd;font-style:italic">:custom</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	(<span style="color:#8be9fd;font-style:italic">tab-width</span> <span style="color:#bd93f9">2</span>))
 </span></span></code></pre></div><p>Use <code>C-h v</code> - <em>describe varibale</em> to check whether a variable is
 customizable or not; Another way is to use <code>custom-variable-p</code> to
 evaluate on the variable symbol.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">custom-variable-p</span> <span style="color:#f1fa8c">&#39;tab-width</span>)
 </span></span></code></pre></div>
     </div>
     <div class="post-content" itemprop="articleBody">
       
 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 

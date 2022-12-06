@@ -234,12 +234,12 @@ I use one-page-per-post way to manage the post, the heading section looks the fo
 <li><a href="https://ox-hugo.scripter.co/">ox-hugo manual</a> for <code>init.el</code> Backlink</li>
 </ul>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-hugo</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-hugo</span>
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>	<span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">ox</span>)
 </span></span></code></pre></div><p><strong>Handing in org.file</strong></p>
 <p>I use one-page-per-post way to manage the post, the heading section
 looks the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>#+TITLE:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>#+TITLE:
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>#+AUTHOR: Chloe
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>#+DATE: 2022-10-28
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>#+HUGO_SECTION: posts
@@ -256,7 +256,7 @@ the exported <code>.md</code> file lies. By setting both <code>BASE_DIR</code> a
 the generated <code>.md</code> file will be exported to <code>~/Blog/content/posts</code>.</p>
 <p>Add following snippet at the end the <code>org</code> file will enabling the
 autosave to the target location</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># Local Variables:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># Local Variables:
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span># eval: (org-hugo-auto-export-mode)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span># End:
 </span></span></code></pre></div><h3 id="hugo">Hugo</h3>
@@ -278,7 +278,7 @@ draft = true
 </code></pre><p>Start the server with the following code  where <code>-D</code> means enabling draft, and <code>ignoreCache</code>
 will deisable the cache function, this will prevent some changes not
 showing in the website on time.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>hugo server -D --ignoreCache
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>hugo server -D --ignoreCache
 </span></span></code></pre></div><p>Except for using theme <a href="https://github.com/monkeyWzr/hugo-theme-cactus">cactus</a>,  I also included a <strong>backlink</strong> section for
 my blog, the configuation can be found <a href="https://seds.nl/notes/export%5Forg%5Froam%5Fbacklinks%5Fwith%5Fgohugo/">here</a>.</p>
 <h2 id="cloudflare">Cloudflare</h2>
@@ -287,20 +287,34 @@ and allows for <a href="https://gohugo.io/hosting-and-deployment/">continuous de
 deployment can be found <a href="https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/">here</a>. Be aware with the <strong>Deployment with
 Cloudflare Page</strong> section, if using the free version of cloudflare, the
 build command need to be set as</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>hugo -b <span style="color:#8be9fd;font-style:italic">$CF_PAGES_URL</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>hugo -b <span style="color:#8be9fd;font-style:italic">$CF_PAGES_URL</span>
 </span></span></code></pre></div><p>For the CSS to be built successfully in the final production. The
 above code will modify the <code>baseURL</code> to be found in the <code>config.toml</code> file
 (by default the section looks like <code>baseURL = 'http://example.org/'</code>),
 which is why when using <code>hugo server</code> to preview the website everything
 seems to work just fine. An easy way to investigate the effect of the
 production version of the personal website, <code>cd /public</code> and run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>python <span style="color:#ff79c6">-</span>m http<span style="color:#ff79c6">.</span>server <span style="color:#bd93f9">8000</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>python <span style="color:#ff79c6">-</span>m http<span style="color:#ff79c6">.</span>server <span style="color:#bd93f9">8000</span>
 </span></span></code></pre></div><p>in the command line, open <code>localhost:8000</code> in the browser.</p>
 
     </div>
     <div class="post-content" itemprop="articleBody">
       
 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 

@@ -17,20 +17,20 @@
     </item>
     
     <item>
-      <title>reading</title>
-      <link>/status/reading/</link>
+      <title>finished</title>
+      <link>/status/finished/</link>
       <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>/status/reading/</guid>
+      <guid>/status/finished/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>finished</title>
-      <link>/status/finished/</link>
-      <pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate>
+      <title>reading</title>
+      <link>/status/reading/</link>
+      <pubDate>Tue, 15 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>/status/finished/</guid>
+      <guid>/status/reading/</guid>
       <description></description>
     </item>
     

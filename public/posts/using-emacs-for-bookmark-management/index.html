@@ -249,7 +249,7 @@ the only caveat is the link to the emacsclient file might be broken
 <h2 id="org-capture">Org capture</h2>
 <p>Both chrome and firefox have the capture extension in the extension
 store. The templates are setup as following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-capture-templates</span> <span style="color:#ff79c6">&#39;</span>(
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-capture-templates</span> <span style="color:#ff79c6">&#39;</span>(
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>															(<span style="color:#f1fa8c">&#34;p&#34;</span> <span style="color:#f1fa8c">&#34;Protocol&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span> <span style="color:#f1fa8c">&#34;Inbox&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>															 <span style="color:#f1fa8c">&#34;* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>															(<span style="color:#f1fa8c">&#34;L&#34;</span> <span style="color:#f1fa8c">&#34;Protocol Link&#34;</span> <span style="color:#8be9fd;font-style:italic">entry</span> (<span style="color:#8be9fd;font-style:italic">file+headline</span> <span style="color:#f1fa8c">&#34;~/Notes/captures.org&#34;</span> <span style="color:#f1fa8c">&#34;Link&#34;</span>)
@@ -262,7 +262,7 @@ then invoke the capture button if using the <code>Protocol</code> template.</p>
 <strong>Inbox</strong> and <strong>Link</strong> headings.</p>
 <p>Open the <code>captures.org</code> file, copy-paste the following configuration at
 the end of the file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># Local Variables:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-text" data-lang="text"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span># Local Variables:
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span># org-confirm-babel-evaluate:nil
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span># eval: (add-hook &#39;after-save-hook &#39;org-html-export-to-html t t)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span># End:
@@ -287,6 +287,20 @@ pinned the bookmark page on top of my main space.&#160;<a href="#fnref:2" class=
     <div class="post-content" itemprop="articleBody">
       
 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
 
    
 

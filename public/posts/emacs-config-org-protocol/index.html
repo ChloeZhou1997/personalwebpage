@@ -221,7 +221,7 @@ up to MacOs built on Intel chips. I will also include the steps I have
 taken to figure the problem out with very limited programming and
 computer background knowledge.</p>
 <p>First, load <code>org-protocol.el</code> to the <code>init.el</code> configuration file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">server-start</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">server-start</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(<span style="color:#8be9fd;font-style:italic">add-to-list</span> <span style="color:#f1fa8c">&#39;load-path</span> <span style="color:#f1fa8c">&#34;~/path/to/org/protocol/&#34;</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">require</span> <span style="color:#f1fa8c">&#39;org-protocol</span>)
 </span></span></code></pre></div><p>Note that <code>org-protocol.el</code> comes with the <code>org-mode</code> so it&rsquo;s not in any
@@ -229,7 +229,7 @@ package archives. From the <a href="https://github.com/emacs-mirror/emacs/blob/m
 located under <code>.../lisp/org/org-protocol.el</code> so what I did is to
 navigate into my <code>.emacs.d</code> and trying to figure out where the file
 is. Another way to find the path is through command line  as following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>find ~/.emacs.d -name <span style="color:#f1fa8c">&#39;org-protocol.el&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>find ~/.emacs.d -name <span style="color:#f1fa8c">&#39;org-protocol.el&#39;</span>
 </span></span></code></pre></div><p>The terminal will return the file-path and you just need to copy the
 path up to where the actual <code>org.protocol.el</code> file is located to the
 <code>'load-path</code> part.</p>
@@ -242,7 +242,7 @@ task comes down to find where the <code>emacscleint</code> in my computer actual
 locates. Since I have several emacs version installed in my macbook
 but I am only using the emacs-plus@28, I want to make sure that I am
 calling the right <code>emacscelint</code> so I run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew info emacs-plus@28
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew info emacs-plus@28
 </span></span></code></pre></div><p>to get the potentially correct path the <code>emacscleint</code> might be, I simply
 navigated into the folder but another way is again using command line
 with <code>sudo</code> in front to gain permission.</p>
@@ -259,7 +259,21 @@ everything works just fine.</p>
    
 
    
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
       
+   
+
    
 
    

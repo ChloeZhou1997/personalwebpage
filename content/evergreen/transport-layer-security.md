@@ -1,10 +1,10 @@
 +++
 title = "Transport Layer Security (TLS)"
 author = ["Chloe"]
-date = 2022-12-05
-lastmod = 2022-12-06T10:17:53-05:00
+date = 2022-12-06T12:00:00-05:00
+lastmod = 2022-12-06T12:00:38-05:00
 tags = ["concept"]
-draft = true
+draft = false
 weight = 1005
 +++
 

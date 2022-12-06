@@ -1,9 +1,10 @@
 +++
 title = "DNS (Domain Name Server)"
-author = ["Zhou Qiaohui"]
-date = 2022-12-05
-lastmod = 2022-12-05T22:01:47-05:00
-draft = true
+author = ["Chloe"]
+date = 2022-12-06T12:00:00-05:00
+lastmod = 2022-12-06T12:00:14-05:00
+tags = ["concept"]
+draft = false
 weight = 1002
 +++
 

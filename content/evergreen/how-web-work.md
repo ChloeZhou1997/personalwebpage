@@ -1,9 +1,9 @@
 +++
 title = "What happened behind the scene when you type an url and request the browser for information"
 author = ["Chloe"]
-date = 2022-12-05
-lastmod = 2022-12-05T22:26:05-05:00
-draft = true
+date = 2022-12-06T12:00:00-05:00
+lastmod = 2022-12-06T12:00:56-05:00
+draft = false
 weight = 1006
 +++
 

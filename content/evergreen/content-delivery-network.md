@@ -1,9 +1,10 @@
 +++
 title = "CDN(Content Delivery Network)"
 author = ["Chloe"]
-date = 2022-12-05
-lastmod = 2022-12-05T21:59:35-05:00
-draft = true
+date = 2022-12-06T11:59:00-05:00
+lastmod = 2022-12-06T12:00:06-05:00
+tags = ["concept"]
+draft = false
 weight = 1001
 +++
 
