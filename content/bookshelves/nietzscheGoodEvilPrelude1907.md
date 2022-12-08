@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-12-03T06:52:47-05:00
+lastmod = 2022-12-08T08:26:55-05:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"
@@ -70,7 +70,12 @@ absolute)... see [quote](#reading-progress-3).
 ## Reading log {#reading-log}
 
 
-### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-03 Sat&gt; </span></span> : Reading Progress : 8% {#reading-progress-8}
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-08 Thu&gt; </span></span> : Reading Progress : 7% {#reading-progress-7}
+
+-   Nietzsche's hope to Psychology
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-03 Sat&gt; </span></span> : Reading Progress : 7% {#reading-progress-7}
 
 -   Nietzsche's criticism of Kant is really acute...
 

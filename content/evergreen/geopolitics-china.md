@@ -2,7 +2,7 @@
 title = "Geopolitics of China"
 author = ["Chloe"]
 date = 2022-12-07
-lastmod = 2022-12-07T23:39:16-05:00
+lastmod = 2022-12-07T23:45:23-05:00
 draft = false
 weight = 1002
 +++
@@ -57,6 +57,10 @@ China's defense, but it's far from the heart land, so less crutial.
 
 
 ### Another Buffer Zone on the Land: Xinjiang {#another-buffer-zone-on-the-land-xinjiang}
+
+Xinjiang is an extremely large area of mountainous and desert terrain,
+twice the size of Texas and big enough to fit the UK and seven other
+European countries inside it.
 
 Xinjiang is strategically important to China because it boarders with
 Russia, Mongolia, Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan,

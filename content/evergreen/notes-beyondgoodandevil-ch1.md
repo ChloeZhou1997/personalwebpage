@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-12-05T22:37:21-05:00
+lastmod = 2022-12-08T08:39:27-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -136,7 +136,7 @@ The first cause, the cause of all the causes.
 -   [Here](https://kirbyyardley.medium.com/010-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-442388529707) seems to have a convincing interpretation.
 
 
-## 11. German theologians love Kant using a means and his Synthetic judgment a priori. But none of these buy Nietzsches. The way Kant justifies the existence of a prior is at best cyclical. In Nietzsches' view, the more pressing question to be answered is: why do we must believe an _a prior_ to be true. The belief in "Virtus Dormitiva" is a mere antidote to the overwhelming sensualism overflowing in German. {#11-dot-german-theologians-love-kant-using-a-means-and-his-synthetic-judgment-a-priori-dot-but-none-of-these-buy-nietzsches-dot-the-way-kant-justifies-the-existence-of-a-prior-is-at-best-cyclical-dot-in-nietzsches-view-the-more-pressing-question-to-be-answered-is-why-do-we-must-believe-an-a-prior-to-be-true-dot-the-belief-in-virtus-dormitiva-is-a-mere-antidote-to-the-overwhelming-sensualism-overflowing-in-german-dot}
+## 11. German theologians love Kant using a means and his Synthetic judgment a priori. But none of these buy Nietzsches. The way Kant justifies the existence of a prior is at best cyclical. In Nietzsches' view, the more pressing question to be answered is: why do we must believe an _a prior_ to be true? The belief in "Virtus Dormitiva" is a mere antidote to the overwhelming sensualism overflowing in German. {#11-dot-german-theologians-love-kant-using-a-means-and-his-synthetic-judgment-a-priori-dot-but-none-of-these-buy-nietzsches-dot-the-way-kant-justifies-the-existence-of-a-prior-is-at-best-cyclical-dot-in-nietzsches-view-the-more-pressing-question-to-be-answered-is-why-do-we-must-believe-an-a-prior-to-be-true-the-belief-in-virtus-dormitiva-is-a-mere-antidote-to-the-overwhelming-sensualism-overflowing-in-german-dot}
 
 -   Summary: Kant was proud of having discovered a new faculty in man, the faculty of synthetic judgment a priori, and the development of German philosophy was due to his pride. However, his answer to his own question of how synthetic judgments a priori were possible, was unsatisfactory. This led to a period of exuberant discovery of new faculties, which eventually gave way to a more sober view. The influence of German philosophy was due in part to its ability to provide an antidote to the sensualism of the previous century.
 
@@ -146,17 +146,17 @@ The first cause, the cause of all the causes.
 Immanuel Kant's Table of Categories is a categorization of the twelve
 fundamental concepts of the understanding (Verstand) that Kant
 believed to be necessary for any meaningful experience. The Table of
-Categories consists of four sets of three categories each,
+Categories consist of four sets of three categories each,
 representing the four primary functions of the understanding:
 quantity, quality, relation, and modality.
 
 
-### Synthetic judgement a priori {#synthetic-judgement-a-priori}
+### Synthetic judgment a priori {#synthetic-judgment-a-priori}
 
 Synthetic judgment a priori is a term used to refer to a type of
 judgment that is based on an innate knowledge or ability of the human
 mind. It is a judgment that does not rely on empirical evidence or
-experience, and is instead based purely on the logical reasoning of
+experience and is instead based purely on the logical reasoning of
 the mind.
 
 
@@ -172,14 +172,14 @@ the mind.
     inclination.
 -   Kant's idea was happily received by theologians belongs to the
     Tubingen institution: The Tübingen School, also known as the
-    Tubingen institution, was a German theological movement in the 19th
+    Tubingen institution was a German theological movement in the 19th
     century that aimed to interpret the Bible in a historical-critical
     manner. It was led by theologians such as Friedrich Schleiermacher,
     Albrecht Ritschl, and Adolf von Harnack.
 -   However, to Nietzsche, the claim of a "by means of a means" is a
     cyclical statement. To demonstrate this point, he made an example of
-    a person asking a doctor, how opium induce sleep, and the
-    doctor answer, there's a power in it that induces sleep, and the
+    a person asking a doctor, how opium induces sleep, and the
+    doctor answers, there's a power in it that induces sleep, and the
     nature of that power is to make sense to become drowsy. It's
     immediately seen that the statement lacks any substance in it but
     only comical.
@@ -190,8 +190,41 @@ the mind.
 Virtus dormitiva is a Latin phrase meaning "powers of sleep". It is
 used to refer to a faculty or ability that induces sleep. In this
 document, the author is suggesting that this faculty can be used to
-achieve a desired effect which could be compared to a "circulus
+achieve the desired effect which could be compared to a "circulus
 vitiosus deus" (a vicious cycle of God).
+
+
+## 12. Thanks to Copernicus and Boscovich, the Europeans have largely disregarded materialistic atomism. However, the soul-atomism suggested by Christianity should also be disregarded, or at best replaced by science. Psychologists should pave the way. {#12-dot-thanks-to-copernicus-and-boscovich-the-europeans-have-largely-disregarded-materialistic-atomism-dot-however-the-soul-atomism-suggested-by-christianity-should-also-be-disregarded-or-at-best-replaced-by-science-dot-psychologists-should-pave-the-way-dot}
+
+
+### Pole Copernicus {#pole-copernicus}
+
+Nicolaus Copernicus was a Renaissance-era astronomer who developed the
+heliocentric model of the universe, which suggests that the Earth and
+other planets revolve around the Sun. This contradicted the prevailing
+geocentric model of the universe, which held that the Earth was the
+center of the universe. He is also credited with being the first
+scientist to propose a comprehensive system of the universe that was
+consistent with astronomical observations.
+
+
+### Pole Boscovich {#pole-boscovich}
+
+Roger Joseph Boscovich was a Croatian polymath and Jesuit priest who
+made important contributions to physics, astronomy, mathematics, and
+philosophy. He is best known for his atomic theory, which proposed a
+system of point-like particles with repulsive forces between
+them. Boscovich also suggested that the force of gravity is mediated
+by a field, similar
+
+
+### Materialistic atomism {#materialistic-atomism}
+
+Materialistic atomism is the theory that the universe is composed of
+small, indivisible particles (atoms) which possess certain properties
+and possess the power to interact with one another to create the
+phenomena we observe in the world. These particles are seen as being
+the ultimate source of all matter, energy, and forces.
 
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
 [^fn:2]: Read more [from here](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.).
