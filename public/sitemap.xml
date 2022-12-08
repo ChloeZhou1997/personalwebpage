@@ -2,8 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/evergreen/toc-geopolitics/</loc>
+    <lastmod>2022-12-07T14:03:42-05:00</lastmod>
+  </url><url>
     <loc>/evergreen/content-delivery-network/</loc>
     <lastmod>2022-12-06T12:00:06-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/geopolitics-china/</loc>
+    <lastmod>2022-12-07T20:21:43-05:00</lastmod>
   </url><url>
     <loc>/evergreen/domain-name-server/</loc>
     <lastmod>2022-12-06T12:00:14-05:00</lastmod>
@@ -20,6 +26,12 @@
     <loc>/evergreen/how-web-work/</loc>
     <lastmod>2022-12-06T12:00:56-05:00</lastmod>
   </url><url>
+    <loc>/evergreen/strait-of-malacca/</loc>
+    <lastmod>2022-12-07T14:25:57-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/specific-geopolitical-features-influence-international-relationship/</loc>
+    <lastmod>2022-12-07T13:53:10-05:00</lastmod>
+  </url><url>
     <loc>/evergreen/can-history-be-remade/</loc>
     <lastmod>2022-11-21T00:02:13-05:00</lastmod>
   </url><url>
@@ -29,17 +41,51 @@
     <loc>/posts/using-emacs-for-bookmark-management/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
   </url><url>
+    <loc>/evergreen/how-tech-change-the-way-countries-interact/</loc>
+    <lastmod>2022-12-07T13:57:33-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/what-strategies-do-contries-use-to-overcome-geographical-limitations/</loc>
+    <lastmod>2022-12-07T14:02:45-05:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2022-12-06T12:00:56-05:00</lastmod>
+    <lastmod>2022-12-07T20:21:43-05:00</lastmod>
   </url><url>
-    <loc>/tags/concept/</loc>
-    <lastmod>2022-12-06T12:00:38-05:00</lastmod>
+    <loc>/bookshelves/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+    <priority>0</priority>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-12-06T12:00:38-05:00</lastmod>
+    <loc>/bookcate/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
-    <lastmod>2022-12-05T22:37:21-05:00</lastmod>
+    <lastmod>2022-12-07T14:03:42-05:00</lastmod>
+  </url><url>
+    <loc>/tags/concept/</loc>
+    <lastmod>2022-12-07T14:25:57-05:00</lastmod>
+  </url><url>
+    <loc>/tags/geoplitics/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/tags/geopolitics/</loc>
+    <lastmod>2022-12-07T14:25:57-05:00</lastmod>
+  </url><url>
+    <loc>/bookcate/geopolitics/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/bookshelves/marshallprisonersgeographyten2015/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/status/reading/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/status/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-12-07T16:43:20-05:00</lastmod>
+  </url><url>
+    <loc>/categories/toc/</loc>
+    <lastmod>2022-12-07T14:03:42-05:00</lastmod>
   </url><url>
     <loc>/status/infantry/</loc>
     <lastmod>2022-11-21T00:02:13-05:00</lastmod>
@@ -47,27 +93,17 @@
     <loc>/categories/politics/</loc>
     <lastmod>2022-11-21T00:02:13-05:00</lastmod>
   </url><url>
-    <loc>/status/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
-  </url><url>
-    <loc>/bookshelves/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
-    <priority>0</priority>
-  </url><url>
     <loc>/bookshelves/orwell1984orwell2020/</loc>
     <lastmod>2022-12-05T22:46:39-05:00</lastmod>
   </url><url>
-    <loc>/bookcate/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
-  </url><url>
     <loc>/status/finished/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
+    <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/bookcate/literature/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
+    <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/tags/literatures/</loc>
-    <lastmod>2022-12-05T22:46:39-05:00</lastmod>
+    <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/categories/notes/</loc>
     <lastmod>2022-12-05T22:37:21-05:00</lastmod>
@@ -81,9 +117,6 @@
     <loc>/bookcate/philosophy/</loc>
     <lastmod>2022-12-03T06:52:47-05:00</lastmod>
   </url><url>
-    <loc>/status/reading/</loc>
-    <lastmod>2022-12-03T06:52:47-05:00</lastmod>
-  </url><url>
     <loc>/bookshelves/bryantcomputersystemsprogrammer2015/</loc>
     <lastmod>2022-11-16T01:21:26-05:00</lastmod>
   </url><url>
@@ -91,17 +124,17 @@
     <lastmod>2022-11-16T01:21:26-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/dostoyevskybrotherskaramazov2012/</loc>
-    <lastmod>2022-11-16T01:22:14-05:00</lastmod>
+    <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-12-04T16:54:36-05:00</lastmod>
+    <lastmod>2022-12-07T14:25:46-05:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>/tags/config/</loc>
-    <lastmod>2022-12-04T16:54:36-05:00</lastmod>
+    <lastmod>2022-12-07T14:25:46-05:00</lastmod>
   </url><url>
     <loc>/tags/emacs/</loc>
-    <lastmod>2022-12-04T16:54:36-05:00</lastmod>
+    <lastmod>2022-12-07T14:25:46-05:00</lastmod>
   </url><url>
     <loc>/categories/tutorial/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
@@ -110,7 +143,7 @@
     <lastmod>2022-11-08T14:33:00-05:00</lastmod>
   </url><url>
     <loc>/posts/emacs/</loc>
-    <lastmod>2022-12-04T16:54:36-05:00</lastmod>
+    <lastmod>2022-12-07T14:25:46-05:00</lastmod>
   </url><url>
     <loc>/tags/hugo/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>

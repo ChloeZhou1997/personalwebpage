@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-12-04T16:54:36-05:00
+lastmod = 2022-12-07T14:25:46-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -543,8 +543,8 @@ The straight version of org is not working, using straight to make sure using th
   (org-download-timestamp "org_%Y%m%d-%H%M%S_")
   (org-image-actual-width 400)
   (org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
-  (org-download-image-html-width 400)
-  (org-download-image-org-width 400)
+  (org-download-image-html-width 500)
+  (org-download-image-org-width 500)
   :bind
   ("C-M-y" . org-download-clipboard))
 ```

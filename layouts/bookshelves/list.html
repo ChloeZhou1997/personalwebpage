@@ -3,11 +3,11 @@
 <div class="intro">
   <p>I am a heavy reader who loves reading about philosophy, history and politics. I also love classic literature a lot. Sometimes I read reviews, analyses and background stories that relate to the pieces I am reading. </p>
 
-  <p>This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting. This might look messy at current stage, but I am looking forward to the day this place grows into something meaningful.</p>
+  <p>This page is dedicated to the list of books and articles I have read and currently reading that I find inspiring and interesting. The site might look messy at current stage, but I am looking forward to the day this place grows into something meaningful.</p>
 
 </div>
 {{ if isset .Site.Params "bookshelf" }}
-<p> This is a new site. I haven't got the chance to load them all on my blog. This year I have read roughly about 90 books (including some books in my language that are still not accessible in English translation). If you are interested in the my list, please find me on
+<p> This is a new site. I haven't got the chance to load all the books I have read. This year I have read roughly about 90 books (including some books in my language that doesn't have an English translation). If you are interested in the my list, please find me on
 {{ $length := (len .Site.Params.bookshelf) }}
 {{ range $index, $elem := .Site.Params.bookshelf}}
 {{ if eq $elem.name "email" }}

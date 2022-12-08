@@ -1,8 +1,11 @@
 {{ define "main"}}
+
+{{ range .Data.Pages }}
+
 <div class="intro">
   <p>This is where I place all my working notes </p>
 </div>
-{{ range .Data.Pages }}
+
 <li>
   <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
 </li>

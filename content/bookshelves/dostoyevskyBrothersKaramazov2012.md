@@ -1,8 +1,8 @@
 +++
-title = "Notes for The Brothers Karamazov"
+title = "The Brothers Karamazov"
 author = ["Chloe"]
 date = 2022-11-09
-lastmod = 2022-11-16T01:22:14-05:00
+lastmod = 2022-12-07T14:09:35-05:00
 tags = ["literatures"]
 draft = false
 status = "finished"
