@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-12-07T14:25:46-05:00
+lastmod = 2022-12-07T20:36:45-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
@@ -1455,8 +1455,10 @@ Integration with consult:
 
 ```emacs-lisp
 (use-package ox-hugo
-  :after ox)
-(setq org-export-with-broken-links t)
+  :after ox
+  :config
+  (setq org-hugo-link-desc-insert-type t)
+  (setq org-export-with-broken-links t))
 ```
 
 

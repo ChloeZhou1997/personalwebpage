@@ -2,7 +2,7 @@
 title = "Geopolitics"
 author = ["Chloe"]
 date = 2022-12-07
-lastmod = 2022-12-07T14:03:42-05:00
+lastmod = 2022-12-07T20:36:58-05:00
 categories = ["toc"]
 draft = false
 weight = 1001

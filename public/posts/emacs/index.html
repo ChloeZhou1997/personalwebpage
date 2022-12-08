@@ -21,7 +21,7 @@ TODO Emacs configurations [4/7] ox-json &#43; pyorg to obtain json data from org
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/emacs/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-12-07T14:25:46-05:00" />
+<meta property="article:modified_time" content="2022-12-07T20:36:45-05:00" />
 
 
   <meta name="twitter:card" content="summary"/>
@@ -311,7 +311,7 @@ TODO Emacs configurations [4/7] ox-json &#43; pyorg to obtain json data from org
           
           <time datetime="2022-10-29 00:00:00 &#43;0000 UTC" itemprop="datePublished">2022-10-29</time>
           
-            (Updated: <time datetime="2022-12-07 14:25:46 -0500 EST" itemprop="dateModified">2022-12-07</time>)
+            (Updated: <time datetime="2022-12-07 20:36:45 -0500 EST" itemprop="dateModified">2022-12-07</time>)
           
         </div>
         
@@ -1459,8 +1459,10 @@ Prompt and colors</a>, <a href="https://github.com/mclear-tools/dotemacs/blob/11
 </span></span></code></pre></div><h2 id="export">Export</h2>
 <h3 id="blogging-with-ox-hugo">Blogging with ox-hugo</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-hugo</span>
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">ox</span>)
-</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-export-with-broken-links</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#8be9fd;font-style:italic">:after</span> <span style="color:#8be9fd;font-style:italic">ox</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#8be9fd;font-style:italic">:config</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  (<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-hugo-link-desc-insert-type</span> t)
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>  (<span style="color:#8be9fd;font-style:italic">setq</span> <span style="color:#8be9fd;font-style:italic">org-export-with-broken-links</span> t))
 </span></span></code></pre></div><h3 id="cv-with-org-mode">CV with Org-mode</h3>
 <h4 id="moderncv">moderncv</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(<span style="color:#8be9fd;font-style:italic">use-package</span> <span style="color:#8be9fd;font-style:italic">ox-altacv</span>
