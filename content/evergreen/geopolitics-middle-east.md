@@ -2,13 +2,16 @@
 title = "Geopolitics of the Middle East"
 author = ["Chloe"]
 date = 2022-12-10
-lastmod = 2022-12-10T17:09:06-05:00
+lastmod = 2022-12-10T19:50:14-05:00
 categories = ["notes"]
 draft = false
 weight = 1003
 +++
 
-## Iran {#iran}
+## Important player {#important-player}
+
+
+### Iran {#iran}
 
 {{< figure src="/images/Geopolitics_of_Middle_East/org_20221210-002452_screenshot.png" width="600px" >}}
 
@@ -25,7 +28,7 @@ other countries could use Iran's minorities to cause trouble and try
 to change the government.
 
 
-### Potential problem: nuclear weapons threatening other countries {#potential-problem-nuclear-weapons-threatening-other-countries}
+#### Potential problem: nuclear weapons threatening other countries {#potential-problem-nuclear-weapons-threatening-other-countries}
 
 Many countries, especially Israel, are afraid that Iran is trying to
 build nuclear weapons which could cause a lot of tension in the
@@ -42,7 +45,7 @@ cause problems for the whole world. That's why so many countries are
 trying to stop Israel from attacking Iran.
 
 
-### Geopolitical Friends and Enemies {#geopolitical-friends-and-enemies}
+#### Geopolitical Friends and Enemies {#geopolitical-friends-and-enemies}
 
 -   Friends
     -Iraq: the US delivered Shia-majority government
@@ -55,35 +58,38 @@ trying to stop Israel from attacking Iran.
         and Afghanistan, but now the fear is gone.
 
 
-## Turkey {#turkey}
+### Turkey {#turkey}
 
 
-### Why EU won't accept it as a member country {#why-eu-won-t-accept-it-as-a-member-country}
+#### Why EU won't accept it as a member country {#why-eu-won-t-accept-it-as-a-member-country}
+
+<!--list-separator-->
+
+-  Geography
+
+    If Turkey is part of Europe, then Europe's borders would reach
+    to Syria, Iraq and Iran.
+
+    Only 5% of the territory of Turkey is considered inside of the
+    Europe. (West of the Bosporus[^fn:1]), the rest are considered
+    in the middle east.
+
+<!--list-separator-->
+
+-  Demographic
+
+    The disparity in living standard and 75m population. The EU
+    countries are afraid of the influx of labour force from Turkey.
+
+<!--list-separator-->
+
+-  Other potential issues
+
+    -   Human right issues, especially towards the Kurd.
+    -   Religion: the majority of the population is Muslim.
 
 
-#### Geography {#geography}
-
-If Turkey is part of Europe, then Europe's borders would reach
-to Syria, Iraq and Iran.
-
-Only 5% of the territory of Turkey is considered inside of the
-Europe. (West of the Bosporus[^fn:1]), the rest are considered
-in the middle east.
-
-
-#### Demographic {#demographic}
-
-The disparity in living standard and 75m population. The EU
-countries are afraid of the influx of labour force from Turkey.
-
-
-#### Other potential issues {#other-potential-issues}
-
--   Human right issues, especially towards the Kurd.
--   Religion: the majority of the population is Muslim.
-
-
-### [ ] To what extent did the refusal from the EU result in the reemergence of religious leaders since Mustafa Kemal[^fn:2]? {#to-what-extent-did-the-refusal-from-the-eu-result-in-the-reemergence-of-religious-leaders-since-mustafa-kemal}
+#### [ ] To what extent did the refusal from the EU result in the reemergence of religious leaders since Mustafa Kemal[^fn:2]? {#to-what-extent-did-the-refusal-from-the-eu-result-in-the-reemergence-of-religious-leaders-since-mustafa-kemal}
 
 In the book [Prisoner of Geography]({{< relref "marshallPrisonersGeographyTen2015#prisoner-of-geography" >}}), the author brought up that
 continued rejection from the EU, plus the refusal of many Turks to
@@ -100,52 +106,55 @@ However, it is also the geography of the country that makes the dream
 hard to be fulfilled.
 
 
-### Relationship with other regional countries {#relationship-with-other-regional-countries}
+#### Relationship with other regional countries {#relationship-with-other-regional-countries}
 
+<!--list-separator-->
 
-#### With Arab Countries: icy and cooled {#with-arab-countries-icy-and-cooled}
+-  With Arab Countries: icy and cooled
 
-Arab countries are generally suspicious of Turkey's plan to
-revive the Ottoman's glory economically.
+    Arab countries are generally suspicious of Turkey's plan to
+    revive the Ottoman's glory economically.
 
--   Iran: sees Turkey as the most important competitor bother
-    economically and militarily in its backyard. The relationship cooled
-    after the Syrian civil war[^fn:5], for they are backing opposite
-    sides of the factions.
--   Egypt: the Muslim brotherhood policy failed after the second military
-    coup in Egypt, and the relationship between Cairo and Ankara become
-    icy. They even become the major customer of the new energy source
-    created by the alliance between Cyprus, Greece and Israel.
+    -   Iran: sees Turkey as the most important competitor bother
+        economically and militarily in its backyard. The relationship cooled
+        after the Syrian civil war[^fn:5], for they are backing opposite
+        sides of the factions.
+    -   Egypt: the Muslim brotherhood policy failed after the second military
+        coup in Egypt, and the relationship between Cairo and Ankara become
+        icy. They even become the major customer of the new energy source
+        created by the alliance between Cyprus, Greece and Israel.
 
+<!--list-separator-->
 
-#### Israel: cold war relation {#israel-cold-war-relation}
+-  Israel: cold war relation
 
--   [ ] fill the Turkey and Israel conflict with more details later.
+    -   [ ] fill the Turkey and Israel conflict with more details later.
 
-The deterioration of relations between Israel and Turkey after the
-ascendancy of the Justice and Development Party (AKP). The Israel-Gaza
-conflict brings a good diplomatic relationship between Turkey and
-Israel to a halt.&nbsp;[^fn:6]
+    The deterioration of relations between Israel and Turkey after the
+    ascendancy of the Justice and Development Party (AKP). The Israel-Gaza
+    conflict brings a good diplomatic relationship between Turkey and
+    Israel to a halt.&nbsp;[^fn:6]
 
-Israel, Cyprus, and Greece are working together to get energy from the
-gas fields near their coasts. Turkey could have gotten energy from
-Israel, if their relationships are more reconciliatory. However,
-because of the strained diplomatic relationship, they are still
-relying on Russia for their energy needs. They are also working with
-Russia builds pipelines so they can get the energy to other
-countries in Europe.
+    Israel, Cyprus, and Greece are working together to get energy from the
+    gas fields near their coasts. Turkey could have gotten energy from
+    Israel, if their relationships are more reconciliatory. However,
+    because of the strained diplomatic relationship, they are still
+    relying on Russia for their energy needs. They are also working with
+    Russia builds pipelines so they can get the energy to other
+    countries in Europe.
 
+<!--list-separator-->
 
-#### NATO and US {#nato-and-us}
+-  NATO and US
 
-The US wants a better relationship between the Turkey and Israel to
-strengthen NATO's position in the eastern Mediterranean.
-Turkey is a key country to NATO because it controls the Bosporus
-strait&nbsp;[^fn:1] - the entrance from the Black Sea to the
-Mediterranean. Except for that, there is the Dardanelles Straits[^fn:7],
-which is between the Sea of Marmara and the Aegean Sea&nbsp;[^fn:1], the Russian
-fleets will have to navigate through if they want to get to the Aegean Sea
-en route to the Mediterranean.
+    The US wants a better relationship between the Turkey and Israel to
+    strengthen NATO's position in the eastern Mediterranean.  Turkey is a
+    key country to NATO because it controls the Bosporus strait&nbsp;[^fn:1] -
+    the entrance from the Black Sea to the Mediterranean. Except for that,
+    there is the Dardanelles Straits[^fn:7], which is between the Sea of
+    Marmara and the Aegean Sea&nbsp;[^fn:1], the Russian fleets will have to
+    navigate through if they want to get to the Aegean Sea en route to the
+    Mediterranean.
 
 [^fn:1]: The Bosporus or Bosphorus is a narrow, natural strait and an
     internationally significant waterway located in northwestern

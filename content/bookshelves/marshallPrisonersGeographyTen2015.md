@@ -2,7 +2,7 @@
 title = "Prisoners of Geography"
 author = ["Zhou Qiaohui"]
 date = 2022-12-07
-lastmod = 2022-12-10T15:27:56-05:00
+lastmod = 2022-12-10T19:57:04-05:00
 tags = ["geoplitics"]
 draft = false
 status = "reading"
@@ -77,9 +77,24 @@ physical surroundings when making foreign policy decisions.
 ## Reading log {#reading-log}
 
 
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-10 Sat&gt; </span></span> : Reading Progress : 61% {#reading-progress-61}
+
+-   Finished the section on the middle east
+-   I kind of like the author's perspective on the Arabic Spring...there
+    are so many factions in society, even though a lot of groups are
+    anti-Hosni Mubarak[^fn:1](in the case of Egypt), it doesn't mean all of them are
+    liberal. People want different things against authority.
+
+
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-07 Wed&gt; </span></span> : Reading Progress : 39% {#reading-progress-39}
 
 -   Finished the section on Western Europe.
 
 
 ## Relevant {#relevant}
+
+[^fn:1]: Hosni Mubarak was an Egyptian politician who served as the
+    fourth President of Egypt from 1981 to 2011. He came to power after
+    the assassination of Anwar Sadat and was overthrown during the 2011
+    Egyptian revolution. He was sentenced to life imprisonment for his
+    role in the killing of protesters and corruption.
