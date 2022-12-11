@@ -2,7 +2,8 @@
 title = "Geopolitics of China"
 author = ["Chloe"]
 date = 2022-12-07
-lastmod = 2022-12-07T23:45:23-05:00
+lastmod = 2022-12-08T20:25:13-05:00
+categories = ["notes"]
 draft = false
 weight = 1002
 +++

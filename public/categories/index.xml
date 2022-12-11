@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>notes</title>
+      <link>/categories/notes/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/notes/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>toc</title>
       <link>/categories/toc/</link>
@@ -22,15 +31,6 @@
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>/categories/politics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>notes</title>
-      <link>/categories/notes/</link>
-      <pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/notes/</guid>
       <description></description>
     </item>
     

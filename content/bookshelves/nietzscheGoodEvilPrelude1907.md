@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-12-08T08:26:55-05:00
+lastmod = 2022-12-08T22:37:06-05:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"

@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Chloe Jo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>concept</title>
       <link>/tags/concept/</link>
-      <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/concept/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geopolitics</title>
+      <link>/tags/geopolitics/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/geopolitics/</guid>
       <description></description>
     </item>
     
@@ -26,11 +35,11 @@
     </item>
     
     <item>
-      <title>geopolitics</title>
-      <link>/tags/geopolitics/</link>
+      <title>place</title>
+      <link>/tags/place/</link>
       <pubDate>Wed, 07 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/geopolitics/</guid>
+      <guid>/tags/place/</guid>
       <description></description>
     </item>
     

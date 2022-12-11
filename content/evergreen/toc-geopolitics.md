@@ -2,7 +2,7 @@
 title = "Geopolitics"
 author = ["Chloe"]
 date = 2022-12-07
-lastmod = 2022-12-07T20:36:58-05:00
+lastmod = 2022-12-10T15:43:11-05:00
 categories = ["toc"]
 draft = false
 weight = 1001
@@ -21,3 +21,4 @@ weight = 1001
 ## Regional Interests {#regional-interests}
 
 -   [Geopolitics of China]({{< relref "geopolitics-china" >}})
+-   [Geopolitics of the Middle East]({{< relref "geopolitics-middle-east" >}})

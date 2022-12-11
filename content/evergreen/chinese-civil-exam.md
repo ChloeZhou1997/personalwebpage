@@ -2,7 +2,8 @@
 title = "The Chinese Civil Examinations"
 author = ["Chloe"]
 date = 2022-12-08
-lastmod = 2022-12-08T16:44:09-05:00
+lastmod = 2022-12-08T20:23:36-05:00
+categories = ["notes"]
 draft = false
 weight = 1001
 +++

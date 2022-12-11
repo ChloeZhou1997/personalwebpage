@@ -2,12 +2,14 @@
 title = "Prisoners of Geography"
 author = ["Zhou Qiaohui"]
 date = 2022-12-07
-lastmod = 2022-12-07T20:50:43-05:00
+lastmod = 2022-12-10T15:27:56-05:00
 tags = ["geoplitics"]
 draft = false
 status = "reading"
 bookCate = "geopolitics"
 +++
+
+## Prisoner of Geography {#prisoner-of-geography}
 
 tags
 : [Geopolitics]({{< relref "toc-geopolitics" >}})

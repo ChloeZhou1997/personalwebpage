@@ -3,19 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/evergreen/chinese-civil-exam/</loc>
-    <lastmod>2022-12-08T16:44:09-05:00</lastmod>
+    <lastmod>2022-12-08T20:23:36-05:00</lastmod>
   </url><url>
     <loc>/evergreen/toc-geopolitics/</loc>
-    <lastmod>2022-12-07T20:36:58-05:00</lastmod>
+    <lastmod>2022-12-10T15:43:11-05:00</lastmod>
   </url><url>
     <loc>/evergreen/content-delivery-network/</loc>
     <lastmod>2022-12-06T12:00:06-05:00</lastmod>
   </url><url>
     <loc>/evergreen/geopolitics-china/</loc>
-    <lastmod>2022-12-07T23:45:23-05:00</lastmod>
+    <lastmod>2022-12-08T20:25:13-05:00</lastmod>
   </url><url>
     <loc>/evergreen/domain-name-server/</loc>
     <lastmod>2022-12-06T12:00:14-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/geopolitics-middle-east/</loc>
+    <lastmod>2022-12-10T17:09:06-05:00</lastmod>
   </url><url>
     <loc>/evergreen/hyptertext-transfer-protocol/</loc>
     <lastmod>2022-12-06T12:00:24-05:00</lastmod>
@@ -30,7 +33,7 @@
     <lastmod>2022-12-06T12:00:56-05:00</lastmod>
   </url><url>
     <loc>/evergreen/strait-of-malacca/</loc>
-    <lastmod>2022-12-07T23:03:06-05:00</lastmod>
+    <lastmod>2022-12-08T20:26:02-05:00</lastmod>
   </url><url>
     <loc>/evergreen/specific-geopolitical-features-influence-international-relationship/</loc>
     <lastmod>2022-12-07T13:53:10-05:00</lastmod>
@@ -39,10 +42,13 @@
     <lastmod>2022-11-21T00:02:13-05:00</lastmod>
   </url><url>
     <loc>/evergreen/notes-beyondgoodandevil-ch1/</loc>
-    <lastmod>2022-12-08T08:39:27-05:00</lastmod>
+    <lastmod>2022-12-08T20:23:07-05:00</lastmod>
   </url><url>
     <loc>/posts/using-emacs-for-bookmark-management/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
+  </url><url>
+    <loc>/evergreen/strait-of-hormuz/</loc>
+    <lastmod>2022-12-10T00:43:01-05:00</lastmod>
   </url><url>
     <loc>/evergreen/how-tech-change-the-way-countries-interact/</loc>
     <lastmod>2022-12-07T13:57:33-05:00</lastmod>
@@ -50,45 +56,51 @@
     <loc>/evergreen/what-strategies-do-contries-use-to-overcome-geographical-limitations/</loc>
     <lastmod>2022-12-07T14:02:45-05:00</lastmod>
   </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2022-12-10T17:09:06-05:00</lastmod>
+  </url><url>
     <loc>/</loc>
-    <lastmod>2022-12-08T16:44:09-05:00</lastmod>
+    <lastmod>2022-12-10T17:09:06-05:00</lastmod>
+  </url><url>
+    <loc>/tags/concept/</loc>
+    <lastmod>2022-12-10T00:43:01-05:00</lastmod>
+  </url><url>
+    <loc>/tags/geopolitics/</loc>
+    <lastmod>2022-12-10T00:43:01-05:00</lastmod>
+  </url><url>
+    <loc>/categories/notes/</loc>
+    <lastmod>2022-12-10T17:09:06-05:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>/bookcate/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-    <lastmod>2022-12-08T08:39:27-05:00</lastmod>
-  </url><url>
-    <loc>/tags/concept/</loc>
-    <lastmod>2022-12-07T23:03:06-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/tags/geoplitics/</loc>
-    <lastmod>2022-12-07T20:50:43-05:00</lastmod>
-  </url><url>
-    <loc>/tags/geopolitics/</loc>
-    <lastmod>2022-12-07T23:03:06-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/bookcate/geopolitics/</loc>
-    <lastmod>2022-12-07T20:50:43-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
+  </url><url>
+    <loc>/tags/place/</loc>
+    <lastmod>2022-12-08T20:26:02-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/marshallprisonersgeographyten2015/</loc>
-    <lastmod>2022-12-07T20:50:43-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/status/reading/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/status/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2022-12-08T08:39:27-05:00</lastmod>
+    <lastmod>2022-12-10T15:27:56-05:00</lastmod>
   </url><url>
     <loc>/categories/toc/</loc>
-    <lastmod>2022-12-07T20:36:58-05:00</lastmod>
+    <lastmod>2022-12-10T15:43:11-05:00</lastmod>
   </url><url>
     <loc>/status/infantry/</loc>
     <lastmod>2022-11-21T00:02:13-05:00</lastmod>
@@ -106,19 +118,16 @@
     <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/tags/literatures/</loc>
-    <lastmod>2022-12-08T08:39:27-05:00</lastmod>
-  </url><url>
-    <loc>/categories/notes/</loc>
-    <lastmod>2022-12-08T08:39:27-05:00</lastmod>
+    <lastmod>2022-12-08T22:37:06-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/nietzschegoodevilprelude1907/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
+    <lastmod>2022-12-08T22:37:06-05:00</lastmod>
   </url><url>
     <loc>/tags/philosophy/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
+    <lastmod>2022-12-08T22:37:06-05:00</lastmod>
   </url><url>
     <loc>/bookcate/philosophy/</loc>
-    <lastmod>2022-12-08T08:26:55-05:00</lastmod>
+    <lastmod>2022-12-08T22:37:06-05:00</lastmod>
   </url><url>
     <loc>/bookshelves/bryantcomputersystemsprogrammer2015/</loc>
     <lastmod>2022-11-16T01:21:26-05:00</lastmod>
@@ -130,14 +139,14 @@
     <lastmod>2022-12-07T14:09:35-05:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
-    <lastmod>2022-12-07T20:36:45-05:00</lastmod>
+    <lastmod>2022-12-08T22:52:26-05:00</lastmod>
     <priority>0</priority>
   </url><url>
     <loc>/tags/config/</loc>
-    <lastmod>2022-12-07T20:36:45-05:00</lastmod>
+    <lastmod>2022-12-08T22:52:26-05:00</lastmod>
   </url><url>
     <loc>/tags/emacs/</loc>
-    <lastmod>2022-12-07T20:36:45-05:00</lastmod>
+    <lastmod>2022-12-08T22:52:26-05:00</lastmod>
   </url><url>
     <loc>/categories/tutorial/</loc>
     <lastmod>2022-11-08T14:21:10-05:00</lastmod>
@@ -146,7 +155,7 @@
     <lastmod>2022-11-08T14:33:00-05:00</lastmod>
   </url><url>
     <loc>/posts/emacs/</loc>
-    <lastmod>2022-12-07T20:36:45-05:00</lastmod>
+    <lastmod>2022-12-08T22:52:26-05:00</lastmod>
   </url><url>
     <loc>/tags/hugo/</loc>
     <lastmod>2022-10-28T11:06:26-04:00</lastmod>

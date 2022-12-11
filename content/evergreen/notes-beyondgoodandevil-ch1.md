@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-12-08T08:39:27-05:00
+lastmod = 2022-12-08T20:23:07-05:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -146,7 +146,7 @@ The first cause, the cause of all the causes.
 Immanuel Kant's Table of Categories is a categorization of the twelve
 fundamental concepts of the understanding (Verstand) that Kant
 believed to be necessary for any meaningful experience. The Table of
-Categories consist of four sets of three categories each,
+Categories consists of four sets of three categories each,
 representing the four primary functions of the understanding:
 quantity, quality, relation, and modality.
 
