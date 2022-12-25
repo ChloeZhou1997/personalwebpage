@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil - Ch1 Prejudices of Philosophers"
 author = ["Chloe"]
 date = 2022-11-16
-lastmod = 2022-12-08T20:23:07-05:00
+lastmod = 2022-12-24T19:13:12-07:00
 tags = ["literatures"]
 categories = ["notes"]
 draft = false
@@ -194,6 +194,20 @@ achieve the desired effect which could be compared to a "circulus
 vitiosus deus" (a vicious cycle of God).
 
 
+## Sensualism {#sensualism}
+
+Sensualism has its roots in the philosophies of ancient Greek
+philosophers, who believed that the most reliable form of knowledge
+was derived from the senses and feelings. This idea was further
+developed by British Sensualists such as John Locke and David Hume,
+and British Associationists including Thomas Brown, David Hartley, and
+Joseph Priestley. Sensualism was also popularized by Victor Cousin,
+who argued that the gratification of the senses was the highest
+good. In the 19th century, sensualism was adopted by philosophers such
+as Wilhelm Wundt, who proposed a scientific approach to sensualism
+that could be applied to the study of language and cognition.
+
+
 ## 12. Thanks to Copernicus and Boscovich, the Europeans have largely disregarded materialistic atomism. However, the soul-atomism suggested by Christianity should also be disregarded, or at best replaced by science. Psychologists should pave the way. {#12-dot-thanks-to-copernicus-and-boscovich-the-europeans-have-largely-disregarded-materialistic-atomism-dot-however-the-soul-atomism-suggested-by-christianity-should-also-be-disregarded-or-at-best-replaced-by-science-dot-psychologists-should-pave-the-way-dot}
 
 
@@ -225,6 +239,63 @@ small, indivisible particles (atoms) which possess certain properties
 and possess the power to interact with one another to create the
 phenomena we observe in the world. These particles are seen as being
 the ultimate source of all matter, energy, and forces.
+
+
+## 13. The instinct of self-preservation should not be seen as the primary instinct of an organic being. Instead, it suggests that life itself can be seen as a "will to power" and that self-preservation is only a result of this. The author argues for economy of principles and cautions against superfluous teleological principles, citing Spinoza's inconsistency as an example. {#13-dot-the-instinct-of-self-preservation-should-not-be-seen-as-the-primary-instinct-of-an-organic-being-dot-instead-it-suggests-that-life-itself-can-be-seen-as-a-will-to-power-and-that-self-preservation-is-only-a-result-of-this-dot-the-author-argues-for-economy-of-principles-and-cautions-against-superfluous-teleological-principles-citing-spinoza-s-inconsistency-as-an-example-dot}
+
+-   Nietzsche stressed his idea of "WILL TO POWER" and argued against
+    teleological principal
+
+
+### Teleological principles {#teleological-principles}
+
+Teleological principles refer to ideas or beliefs that propose a
+purpose or goal in the natural world. In this document, the author is
+suggesting that this idea should be avoided, as it may be superfluous.
+
+
+### Economy of principles {#economy-of-principles}
+
+Economy of principles is the idea of using a limited number of
+principles to guide decisions, rather than attempting to make a
+principle out of every individual situation. It is a form of
+efficiency, where the use of fewer principles can lead to more
+effective decision-making.
+
+
+### Will to power {#will-to-power}
+
+Friedrich Nietzsche's “will to power” is a concept which is central to
+his writings. It is the idea that all people have a fundamental drive
+to exert power and control over their environment and the people
+around them. This concept is related to, but distinct from, the idea
+of ambition or striving for success. According to Nietzsche, the will
+to power is an all-encompassing and pervasive aspect of human nature
+which underlies all other motivations and drives. It is an innate part
+of human nature, and it is only through the will to power that we can
+achieve any kind of progress or advancement. The will to power is a
+controversial concept, and one that has been widely debated by
+philosophers and psychologists.
+
+
+## 14. This passage discusses the difference between the two modes of thought in natural philosophy: the plebeian sensualism that relies on what can be seen and felt, and the aristocratic mode of thought of Plato, which resists sense-evidence and instead relies on pale, cold, grey conceptional networks. It suggests that the former approach may be more suitable for a hardy, laborious race of machinists and bridge-builders of the future, while the latter approach offers a different kind of enjoyment. {#14-dot-this-passage-discusses-the-difference-between-the-two-modes-of-thought-in-natural-philosophy-the-plebeian-sensualism-that-relies-on-what-can-be-seen-and-felt-and-the-aristocratic-mode-of-thought-of-plato-which-resists-sense-evidence-and-instead-relies-on-pale-cold-grey-conceptional-networks-dot-it-suggests-that-the-former-approach-may-be-more-suitable-for-a-hardy-laborious-race-of-machinists-and-bridge-builders-of-the-future-while-the-latter-approach-offers-a-different-kind-of-enjoyment-dot}
+
+
+## 15. the sense organs are not phenomena in the idealistic philosophy, and that the external world is not the work of our organs. It suggests that the concept of "causa sui" (the cause of itself) is fundamentally absurd, and that accepting it is a reduction to absurdity. {#15-dot-the-sense-organs-are-not-phenomena-in-the-idealistic-philosophy-and-that-the-external-world-is-not-the-work-of-our-organs-dot-it-suggests-that-the-concept-of-causa-sui--the-cause-of-itself--is-fundamentally-absurd-and-that-accepting-it-is-a-reduction-to-absurdity-dot}
+
+
+### Regulative hypothesis {#regulative-hypothesis}
+
+The regulative hypothesis is a concept in the philosophy of science
+which states that scientific inquiry should aim to discover laws that
+regulate nature. This hypothesis seeks to explain why certain
+scientific theories are accepted by scientists even though they may
+lack empirical evidence. The hypothesis suggests that the pursuit of
+such laws is a necessary part of scientific progress, as it allows
+scientists to more accurately and effectively predict the behavior of
+natural phenomena. The regulative hypothesis is closely related to the
+principle of uniformity, which states that the laws of nature remain
+the same over time and space.
 
 [^fn:1]: "But whoever considers the fundamental impulses of man with a view to determining how far they may have here acted as INSPIRING GENII (or as demons and cobolds), will find that they have all practiced philosophy at one time or another, and that each one of them would have been only too glad to look upon itself as the ultimate end of existence and the legitimate LORD over all the other impulses. For every impulse is imperious, and as SUCH, attempts to philosophize."
 [^fn:2]: Read more [from here](https://kirbyyardley.medium.com/008-nietzsches-beyond-good-and-evil-one-paragraph-at-a-time-b5f42fd8e0e#:~:text=There%20is%20a%20point%20in,%2C%20beautiful%20and%20most%20brave.).

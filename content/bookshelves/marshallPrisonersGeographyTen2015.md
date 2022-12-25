@@ -2,10 +2,10 @@
 title = "Prisoners of Geography"
 author = ["Zhou Qiaohui"]
 date = 2022-12-07
-lastmod = 2022-12-10T19:57:04-05:00
+lastmod = 2022-12-14T10:51:36-05:00
 tags = ["geoplitics"]
 draft = false
-status = "reading"
+status = "finished"
 bookCate = "geopolitics"
 +++
 
@@ -75,6 +75,11 @@ physical surroundings when making foreign policy decisions.
 
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-14 Wed&gt; </span></span> : Reading Progress : 100% {#reading-progress-100}
+
+-   Finished reading the book
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-10 Sat&gt; </span></span> : Reading Progress : 61% {#reading-progress-61}

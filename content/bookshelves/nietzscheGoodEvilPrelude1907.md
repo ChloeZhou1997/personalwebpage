@@ -2,7 +2,7 @@
 title = "Beyond Good and Evil"
 author = ["Chloe"]
 date = 2022-11-15
-lastmod = 2022-12-08T22:37:06-05:00
+lastmod = 2022-12-24T19:17:10-07:00
 tags = ["literatures", "philosophy"]
 draft = false
 status = "reading"
@@ -33,7 +33,14 @@ work... I have long wanted to read about him.
 
 ### Ch1-3 {#ch1-3}
 
-> As little as the act of birth comes into consideration in the whole process and procedure of heredity, just as little is “being-conscious” as opposed to the instinctive in any decisive sense; the greater part of the conscious thinking of a philosopher is secretly influenced by his instincts and forced into definite channels. And behind all logic and its seeming sovereignty of movement, there are valuations, or to speak more plainly, physiological demands, for the maintenance of a definite mode of life.
+> As little as the act of birth comes into consideration in the whole
+> process and procedure of heredity, just as little is “being-conscious”
+> as opposed to the instinctive in any decisive sense; the greater part
+> of the conscious thinking of a philosopher is secretly influenced by
+> his instincts and forced into definite channels. And behind all logic
+> and its seeming sovereignty of movement, there are valuations, or to
+> speak more plainly, physiological demands, for the maintenance of a
+> definite mode of life.
 
 
 ### Ch1-4 {#ch1-4}
@@ -68,6 +75,13 @@ absolute)... see [quote](#reading-progress-3).
 
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-24 Sat&gt; </span></span> : Reading Progress : 10% {#reading-progress-10}
+
+-   It seems Nietzsche has a better impression for < Sensualism> than
+    for Plato's view of the world, where even the external work is
+    the work of a person's perception.
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-08 Thu&gt; </span></span> : Reading Progress : 7% {#reading-progress-7}
