@@ -2,7 +2,7 @@
   "list": [
     {
       "name":"Smart Brain",
-      "url":"https://smart-brain-joz.herokuapp.com/",
+      "url":"https://smart-brain-front-end-m2zu.onrender.com/",
       "desc":"React + Node.js + PostgreSQL full-stack project"
     },
     {

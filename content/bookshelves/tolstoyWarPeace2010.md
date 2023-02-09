@@ -2,9 +2,9 @@
 title = "War and Peace"
 author = ["Chloe"]
 date = 2022-12-14
-lastmod = 2022-12-20T22:59:17-05:00
+lastmod = 2023-01-09T22:54:31-05:00
 draft = false
-status = "reading"
+status = "finished"
 bookCate = "literature"
 +++
 
@@ -41,8 +41,16 @@ keywords
 
 ## Impression {#impression}
 
+Tolstoy's depiction of people is extremely realistic and
+refined. However, somehow it feels detached and almost feels like he
+doesn't really care about the people that he was writing
+about. There's no sympathy in his working.
+
 
 ## Reading log {#reading-log}
+
+
+### <span class="timestamp-wrapper"><span class="timestamp">&lt;2023-01-01 Sun&gt; </span></span> : Reading Progress : 100% {#reading-progress-100}
 
 
 ### <span class="timestamp-wrapper"><span class="timestamp">&lt;2022-12-20 Tue&gt; </span></span> : Reading Progress : 36% {#reading-progress-36}

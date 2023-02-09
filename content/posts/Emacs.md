@@ -2,7 +2,7 @@
 title = "Emacs Configuration"
 author = ["Chloe"]
 date = 2022-10-29
-lastmod = 2022-12-08T22:52:26-05:00
+lastmod = 2023-01-15T15:21:55-05:00
 tags = ["emacs", "config"]
 draft = false
 +++
